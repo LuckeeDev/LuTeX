@@ -1,7 +1,7 @@
 # Latex artifacts
 *.aux
 *.log
-*.gz
+*.synctex*
 *.toc
 *.fls
 *.fdb_latexmk
