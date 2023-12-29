@@ -1,0 +1,9 @@
+# Latex artifacts
+*.aux
+*.log
+*.gz
+*.toc
+*.fls
+*.fdb_latexmk
+*.out
+*.pdf

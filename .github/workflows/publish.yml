@@ -9,9 +9,25 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@main
-            - name: Compile and Deploy
-              uses: jonhue/pubtex-action@main
+              shell: bash
+            - name: Compile LaTeX sources
+              uses: xu-cheng/latex-action@2.2.1
+              with:
+                  pre_compile: tlmgr update --self && tlmgr update --all
+                  work_in_root_file_dir: true
+                  root_file: |
+                      tex/analysis_2/analysis_2.tex
+            - name: Move PDFs
+              run: mv ./*.pdf dist
+              shell: bash
+            - name: Move index page
+              run: cp README.md dist/index.md
+              shell: bash
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3.8.0
               with:
                   deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-                  files: |
-                      tex/analysis_2/main.tex
+                  publish_dir: dist
+                  allow_empty_commit: true
+                  force_orphan: true
+                  enable_jekyll: true
