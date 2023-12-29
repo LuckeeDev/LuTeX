@@ -1,0 +1,300 @@
+\chapter{Topologia negli spazi metrici}
+
+\section{Elementi di topologia}
+
+\begin{definition}[Spazio metrico]
+    Si consideri un insieme $X$ e una funzione $d: X \to [0, +\infty)$ con le seguenti proprietà $\forall x,y,z \in X$:
+    \begin{enumerate}
+        \item $d(x,y) \geq 0$ e $d(x,y) \iff  x = y$
+        \item $d(x,y) = d(y,x) \  \forall x, y \in X$
+        \item $d(x,y) \leq d(x,z) + d(z,y)$
+    \end{enumerate}
+    Chiamiamo spazio metrico la coppia $(X, d)$.
+\end{definition}
+
+\begin{definition}[Topologia]
+    Si consideri un insieme $X$ e una famiglia\footnote{Una famiglia consiste in un insieme, detto insieme di indici, e in una mappa che ad ogni indice associa un unico elemento della famiglia.} di suoi sottoinsiemi $\tau$. La coppia $(X, \tau)$ è uno spazio topologico se $\tau$, che nel caso è detta topologia, ha le seguenti proprietà:
+    \begin{enumerate}
+        \item $\varnothing, X \in \tau$
+        \item $A_{\alpha} \in \tau \ \forall \alpha \then \bigcup\limits_\alpha A_\alpha \in \tau$ (unione anche infinita)
+        \item $A_1,\dots,A_k \in \tau \with k \in \N \then \bigcap\limits_{j=1}^k A_j \in \tau$ (intersezione finita)
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Intorno circolare aperto o palla aperta]
+    Sia dato $x_0 \in X$. Si definisce intorno circolare aperto di $x_0$ di raggio $r$ l'insieme $B_r(x_0)=\{x \in X : d(x, x_0) < r\}$.
+\end{definition}
+
+\begin{definition}
+    [Insieme aperto]
+    $A \subseteq X$ è un insieme aperto se $\forall x \in A \ \exists r>0 \tc B_r(x) \subseteq A$.
+\end{definition}
+
+\begin{prop}
+    Ogni intorno circolare aperto è un aperto in $(X,d)$. \qed
+\end{prop}
+
+\begin{definition}
+    [Insieme chiuso]
+    $A \subseteq X$ è un insieme chiuso se il suo complementare $X \setminus A$ è un insieme aperto.
+\end{definition}
+
+\begin{remark}
+    Esistono insiemi che non sono né aperti né chiusi.
+\end{remark}
+
+\begin{prop}
+    [Proprietà degli insiemi chiusi] Gli insiemi chiusi hanno le seguenti proprietà:
+    \begin{enumerate}
+        \item $\varnothing, X$ sono insiemi chiusi
+        \item $A_1,\dots,A_k \in X \with k \in \N \then \bigcup\limits_{j=1}^k A_j$ è un insieme chiuso (unione finita)
+        \item $A_\lambda, \lambda \in \Lambda\footnote{Con $\Lambda$ si indica un insieme di indici, anche infinito, per l'insieme $X$.} \then \bigcap\limits_{\lambda \in \Lambda} A_\lambda$ è un insieme chiuso (intersezione anche infinita)
+        \qed
+    \end{enumerate}
+\end{prop}
+
+\begin{definition}
+    [Distanza di un punto da un insieme]
+    Sia $(X,d)$ spazio metrico. Si considerino $A \subseteq X, x \in X$. La distanza di $x$ da $A$ è $d(x,A)=\inf\{d(x,y) : y \in A\}$.
+\end{definition}
+
+\begin{definition}
+    [Insieme limitato]
+    Sia $(X, d)$ uno spazio metrico. $A \subseteq X$ si dice limitato se $\exists M > 0, x_0 \in X \tc A \subseteq B_M(x_0)$.
+\end{definition}
+
+\begin{definition}
+    [Insieme connesso]
+    Sia $(X,d)$ uno spazio metrico. $Y \subseteq X$ è connesso se non esiste una partizione propria di $Y$, ovvero se non esistono due aperti disgiunti $A_1, A_2 \in X$ tali che:
+    \begin{itemize}
+        \item $A_1, A_2 \neq \varnothing$
+        \item $Y \cap A_1, Y \cap A_2 \neq \varnothing$
+        \item $(Y\cap A_1)\cup(Y \cap A_2)=Y$
+    \end{itemize}
+    In altre parole, significa che non è possibile separare i punti di $Y$ usando due aperti in modo non banale.
+\end{definition}
+
+\begin{definition}
+    [Ricoprimento]
+    Sia $(X, \tau)$ uno spazio topologico. Si definisce ricoprimento di $A$ una famiglia $U_\alpha, \alpha \in \Lambda \with U_\alpha \in \tau \ \forall \alpha$ (quindi aperti rispetto a $\tau$)$\tc A \subseteq \bigcup\limits_\alpha U_\alpha$. Si dice sottoricoprimento (finito) una sottofamiglia (finita) di $U_\alpha$ che sia ancora ricoprimento di $A$.
+\end{definition}
+
+\begin{definition}
+    [Insieme compatto]
+    Sia $(X, \tau)$ uno spazio topologico. $A \subseteq X$ è compatto se da ogni ricoprimento di $A$ è possibile estrarre un sottoricoprimento finito di A.
+\end{definition}
+
+\begin{theorem}
+    [di Heine-Borel]
+    Si consideri $(\R^n, d_2)$, ovvero lo spazio euclideo. $A \subseteq \R^n$ è compatto se e solo se $A$ è limitato e chiuso. \qed
+\end{theorem}
+
+\section{Chiusura, interno e frontiera}
+
+\begin{definition}
+    [Chiusura di un insieme]
+    Sia $(X, d)$ uno spazio metrico e $A \subseteq X$. Si dice chiusura dell'insieme $A$ e si indica con $\overline{A}$ l'insieme chiuso più piccolo contenente $A$, ovvero $\overline{A} = \cap\{C\subseteq X : C \text{ è chiuso}, C \supseteq A\}$.
+\end{definition}
+
+\begin{definition}
+    [Interno di un insieme]
+    Sia $(X, d)$ uno spazio metrico e $A \subseteq X$. Si dice interno dell'insieme $A$ e si indica con $\mathring{A}$ l'insieme aperto più grande contenuto in $A$, ovvero $\mathring{A} = \cup\{U\subseteq X: U \text{ è aperto}, U \supseteq A\}$.
+\end{definition}
+
+\begin{prop}
+    Sia $(X, d)$ uno spazio metrico. $A \subseteq X, \ x,y \in X \then \abs{d(x,A)-d(y,A)}\leq d(x,y)$. \qed
+\end{prop}
+
+\begin{definition}
+    [Diametro]
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. Si dice diametro di $A$ $\text{diam}(A)=\sup\limits_{x,y \in A}d(x,y)$.
+\end{definition}
+
+\begin{definition}
+    [Punto aderente a un insieme]
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. $x \in X$ è aderente ad $A$ se $\forall \varepsilon > 0 \ B_\varepsilon(x)\cap A \neq \varnothing$.
+\end{definition}
+
+\begin{definition}
+    [Punto di frontiera]
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. $x \in X$ è di frontiera per $A$ se è aderente sia ad $A$ che a $X \setminus A$.
+\end{definition}
+
+\begin{definition}
+    [Frontiera]
+    La frontiera dell'insieme $A$, indicata con $\partial A$, è l'insieme dei punti di frontiera per l'insieme $A$.
+\end{definition}
+
+\begin{definition}
+    [Punto interno]
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. $x_0 \in A$ è interno ad $A$ se $\exists \varepsilon > 0 \tc B_\varepsilon(x_0)\subseteq A$.
+\end{definition}
+
+\begin{theorem}
+    [di caratterizzazione della chiusura]\label{thm:chiusura}
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. Allora:
+    \begin{enumerate}
+        \item $A \subseteq \overline A$
+        \item $A, B \subseteq X \then \overline{A} \cup \overline{B} = \overline{A \cup B}$
+        \item $\overline{\overline{A}} = \overline{A}$
+        \item $A$ chiuso $\iff A = \overline{A}$
+        \item $\overline{A} = \{x\in X : d(x,A) = 0\}$
+        \item $\overline{A} = \{x \in X : x\text{ aderente ad }A\}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof} Si dimostra ciascun punto separatamente.
+    \begin{enumerate}
+        \item Ovvio per definizione.
+        \item $A, B \subseteq A \cup B \subseteq \overline{A \cup B}$ per il punto 1 del teorema.\\
+        Dato che i chiusi che contengono $A \cup B$ contengono sia $A$ che $B$, $\overline A, \overline B \subseteq \overline{A \cup B} \then \overline A \cup \overline B \subseteq \overline{A \cup B}$.\\
+        Viceversa, $A \subseteq \overline{A}, B \subseteq \overline{B} \then A \cup B \subseteq \overline{A} \cup \overline{B} \then \overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$.\\
+        Di conseguenza, $\overline{A} \cup \overline{B} = \overline{A \cup B}$.
+        \item $\overline{A}$ è chiuso, quindi è ovvio usando la definizione.
+        \item Segue dal punto 3 del teorema e dalle definizioni di chiuso e chiusura.
+    \end{enumerate}
+    I punti 5 e 6 non vengono dimostrati, tuttavia si può notare che se $x$ è punto di aderenza per $A$, allora $\forall \varepsilon > 0 \ B_\varepsilon(x) \cap A \neq \varnothing \iff d(x,A)=0$. In altre parole, i punti 5 e 6 sono equivalenti fra loro.
+\end{proof}
+
+\begin{theorem}
+    [di caratterizzazione di $\mathring A, \overline{A}, \partial A$]
+    Siano $(X,d)$ uno spazio metrico e $A \subseteq X$. Allora:
+    \begin{enumerate}
+        \item $\mathring A = \{x \in A : x \text{ è punto interno ad }A\}$
+        \item $\mathring A = A \setminus \partial A$
+        \item $\overline{A} = A \cup \partial A$
+        \item $\partial A = \partial (X\setminus A)= \overline{X\setminus A}\cap\overline{A}$ (si noti che $\partial A$ è un insieme chiuso)
+        \item $A$ è chiuso $\iff A \supseteq \partial A$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Si dimostra ciascun punto separatamente.
+    \begin{enumerate}
+        \item $x \in \mathring A \subseteq A \then \exists U \text{ aperto} \subseteq X \tc x \in U \subseteq A \then \exists B_\varepsilon(x) \subseteq U \subseteq A$, ovvero $x$ è punto interno ad $A$. Viceversa, se $x \in A$ è punto interno $\exists B_\varepsilon(x)\subseteq A$, quindi $x \in \mathring A$.
+        \item $x \in A\setminus \partial A$, quindi $x \in A$. Poiché $x \notin \partial A$, definendo $\delta = d(x, X\setminus A) > 0$, $\forall \ 0 < \varepsilon < \delta \ B_\varepsilon(x) \subseteq A \then x \in \mathring A \then A \setminus \partial A \subseteq \mathring A$.
+
+        Viceversa, se $x \in \mathring A \subseteq A \ \exists B_\varepsilon(x) \subseteq A \then d(x, X\setminus A) \geq \varepsilon > 0$, quindi $x \notin \partial A$, cioè $\mathring A \subseteq A \setminus \partial A$.
+
+        Di conseguenza, $\mathring A = A \setminus \partial A$.
+        \item $x \in A \cup \partial A$, allora o $x \in A \subseteq \overline{A}$ o $x \in X \setminus A$ e $x$ aderente ad A. In entrambi i casi, per il teorema \ref{thm:chiusura} $x \in \overline{A}$, ovvero $A \cup \partial A \subseteq \overline{A}$.
+
+        Viceversa, se $x \in \overline{A}$ allora $x$ è aderente ad A (sempre per il teorema \ref{thm:chiusura}). Si verificano due casi:
+        \begin{enumerate}[a.]
+            \item $x \in A$. Non c'è nient'altro da dimostrare.
+            \item $x \in X \setminus A$, ma $x$ dev'essere aderente ad $A$, quindi $x \in \partial A$.
+        \end{enumerate}
+        Da questo segue che $\overline{A} \subseteq A \cup \partial A \then \overline{A} = A \cup \partial A$.
+        \item Ovviamente, $\partial A = \partial (X \setminus A)$, per cui $\overline{X \setminus A} = (X \setminus A) \cup \partial (X \setminus A) = (X \setminus A) \cup \partial A$. Considerando che $\overline{A} = A \cup \partial A$, si vede facilmente che $\overline{A} \cap \overline{X \setminus A} \supseteq \partial A$. Si vuole ora dimostrare l'uguaglianza fra questi due insiemi. Se $x \notin \partial A$ si presentano due casi:
+        \begin{enumerate}[a.]
+            \item $x \in A$ e $d(x, X \setminus A) > 0 \then x \notin \overline{X \setminus A}$
+            \item $x \in X \setminus A$ e $d(x, A)> 0 \then x \notin \overline{A}$
+        \end{enumerate}
+        In entrambi i casi, $x \notin \overline{A} \cap \overline{X \setminus A}$, quindi $\partial A = \overline{A} \cap \overline{X \setminus A}$.
+        
+        \item Segue dal punto 3 del teorema e dal teorema \ref{thm:chiusura}. $A \text{ chiuso} \iff A = \overline{A} = A \cup \partial A \iff A \supseteq \partial A$.
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    [Punto di accumulazione]
+    Siano $(X, d)$ uno spazio metrico e $A \subseteq X$. $x_0 \in X$ è un punto di accumulazione per $A$ se $\forall \varepsilon > 0 \ (B_\varepsilon(x_0)\setminus \{x_0\})\cap A \neq \varnothing$.
+\end{definition}
+
+\begin{definition}
+    [Derivato di un insieme]
+    Si definisce derivato di $A$ e si indica con $\text{D}(A)$ l'insieme dei punti di accumulazione di $A$.
+\end{definition}
+
+\begin{theorem}
+    [di Bolzano-Weierstrass]
+    Si consideri lo spazio metrico euclideo $(\R^n, d_2)$. Ogni insieme infinito e limitato possiede almeno un punto di accumulazione. \qed
+\end{theorem}
+
+\begin{definition}
+    [Punto isolato]
+    $x \in A$ è un punto isolato di $A$ se $x \notin \text{D}(A)$, ovvero se non è un punto di accumulazione per $A$.
+\end{definition}
+
+\section{Spazi normati}
+
+\begin{definition}
+    [Norma]
+    Sia $X$ uno spazio vettoriale definito sul campo $\K$. $\norm{\cdot} : X \to [0, +\infty)$ è una norma se soddisfa le seguenti proprietà $\forall \vb{x},\vb{y} \in X$ e $\forall \lambda \in \K$:
+    \begin{enumerate}
+        \item $\norm{\vb{x}} = 0 \iff \vb{x} = \vb{0}$
+        \item $\norm{\lambda \vb{x}} = \abs{\lambda}\norm{\vb{x}}$
+        \item $\norm{\vb{x} + \vb{y}} \leq \norm{\vb{x}} + \norm{\vb{y}}$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    [Prodotto interno]
+    Sia $X$ uno spazio vettoriale definito sul campo $\K$. $\innerproduct{\cdot}{\cdot}: X \times X \to \R$ è detto prodotto interno se soddisfa le seguenti proprietà:
+    \begin{enumerate}
+        \item $\forall \vb{x} \in X, \innerproduct{\vb{x}} \geq 0$ e $\innerproduct{\vb{x}} = 0 \iff \vb{x} = \vb{0}$
+        \item $\forall \vb{x}, \vb{y} \in X \innerproduct{\vb{x}}{\vb{y}}=\innerproduct{\vb{y}}{\vb{x}}$
+        \item $\forall \vb{x}, \vb{y}, \vb{z}, \innerproduct{\vb{x}}{\vb{y}+\vb{z}}=\innerproduct{\vb{x}}{\vb{y}} + \innerproduct{\vb{x}}{\vb{z}}$
+        \item $\forall \vb{x}, \vb{y} \in X, \ \forall \lambda \in \K, \innerproduct{\lambda \vb{x}}{\vb{y}} = \lambda \innerproduct{\vb{x}}{\vb{y}} $
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    [Ortogonale]
+    Siano $\vb{x}, \vb{y} \in X$. Si dice che $\vb{x}$ è ortogonale a $\vb{y}$ e si scrive $\vb{x} \perp \vb{y}$ se $\innerproduct{\vb{x}}{\vb{y}}$.
+\end{definition}
+
+\section{Successioni}
+
+\begin{definition}
+    [Successione in uno spazio metrico]
+    Sia $(X, d)$ uno spazio metrico. Si definisce successione $f: \N \to X$. Si definisce insieme dei valori della successione l'insieme $\{x_n\}$ dove $x_n = f(n)$.
+\end{definition}
+
+\begin{definition}
+    [Successione convergente]
+    Siano $(X, d)$ uno spazio metrico, $a \in X$ e $x_n \in X \ \forall n \in \N$. Si dice che $x_n$ converge ad $a$ rispetto a $d$ se $\lim\limits_{n \to + \infty}d(x_n, a) = 0$, cioè $\forall \varepsilon > 0 \ \exists m \in \N \tc d(x_n, a) < \varepsilon \ \forall n \geq m$.
+\end{definition}
+
+\begin{remark}
+    Se $X$ è uno spazio normato, allora $X$ è anche uno spazio metrico con $d(\vb{x},\vb{y}) = \norm{\vb{x}-\vb{y}}$. In $\R^n$ tutte le norme sono equivalenti, cioè se una successione di elementi in $\R^n$ converge rispetto a una norma allora converge rispetto a qualunque altra norma.
+\end{remark}
+
+\begin{definition}
+    [Successione di funzioni]
+    Si chiama successione di funzioni una successione definita da $\N$ all'insieme $X=\{f: I \to \R\} \with I \subseteq \R$ intervallo.
+\end{definition}
+
+\begin{definition}
+    [Convergenza uniforme]
+    Si dice che $f_n$ converge uniformemente a $f$ e si indica con $f_n \rightrightarrows f$ se $d_\infty(f_n, f) = \sup\limits_{x \in I}\abs{f_n(x) - f(x)} \xrightarrow{n \to + \infty} 0$.
+\end{definition}
+
+\begin{definition}
+    [Convergenza in media]
+    Si dice che $f_n$ converge in media a $f$ se $\displaystyle \lim_{n\to + \infty}d_1(f_n,f)=\lim_{n \to + \infty} \int_I\abs{f_n(t) - f(t)}dt = 0$.
+\end{definition}
+
+\begin{definition}
+    [Convergenza puntuale]
+    Si dice che $f_n$ converge puntualmente a $f$ e si indica con $f_n \to f$ se $\displaystyle \lim_{n\to +\infty} f_n(t) = f(t) \ \forall t \in I$.
+\end{definition}
+
+\begin{theorem}
+    [Proprietà della convergenza uniforme]
+    Siano $f_n, f \in B(I, \R) = \{f: I \to \R \text{ limitate}\}$ e sia che $f_n \rightrightarrows f$. Allora:
+    \begin{enumerate}
+        \item Se $f_n$ è continua $\forall n$ in $I \then f$ è continua in $I$
+        \item $f_n$ converge puntualmente a $f$
+        \item Se $I$ è un insieme limitato e $\displaystyle \int_I\abs{f_n(t)}dt < + \infty \ \forall n \then \int_I\abs{f(t)dt} < +\infty$ e $f_n \xrightarrow{d_1} f$ (ovvero, $f_n$ converge in media a $f$)
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    [Scambio fra limite e derivata]
+    Siano $f_n, f, f_n', g: I \to \R$ tali che $d_\infty(f_n, f) \xrightarrow{n\to + \infty} 0$ e $d_\infty(f_n', g) \xrightarrow{n \to +\infty} 0$. Allora $f$ è derivabile in $I$ e $f'(t) = g(t)$. \qed
+\end{theorem}

@@ -1,0 +1,143 @@
+\chapter{Teoria della misura e dell'integrazione}
+
+\section{Misura di Peano-Jordan}
+
+\begin{definition}
+    [Intervallo semi-aperto superiormente]
+    Si definisce intervallo semi-aperto superiormente di $\R^n$ il prodotto cartesiano di $n$ intervalli chiusi inferiormente e aperti superiormente:
+    \begin{equation*}
+        I=[a_1,b_1)\times\cdots\times[a_n,b_n) \with a_i \leq b_i \ \forall i \in [n]
+    \end{equation*}
+    La misura elementare di $I$ è
+    \begin{equation*}
+        \mu_n(I)=\prod_{j=1}^n(b_j-a_j)
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    [Pluri-intervallo]
+    Siano $I_1,\dots,I_k$ intervalli semi-aperti superiormente a due a due disgiunti. Si definisce pluri-intervallo l'unione $\displaystyle P=\bigcup_{j=1}^kI_j$. La misura di $P$ è $\mu_n(P)=\displaystyle \sum_{j=1}^k\mu_n(I_j)$. 
+    L'insieme dei pluri-intervalli di $\R^n$ viene indicato con $\mathcal{P}$.
+\end{definition}
+
+\begin{lemma}
+    Valgono le seguenti proposizioni:
+    \begin{itemize}
+        \item Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\displaystyle \bigcup_{j=1}^k P_j, \bigcap_{j=1}^kP_j \in \mathcal{P}$
+        \item Se $P_1,P_2 \in \mathcal{P}$, allora $P_2 \setminus P_1 \in \mathcal{P}$
+        \qed
+    \end{itemize}
+\end{lemma}
+
+\begin{theorem}
+    [Caratterizzazione della misura in $\mathcal{P}$]
+    Per la misura in $\mathcal{P}$ valgono le seguenti proprietà:
+    \begin{enumerate}
+        \item (Additività finita) Se $P_1,\dots,P_k \in \mathcal{P}$ sono a due a due disgiunti, allora
+        \begin{equation*}
+            \mu_n\left( \bigcup_{j=1}^k P_j \right) = \sum_{j=1}^k \mu_n(P_j)
+        \end{equation*}
+        \item (Monotonia) Se $P, Q \in \mathcal{P} \e P \subseteq Q \then \mu_n(P)\leq \mu_n(Q)$
+        \item (Modularità) Se $P,Q \in \mathcal{P}$, allora
+        \begin{equation*}
+            \mu_n(P\cup Q) + \mu_n (P \cap Q) = \mu_n (P) + \mu_n (Q)
+        \end{equation*}
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\displaystyle \mu_n\left(\bigcup_{j=1}^kP_j\right) \leq \sum_{j=1}^k\mu_n(P_j)$. Ovvero, vale la proprietà di subadditività finita per $\mu_n$ su $\mathcal{P}$.
+    \qed
+\end{corollary}
+
+\begin{corollary}
+    Se $P,Q \in \mathcal{P} \then \mu_n(P\setminus Q)=\mu_n(P)-\mu_n(P\cap Q)$. In particolare, se $Q \subseteq P$, allora $\mu_n(P\setminus Q) = \mu_n (P)-\mu_n(Q)$.
+    \qed
+\end{corollary}
+
+\begin{lemma}
+    Se $P \in \mathcal{P}$, allora $\partial P \in \mathcal{P} \e \mu_n(\partial P)=0$.
+    \qed
+\end{lemma}
+
+\begin{corollary}
+    Se $P \in \mathcal{P}$, allora $\mathring P, \overline{P}$ sono misurabili e $\mu_n(\mathring P)=\mu_n(\overline{P})=\mu_n(P)$.
+    \qed
+\end{corollary}
+
+\begin{definition}
+    [Misura interna ed esterna]
+    Si definiscono gli insiemi dei pluri-intervalli interni all'insieme $X$, $\mathcal{P}^{(i)}$, e dei pluri-intervalli esterni all'insieme $X$, $\mathcal{P}^{(e)}$:
+    \begin{align*}
+        \mathcal{P}^{(i)}&=\{P\in \mathcal{P}:P\subseteq X\}\\
+        \mathcal{P}^{(e)}&=\{Q \in \mathcal{P}: Q \supseteq X \}
+    \end{align*}
+    La misura interna di $X$ è $
+        \mu_n^{(i)}(X)=\sup\limits_{P\in \mathcal{P}^{(i)}}\mu_n(P)
+    $
+    e la misura esterna di $X$ è $
+        \mu_n^{(e)}(X)=\inf\limits_{Q \in \mathcal{P}^{(e)}}\mu_n(Q)
+    $
+\end{definition}
+
+\begin{lemma}
+    $\mu_n^{(i)}(X), \mu_n^{(e)}(X) \in \R_{\geq 0} \e \mu_n^{(i)}(X)\leq\mu_n^{(e)}(X)$.
+    \qed
+\end{lemma}
+
+\begin{definition}
+    [Insieme limitato misurabile secondo Peano-Jordan]
+    Sia $X \subseteq \R^n$ un insieme limitato. Si dice che $X$ è misurabile secondo Peano-Jordan se $\mu_n^{(i)}(X)=\mu_n^{(e)}(X)$ e in tal caso si dice misura $n$-dimensionale di $X$ tale valore.
+    L'insieme degli insiemi limitati misurabili secondo Peano-Jordan si indica con $\mathcal{J}_b(\R^n)$.
+\end{definition}
+
+\begin{lemma} Valgono le seguenti proposizioni:
+    \begin{enumerate}
+        \item $\mathcal{P} \subseteq \mathcal{J}_b(\R^n)$. Tutti i pluri-intervalli sono misurabili secondo Peano-Jordan e la misura coincide con quella definita in modo elementare.
+        \item Se $X_1,\dots,X_k \in \mathcal{J}_b(\R^n)$, allora $\displaystyle\bigcup_{j=1}^k X_j, \bigcap_{j=1}^kX_j \in \mathcal{J}_b(\R^n)$
+        \item Se $X,Y \in \mathcal{J}_b(\R^n)\then X \setminus Y \in \mathcal{J}_b(\R^n)$
+        \qed
+    \end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+    [Caratterizzazione della misurabilità]
+    Sia $X\subseteq \R^n$ limitato. Allora:
+    \begin{enumerate}
+        \item $X\in \mathcal{J}_b(\R^n) \iff \forall \varepsilon > 0 \ \exists P,Q \in \mathcal{P} \tc P \subseteq X \subseteq Q \e \mu_n(Q)-\mu_n(P) < \varepsilon$
+        \item $X \in \mathcal{J}_b(\R^n) \iff \forall \varepsilon > 0 \ \exists Y,Z \in \mathcal{J}_b(\R^n) \tc Y \subseteq X \subseteq Z \e \mu_n(Z)-\mu_n(Y) < \varepsilon$
+        \item $X \in \mathcal{J}_b(\R^n)\iff \partial X \in \mathcal{J}_b(\R^n) \e \mu_n(\partial X)=0$
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    Se $X \in \mathcal{J}_b(\R^n)$, allora $\overline{X},\mathring X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=\mu_n(\overline{X})=\mu_n(\mathring X)$.
+    \qed
+\end{corollary}
+
+\begin{theorem}
+    [Proprietà di $\mathcal{J}_b(\R^n)$]
+    Valgono le seguenti proprietà per la misura in $\mathcal{J}_b(\R^n)$:
+    \begin{enumerate}
+        \item (Additività finita) Se $X_1,\dots,X_k \in \mathcal{J}_b(\R)^n$ sono a due a due disgiunti, allora
+        \begin{equation*}
+            \mu_n\left(\displaystyle \bigcup_{j=1}^kX_j\right) =   \displaystyle\sum_{j=1}^k\mu_n(X_j)
+        \end{equation*}
+        \item (Modularità) Se $X,Y \in \mathcal{J}_b(\R^n)$, allora $\mu_n(X\cup Y)+\mu_n(X\cap Y)=\mu_n(X)+\mu_n(Y)$
+        \item (Monotonia) Se $X,Y \in \mathcal{J}_b(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
+        \item Se $X,Y \in \mathcal{J}_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    [Caratterizzazione degli insiemi di misura nulla]\leavevmode
+    \begin{enumerate}
+        \item $\mathring X = \varnothing \iff \mu_n^{(i)}=0$
+        \item $X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=0 \iff \forall \varepsilon >0 \ \exists P \in \mathcal{P} \tc P \supseteq X \e \mu_n(P)< \varepsilon$
+        \item $X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=0 \iff \mathring = \varnothing \e X \in \mathcal{J}_b(\R^n)$
+        \qed
+    \end{enumerate}
+\end{theorem}

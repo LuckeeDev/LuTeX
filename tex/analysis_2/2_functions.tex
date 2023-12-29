@@ -1,0 +1,157 @@
+\chapter{Funzioni fra spazi metrici}
+
+\section{Funzioni e regolarità}
+
+\begin{definition}
+    [Funzione fra spazi metrici]
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici. Si dice funzione $f: X \to Y$ che a $x \in X$ associa $y = f(x) \in Y$.
+\end{definition}
+
+\begin{definition}
+    [Funzione continua fra spazi metrici]
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici. $f: X \to Y$ si dice continua se $\forall x_0 \in X, \ \forall \varepsilon > 0 \ \exists \delta > 0 \tc d_y(f(x), f(x_0)) < \varepsilon \ \forall x \in A \tc d_x(x, x_0) < \delta$.
+\end{definition}
+
+\begin{theorem}
+    [Caratterizzazioni equivalenti della continuità]
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici. Allora le seguenti proposizioni sono equivalenti:
+    \begin{enumerate}
+        \item $f$ è continua da $X$ in $Y$
+        
+        \item $f$ trasforma successioni convergenti in $X$ in successioni convergenti in $Y$, cioè $\forall \{x_n\}_{n \in \N}, x_n \in X \ \forall n \tc \exists x \in X$ per cui $\displaystyle \lim_{n \to +\infty}d_x(x_n, x)=0$, si ha che $\displaystyle \lim_{n \to +\infty}d_y(f(x),f(x_n))=0$.
+        
+        \item $\forall x \in X, \forall V \subseteq Y$ intorno circolare aperto di $f(x)$, $\exists U \subseteq X$ intorno circolare aperto di $x$ tale che $f(U) \subseteq f(V)$.
+
+        \item $\forall V$ aperto in $Y$, $f^{-1}(V)$ è aperto in $X$, dove $f^{-1}(V)=\{x \in X : f(x) \in V\}$.
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Si noti che il punto 4 del teorema fa uso esclusivamente del concetto di insieme aperto senza fare riferimento alle strutture metriche, ma solo alla struttura topologica. Esso costituisce la definizione di continuità in spazi topologici non metrici.
+\end{remark}
+
+\begin{definition}
+    [Uniforme continuità]
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici. $f : X \to Y$ si dice uniformemente continua se $\forall \varepsilon > 0 \ \exists \delta = \delta (\varepsilon) > 0 \tc d_y(f(x), f(x_0)) < \varepsilon \ \forall x,x_0 \in X \tc d_x(x, x_0) < \delta$.
+\end{definition}
+
+\begin{remark}
+    Il concetto di uniforme continuità rende il valore di $\delta$ indipendente dalla scelta di $x_0$. Esso dipende quindi solo dalla scelta di $\varepsilon$.
+\end{remark}
+
+\begin{definition}
+    [Funzione lipschitziana]
+    Siano $(X, d_x),\ (Y, d_y)$ spazi metrici. $f: X \to Y$ si dice lipschitziana se $\exists L > 0 \tc \forall x, x_0 \in X \ d_y(f(x), f(x_0)) \leq Ld_x(x, x_0)$. Se $L<1$, $f$ si chiama contrazione.
+\end{definition}
+
+\begin{definition}
+    [Isometria]
+    Siano $(X, d_x),\ (Y, d_y)$ spazi metrici. $f: X \to Y$ è un'isometria se $\forall x, y \in X \ d_y(f(x), f(y)) = d_x(x,y)$.
+\end{definition}
+
+\begin{theorem}
+    [Relazioni fra regolarità delle funzioni]
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici e $f:x \to Y$. Allora:
+    \begin{enumerate}
+        \item Se $f$ è uniformemente continua, allora è continua.
+        \item Se $f$ è lipschitziana, allora è uniformemente continua.
+        \item Se $f$ è un'isometria, allora è lipschitziana.
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Si consideri lo spazio euclideo $(\R^n,d)$.
+    \begin{enumerate}
+        \item $x \in \overline{A} \iff \exists \{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N \tc d(x, x_k) \xrightarrow{k \to + \infty} 0$
+
+        \item $A \subseteq \R^n$ è compatto $\iff \forall\{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N$ esiste una sottosuccessione $x_{k_l}$ convergente in $A$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    [di Weierstrass]
+    Siano $(\R^n, d), (\R^m, d)$ spazi metrici euclidei, $K \subseteq \R^n$ un insieme compatto e $f: K \to \R^m$ una funzione continua. Allora $f(K) \subseteq \R^m$ è un insieme compatto e, se $m=1$, $\exists \min\limits_Kf, \max\limits_Kf$.
+    \qed
+\end{theorem}
+
+\begin{theorem}
+    [di Bolzano]
+    Siano $(\R^n, d), (\R^m, d)$ spazi metrici euclidei, $A \subseteq \R^n$ un insieme connesso, $f: A \to \R^m$ una funzione continua. Allora $f(A)$ è connesso e, se $m=1$, $f(A)$ è un intervallo.
+    \qed
+\end{theorem}
+
+\begin{definition}
+    [Insieme connesso per archi]
+    Sia $(\R^n, d)$ lo spazio metrico euclideo. $A \subseteq \R^n$ è un insieme connesso per archi se $\forall x, y \in A \ \exists r: [0,1] \to A$ continua tale che $r(0)=x,\ r(1)=y$.
+\end{definition}
+
+\begin{theorem}
+    Sia $(\R^n, d)$ lo spazio metrico euclideo.
+    \begin{enumerate}
+        \item Se $A \subseteq \R^n$ è connesso per archi, allora è connesso
+        \item Se $A \subseteq \R^n$ è aperto, allora $A$ è connesso $\iff A$ è connesso per archi
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\section{Spazi metrici completi}
+
+\begin{definition}
+    [Successione di Cauchy]
+    Sia $(X, d)$ uno spazio metrico. $x_n \in X \ \forall n \in \N, \{x_n\}_{n \in \N}$ è di Cauchy se $\forall \varepsilon > 0 \ \exists \overline{n} \in \N \tc d(x_m, x_p) < \varepsilon \ \forall m, p \geq \overline{n}$.
+\end{definition}
+
+\begin{theorem}
+    Se $\{x_n\}_{n \in \N}$ converge in $(X, d)$, allora è di Cauchy.
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{definition}
+    [Spazio metrico completo]
+    $(X, d)$ è uno spazio metrico completo se ogni successione di Cauchy in $X$ ha limite in $X$ rispetto a $d$.
+\end{definition}
+
+\begin{definition}
+    [Insieme denso]
+    Sia $(X,d)$ uno spazio metrico completo. $Z \subseteq X$ è denso in $X$ se $\overline{Z} = X$.
+\end{definition}
+
+\begin{theorem}
+    [del colapasta]
+    Ogni spazio metrico $(Y,d)$ è completabile in modo univoco a meno di isometria. Cioè esiste $X$ tale che $\overline{Y} = X$. Cioè esiste $Z \subseteq X$ denso in $X$ e isometrico a $Y$.
+    \qed
+\end{theorem}
+
+\section{Proprietà delle funzioni continue}
+
+\begin{theorem}
+    [Continuità della somma e del prodotto per scalare]
+    $\mathcal{F}=\{f: A \subseteq \R^n \to \R^p\}$ è uno spazio vettoriale, poiché
+    \begin{enumerate}[a.]
+        \item $(f+g)(x)=f(x)+g(x) \in \R^p$
+        \item $(\lambda f)(x)= \lambda f(x) \in \R^p \with \lambda \in \R$
+    \end{enumerate}
+    Inoltre se $f,g$ sono continue, allora $f+g, \lambda f$ sono continue.
+    \qed
+\end{theorem}
+
+\begin{theorem}
+    [Continuità della composta]
+    Siano $A \subseteq \R^n, \ B \subseteq \R^p$, $f: A \to B$ continua e $g: B \to \R^k$ continua, allora $f\circ g: A \to \R^k$ è continua in $A$.
+    \qed
+\end{theorem}
+
+\begin{theorem}
+    [di permanenza del segno]
+    Sia $f: A \subseteq \R^n \to \R$ continua in $x_0 \in A$. Se $f(x_0)>0$, allora $\exists \varepsilon > 0 \tc f(x) > 0 \ \forall x \in B_\varepsilon(x_0)$.
+    \qed
+\end{theorem}

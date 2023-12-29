@@ -1,0 +1,86 @@
+% Basic packages
+\documentclass[openany]{book}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsthm, amssymb, amsmath, bm, physics}
+
+% Links
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+
+% Define new commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\vecf}{\bm f}
+\newcommand{\then}{\Longrightarrow}
+\newcommand{\tc}{\text{ tale che }}
+\newcommand{\with}{\text{ con }}
+\newcommand{\e}{\text{ e }}
+\DeclareMathOperator{\rk}{rk}
+
+% Used to have letter lists
+\usepackage[shortlabels]{enumitem}
+
+% Remove dot after theorem number
+\usepackage{xpatch}
+\makeatletter
+\AtBeginDocument{\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}}
+\makeatother
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear header and footer fields
+\fancyhead[LEH, ROH]{\nouppercase{\leftmark}}
+\fancyhead[REH, LOH]{\nouppercase{\rightmark}}
+\fancyfoot[LEF, ROF]{\thepage}
+
+% Define available theorems and their styles
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposizione}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
+
+% Change QED symbol to #
+\renewcommand\qedsymbol{\#}
+
+\title{Analisi Matematica 2}
+\author{Luca Zoppetti}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\
+\thispagestyle{empty}
+\newpage 
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\
+\thispagestyle{empty}
+\newpage
+
+\include{1_topology}
+
+\include{2_functions}
+
+\include{3_calculus_nvars}
+
+\include{4_calculus_nvals}
+
+\include{5_peano_jordan}
+
+\end{document}
