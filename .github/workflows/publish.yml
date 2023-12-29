@@ -10,7 +10,7 @@ jobs:
         steps:
             - uses: actions/checkout@main
             - name: Compile LaTeX sources
-              uses: xu-cheng/latex-action@2.2.1
+              uses: xu-cheng/latex-action@3.1.0
               with:
                   pre_compile: tlmgr update --self && tlmgr update --all
                   work_in_root_file_dir: true
