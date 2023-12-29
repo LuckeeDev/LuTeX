@@ -17,7 +17,7 @@ jobs:
                   root_file: |
                       tex/analysis_2/analysis_2.tex
             - name: Move PDFs
-              run: mv ./*.pdf dist
+              run: mv ./tex/*/*.pdf dist
               shell: bash
             - name: Move index page
               run: cp README.md dist/index.md
