@@ -5,7 +5,7 @@ title: Lu(ca)TeX
 
 # Lu(ca)TeX
 
-In questa repository sono disponibili i progetti $\LaTeX$ che scrivo per i miei studi o per altri motivi. Questa pagina è disponibile anche come sito web a [questo link](https://https://luckeedev.github.io/lutex).
+In questa repository sono disponibili i progetti LaTeX che scrivo per i miei studi o per altri motivi. Questa pagina è disponibile anche come sito web a [questo link](https://https://luckeedev.github.io/lutex).
 
 ## Progetti
 
