@@ -1,1 +1,148 @@
 \chapter{Curve e lavoro}
+
+\section{Curve in forma parametrica}
+
+\begin{definition}
+	[Curva]
+	Si definisce curva in $\R^n$ una funzione $\vb{r}:[a,b]\to \R^n$ continua. $\vb{r}([a,b])$ è detto sostegno della curva.
+\end{definition}
+
+\begin{remark}
+	La richiesta della continuità non è sufficiente perché $\vb{r}([a,b])$ sia un sottoinsieme di dimensione $1$ di $\R^n$. Esempio: la curva di Peano.
+\end{remark}
+
+\begin{definition}
+	[Parametrizzazione regolare]
+	Si dice parametrizzazione regolare della curva una funzione $\vb{r}:[a,b]\to \R^n \in \C{1} \tc \vb{r}'(t)\neq\vb{0} \ \forall t \in [a,b]$.
+\end{definition}
+
+\begin{definition}
+	[Parametrizzazione semplice aperta]
+	Si dice parametrizzazione semplice aperta una funzione $\vb{r}: [a,b]\bijarrow\R^n \in \C{1}$. Si noti che $\vb{r}$ è un omeomorfismo.
+\end{definition}
+
+\begin{definition}
+	[Parametrizzazione semplice chiusa]
+	Si dice parametrizzazione semplice chiusa una funzione $\vb{r}: [a,b]\bijarrow \vb{r}((a,b)) \e \vb{r}(a)=\vb{r}(b)$.
+\end{definition}
+
+\begin{theorem}
+	[Invarianza per cambio di parametrizzazione]
+	Siano $\vb{r} \in \C{1}([a,b],\gamma) \e \varphi:[\alpha,\beta]\bijarrow[a,b]\\\in \C{1} \with \varphi^{-1} \in \C{1}$ (ovvero, $\varphi$ è un diffeomorfismo). Sia $\bm\rho = \vb{r} \circ \varphi: [\alpha, \beta] \to \R^n$. Allora
+	\begin{enumerate}
+		\item $\bm\rho([\alpha,\beta])=\gamma$, ovvero il sostegno della curva è invariato
+		\item $\bm\rho$ è regolare se e solo se $\vb{r}$ è regolare
+		\item $\bm\rho$ è semplice se e solo se $\vb{r}$ è semplice
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	[Curva orientabile]
+	$\gamma \subseteq \R^n$ connesso e compatto è orientabile se $\exists \vb{T}: \gamma \to \R^n \tc \forall \vb{x} \in \gamma \ \vb{T}(\vb{x})\in T_{\vb{x}}\gamma \e \norm{\vb{T}(\vb{x})}=1$. In altre parole, è necessario che esista un campo continuo di versori tangenti alla curva. Si definisce orientamento indotto dalla parametrizzazione $\vb{r}$ il campo di versori
+	\begin{equation}
+		T(x)=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}} \in T_{\vb{x}}\gamma
+	\end{equation}
+\end{definition}
+
+\begin{lemma}
+	Ogni curva semplice e regolare è orientabile. La semplicità garantisce che $\gamma$ abbia esattamente due orientamenti.\qed
+\end{lemma}
+
+\begin{theorem}
+	[Effetto del cambio di parametrizzazione sull'orientamento]
+	Sia $\gamma$ orientabile e sia $\vb{T}(\vb{x})=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}}$. Vi sono due casi:
+	\begin{enumerate}[a.]
+		\item $\varphi$ è un diffeomorfismo crescente, quindi l'orientamento indotto da $\bm\rho$ è lo stesso di $\vb{r}$
+		\item $\varphi$ è un diffeomorfismo decrescente, quindi l'orientamento indotto da $\bm\rho$ è opposto a quello indotto da $\vb{r}$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{definition}
+	[Parametrizzazione regolare a tratti]
+	Si definisce parametrizzazione regolare a tratti $\vb{r}:[a,b]\to \R^n$ continua se $\exists a=t_1<\cdots<t_k=b \tc \vb{r}:[t_i, t_{i+1}]\bijarrow \vb{r}([t_i,t_{i+1}]) \in \C{1} \e \vb{r}'(t)\neq \vb{0} \ \forall t \in (t_i,t_{i+1}) \ \forall i \in [k-1]$.
+\end{definition}
+
+\begin{definition}
+	[Parametrizzazione regolare a tratti orientabile]
+	Si definisce parametrizzazione regolare a tratti orientabile $\vb{r}: [a,b]\to\R^n$ continua se $\exists a=t_1<\cdots<t_k=b \tc \vb{r}:[a,b]\setminus \{t_1,\dots,t_k\} \injarrow \gamma, \ \vb{r}:[t_i,t_{i+1}]\bijarrow \vb{r}([t_i,t_{i+1}]) \in \C{1} \e \vb{r}'(t)\neq \vb{0} \ \forall t \in (t_i,t_{i+1}) \ \forall i \in [k-1]$.
+\end{definition}
+
+\begin{definition}
+	[Punto di arresto]
+	Sia $\vb{r} :[a,b] \to \R^n\in \C{1}$. $t \in [a,b]$ è punto di arresto se $\vb{r}'(t) = \vb{0}$.
+\end{definition}
+
+\section{Integrali curvilinei}
+
+\begin{theorem}
+	[Lunghezza di una curva]
+	Se $\gamma$ è una curva regolare, allora la lunghezza di $\gamma$ è
+	\begin{equation}
+		L_\gamma = \int_a^b\norm{\vb{r}'(t)}\dd t
+	\end{equation}
+	dove $\vb{r}: [a,b]\suarrow \gamma$ è una parametrizzazione regolare.
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{prop}
+	La lunghezza di una curva regolare non dipende dalla parametrizzazione.
+\end{prop}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{prop}
+	Tutte le curve regolari a tratti sono rettificabili, ovvero hanno lunghezza finita.
+	\qed
+\end{prop}
+
+\begin{definition}
+	[Integrale di linea di una funzione]
+	Siano $f: A\subseteq\R^n \to \R$ continua con $A$ aperto, $\gamma \subseteq A$ una curva regolare (o regolare a tratti) e $\vb{r}:[a,b]\suarrow \gamma \in \C{1}$ una sua parametrizzazione, allora
+	\begin{equation}
+		\int_\gamma f \dd s = \int_a^b f(\vb{r}(t))\norm{\vb{r}'(t)}\dd t
+	\end{equation}
+\end{definition}
+
+\begin{definition}
+	[Ascissa curvilinea]
+	Sia $\gamma$ una curva rettificabile e $\vb{r}:[a,b]\bijarrow\gamma \in \C{1}$ una sua parametrizzazione. Sia
+	\begin{equation}
+		s(t)=\int_a^t\norm{\vb{r}'(u)}\dd u
+	\end{equation}
+	$s(t)$ è detta ascissa curvilinea e $s^{-1}(t)$ è un cambio di parametrizzazione ammissibile per $\gamma$, essendo un diffeomorfismo crescente da $[0,L_\gamma]$ in $[a,b]$.
+\end{definition}
+
+\section{Lavoro}
+
+\begin{definition}
+	[Campo vettoriale]
+	Sia $A\subseteq \R^n$ un aperto connesso. Una funzione $\vb{f}: A \to \R^n$ continua è detta campo vettoriale.
+\end{definition}
+
+\begin{definition}
+	[$1$-forma differenziale]
+	Si definisce 1-forma differenziale $\omega=\innerproduct{\vb{f}(\vb{x})}{\dd \vb{x}}$.
+\end{definition}
+
+\begin{definition}
+	[Lavoro]
+	Sia $\gamma \subseteq A$ una curva regolare (a tratti) orientabile con orientamento $\hat{\bm\tau}$. Il lavoro di $\vb{f}$ lungo $\gamma$ è
+	\begin{equation}
+		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\innerproduct{\vb{f}(\vb{x})}{\dd \vb{x}}=\int_\gamma \innerproduct{\vb{f}}{\hat{\bm\tau}}\dd s
+	\end{equation}
+	dove $s$ è l'ascissa curvilinea.
+\end{definition}
+
+\begin{remark}
+	Se cambia l'orientamento da $(\gamma, \hat{\bm\tau})$ in $(\gamma, -\hat{\bm\tau})$, allora $L_{\gamma,-\hat{\bm\tau}}$=$-L_{\gamma,\hat{\bm\tau}}$.
+\end{remark}

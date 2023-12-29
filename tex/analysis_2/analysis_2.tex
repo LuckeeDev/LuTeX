@@ -1,9 +1,11 @@
 % Basic packages
 \documentclass[openany]{book}
-\usepackage{graphicx}
 \usepackage[italian]{babel}
 \usepackage[a4paper,margin=1in]{geometry}
-\usepackage{amsthm, amssymb, amsmath, bm, physics, esint}
+\usepackage{amsthm, amssymb, amsmath, bm, physics, esint, graphicx}
+
+\usepackage{mathtools}  
+\mathtoolsset{showonlyrefs}
 
 % Links
 \usepackage{hyperref}
@@ -21,6 +23,11 @@
 \newcommand{\with}{\text{ con }}
 \newcommand{\e}{\text{ e }}
 \DeclareMathOperator{\sez}{sez}
+\DeclareMathOperator{\inj}{1-1}
+\DeclareMathOperator{\su}{su}
+\DeclareMathOperator{\injarrow}{\xrightarrow{\inj}}
+\DeclareMathOperator{\suarrow}{\xrightarrow{\su}}
+\DeclareMathOperator{\bijarrow}{\xrightarrow[\su]{\inj}}
 
 % Used to have letter lists
 \usepackage[shortlabels]{enumitem}
