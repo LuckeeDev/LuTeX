@@ -89,14 +89,14 @@
 \begin{definition}
     [Insieme limitato misurabile secondo Peano-Jordan]
     Sia $X \subseteq \R^n$ un insieme limitato. Si dice che $X$ è misurabile secondo Peano-Jordan se $\mu_n^{(i)}(X)=\mu_n^{(e)}(X)$ e in tal caso si dice misura $n$-dimensionale di $X$ tale valore.
-    L'insieme degli insiemi limitati misurabili secondo Peano-Jordan si indica con $\mathcal{J}_b(\R^n)$.
+    L'insieme degli insiemi limitati misurabili secondo Peano-Jordan si indica con $\J_b(\R^n)$.
 \end{definition}
 
 \begin{lemma} Valgono le seguenti proposizioni:
     \begin{enumerate}
-        \item $\mathcal{P} \subseteq \mathcal{J}_b(\R^n)$. Tutti i pluri-intervalli sono misurabili secondo Peano-Jordan e la misura coincide con quella definita in modo elementare.
-        \item Se $X_1,\dots,X_k \in \mathcal{J}_b(\R^n)$, allora $\displaystyle\bigcup_{j=1}^k X_j, \bigcap_{j=1}^kX_j \in \mathcal{J}_b(\R^n)$
-        \item Se $X,Y \in \mathcal{J}_b(\R^n)\then X \setminus Y \in \mathcal{J}_b(\R^n)$
+        \item $\mathcal{P} \subseteq \J_b(\R^n)$. Tutti i pluri-intervalli sono misurabili secondo Peano-Jordan e la misura coincide con quella definita in modo elementare.
+        \item Se $X_1,\dots,X_k \in \J_b(\R^n)$, allora $\displaystyle\bigcup_{j=1}^k X_j, \bigcap_{j=1}^kX_j \in \J_b(\R^n)$
+        \item Se $X,Y \in \J_b(\R^n)\then X \setminus Y \in \J_b(\R^n)$
         \qed
     \end{enumerate}
 \end{lemma}
@@ -105,29 +105,29 @@
     [Caratterizzazione della misurabilità]
     Sia $X\subseteq \R^n$ limitato. Allora:
     \begin{enumerate}
-        \item $X\in \mathcal{J}_b(\R^n) \iff \forall \varepsilon > 0 \ \exists P,Q \in \mathcal{P} \tc P \subseteq X \subseteq Q \e \mu_n(Q)-\mu_n(P) < \varepsilon$
-        \item $X \in \mathcal{J}_b(\R^n) \iff \forall \varepsilon > 0 \ \exists Y,Z \in \mathcal{J}_b(\R^n) \tc Y \subseteq X \subseteq Z \e \mu_n(Z)-\mu_n(Y) < \varepsilon$
-        \item $X \in \mathcal{J}_b(\R^n)\iff \partial X \in \mathcal{J}_b(\R^n) \e \mu_n(\partial X)=0$
+        \item $X\in \J_b(\R^n) \iff \forall \varepsilon > 0 \ \exists P,Q \in \mathcal{P} \tc P \subseteq X \subseteq Q \e \mu_n(Q)-\mu_n(P) < \varepsilon$
+        \item $X \in \J_b(\R^n) \iff \forall \varepsilon > 0 \ \exists Y,Z \in \J_b(\R^n) \tc Y \subseteq X \subseteq Z \e \mu_n(Z)-\mu_n(Y) < \varepsilon$
+        \item $X \in \J_b(\R^n)\iff \partial X \in \J_b(\R^n) \e \mu_n(\partial X)=0$
         \qed
     \end{enumerate}
 \end{theorem}
 
 \begin{corollary}
-    Se $X \in \mathcal{J}_b(\R^n)$, allora $\overline{X},\mathring X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=\mu_n(\overline{X})=\mu_n(\mathring X)$.
+    Se $X \in \J_b(\R^n)$, allora $\overline{X},\mathring X \in \J_b(\R^n) \e \mu_n(X)=\mu_n(\overline{X})=\mu_n(\mathring X)$.
     \qed
 \end{corollary}
 
 \begin{theorem}
-    [Proprietà di $\mathcal{J}_b(\R^n)$]
-    Valgono le seguenti proprietà per la misura in $\mathcal{J}_b(\R^n)$:
+    [Proprietà di $\J_b(\R^n)$]
+    Valgono le seguenti proprietà per la misura in $\J_b(\R^n)$:
     \begin{enumerate}
-        \item (Additività finita) Se $X_1,\dots,X_k \in \mathcal{J}_b(\R)^n$ sono a due a due disgiunti, allora
+        \item (Additività finita) Se $X_1,\dots,X_k \in \J_b(\R)^n$ sono a due a due disgiunti, allora
         \begin{equation*}
             \mu_n\left(\displaystyle \bigcup_{j=1}^kX_j\right) =   \displaystyle\sum_{j=1}^k\mu_n(X_j)
         \end{equation*}
-        \item (Modularità) Se $X,Y \in \mathcal{J}_b(\R^n)$, allora $\mu_n(X\cup Y)+\mu_n(X\cap Y)=\mu_n(X)+\mu_n(Y)$
-        \item (Monotonia) Se $X,Y \in \mathcal{J}_b(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
-        \item Se $X,Y \in \mathcal{J}_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
+        \item (Modularità) Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\cup Y)+\mu_n(X\cap Y)=\mu_n(X)+\mu_n(Y)$
+        \item (Monotonia) Se $X,Y \in \J_b(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
+        \item Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -136,25 +136,25 @@
     [Caratterizzazione degli insiemi di misura nulla]\leavevmode
     \begin{enumerate}
         \item $\mathring X = \varnothing \iff \mu_n^{(i)}=0$
-        \item $X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=0 \iff \forall \varepsilon >0 \ \exists P \in \mathcal{P} \tc P \supseteq X \e \mu_n(P)< \varepsilon$
-        \item $X \in \mathcal{J}_b(\R^n) \e \mu_n(X)=0 \iff \mathring = \varnothing \e X \in \mathcal{J}_b(\R^n)$
+        \item $X \in \J_b(\R^n) \e \mu_n(X)=0 \iff \forall \varepsilon >0 \ \exists P \in \mathcal{P} \tc P \supseteq X \e \mu_n(P)< \varepsilon$
+        \item $X \in \J_b(\R^n) \e \mu_n(X)=0 \iff \mathring = \varnothing \e X \in \J_b(\R^n)$
         \qed
     \end{enumerate}
 \end{theorem}
 
 \begin{definition}
     [Insieme misurabile secondo Peano-Jordan]
-    Sia $X\subseteq \R^n$. $X$ è misurabile secondo Peano-Jordan, ovvero $X \in \mathcal{J}(\R^n)$, se $\forall Y \in \mathcal{J}_b(\R^n), \ Y \cap X \in \mathcal{J}_b(\R^n)$. In tal caso si definisce $\mu_n(X)=\sup\{\mu_n(X\cap Y):Y\in \mathcal{J}_b(\R^n)\}$.
+    Sia $X\subseteq \R^n$. $X$ è misurabile secondo Peano-Jordan, ovvero $X \in \J(\R^n)$, se $\forall Y \in \J_b(\R^n), \ Y \cap X \in \J_b(\R^n)$. In tal caso si definisce $\mu_n(X)=\sup\{\mu_n(X\cap Y):Y\in \J_b(\R^n)\}$.
 \end{definition}
 
 \begin{remark}
-    Questa definizione allarga la nozione di misura agli insiemi non limitati. Un insieme misurabile in $\mathcal{J}_b(\R^n)$ ha la stessa misura se misurato in $\mathcal{J}(\R^n)$.
+    Questa definizione allarga la nozione di misura agli insiemi non limitati. Un insieme misurabile in $\J_b(\R^n)$ ha la stessa misura se misurato in $\J(\R^n)$.
 \end{remark}
 
 \begin{theorem}
-    Se $X \in \mathcal{J}(\R^n) \e \{X_k\}_{k \in \N}$ è una successione crescente di elementi in $\mathcal{J}_b(\R^n)$, ovvero:
+    Se $X \in \J(\R^n) \e \{X_k\}_{k \in \N}$ è una successione crescente di elementi in $\J_b(\R^n)$, ovvero:
     \begin{enumerate}
-        \item $\forall k \in \N, \ X_k \in \mathcal{J}_b(\R^n)$
+        \item $\forall k \in \N, \ X_k \in \J_b(\R^n)$
         \item $X_k \subseteq X_{k+1}$
         \item $\bigcup_{k=1}^{+\infty}X_k = \R^n$,
     \end{enumerate}
@@ -163,29 +163,29 @@
 \end{theorem}
 
 \begin{theorem}
-    $\mu_n: \mathcal{J}(\R^n) \to [0, +\infty]$ e inoltre:
+    $\mu_n: \J(\R^n) \to [0, +\infty]$ e inoltre:
     \begin{enumerate}
-        \item $\varnothing \in \mathcal{J}(\R^n)$
-        \item Se $X \in \mathcal{J}(\R^n)$, allora $\R^n \setminus X \in \mathcal{J}(\R^n)$
-        \item Se $X, Y \in \mathcal{J}(\R^n)$, allora $X \cup Y, X \cap Y, X \setminus Y \in \mathcal{J}(\R^n)$
+        \item $\varnothing \in \J(\R^n)$
+        \item Se $X \in \J(\R^n)$, allora $\R^n \setminus X \in \J(\R^n)$
+        \item Se $X, Y \in \J(\R^n)$, allora $X \cup Y, X \cap Y, X \setminus Y \in \J(\R^n)$
         \qed
     \end{enumerate}
 \end{theorem}
 
 \begin{theorem}
-    [Proprietà di $\mathcal{J}(\R^n)$]
-    $\mathcal{J}(\R^n)$ gode delle seguenti proprietà:
+    [Proprietà di $\J(\R^n)$]
+    $\J(\R^n)$ gode delle seguenti proprietà:
     \begin{enumerate}
-        \item (Additività finita) Se $X_1,\dots,X_k \in \mathcal{J}(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup_{j=1}^kX_j \in \mathcal{J}(\R^n)$ e
+        \item (Additività finita) Se $X_1,\dots,X_k \in \J(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup_{j=1}^kX_j \in \J(\R^n)$ e
         \begin{equation*}
             \mu_n\left(\bigcup_{j=1}^kX_j\right) = \sum_{j=1}^k\mu_n(X_j)
         \end{equation*}
-        \item (Monotonia) Se $X, Y \in \mathcal{J}(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
-        \item (Modularità) Se $X, Y \in \mathcal{J}(\R^n)$, allora
+        \item (Monotonia) Se $X, Y \in \J(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
+        \item (Modularità) Se $X, Y \in \J(\R^n)$, allora
         \begin{equation*}
             \mu_n(X \cup Y) + \mu_n (X \cap Y) = \mu_n(X) + \mu_n(Y)
         \end{equation*}
-        \item (Sottrattività) Se $X, Y \in \mathcal{J}(\R^n) \e \mu_n(Y) < + \infty$, allora
+        \item (Sottrattività) Se $X, Y \in \J(\R^n) \e \mu_n(Y) < + \infty$, allora
         \begin{equation*}
             \mu_n(X \setminus Y) = \mu_n(X) - \mu_n(X \cap Y)
         \end{equation*}
@@ -194,7 +194,7 @@
 \end{theorem}
 
 \begin{lemma}
-    $X \in \mathcal{J}(\R^n) \iff \partial X \in \mathcal{J}(\R^n) \e \mu_n(\partial X)=0$.
+    $X \in \J(\R^n) \iff \partial X \in \J(\R^n) \e \mu_n(\partial X)=0$.
     \qed
 \end{lemma}
 
@@ -202,23 +202,183 @@
 
 \begin{definition}
     [Funzione non negativa integrabile secondo Riemann]
-    Siano $A \subseteq \R^n, \ A \in \mathcal{J}(\R^n), \ f: A \to \R$ limitata e tale che $f \geq 0$. Si definisce sottografico di $f$ l'insieme $R(f)=\{(\vb{x}, y)\in A \times \R_{\geq 0} : 0 \leq y \leq f(\vb{x})\}$.
-    $f$ si dice integrabile secondo Riemann se $R(f) \in \mathcal{J}(\R^{n+1})$ e in tal caso
+    Siano $A \subseteq \R^n, \ A \in \J(\R^n), \ f: A \to \R$ limitata e tale che $f \geq 0$. Si definisce sottografico di $f$ l'insieme $R(f)=\{(\vb{x}, y)\in A \times \R_{\geq 0} : 0 \leq y \leq f(\vb{x})\}$.
+    $f$ si dice integrabile secondo Riemann se $R(f) \in \J(\R^{n+1})$ e in tal caso
     \begin{equation*}
-        \idotsint_A f(x_1,\dots,x_n)dx_1\cdots dx_n=\mu_{n+1}(R(f))
+        \idotsint_A f(x_1,\dots,x_n)\dd x_1\cdots \dd x_n=\mu_{n+1}(R(f))
     \end{equation*}
+    $f$ è detta sommabile se $f$ è integrabile e $\idotsint_Af < +\infty$.
 \end{definition}
 
 \begin{definition}
     [Parte positiva e parte negativa]
     Se $f:A \subseteq \R^n \to \R$, si definiscono:
     \begin{itemize}
-        \item Parte positiva di $f$, $f_+(x)=\max\{0,f(x)\}$
-        \item Parte negativa di $f$, $f_-(x)=\max\{0,-f(x)\}$
+        \item Parte positiva di $f$, $f_+(\vb{x})=\max\{0,f(\vb{x})\}$
+        \item Parte negativa di $f$, $f_-(\vb{x})=\max\{0,-f(\vb{x})\}$
     \end{itemize}
-    In base a questa definizione, $f(x)=f_+(x)-f_-(x)$ e $\abs{f(x)}=f_+(x)+f_-(x)$.
+    In base a questa definizione, $f(\vb{x})=f_+(\vb{x})-f_-(\vb{x})$ e $\abs{f(\vb{x})}=f_+(\vb{x})+f_-(\vb{x})$.
 \end{definition}
 
 \begin{definition}
     [Funzione integrabile secondo Riemann]
+    Siano $A \in \J(\R^n) \e f: A \to \R$ limitata. Se $f_+ \e f_-$ sono integrabili e almeno uno fra $\idotsint_A f_+, \idotsint_A f_-$ è un valore finito, allora $f$ si dice integrabile secondo Riemann e
+    \begin{equation*}
+        \idotsint_Af(x_1,\dots,x_n)\dd x_1\cdots \dd x_n = \idotsint_A f_+(x_1,\dots,x_n)\dd x_1\cdots \dd x_n - \idotsint_A f_-(x_1,\dots,x_n)\dd x_1\cdots \dd x_n
+    \end{equation*}
+    Inoltre, se $f_+ \e f_-$ sono sommabili, allora $f$ è sommabile.
 \end{definition}
+
+\begin{theorem}
+    Sia $f: A \to \R$ integrabile in $A \in \J(\R^n)$. Allora
+    \begin{equation*}
+        \abs{\idotsint_A f(x_1,\dots,x_n)\dd x_1\cdots \dd x_n} \leq \idotsint_A\abs{f(x_1,\dots,x_n)}\dd x_1\cdots \dd x_n
+    \end{equation*}
+    \qed
+\end{theorem}
+
+\begin{theorem}
+    [Proprietà dell'integrale di Riemann]
+    Siano $A \in \J(\R^n), \ f,g: A \to \R$ limitate e sommabili secondo Riemann. Valgono le seguenti proprietà:
+    \begin{enumerate}
+        \item (Linearità) $\forall a,b \in \R, \ af + bg$ è sommabile e $\idotsint_A(af+bg)=a\idotsint_A f+b\idotsint_A g$
+        \item (Monotonia) Se $\forall \vb{x} \in A \ f(\vb{x}) \leq g(\vb{x})$, allora $\idotsint_A f \leq \idotsint_A g$
+        \item (Additività) Se $\mu_n(A) < + \infty \e A_1,A_2 \subseteq A \tc A_1 \cup A_2 = A \e A_1,A_2 \in \J(\R^n) \e \mu_n(A_1 \cap A_2)=0$, allora $\idotsint_A f= \idotsint_{A_1} f+ \idotsint_{A_2} f$
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    [della media integrale]
+    Siano $A \subseteq \R^n, \ A \in \J(\R^n), \ \mu_n(A) < +\infty \e f: A \to \R$ limitata e sommabile. Allora:
+    \begin{equation*}
+        \inf_A f \leq \frac{\idotsint_A f}{\mu_n(A)}\leq \sup_A f
+    \end{equation*}
+    \qed
+\end{theorem}
+
+\begin{corollary}
+    Sotto le ipotesi del teorema, se $A \subseteq \R^n$ è compatto e connesso e $f: A \to \R$ è continua, allora $\exists \vb{c} \in A \tc \displaystyle\frac{\idotsint_A f}{\mu_n(A)}=f(\vb{c})$.
+    \qed
+\end{corollary}
+
+\subsection{Integrali doppi}
+
+\begin{theorem}
+    [di riduzione sui rettangoli]
+    Sia $K=[a,b]\times[c,d] \e f\in \C{1}(K,\R)$, allora:
+    \begin{enumerate}
+        \item $G:[c,d]\to \R$ definita come $G(y)=\int_a^bf(x,y)\dd x$ è continua e $\iint_Kf(x,y)\dd x\dd y=\int_c^dG(y)\dd y=\int_c^d\dd y(\int_a^b f(x,y)\dd x)$
+        \item $F:[a,b]\to \R$ definita come $F(x)=\int_c^df(x,y)\dd y$ è continua e $\iint_Kf(x,y)\dd x\dd y=\int_a^bF(x)\dd x=\int_a^b\dd x(\int_c^d f(x,y)\dd y)$
+        \item Se $f(x,y)=g(x)h(y)$, allora
+        \begin{equation*}
+            \iint_Kf(x,y)\dd x\dd y=\iint_Kg(x)h(y)\dd x\dd y=\left(\int_a^bg(x)\dd x\right)\left(\int_c^dh(y)\dd y\right)
+        \end{equation*}
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}
+    [Dominio normale rispetto a un asse]\leavevmode
+    \begin{enumerate}[a.]
+        \item Siano $\varphi, \psi \in \C{0}([c,d],\R) \tc \varphi(y)\leq \psi(y)\ \forall y \in [c,d]$. Allora
+        \begin{equation*}
+            A=\{(x,y)\in \R\times[c,d]:\varphi(y)\leq x \leq \psi(y)\}
+        \end{equation*}
+        è un dominio normale rispetto all'asse $x$.
+        \item Siano $g, h \in \C{0}([a,b],\R) \tc g(x)\leq h(x)\ \forall x \in [a,b]$. Allora
+        \begin{equation*}
+            B=\{(x,y)\in [a,b]\times\R:g(x)\leq y \leq h(x)\}
+        \end{equation*}
+        è un dominio normale rispetto all'asse $y$. 
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    [di riduzione degli integrali doppi su domini normali]\leavevmode
+    \begin{enumerate}[a.]
+        \item Siano $\varphi, \psi \in \C{0}([c,d],\R), \ A=\{(x,y)\in \R\times[c,d]:\varphi(y)\leq x \leq \psi(y)\} \e f \in \C{0}(A,\R)$. Allora
+        \begin{equation*}
+            \iint_Af(x,y)\dd x\dd y = \int_c^d\dd y\left(\int_{\varphi(y)}^{\psi(y)}f(x,y)\dd x\right)
+        \end{equation*}
+        \item Siano $g, h \in \C{0}([a,b],\R), \ A=\{(x,y)\in \R\times[a,b]:g(x)\leq y \leq h(x)\} \e f \in \C{0}(A,\R)$. Allora
+        \begin{equation*}
+            \iint_Af(x,y)\dd x\dd y = \int_a^b\dd x\left(\int_{g(x)}^{h(x)}f(x,y)\dd y\right)
+        \end{equation*}
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Integrali tripli}
+
+\begin{definition}
+    [Solido di Cavalieri]
+    Sia $K \subseteq \R^3$ compatto e misurabile. Se esiste un asse $\hat{\lambda}$ tale che
+    \begin{enumerate}[a.]
+        \item $\forall \lambda \in [a,b], \ \sez_\lambda(K)$ è un insieme misurabile e
+        \item $\forall \lambda < a \e \lambda > b, \ \sez_\lambda (K) = \varnothing$,
+    \end{enumerate}
+    allora $K$ è un solido di Cavalieri.
+\end{definition}
+
+\begin{axiom}
+    [di Cavalieri]
+    Se $V$ e $W$ sono solidi di Cavalieri rispetto allo stesso asse $\hat{\lambda}$ e $\mu_2(\sez_\lambda(V))\leq\mu_2(\sez_\lambda(W)) \ \forall \lambda \in [a,b]$, allora $\mu_3(V)\leq \mu_3(W)$. Inoltre, se $\mu_2(\sez_\lambda(V))=\mu_2(\sez_\lambda(W))$, allora $\mu_3(V)=\mu_3(W)$.
+\end{axiom}
+
+\begin{theorem}
+    [di Cavalieri]
+    Sia $K \in \J_b(\R^3)$ compatto un solido di Cavalieri rispetto all'asse $\hat{z}$. Allora
+    \begin{equation*}
+        \mu_3(K)=\int_a^b\dd z\mu_2(\sez_z(K))=\int_a^b\dd z\left(\iint_{\sez_z(K)}\dd x\dd y\right)    
+    \end{equation*}
+    Inoltre, se $f \in \C{0}(K,\R)$, allora
+    \begin{equation*}
+        \iiint_Kf(x,y,z)\dd x\dd y\dd z=\int_a^b\dd z\left(\iint_{\sez_z(K)}f(x,y,z)\dd x\dd y\right)
+    \end{equation*}
+    \qed
+\end{theorem}
+
+\begin{definition}
+    [Domino normale rispetto a un asse in $\R^3$]\label{def:dom_r3}
+    Siano $K\subseteq \R^2$ compatto e misurabile, $\varphi,\psi \in \C{0}(K,\R) \tc \varphi(x,y)\leq \psi(x,y) \ \forall (x,y) \in K$. Si dice dominio normale rispetto all'asse $\hat{z}$ l'insieme $A=\{(x,y,z)\in K \times \R : \varphi(x,y)\leq z \leq \psi(x,y)\}$.
+\end{definition}
+
+\begin{theorem}
+    [di riduzione degli integrali tripli su domini normali]
+    Siano $\varphi, \psi, K, A$ come nella definizione \ref{def:dom_r3}. Allora
+    \begin{equation*}
+        \mu_3(A)=\iint_K\dd x\dd y(\psi(x,y)-\varphi(x,y))
+    \end{equation*}
+    Inoltre, se $f \in \C{0}(A,\R)$,
+    \begin{equation*}
+        \iiint_Af(x,y,z)\dd x\dd y\dd z = \iint_K\dd x\dd y\left(\int_{\varphi(x,y)}^{\psi(x,y)}\dd zf(x,y,z)\right)
+    \end{equation*}
+\end{theorem}
+
+\subsection{Cambiamento di variabile nell'integrale multiplo}
+
+\begin{theorem}
+    Siano $A \subseteq \R^n$ aperto, $\bm\varphi \in \C{1}(A,\R^n), \bm\varphi \ 1-1 \e \det J_{\bm\varphi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\varphi(K)$ è compatto e misurabile e vale
+    \begin{equation*}
+        \mu_n(\bm\varphi(K))=\idotsint_K \abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1 \cdots \dd u_n
+    \end{equation*}
+    Inoltre, se $f \in \C{0}(\bm\varphi(K),\R)$, allora
+    \begin{equation*}
+        \idotsint_{\bm\varphi(K)}f(x_1,\dots,x_n)\dd x_1 \cdots \dd x_n=\idotsint_K (f \circ \bm\varphi)(u_1,\dots,u_n)\abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1\cdots \dd u_n
+    \end{equation*}
+    \qed
+\end{theorem}
+
+\begin{remark}
+    Il teorema del cambiamento di variabile continua a valere nel caso di perdita di iniettività o $\det J_{\bm\varphi}\neq 0$ su insiemi di misura nulla che sono trasformati in insiemi di misura nulla.
+\end{remark}
+
+\subsubsection{Coordinate polari nel piano}
+% TODO
+
+\subsubsection{Coordinate sferiche in $\R^3$}
+% TODO
+
+\subsubsection{Coordinate cilindriche in $\R^3$}
+% TODO

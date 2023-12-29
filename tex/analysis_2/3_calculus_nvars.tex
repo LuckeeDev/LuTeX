@@ -49,7 +49,7 @@
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \begin{definition}
@@ -63,7 +63,7 @@
 \end{theorem}
 
 \begin{proof}[Dimostrazione per n=2.]
-    
+    % TODO
 \end{proof}
 
 \begin{theorem}
@@ -72,7 +72,7 @@
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \section{Derivate di ordine superiore}
@@ -86,10 +86,10 @@
 \end{definition}
 
 \begin{definition}
-    [Insieme $C^{(k)}(A, \R)$]
+    [Insieme $\C{k}(A, \R)$]
     Si definisce l'insieme delle funzioni derivabili con continuità $k$ volte in $A$:
     \begin{equation*}
-        \displaystyle C^{(k)}(A,\R) = \left\{ f: A \to \R \tc \ \exists \frac{\partial f}{\partial x_i},\dots,\frac{\partial ^2 f}{\partial x_i \partial x_j}, \dots, \frac{\partial ^k f}{\partial x_{i_1}\cdots\partial x_{i_k}} \text{ continue in } A \right\}
+        \displaystyle \C{k}(A,\R) = \left\{ f: A \to \R \tc \ \exists \frac{\partial f}{\partial x_i},\dots,\frac{\partial ^2 f}{\partial x_i \partial x_j}, \dots, \frac{\partial ^k f}{\partial x_{i_1}\cdots\partial x_{i_k}} \text{ continue in } A \right\}
     \end{equation*}
 \end{definition}
 
@@ -106,7 +106,7 @@
 \end{theorem}
 
 \begin{proof}
-    [Dimostrazione per n=2.]
+    [Dimostrazione per n=2.] % TODO
 \end{proof}
 
 \begin{definition}
@@ -123,12 +123,12 @@
 \end{definition}
 
 \begin{remark}
-    Per il teorema \ref{thm:schwarz}, se $f$ è $C^{(2)}$ in $\vb{x_0} \in A$, allora $H_f(\vb{x_0})$ è simmetrica.
+    Per il teorema \ref{thm:schwarz}, se $f$ è $\C{2}$ in $\vb{x_0} \in A$, allora $H_f(\vb{x_0})$ è simmetrica.
 \end{remark}
 
 \begin{theorem}
     [Formula di Taylor di ordine $k$]
-    Sia $A \subseteq \R^n$ un aperto. Se $f \in C^{(k)}(A, \R)$, allora vale la seguente
+    Sia $A \subseteq \R^n$ un aperto. Se $f \in \C{k}(A, \R)$, allora vale la seguente
     \begin{align*}
         f(\vb{x_0}+ \vb{h})= f(\vb{x_0})&+\sum_{j=1}^{n}\frac{\partial f}{\partial x_j}(\vb{x_0})h_j + \frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})h_ih_j+\cdots+\\
         &+\frac{1}{k!}\sum_{i_1,\dots,i_k=1}^n\frac{\partial^k}{\partial x_{i_1}\cdots\partial x_{i_k}}(\vb{x_0})h_{i_1}\cdots h_{i_k} +\\
@@ -171,7 +171,7 @@
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \subsection{Forme quadratiche}
@@ -221,7 +221,7 @@ Matrici diverse possono essere associate alla stessa forma quadratica, infatti �
 
 \begin{theorem}
     [Classificazione con la matrice hessiana]
-    Sia $f \in C^{(2)}(A, \R) \with A\subseteq \R^n$ aperto. Allora:
+    Sia $f \in \C{2}(A, \R) \with A\subseteq \R^n$ aperto. Allora:
     \begin{enumerate}
         \item Se $\vb{x_0} \in A$ è punto di minimo locale per $f$, allora $\grad f(\vb{x_0})=\vb{0}$ e $H_f(\vb{x_0})$ è o definita positiva o semidefinita positiva
         \item Se $\vb{x_0} \in A$ è punto di massimo locale per $f$, allora $\grad f(\vb{x_0})=\vb{0}$ e $H_f(\vb{x_0})$ è o definita negativa o semidefinita negativa
@@ -232,5 +232,5 @@ Matrici diverse possono essere associate alla stessa forma quadratica, infatti �
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}

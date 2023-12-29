@@ -52,31 +52,31 @@
 
 \begin{definition}
     [Diffeomorfismo]
-    Siano $A,B \subseteq \R^n$ aperti. La funzione $\vecf: A \to B$ è un diffeomorfismo $C^{(k)}$ se $\vecf$ è iniettiva e suriettiva e $\vecf, \vecf^{-1}$ sono $C^{(k)}$ nei rispettivi domini.
+    Siano $A,B \subseteq \R^n$ aperti. La funzione $\vecf: A \to B$ è un diffeomorfismo $\C{k}$ se $\vecf$ è iniettiva e suriettiva e $\vecf, \vecf^{-1}$ sono $\C{k}$ nei rispettivi domini.
 \end{definition}
 
 \begin{theorem}
     [Differenziale della funzione inversa]
-    Siano $A,B \subseteq \R^n$ aperti e sia $\vecf:A\to B \in C^{(1)}$. Allora vale che
+    Siano $A,B \subseteq \R^n$ aperti e sia $\vecf:A\to B \in \C{1}$. Allora vale che
     \begin{equation*}
         J_{\vecf^{-1}}(\vb{y}) = \left(J_{\vecf}(\vecf^{-1}(\vb{y})) \right)^{-1} \ \forall \vb{y} \in B
     \end{equation*}
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \section{Varietà regolari}
 
 \begin{definition}
     [Varietà regolare $(n-k)$-dimensionale]
-    Siano $A \subseteq \R^n$, $\bm g=(g_1,\dots,g_k):A\to\R^k \in C^{(1)}$. Detto $\Gamma =\{\vb{x}\in A : g_1(\vb{x})=0,\dots,g_k(\vb{x})=0\}$ l'insieme delle soluzioni del sistema di equazioni, $\Gamma$ è una varietà regolare $(n-k)$-dimensionale se $\forall \vb{x} \in \Gamma \ J_{\bm g}(\vb{x})$ ha rango uguale a $k$.
+    Siano $A \subseteq \R^n$, $\bm g=(g_1,\dots,g_k):A\to\R^k \in \C{1}$. Detto $\Gamma =\{\vb{x}\in A : g_1(\vb{x})=0,\dots,g_k(\vb{x})=0\}$ l'insieme delle soluzioni del sistema di equazioni, $\Gamma$ è una varietà regolare $(n-k)$-dimensionale se $\forall \vb{x} \in \Gamma \ J_{\bm g}(\vb{x})$ ha rango uguale a $k$.
 \end{definition}
 
 \begin{definition}
     [Vettore tangente]
-    Il vettore $\vb{h} \in \R^n$ è tangente a $\Gamma$ in $\vb{x_0}$ se $\exists \varphi: (-\varepsilon, \varepsilon) \to \Gamma \subseteq \R^n$ di classe $C^{(1)} \tc \varphi (0) = \vb{x_0} \e \varphi ' (0) = \vb{h}$.
+    Il vettore $\vb{h} \in \R^n$ è tangente a $\Gamma$ in $\vb{x_0}$ se $\exists \varphi: (-\varepsilon, \varepsilon) \to \Gamma \subseteq \R^n$ di classe $\C{1} \tc \varphi (0) = \vb{x_0} \e \varphi ' (0) = \vb{h}$.
 \end{definition}
 
 \begin{definition}
@@ -112,25 +112,25 @@
 
 \begin{theorem}
     [Caso con $1$ equazione in $2$ incognite]
-    Sia $A \subseteq \R^2$ aperto, $g \in C^{(1)}(A, \R)$ e $(x_0,y_0) \in A \tc g(x_0, y_0)=0 \e \partial_y g(x_0,y_0)\neq 0$.
+    Sia $A \subseteq \R^2$ aperto, $g \in \C{1}(A, \R)$ e $(x_0,y_0) \in A \tc g(x_0, y_0)=0 \e \partial_y g(x_0,y_0)\neq 0$.
     Allora,
     \begin{enumerate}
         \item $\exists \delta, \varepsilon>0 \tc W=[x_0-\delta,x_0+\delta]\times[y_0-\varepsilon,y_0+\varepsilon] \subseteq A$
-        \item $\exists f \in C^{(1)}([x_0-\delta,x_0+\delta],[y_0-\varepsilon,y_0+\varepsilon]) \tc g(x,y)=0 \with (x,y) \in W \iff y=f(x) \with x \in [x_0-\delta,x_0+\delta]$
+        \item $\exists f \in \C{1}([x_0-\delta,x_0+\delta],[y_0-\varepsilon,y_0+\varepsilon]) \tc g(x,y)=0 \with (x,y) \in W \iff y=f(x) \with x \in [x_0-\delta,x_0+\delta]$
     \end{enumerate}
     In altre parole, se si restringe l'equazione $g(x,y)=0$ al rettangolo $W$ l'insieme delle sue soluzioni è il grafico di $f$. Inoltre
     \begin{equation*}
-        \frac{df}{dx}(x)=-\frac{\partial_x g(x,f(x))}{\partial_y g(x,f(x))}
+        \frac{\dd f}{\dd x}(x)=-\frac{\partial_x g(x,f(x))}{\partial_y g(x,f(x))}
     \end{equation*}
 \end{theorem}
 
 \begin{proof}
-    [Dimostrazione per $n=2$ e $k=1$.]
+    [Dimostrazione per $n=2$ e $k=1$.] % TODO
 \end{proof}
 
 \begin{theorem}
     [Caso generale con $k$ equazioni in $n$ incognite]
-    Siano $A\subseteq \R^n$ aperto, $\bm g \in C^{(1)}(A,\R^k)$, $(\vb{x^0}, \vb{y^0})=(x_1^0,\dots,x_{n-k}^0,y_1^0,\dots,y_{k}^0) \in A \tc \bm g(\vb{x^0}, \vb{y^0})=\vb{0} \e$
+    Siano $A\subseteq \R^n$ aperto, $\bm g \in \C{1}(A,\R^k)$, $(\vb{x^0}, \vb{y^0})=(x_1^0,\dots,x_{n-k}^0,y_1^0,\dots,y_{k}^0) \in A \tc \bm g(\vb{x^0}, \vb{y^0})=\vb{0} \e$
     \begin{equation*}
         \det\frac{\partial(g_1\cdots g_k)}{\partial (y_1 \cdots y_k)}(\vb{x^0}, \vb{y^0})=\\
         \det\begin{bmatrix}
@@ -143,7 +143,7 @@
     Allora esistono $I_{\vb{x^0}} \in \R^{n-k}$ intorno circolare aperto di $\vb{x^0}$ e $J_{\vb{y^0}} \in \R^k$ intorno circolare aperto di $\vb{y^0}$ tali che:
     \begin{enumerate}
         \item $W=I_{\vb{x^0}}\times J_{\vb{y^0}} \subseteq A$
-        \item $\exists \vecf \in C^{(1)}(I_{\vb{x^0}}, J_{\vb{y^0}}) \tc \bm g(\vb{x}, \vb{y})=\vb{0} \iff \vb{y} = \bm f (\vb{x}) \with \vb{x} \in I_{\vb{x^0}}$
+        \item $\exists \vecf \in \C{1}(I_{\vb{x^0}}, J_{\vb{y^0}}) \tc \bm g(\vb{x}, \vb{y})=\vb{0} \iff \vb{y} = \bm f (\vb{x}) \with \vb{x} \in I_{\vb{x^0}}$
     \end{enumerate}
     Inoltre
     \begin{equation*}
@@ -172,7 +172,7 @@
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \begin{corollary}
@@ -190,16 +190,16 @@
 
 \begin{theorem}
     [dei moltiplicatori di Lagrange]
-    Siano $f,g_1,\dots,g_k \in C^{(1)}(A\subseteq\R^n, \R) \with A$ aperto in $\R^n$. Se $\Gamma = \{ \vb{x} \in A: g_1 (\vb{x})=0, \dots, g_k(\vb{x})=0 \}$ è una varietà regolare e $\vb{x_0} \in \Gamma$ è punto estremante condizionato di $f$ a $\Gamma$, allora $\exists (\overline{\lambda}_1, \dots,\overline{\lambda}_k)$ tale che il punto $(\vb{x_0}; \overline{\lambda}_1,\dots,\overline{\lambda}_k)$ è punto critico libero di $\mathcal{L}$.
+    Siano $f,g_1,\dots,g_k \in \C{1}(A\subseteq\R^n, \R) \with A$ aperto in $\R^n$. Se $\Gamma = \{ \vb{x} \in A: g_1 (\vb{x})=0, \dots, g_k(\vb{x})=0 \}$ è una varietà regolare e $\vb{x_0} \in \Gamma$ è punto estremante condizionato di $f$ a $\Gamma$, allora $\exists (\overline{\lambda}_1, \dots,\overline{\lambda}_k)$ tale che il punto $(\vb{x_0}; \overline{\lambda}_1,\dots,\overline{\lambda}_k)$ è punto critico libero di $\mathcal{L}$.
 \end{theorem}
 
 \begin{proof}
-    
+    % TODO
 \end{proof}
 
 \begin{theorem}
     [Condizioni con funzione di Lagrange]
-    Siano $f,g_1,\dots,g_k \in C^{(2)}(A\subseteq\R^n, \R) \with A$ aperto e $\Gamma = \{ \vb{x} \in A: g_1 (\vb{x})=0, \dots, g_k(\vb{x})=0 \}$ una varietà regolare.
+    Siano $f,g_1,\dots,g_k \in \C{2}(A\subseteq\R^n, \R) \with A$ aperto e $\Gamma = \{ \vb{x} \in A: g_1 (\vb{x})=0, \dots, g_k(\vb{x})=0 \}$ una varietà regolare.
     \begin{enumerate}
         \item Se $\vb{x_0} \in \Gamma$ è punto di minimo condizionato di $f$ a $\Gamma$, allora $\exists \overline{\lambda}_1,\dots,\overline{\lambda}_k \in \R \tc$
         \begin{enumerate}[a.]
@@ -216,5 +216,5 @@
 \end{theorem}
 
 \begin{proof}
-    [Dimostrazione del punto 2.]
+    [Dimostrazione del punto 2.] % TODO
 \end{proof}
