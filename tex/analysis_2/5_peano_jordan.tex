@@ -203,4 +203,22 @@
 \begin{definition}
     [Funzione non negativa integrabile secondo Riemann]
     Siano $A \subseteq \R^n, \ A \in \mathcal{J}(\R^n), \ f: A \to \R$ limitata e tale che $f \geq 0$. Si definisce sottografico di $f$ l'insieme $R(f)=\{(\vb{x}, y)\in A \times \R_{\geq 0} : 0 \leq y \leq f(\vb{x})\}$.
+    $f$ si dice integrabile secondo Riemann se $R(f) \in \mathcal{J}(\R^{n+1})$ e in tal caso
+    \begin{equation*}
+        \idotsint_A f(x_1,\dots,x_n)dx_1\cdots dx_n=\mu_{n+1}(R(f))
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    [Parte positiva e parte negativa]
+    Se $f:A \subseteq \R^n \to \R$, si definiscono:
+    \begin{itemize}
+        \item Parte positiva di $f$, $f_+(x)=\max\{0,f(x)\}$
+        \item Parte negativa di $f$, $f_-(x)=\max\{0,-f(x)\}$
+    \end{itemize}
+    In base a questa definizione, $f(x)=f_+(x)-f_-(x)$ e $\abs{f(x)}=f_+(x)+f_-(x)$.
+\end{definition}
+
+\begin{definition}
+    [Funzione integrabile secondo Riemann]
 \end{definition}
