@@ -141,3 +141,63 @@
         \qed
     \end{enumerate}
 \end{theorem}
+
+\begin{definition}
+    [Insieme misurabile secondo Peano-Jordan]
+    Sia $X\subseteq \R^n$. $X$ è misurabile secondo Peano-Jordan, ovvero $X \in \mathcal{J}(\R^n)$, se $\forall Y \in \mathcal{J}_b(\R^n), \ Y \cap X \in \mathcal{J}_b(\R^n)$. In tal caso si definisce $\mu_n(X)=\sup\{\mu_n(X\cap Y):Y\in \mathcal{J}_b(\R^n)\}$.
+\end{definition}
+
+\begin{remark}
+    Questa definizione allarga la nozione di misura agli insiemi non limitati. Un insieme misurabile in $\mathcal{J}_b(\R^n)$ ha la stessa misura se misurato in $\mathcal{J}(\R^n)$.
+\end{remark}
+
+\begin{theorem}
+    Se $X \in \mathcal{J}(\R^n) \e \{X_k\}_{k \in \N}$ è una successione crescente di elementi in $\mathcal{J}_b(\R^n)$, ovvero:
+    \begin{enumerate}
+        \item $\forall k \in \N, \ X_k \in \mathcal{J}_b(\R^n)$
+        \item $X_k \subseteq X_{k+1}$
+        \item $\bigcup_{k=1}^{+\infty}X_k = \R^n$,
+    \end{enumerate}
+    allora $\mu_n(X)=\displaystyle\lim_{k\to + \infty}\mu_n(X\cap X_k)$.
+    \qed
+\end{theorem}
+
+\begin{theorem}
+    $\mu_n: \mathcal{J}(\R^n) \to [0, +\infty]$ e inoltre:
+    \begin{enumerate}
+        \item $\varnothing \in \mathcal{J}(\R^n)$
+        \item Se $X \in \mathcal{J}(\R^n)$, allora $\R^n \setminus X \in \mathcal{J}(\R^n)$
+        \item Se $X, Y \in \mathcal{J}(\R^n)$, allora $X \cup Y, X \cap Y, X \setminus Y \in \mathcal{J}(\R^n)$
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    [Proprietà di $\mathcal{J}(\R^n)$]
+    $\mathcal{J}(\R^n)$ gode delle seguenti proprietà:
+    \begin{enumerate}
+        \item (Additività finita) Se $X_1,\dots,X_k \in \mathcal{J}(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup_{j=1}^kX_j \in \mathcal{J}(\R^n)$ e
+        \begin{equation*}
+            \mu_n\left(\bigcup_{j=1}^kX_j\right) = \sum_{j=1}^k\mu_n(X_j)
+        \end{equation*}
+        \item (Monotonia) Se $X, Y \in \mathcal{J}(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
+        \item (Modularità) Se $X, Y \in \mathcal{J}(\R^n)$, allora
+        \begin{equation*}
+            \mu_n(X \cup Y) + \mu_n (X \cap Y) = \mu_n(X) + \mu_n(Y)
+        \end{equation*}
+        \item (Sottrattività) Se $X, Y \in \mathcal{J}(\R^n) \e \mu_n(Y) < + \infty$, allora
+        \begin{equation*}
+            \mu_n(X \setminus Y) = \mu_n(X) - \mu_n(X \cap Y)
+        \end{equation*}
+        \qed
+    \end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+    $X \in \mathcal{J}(\R^n) \iff \partial X \in \mathcal{J}(\R^n) \e \mu_n(\partial X)=0$.
+    \qed
+\end{lemma}
+
+\section{Integrazione secondo Riemann}
+
+
