@@ -5,7 +5,7 @@
 \begin{definition}
     [Funzione derivabile]
     Sia $\vecf=(f_1,\dots,f_k): A\subseteq \R^n \to \R^k \with A$ aperto. $\vecf$ è derivabile in $\vb{x_0} \in A$ se $\exists \frac{\partial f_1}{\partial x_i}(\vb{x_0}),\dots,\frac{\partial f_k}{\partial x_i}(\vb{x_0}) \in \R \ \forall i \in [n]$. In questo caso si definisce la matrice jacobiana di $\vecf$ in $\vb{x_0}$ come segue:
-    \begin{equation*}
+    $$
         J_{\vecf}(\vb{x_0})=
         \begin{bmatrix}
             \grad f_1 (\vb{x_0})\\
@@ -13,15 +13,15 @@
             \grad f_k (\vb{x_0})
         \end{bmatrix}
         \in \mathcal{M}_{k\times n}(\R)
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{definition}
     [Funzione differenziabile]
     Sia $\vecf=(f_1,\dots,f_k): A\subseteq \R^n \to \R^k \with A$ aperto. $\vecf$ è differenziabile in $\vb{x_0} \in A$ se $\exists M \in \mathcal{M}_{k\times n}(\R)$ tale che
-    \begin{equation*}
+    $$
         \vecf(\vb{x_0} + \vb{h})= \vecf(\vb{x_0}) + M\vb{h} + \bm o (\norm{\vb{h}}) \in \R^k \with \norm{\vb{h}}\to 0
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{theorem}
@@ -29,7 +29,7 @@
     Sia $A \subseteq \R^n$ un aperto e $\vecf= (f_1,\dots,f_k):A \to \R^k$.
     \begin{enumerate}
         \item $\vecf$ è differenziabile in $\vb{x_0} \in A \iff f_1,\dots,f_k$ sono differenziabili in $\vb{x_0} \in A$. In tal caso
-        \begin{equation*}
+        $$
             M=J_{\vecf}(\vb{x_0})=
             \begin{bmatrix}
                 \grad f_1(\vb{x_0})\\
@@ -37,7 +37,7 @@
                 \grad f_k(\vb{x_0})
             \end{bmatrix}
             \in \mathcal{M}_{k\times n}(\R)
-        \end{equation*}
+        $$
         \item Se $\vecf$ è differenziabile in $\vb{x_0} \in A$, allora $\vecf$ è continua in $\vb{x_0}$
         \item Se $\vecf$ è derivabile in $\vb{x_0} \in A$ e le derivate parziali sono tutte continue in $\vb{x_0}$, allora $\vecf$ è differenziabile
         \qed
@@ -58,9 +58,9 @@
 \begin{theorem}
     [Differenziale della funzione inversa]
     Siano $A,B \subseteq \R^n$ aperti e sia $\vecf:A\to B \in \C{1}$. Allora vale che
-    \begin{equation*}
+    $$
         J_{\vecf^{-1}}(\vb{y}) = \left(J_{\vecf}(\vecf^{-1}(\vb{y})) \right)^{-1} \ \forall \vb{y} \in B
-    \end{equation*}
+    $$
 \end{theorem}
 
 \begin{proof}
@@ -82,9 +82,9 @@
 \begin{definition}
     [Spazio tangente]
     Se $\Gamma$ è una varietà regolare $(n-k)$-dimensionale e $\vb{x_0} \in \Gamma$, si definisce lo spazio tangente come segue:
-    \begin{equation*}
+    $$
         T_{\vb{x_0}}\Gamma = \{ \vb{h}=(h_1,\dots,h_n) \in \R^n : \innerproduct{\grad g_1(\vb{x_0)}}{\vb{h}}=0,\dots,\innerproduct{\grad g_k(\vb{x_0)}}{\vb{h}}=0 \}
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{remark}
@@ -94,18 +94,18 @@
 \begin{definition}
     [Spazio normale]
     Se $\Gamma$ è una varietà regolare $(n-k)$-dimensionale e $\vb{x_0} \in \Gamma$, si definisce lo spazio normale come segue:
-    \begin{equation*}
+    $$
         N_{\vb{x_0}}\Gamma = \left\{ \vb{h}=(h_1,\dots,h_n) \in \R^n : \exists \lambda_1, \dots, \lambda_k \in \R \e \vb{h}=\sum_{j=1}^n \lambda_j \grad g_j(\vb{x_0}) \right\}
-    \end{equation*}
+    $$
     Si noti che $\dim N_{\vb{x_0}}\Gamma = k$.
 \end{definition}
 
 \begin{definition}
     [Iperpiano tangente]
     A partire dalla nozione di spazio tangente si può definire l'iperpiano tangente nel punto $\vb{x_0}$, che è costituito dall'insieme dei punti $\vb{x}$ tali che il loro vettore distanza dal punto $\vb{x_0}$ appartenga allo spazio tangente a $\Gamma$:
-    \begin{equation*}
+    $$
         I= \{ \vb{x} \in \R^n :  \innerproduct{\grad g_1(\vb{x_0)}}{\vb{x}-\vb{x_0}}=0,\dots,\innerproduct{\grad g_k(\vb{x_0)}}{\vb{x}-\vb{x_0}}=0 \}
-    \end{equation*}
+    $$
 \end{definition}
 
 \section{Teorema di Dini}
@@ -119,9 +119,9 @@
         \item $\exists f \in \C{1}([x_0-\delta,x_0+\delta],[y_0-\varepsilon,y_0+\varepsilon]) \tc g(x,y)=0 \with (x,y) \in W \iff y=f(x) \with x \in [x_0-\delta,x_0+\delta]$
     \end{enumerate}
     In altre parole, se si restringe l'equazione $g(x,y)=0$ al rettangolo $W$ l'insieme delle sue soluzioni è il grafico di $f$. Inoltre
-    \begin{equation*}
+    $$
         \frac{\dd f}{\dd x}(x)=-\frac{\partial_x g(x,f(x))}{\partial_y g(x,f(x))}
-    \end{equation*}
+    $$
 \end{theorem}
 
 \begin{proof}
@@ -131,7 +131,7 @@
 \begin{theorem}
     [Caso generale con $k$ equazioni in $n$ incognite]
     Siano $A\subseteq \R^n$ aperto, $\bm g \in \C{1}(A,\R^k)$, $(\vb{x^0}, \vb{y^0})=(x_1^0,\dots,x_{n-k}^0,y_1^0,\dots,y_{k}^0) \in A \tc \bm g(\vb{x^0}, \vb{y^0})=\vb{0} \e$
-    \begin{equation*}
+    $$
         \det\frac{\partial(g_1\cdots g_k)}{\partial (y_1 \cdots y_k)}(\vb{x^0}, \vb{y^0})=\\
         \det\begin{bmatrix}
             \frac{\partial g_1}{\partial y_1} & \cdots & \frac{\partial g_1}{\partial y_k}\\
@@ -139,18 +139,18 @@
             \frac{\partial g_k}{\partial y_1} & \cdots & \frac{\partial g_k}{\partial y_k}
         \end{bmatrix}
         (\vb{x^0}, \vb{y^0}) \neq 0
-    \end{equation*}
+    $$
     Allora esistono $I_{\vb{x^0}} \in \R^{n-k}$ intorno circolare aperto di $\vb{x^0}$ e $J_{\vb{y^0}} \in \R^k$ intorno circolare aperto di $\vb{y^0}$ tali che:
     \begin{enumerate}
         \item $W=I_{\vb{x^0}}\times J_{\vb{y^0}} \subseteq A$
         \item $\exists \vecf \in \C{1}(I_{\vb{x^0}}, J_{\vb{y^0}}) \tc \bm g(\vb{x}, \vb{y})=\vb{0} \iff \vb{y} = \bm f (\vb{x}) \with \vb{x} \in I_{\vb{x^0}}$
     \end{enumerate}
     Inoltre
-    \begin{equation*}
+    $$
         \frac{\partial f_i}{\partial x_j}(\vb{x})=-\frac
         {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_{i-1},x_j,y_{i+1},\dots,y_k}(\vb{x},\bm f(\vb{x}))}
         {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_k}(\vb{x},\bm f(\vb{x}))}
-    \end{equation*}
+    $$
     \qed
 \end{theorem}
 
@@ -183,9 +183,9 @@
 \begin{definition}
     [Funzione di Lagrange]
     Per lo studio dei punti critici condizionati di $f: A\to \R$ alla varietà regolare $\Gamma$ definita dall'equazione $\bm g (\vb{x})=\vb{0}$ si definisce la funzione di Lagrange, o lagrangiana:
-    \begin{equation*}
+    $$
         \displaystyle \mathcal{L}(\vb{x};\lambda_1,\dots,\lambda_k)=f(\vb{x})-\sum_{j=1}^k \lambda_j g_j(\vb{x}) : A \times \R^k \to \R
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{theorem}

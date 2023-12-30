@@ -1,1 +1,106 @@
 \chapter{Integrali di superficie}
+
+\section{Superfici}
+
+\begin{definition}
+	[Aperto regolare in $\R^2$]
+	$\Omega \subseteq \R^2$ aperto, connesso e limitato è un aperto regolare di $\R^2$ se $\partial \overline{\Omega}=\partial \Omega \e \partial \Omega$ è l'unione finita e disgiunta di curve regolari a tratti, semplici e chiuse.
+\end{definition}
+
+\begin{definition}
+	[Superficie]
+	Siano $\Omega \subseteq \R^2$ un aperto regolare e $\vb{r}:\overline{\Omega}\to \R^3 \in \C{1}$. Si definisce superficie $\Sigma=\vb{r}(\overline{\Omega})$.
+	$\Sigma$ è detta regolare se $\rank{J_{\vb{r}}(u,v)} = 2 \ \forall (u,v) \in \Omega$.
+	$\Sigma$ è detta semplice se $\vb{r}:\Omega \injarrow \Sigma$.
+\end{definition}
+
+\begin{remark}
+	La superficie è la classe di equivalenza delle parametrizzazioni che si ottengono le une dalle altre per composizione con un diffeomorfismo $\C{1}$ fra aperti regolari di $\R^2$.
+\end{remark}
+
+\begin{definition}
+	[Superficie orientabile]
+	$\Sigma \in \R^3$ è una superficie orientabile se $\exists \vb{N}:\Sigma \to \R^3 \tc \\ \vb{N}(x,y,z)\in N_{(x,y,z)}\Sigma \e \norm{\vb{N}(x,y,z)}=1 \ \forall (x,y,z) \in \Sigma$, ovvero se esiste un campo continuo di versori normali a $\Sigma$.
+\end{definition}
+
+\begin{remark}
+	Diffeomorfismi crescenti, ovvero con $\det J_\varphi>0$, non variano l'orientamento della superficie. Diffeomorfismi decrescenti inducono l'orientamento opposto.
+\end{remark}
+
+Sia $\vb{r}:\overline{\Omega} \to \Sigma$ una parametrizzazione regolare. Allora $\vb{n}(u,v)=\frac{\partial \vb{r}}{\partial u}\wedge\frac{\partial \vb{r}}{\partial v} \in N_{\vb{r}(u,v)}\Sigma$ e si può definire il campo di versori normale alla superficie come
+$$
+	\vb{N}(u,v)=\frac{\vb{n}(u,v)}{\norm{\vb{n}(u,v)}}
+$$
+Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che l'espressione di $\vb{N}$ dipende dal segno di $\det J_\varphi$.
+
+\begin{definition}
+	[Superficie regolare con bordo]
+	Siano $\Omega \subseteq \R^2$ un aperto regolare e $\vb{r} \in \C{1}(\overline{\Omega},\R^3)$. $\Sigma = \vb{r}(\overline{\Omega})$ è una superficie regolare con bordo se:
+	\begin{enumerate}
+		\item $\vb{r}:\overline{\Omega}\bijarrow\Sigma$
+		\item $\rank J_{\vb{r}}(u,v) = 2 \ \forall (u,v) \in \overline{\Omega}$
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Ogni superficie regolare con bordo è orientabile. \qed
+\end{theorem}
+
+\begin{definition}
+	[Frontiera orientata canonicamente]
+	Sia $\Omega \subseteq \R^2$ un aperto regolare e siano $\vb{T}(u,v)\in T_{(u,v)}\Omega$ e $\vb{N}(u,v)=(T_2(u,v),-T_1(u,v))$. $(\partial \Omega, \vb{T})$ è orientata canonicamente se $\forall (u,v) \in \partial \Omega \ \exists \lambda > 0 \tc \forall \varepsilon \in (0,\lambda)$
+	\begin{enumerate}[a.]
+		\item $(u,v)+\varepsilon\vb{N}(u,v) \notin \overline{\Omega}$
+		\item $(u,v)-\varepsilon\vb{N}(u,v) \in \Omega$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	[Orientamento canonico di $\partial \Sigma$]
+	Sia $\vb{r}: \overline{\Omega} \bijarrow \Sigma \in \C{1} \tc \rank J_{\vb{r}}(u,v)=2 \ \forall (u,v) \in \overline{\Omega}$ una parametrizzazione che induce l'orientamento $\hat{\bm\nu}$ su $\Sigma$. Siano inoltre $\gamma_1 \subset \partial\Omega$ e $\bm\varphi: [a,b]\to \gamma_1 \in \C{1}$ una parametrizzazione regolare semplice a tratti che induce l'orientamento canonico $\vb{T}$ su $\gamma_1$.
+	Allora $\vb{r}\circ \bm\varphi:[a,b]\to \partial\Sigma_1$ è una parametrizzazione regolare semplice a tratti che induce l'orientamento $\hat{\bm\tau}$ canonico rispetto a $\hat{\bm\nu}$.
+\end{definition}
+
+\begin{definition}
+	[Superficie regolare a tratti]
+	Siano $\Sigma_1,\dots,\Sigma_p$ superfici regolari con bordo, allora $\displaystyle\Sigma = \bigcup_{j=1}^p \Sigma_j$ è una superficie regolare a tratti se $\forall i,j \in [p] \with i \neq j \ \Sigma_i \cap \Sigma_j \subseteq \displaystyle\bigcup_{k=1}^p\partial \Sigma_k$.
+\end{definition}
+
+\begin{definition}
+	[Superficie regolare a tratti orientabile]
+	$\Sigma$ superficie regolare a tratti è detta orientabile se ciascuna componente di $\partial \Sigma_j$ è orientabile in modo tale che sugli spigoli comuni questi abbiano orientamento opposto.
+\end{definition}
+
+\begin{definition}
+	[Superficie chiusa]
+	Le superfici senza bordo e limitate in $\R^3$ si dicono chiuse. Una superficie regolare a tratti è chiusa se $\partial \Sigma = \varnothing$ e se è limitata.
+\end{definition}
+
+\begin{definition}
+	[Area di una superficie]
+	Sia $\vb{r}:\overline{\Omega} \bijarrow \Sigma \tc \rank J_{\vb{r}}(u,v) = 2 \ \forall (u,v) \in \overline{\Omega}$.
+	$$
+		\Area (\Sigma) = \iint_\Sigma \dd S = \iint_{\overline{\Omega}} \norm{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+	$$
+	Inoltre, sia $f: \Sigma \to \R$ una funzione continua.
+	$$
+		\iint_\Sigma f \dd S = \iint_{\overline{\Omega}}(f\circ\vb{r})(u,v)\norm{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+	$$
+\end{definition}
+
+\begin{definition}
+	[Flusso]
+	Sia $A\subseteq \R^3$ un aperto e sia $\Sigma \subseteq A$ una superficie orientabile con orientamento $\hat{\bm \nu}$ indotto dalla parametrizzazione $\vb{r}:\overline{\Omega}\to\Sigma$. Sia inoltre $\vb{f} \in \C{0}(A,\R^3)$ un campo vettoriale. Il flusso di $\vb{f}$ attraverso $\Sigma$ è
+	$$
+		\iint_\Sigma \innerproduct{\vb{f}}{\hat{\bm\nu}}\dd S = \iint_{\overline{\Omega}}\innerproduct{\vb{f}(\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v
+	$$
+\end{definition}
+
+\begin{remark}
+	Se $\vb{r}$ induce l'orientamento opposto,
+	$$
+		\iint_\Sigma \innerproduct{\vb{f}}{\hat{\bm\nu}}\dd S = -\iint_{\overline{\Omega}}\innerproduct{(\vb{f}\circ\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+	$$
+\end{remark}
+
+\section{Teorema di Stokes}

@@ -4,14 +4,11 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{amsthm, amssymb, amsmath, bm, physics, esint, graphicx}
 
-\usepackage{mathtools}  
-\mathtoolsset{showonlyrefs}
-
 % Links
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
 
-% Define new commands
+% Define useful shortcuts
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\K}{\mathbb{K}}
@@ -22,14 +19,17 @@
 \newcommand{\tc}{\text{ tale che }}
 \newcommand{\with}{\text{ con }}
 \newcommand{\e}{\text{ e }}
+
+% Declare additional math operators
 \DeclareMathOperator{\sez}{sez}
 \DeclareMathOperator{\inj}{1-1}
 \DeclareMathOperator{\su}{su}
 \DeclareMathOperator{\injarrow}{\xrightarrow{\inj}}
 \DeclareMathOperator{\suarrow}{\xrightarrow{\su}}
 \DeclareMathOperator{\bijarrow}{\xrightarrow[\su]{\inj}}
+\DeclareMathOperator{\Area}{Area}
 
-% Used to have letter lists
+% Enable lettered enumerations
 \usepackage[shortlabels]{enumitem}
 
 % Remove dot after theorem number
@@ -38,12 +38,20 @@
 \AtBeginDocument{\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}}
 \makeatother
 
+% Style normal pages
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} % Clear header and footer fields
-\fancyhead[LEH, ROH]{\nouppercase{\leftmark}}
-\fancyhead[REH, LOH]{\nouppercase{\rightmark}}
-\fancyfoot[LEF, ROF]{\thepage}
+\fancyhf{}
+\fancyhead[LE, RO]{\nouppercase{\leftmark}}
+\fancyhead[RE, LO]{\nouppercase{\rightmark}}
+\fancyfoot[LE, RO]{\thepage}
+
+% Style chapter page
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
 
 % Define available theorems and their styles
 \newtheorem{theorem}{Teorema}[section]
@@ -61,6 +69,7 @@
 % Change QED symbol to #
 \renewcommand\qedsymbol{\#}
 
+% Setup document
 \title{Analisi Matematica 2}
 \author{Luca Zoppetti}
 \date{\today}

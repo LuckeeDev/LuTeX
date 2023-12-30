@@ -5,13 +5,13 @@
 \begin{definition}
     [Intervallo semi-aperto superiormente]
     Si definisce intervallo semi-aperto superiormente di $\R^n$ il prodotto cartesiano di $n$ intervalli chiusi inferiormente e aperti superiormente:
-    \begin{equation*}
+    $$
         I=[a_1,b_1)\times\cdots\times[a_n,b_n) \with a_i \leq b_i \ \forall i \in [n]
-    \end{equation*}
+    $$
     La misura elementare di $I$ è
-    \begin{equation*}
+    $$
         \mu_n(I)=\prod_{j=1}^n(b_j-a_j)
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{definition}
@@ -34,14 +34,14 @@
     Per la misura in $\mathcal{P}$ valgono le seguenti proprietà:
     \begin{enumerate}
         \item (Additività finita) Se $P_1,\dots,P_k \in \mathcal{P}$ sono a due a due disgiunti, allora
-        \begin{equation*}
+        $$
             \mu_n\left( \bigcup_{j=1}^k P_j \right) = \sum_{j=1}^k \mu_n(P_j)
-        \end{equation*}
+        $$
         \item (Monotonia) Se $P, Q \in \mathcal{P} \e P \subseteq Q \then \mu_n(P)\leq \mu_n(Q)$
         \item (Modularità) Se $P,Q \in \mathcal{P}$, allora
-        \begin{equation*}
+        $$
             \mu_n(P\cup Q) + \mu_n (P \cap Q) = \mu_n (P) + \mu_n (Q)
-        \end{equation*}
+        $$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -122,9 +122,9 @@
     Valgono le seguenti proprietà per la misura in $\J_b(\R^n)$:
     \begin{enumerate}
         \item (Additività finita) Se $X_1,\dots,X_k \in \J_b(\R)^n$ sono a due a due disgiunti, allora
-        \begin{equation*}
+        $$
             \mu_n\left(\displaystyle \bigcup_{j=1}^kX_j\right) =   \displaystyle\sum_{j=1}^k\mu_n(X_j)
-        \end{equation*}
+        $$
         \item (Modularità) Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\cup Y)+\mu_n(X\cap Y)=\mu_n(X)+\mu_n(Y)$
         \item (Monotonia) Se $X,Y \in \J_b(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
         \item Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
@@ -177,18 +177,18 @@
     $\J(\R^n)$ gode delle seguenti proprietà:
     \begin{enumerate}
         \item (Additività finita) Se $X_1,\dots,X_k \in \J(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup_{j=1}^kX_j \in \J(\R^n)$ e
-        \begin{equation*}
+        $$
             \mu_n\left(\bigcup_{j=1}^kX_j\right) = \sum_{j=1}^k\mu_n(X_j)
-        \end{equation*}
+        $$
         \item (Monotonia) Se $X, Y \in \J(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
         \item (Modularità) Se $X, Y \in \J(\R^n)$, allora
-        \begin{equation*}
+        $$
             \mu_n(X \cup Y) + \mu_n (X \cap Y) = \mu_n(X) + \mu_n(Y)
-        \end{equation*}
+        $$
         \item (Sottrattività) Se $X, Y \in \J(\R^n) \e \mu_n(Y) < + \infty$, allora
-        \begin{equation*}
+        $$
             \mu_n(X \setminus Y) = \mu_n(X) - \mu_n(X \cap Y)
-        \end{equation*}
+        $$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -204,9 +204,9 @@
     [Funzione non negativa integrabile secondo Riemann]
     Siano $A \subseteq \R^n, \ A \in \J(\R^n), \ f: A \to \R$ limitata e tale che $f \geq 0$. Si definisce sottografico di $f$ l'insieme $R(f)=\{(\vb{x}, y)\in A \times \R_{\geq 0} : 0 \leq y \leq f(\vb{x})\}$.
     $f$ si dice integrabile secondo Riemann se $R(f) \in \J(\R^{n+1})$ e in tal caso
-    \begin{equation*}
+    $$
         \idotsint_A f(x_1,\dots,x_n)\dd x_1\cdots \dd x_n=\mu_{n+1}(R(f))
-    \end{equation*}
+    $$
     $f$ è detta sommabile se $f$ è integrabile e $\idotsint_Af < +\infty$.
 \end{definition}
 
@@ -223,17 +223,17 @@
 \begin{definition}
     [Funzione integrabile secondo Riemann]
     Siano $A \in \J(\R^n) \e f: A \to \R$ limitata. Se $f_+ \e f_-$ sono integrabili e almeno uno fra $\idotsint_A f_+, \idotsint_A f_-$ è un valore finito, allora $f$ si dice integrabile secondo Riemann e
-    \begin{equation*}
+    $$
         \idotsint_Af(x_1,\dots,x_n)\dd x_1\cdots \dd x_n = \idotsint_A f_+(x_1,\dots,x_n)\dd x_1\cdots \dd x_n - \idotsint_A f_-(x_1,\dots,x_n)\dd x_1\cdots \dd x_n
-    \end{equation*}
+    $$
     Inoltre, se $f_+ \e f_-$ sono sommabili, allora $f$ è sommabile.
 \end{definition}
 
 \begin{theorem}
     Sia $f: A \to \R$ integrabile in $A \in \J(\R^n)$. Allora
-    \begin{equation*}
+    $$
         \abs{\idotsint_A f(x_1,\dots,x_n)\dd x_1\cdots \dd x_n} \leq \idotsint_A\abs{f(x_1,\dots,x_n)}\dd x_1\cdots \dd x_n
-    \end{equation*}
+    $$
     \qed
 \end{theorem}
 
@@ -251,9 +251,9 @@
 \begin{theorem}
     [della media integrale]
     Siano $A \subseteq \R^n, \ A \in \J(\R^n), \ \mu_n(A) < +\infty \e f: A \to \R$ limitata e sommabile. Allora:
-    \begin{equation*}
+    $$
         \inf_A f \leq \frac{\idotsint_A f}{\mu_n(A)}\leq \sup_A f
-    \end{equation*}
+    $$
     \qed
 \end{theorem}
 
@@ -271,9 +271,9 @@
         \item $G:[c,d]\to \R$ definita come $G(y)=\int_a^bf(x,y)\dd x$ è continua e $\iint_Kf(x,y)\dd x\dd y=\int_c^dG(y)\dd y=\int_c^d\dd y(\int_a^b f(x,y)\dd x)$
         \item $F:[a,b]\to \R$ definita come $F(x)=\int_c^df(x,y)\dd y$ è continua e $\iint_Kf(x,y)\dd x\dd y=\int_a^bF(x)\dd x=\int_a^b\dd x(\int_c^d f(x,y)\dd y)$
         \item Se $f(x,y)=g(x)h(y)$, allora
-        \begin{equation*}
+        $$
             \iint_Kf(x,y)\dd x\dd y=\iint_Kg(x)h(y)\dd x\dd y=\left(\int_a^bg(x)\dd x\right)\left(\int_c^dh(y)\dd y\right)
-        \end{equation*}
+        $$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -282,14 +282,14 @@
     [Dominio normale rispetto a un asse]\leavevmode
     \begin{enumerate}[a.]
         \item Siano $\varphi, \psi \in \C{0}([c,d],\R) \tc \varphi(y)\leq \psi(y)\ \forall y \in [c,d]$. Allora
-        \begin{equation*}
+        $$
             A=\{(x,y)\in \R\times[c,d]:\varphi(y)\leq x \leq \psi(y)\}
-        \end{equation*}
+        $$
         è un dominio normale rispetto all'asse $x$.
         \item Siano $g, h \in \C{0}([a,b],\R) \tc g(x)\leq h(x)\ \forall x \in [a,b]$. Allora
-        \begin{equation*}
+        $$
             B=\{(x,y)\in [a,b]\times\R:g(x)\leq y \leq h(x)\}
-        \end{equation*}
+        $$
         è un dominio normale rispetto all'asse $y$. 
     \end{enumerate}
 \end{definition}
@@ -298,13 +298,13 @@
     [di riduzione degli integrali doppi su domini normali]\leavevmode
     \begin{enumerate}[a.]
         \item Siano $\varphi, \psi \in \C{0}([c,d],\R), \ A=\{(x,y)\in \R\times[c,d]:\varphi(y)\leq x \leq \psi(y)\} \e f \in \C{0}(A,\R)$. Allora
-        \begin{equation*}
+        $$
             \iint_Af(x,y)\dd x\dd y = \int_c^d\dd y\left(\int_{\varphi(y)}^{\psi(y)}f(x,y)\dd x\right)
-        \end{equation*}
+        $$
         \item Siano $g, h \in \C{0}([a,b],\R), \ A=\{(x,y)\in \R\times[a,b]:g(x)\leq y \leq h(x)\} \e f \in \C{0}(A,\R)$. Allora
-        \begin{equation*}
+        $$
             \iint_Af(x,y)\dd x\dd y = \int_a^b\dd x\left(\int_{g(x)}^{h(x)}f(x,y)\dd y\right)
-        \end{equation*}
+        $$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -329,13 +329,13 @@
 \begin{theorem}
     [di Cavalieri]
     Sia $K \in \J_b(\R^3)$ compatto un solido di Cavalieri rispetto all'asse $\hat{z}$. Allora
-    \begin{equation*}
+    $$
         \mu_3(K)=\int_a^b\dd z\mu_2(\sez_z(K))=\int_a^b\dd z\left(\iint_{\sez_z(K)}\dd x\dd y\right)    
-    \end{equation*}
+    $$
     Inoltre, se $f \in \C{0}(K,\R)$, allora
-    \begin{equation*}
+    $$
         \iiint_Kf(x,y,z)\dd x\dd y\dd z=\int_a^b\dd z\left(\iint_{\sez_z(K)}f(x,y,z)\dd x\dd y\right)
-    \end{equation*}
+    $$
     \qed
 \end{theorem}
 
@@ -347,26 +347,26 @@
 \begin{theorem}
     [di riduzione degli integrali tripli su domini normali]
     Siano $\varphi, \psi, K, A$ come nella definizione \ref{def:dom_r3}. Allora
-    \begin{equation*}
+    $$
         \mu_3(A)=\iint_K\dd x\dd y(\psi(x,y)-\varphi(x,y))
-    \end{equation*}
+    $$
     Inoltre, se $f \in \C{0}(A,\R)$,
-    \begin{equation*}
+    $$
         \iiint_Af(x,y,z)\dd x\dd y\dd z = \iint_K\dd x\dd y\left(\int_{\varphi(x,y)}^{\psi(x,y)}\dd zf(x,y,z)\right)
-    \end{equation*}
+    $$
 \end{theorem}
 
 \subsection{Cambiamento di variabile nell'integrale multiplo}
 
 \begin{theorem}
     Siano $A \subseteq \R^n$ aperto, $\bm\varphi \in \C{1}(A,\R^n), \bm\varphi \ \inj \e \det J_{\bm\varphi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\varphi(K)$ è compatto e misurabile e vale
-    \begin{equation*}
+    $$
         \mu_n(\bm\varphi(K))=\idotsint_K \abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1 \cdots \dd u_n
-    \end{equation*}
+    $$
     Inoltre, se $f \in \C{0}(\bm\varphi(K),\R)$, allora
-    \begin{equation*}
+    $$
         \idotsint_{\bm\varphi(K)}f(x_1,\dots,x_n)\dd x_1 \cdots \dd x_n=\idotsint_K (f \circ \bm\varphi)(u_1,\dots,u_n)\abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1\cdots \dd u_n
-    \end{equation*}
+    $$
     \qed
 \end{theorem}
 

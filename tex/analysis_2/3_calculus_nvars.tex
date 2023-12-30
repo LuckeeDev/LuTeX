@@ -5,9 +5,9 @@
 \begin{definition}
     [Derivata parziale]
     Sia $f: A \subseteq \R^n \to \R$. Si definisce derivata parziale $j$-esima di $f$ in $\vb{x_0}$ il valore del seguente limite, se esiste finito:
-    \begin{equation*}
+    $$
         \frac{\partial f}{\partial x_j} (\vb{x_0}) = \displaystyle \lim_{h\to 0} \frac{f(\vb{x_0} + h\vb{\hat{e}_j}) - f(\vb{x_0})}{h} \in \R
-    \end{equation*}
+    $$
     dove $\vb{\hat{e}_j}$ è il j-esimo vettore della base canonica.
 \end{definition}
 
@@ -19,9 +19,9 @@
 \begin{definition}
     [Derivata direzionale]
     Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$, $f:A \to \R$ e $\bm{\hat{\nu}} = (\nu_1,\dots,\nu_n) \in \R^n \tc \norm{\bm{\hat{\nu}}}=1$. Si definisce derivata direzionale di $f$ in $\vb{x_0}$ rispetto alla direzione $\bm{\hat{\nu}}$ il valore del seguente limite, se esiste finito:
-    \begin{equation*}
+    $$
         \frac{\partial f}{\partial \bm{\hat{\nu}}} (\vb{x_0}) = \displaystyle \lim_{h\to 0} \frac{f(\vb{x_0} + h\bm{\hat{\nu}}) - f(\vb{x_0})}{h} \in \R
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{remark}
@@ -80,17 +80,17 @@
 \begin{definition}
     [Derivata di ordine $k$]
     Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$ e $f:A \to \R$. Se $\displaystyle \exists \frac{\partial f}{\partial x_{i_1}}, \frac{\partial^2 f}{\partial x_{i_1} \partial x_{i_2}},\dots,\frac{\partial ^{k-1}f}{\partial x_{i_1} \cdots \partial x_{i_{k-1}}} : B_\varepsilon(\vb{x_0}) \to \R$, si definisce derivata $k$-esima di $f$ in $\vb{x_0}$ rispetto a $x_{i_1},\dots,x_{i_{k}}$ il valore del seguente limite se esiste finito:
-    \begin{equation*}
+    $$
         \lim_{h\to 0}\frac{\frac{\partial^{k-1}f}{\partial x_{i_1}\cdots \partial x_{i_{k-1}}}(\vb{x_0}+ h \vb{\hat{e}_{i_k}})- \frac{\partial^{k-1}f}{\partial x_{i_1}\cdots \partial x_{i_{k-1}}}(\vb{x_0})}{h} \in \R
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{definition}
     [Insieme $\C{k}(A, \R)$]
     Si definisce l'insieme delle funzioni derivabili con continuità $k$ volte in $A$:
-    \begin{equation*}
+    $$
         \displaystyle \C{k}(A,\R) = \left\{ f: A \to \R \tc \ \exists \frac{\partial f}{\partial x_i},\dots,\frac{\partial ^2 f}{\partial x_i \partial x_j}, \dots, \frac{\partial ^k f}{\partial x_{i_1}\cdots\partial x_{i_k}} \text{ continue in } A \right\}
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{remark}
@@ -100,9 +100,9 @@
 \begin{theorem}
     [di Schwarz]\label{thm:schwarz}
     Siano $A \subseteq \R^n$ un aperto e $f: A \to \R$ derivabile due volte in $A$. Se $\frac{\partial ^2 f}{\partial x_i \partial x_j}$ e $\frac{\partial^2 f}{\partial x_j \partial x_i}$ sono continue in $\vb{x_0} \in A$, allora
-    \begin{equation*}
+    $$
         \frac{\partial ^2 f}{\partial x_i \partial x_j}(\vb{x_0}) = \frac{\partial^2  f}{\partial x_j \partial x_i}(\vb{x_0})
-    \end{equation*}
+    $$
 \end{theorem}
 
 \begin{proof}
@@ -112,14 +112,14 @@
 \begin{definition}
     [Matrice hessiana]
     Siano $A \subseteq \R^n$ un aperto e $f: A \to \R$ derivabile due volte in $A$. Si definisce matrice hessiana di $f$ in $\vb{x_0}$ la matrice
-    \begin{equation*}
+    $$
         H_f(\vb{x_0}) =
         \begin{bmatrix}
             \grad \frac{\partial f}{\partial x_1}(\vb{x_0})\\
             \vdots\\
             \grad \frac{\partial f}{\partial x_n}(\vb{x_0})
         \end{bmatrix}
-    \end{equation*}
+    $$
 \end{definition}
 
 \begin{remark}
@@ -139,9 +139,9 @@
 
 \begin{remark}
     In particolare, per $n=2$ vale
-    \begin{equation*}
+    $$
         f(\vb{x_0} + \vb{h}) = f(\vb{x_0})+\innerproduct{\grad f(\vb{x_0})}{\vb{h}} + \frac{1}{2}\innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{\vb{h}}^2) \with \norm{\vb{h}} \to 0
-    \end{equation*}
+    $$
 \end{remark}
 
 \section{Punti critici liberi}
@@ -177,9 +177,9 @@
 \subsection{Forme quadratiche}
 
 Sia $M \in \mathcal{M}_{n \times n}(\R)$ una matrice quadrata di ordine $n$. La seguente espressione si chiama forma quadratica associata alla matrice $M$:
-\begin{equation*}
+$$
     q_M(\vb{h}) = \innerproduct{\vb{h}}{M\vb{h}} \in \R
-\end{equation*}
+$$
 La forma quadratica può essere:
 \begin{itemize}
     \item Definita positiva se $\forall \vb{h}\neq \vb{0}, \ q_M(\vb{h})> 0$

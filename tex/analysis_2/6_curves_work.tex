@@ -40,9 +40,9 @@
 \begin{definition}
 	[Curva orientabile]
 	$\gamma \subseteq \R^n$ connesso e compatto è orientabile se $\exists \vb{T}: \gamma \to \R^n \tc \forall \vb{x} \in \gamma \ \vb{T}(\vb{x})\in T_{\vb{x}}\gamma \e \norm{\vb{T}(\vb{x})}=1$. In altre parole, è necessario che esista un campo continuo di versori tangenti alla curva. Si definisce orientamento indotto dalla parametrizzazione $\vb{r}$ il campo di versori
-	\begin{equation}
+	$$
 		T(x)=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}} \in T_{\vb{x}}\gamma
-	\end{equation}
+	$$
 \end{definition}
 
 \begin{lemma}
@@ -82,9 +82,9 @@
 \begin{theorem}
 	[Lunghezza di una curva]
 	Se $\gamma$ è una curva regolare, allora la lunghezza di $\gamma$ è
-	\begin{equation}
+	$$
 		L_\gamma = \int_a^b\norm{\vb{r}'(t)}\dd t
-	\end{equation}
+	$$
 	dove $\vb{r}: [a,b]\suarrow \gamma$ è una parametrizzazione regolare.
 \end{theorem}
 
@@ -108,17 +108,17 @@
 \begin{definition}
 	[Integrale di linea di una funzione]
 	Siano $f: A\subseteq\R^n \to \R$ continua con $A$ aperto, $\gamma \subseteq A$ una curva regolare (o regolare a tratti) e $\vb{r}:[a,b]\suarrow \gamma \in \C{1}$ una sua parametrizzazione, allora
-	\begin{equation}
+	$$
 		\int_\gamma f \dd s = \int_a^b f(\vb{r}(t))\norm{\vb{r}'(t)}\dd t
-	\end{equation}
+	$$
 \end{definition}
 
 \begin{definition}
 	[Ascissa curvilinea]
 	Sia $\gamma$ una curva rettificabile e $\vb{r}:[a,b]\bijarrow\gamma \in \C{1}$ una sua parametrizzazione. Sia
-	\begin{equation}
+	$$
 		s(t)=\int_a^t\norm{\vb{r}'(u)}\dd u
-	\end{equation}
+	$$
 	$s(t)$ è detta ascissa curvilinea e $s^{-1}(t)$ è un cambio di parametrizzazione ammissibile per $\gamma$, essendo un diffeomorfismo crescente da $[0,L_\gamma]$ in $[a,b]$.
 \end{definition}
 
@@ -137,9 +137,9 @@
 \begin{definition}
 	[Lavoro]
 	Sia $\gamma \subseteq A$ una curva regolare (a tratti) orientabile con orientamento $\hat{\bm\tau}$. Il lavoro di $\vb{f}$ lungo $\gamma$ è
-	\begin{equation}
+	$$
 		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\innerproduct{\vb{f}(\vb{x})}{\dd \vb{x}}=\int_\gamma \innerproduct{\vb{f}}{\hat{\bm\tau}}\dd s
-	\end{equation}
+	$$
 	dove $s$ è l'ascissa curvilinea.
 \end{definition}
 
@@ -148,9 +148,9 @@
 \end{remark}
 
 Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si assume che l'orientamento indotto dalla parametrizzazione sia compatibile con $\hat{\bm\tau}$, allora il lavoro si può calcolare come segue:
-\begin{equation}
+$$
 	L_{\gamma, \hat{\bm\tau}} = \int_a^b\innerproduct{\vb{f}(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
-\end{equation}
+$$
 
 \begin{theorem}
 	[Cambio di parametrizzazione e lavoro]
@@ -170,9 +170,9 @@ Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si ass
 \begin{definition}
 	[Campo vettoriale conservativo]
 	Siano $A \subseteq \R^n$ un aperto connesso e $\vb{f} \in \C{0}(A,\R^n)$. $\vb{f}$ è un campo vettoriale conservativo se $\exists U \in \C{1}(A,\R) \tc$
-	\begin{equation}
+	$$
 		\vb{f}(\vb{x})=\grad U(\vb{x}) \ \forall \vb{x} \in A
-	\end{equation}
+	$$
 	In tal caso $U$ è detto potenziale del campo $\vb{f}$.
 \end{definition}
 
@@ -184,9 +184,9 @@ Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si ass
 \begin{theorem}
 	[Campi vettoriali conservativi e lavoro]
 	Sia $\vb{f} \in \C{0}(A,\R^n)$ un campo conservativo definito in $A\subseteq\R^n$ aperto e connesso e sia $U \in \C{1}(A,\R)$ un suo potenziale. Allora, se $(\gamma,\hat{\bm\tau}) \subseteq A$ è una curva regolare a tratti orientabile con primo estremo $\vb{x}_i$ e secondo estremo $\vb{x}_f$,
-	\begin{equation}
+	$$
 		L_{\gamma, \hat{\bm\tau}}=U(\vb{x}_f)-U(\vb{x}_i)
-	\end{equation}
+	$$
 \end{theorem}
 
 \begin{proof}
@@ -199,9 +199,9 @@ Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si ass
 	\begin{enumerate}
 		\item $\vb{f}$ è un campo vettoriale conservativo
 		\item Per ogni coppia di curve regolari a tratti orientate $(\gamma_1,\hat{\bm\tau_1}), (\gamma_2,\hat{\bm\tau_2})$ con estremi coincidenti e $\gamma_1,\gamma_2 \subseteq A$ vale
-		\begin{equation}
+		$$
 			L_{\gamma_1,\hat{\bm\tau_1}}=L_{\gamma_2,\hat{\bm\tau_2}}
-		\end{equation}
+		$$
 		\item Per ogni curva chiusa regolare a tratti orientabile con sostegno $\gamma \subseteq A$ e orientamento $\hat{\bm\tau}$ vale $L_{\gamma, \hat{\bm\tau}}=0$
 	\end{enumerate}
 \end{theorem}
@@ -213,9 +213,9 @@ Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si ass
 \begin{definition}
 	[Campo vettoriale irrotazionale]
 	Siano $A\subseteq\R^n$ un aperto connesso e $\vb{f} \in \C{1}(A,\R^n)$. $\vb{f}$ è detto irrotazionale se ha matrice jacobiana simmetrica, ovvero se
-	\begin{equation}
+	$$
 		\frac{\partial f_i}{\partial x_j}(\vb{x})=\frac{\partial f_j}{\partial x_i}(\vb{x}) \ \forall \vb{x} \in A \ \forall i,j \in [n]
-	\end{equation}
+	$$
 \end{definition}
 
 \begin{theorem}
