@@ -30,12 +30,12 @@
 
 \begin{definition}
     [Funzione differenziabile]
-    Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$ e $f:A \to \R$. La funzione $f$ è differenziabile in $\vb{x_0}$ se esiste $\vb{m} = (m_1,\dots,m_n) \in \R^n \tc f(\vb{x}) = f(\vb{x_0}) + \innerproduct{\vb{m}}{\vb{x} - \vb{x_0}} + o(\norm{\vb{x} - \vb{x_0}}) \with \norm{\vb{x}-\vb{x_0}}\to 0$.
+    Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$ e $f:A \to \R$. La funzione $f$ è differenziabile in $\vb{x_0}$ se esiste $\vb{m} = (m_1,\dots,m_n) \in \R^n \tc f(\vb{x}) = f(\vb{x_0}) + \ip{\vb{m}}{\vb{x} - \vb{x_0}} + o(\norm{\vb{x} - \vb{x_0}}) \with \norm{\vb{x}-\vb{x_0}}\to 0$.
 \end{definition}
 
 \begin{definition}
     [Operatore differenziale]
-    Si definisce operatore differenziale e si indica con $\dd{f}_{\vb{x_0}} : \R^n \to \R$ l'operatore $\dd{f}_{\vb{x_0}}(\vb{h})=\innerproduct{\vb{m}}{\vb{h}}$.
+    Si definisce operatore differenziale e si indica con $\dd{f}_{\vb{x_0}} : \R^n \to \R$ l'operatore $\dd{f}_{\vb{x_0}}(\vb{h})=\ip{\vb{m}}{\vb{h}}$.
 \end{definition}
 
 \begin{theorem}
@@ -44,7 +44,7 @@
     \begin{enumerate}
         \item $f$ è continua in $\vb{x_0}$
         \item $f$ è derivabile parzialmente in $\vb{x_0}$ e $\vb{m} = \bm{\nabla}f(\vb{x_0})$
-        \item $f$ è derivabile in qualunque direzione $\bm{\hat{\nu}} \tc \norm{\bm{\hat{\nu}}}=1$ e $\frac{\partial f}{\partial \bm{\hat{\nu}}} = \innerproduct{\grad f(\vb{x_0})}{\bm{\hat{\nu}}}$
+        \item $f$ è derivabile in qualunque direzione $\bm{\hat{\nu}} \tc \norm{\bm{\hat{\nu}}}=1$ e $\frac{\partial f}{\partial \bm{\hat{\nu}}} = \ip{\grad f(\vb{x_0})}{\bm{\hat{\nu}}}$
     \end{enumerate}
 \end{theorem}
 
@@ -140,7 +140,7 @@
 \begin{remark}
     In particolare, per $n=2$ vale
     $$
-        f(\vb{x_0} + \vb{h}) = f(\vb{x_0})+\innerproduct{\grad f(\vb{x_0})}{\vb{h}} + \frac{1}{2}\innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{\vb{h}}^2) \with \norm{\vb{h}} \to 0
+        f(\vb{x_0} + \vb{h}) = f(\vb{x_0})+\ip{\grad f(\vb{x_0})}{\vb{h}} + \frac{1}{2}\ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{\vb{h}}^2) \with \norm{\vb{h}} \to 0
     $$
 \end{remark}
 
@@ -178,7 +178,7 @@
 
 Sia $M \in \mathcal{M}_{n \times n}(\R)$ una matrice quadrata di ordine $n$. La seguente espressione si chiama forma quadratica associata alla matrice $M$:
 $$
-    q_M(\vb{h}) = \innerproduct{\vb{h}}{M\vb{h}} \in \R
+    q_M(\vb{h}) = \ip{\vb{h}}{M\vb{h}} \in \R
 $$
 La forma quadratica può essere:
 \begin{itemize}

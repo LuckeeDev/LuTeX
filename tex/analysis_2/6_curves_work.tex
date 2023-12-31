@@ -130,15 +130,15 @@
 \end{definition}
 
 \begin{definition}
-	[$1$-forma differenziale]
-	Si definisce 1-forma differenziale $\omega=\innerproduct{\vb{f}(\vb{x})}{\dd \vb{x}}$.
+	[$1$-forma differenziale]\label{def:1form}
+	Si definisce 1-forma differenziale $\omega=\ip{\vb{f}(\vb{x})}{\dd \vb{x}}$.
 \end{definition}
 
 \begin{definition}
 	[Lavoro]
 	Sia $\gamma \subseteq A$ una curva regolare (a tratti) orientabile con orientamento $\hat{\bm\tau}$. Il lavoro di $\vb{f}$ lungo $\gamma$ è
 	$$
-		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\innerproduct{\vb{f}(\vb{x})}{\dd \vb{x}}=\int_\gamma \innerproduct{\vb{f}}{\hat{\bm\tau}}\dd s
+		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\ip{\vb{f}(\vb{x})}{\dd \vb{x}}=\int_\gamma \ip{\vb{f}}{\hat{\bm\tau}}\dd s
 	$$
 	dove $s$ è l'ascissa curvilinea.
 \end{definition}
@@ -149,7 +149,7 @@
 
 Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si assume che l'orientamento indotto dalla parametrizzazione sia compatibile con $\hat{\bm\tau}$, allora il lavoro si può calcolare come segue:
 $$
-	L_{\gamma, \hat{\bm\tau}} = \int_a^b\innerproduct{\vb{f}(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
+	L_{\gamma, \hat{\bm\tau}} = \int_a^b\ip{\vb{f}(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
 $$
 
 \begin{theorem}
