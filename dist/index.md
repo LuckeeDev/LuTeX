@@ -11,7 +11,7 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ### Secondo anno
 
--   [Risalita di bolle in un liquido](https://luckeedev.github.io/LuTeX/bubbles.pdf)
+-   [Risalita di bolle in un liquido](https://luckeedev.github.io/LuTeX/bubbles.pdf)  
     Una piccola derivazione per calcolare il tempo di risalita di una bolla d'aria posta sul fondo di una bottiglia riempita con un liquido in quiete.
 
 -   [Analisi Matematica 2](https://luckeedev.github.io/LuTeX/analysis_2.pdf)  
