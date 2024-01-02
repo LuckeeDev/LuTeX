@@ -14,6 +14,9 @@
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\J}{\mathcal{J}}
 \newcommand{\C}[1]{\mathcal{C}^{(#1)}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\calR}{\mathcal{R}}
 \newcommand{\vecf}{\bm f}
 \newcommand{\then}{\Longrightarrow}
 \newcommand{\tc}{\text{ tale che }}
@@ -30,6 +33,13 @@
 \DeclareMathOperator{\Area}{Area}
 \DeclareMathOperator{\divop}{div}
 \DeclareMathOperator{\rot}{\vb{rot}}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
 
 % Enable lettered enumerations
 \usepackage[shortlabels]{enumitem}
@@ -54,6 +64,9 @@
 	\fancyfoot[LE,RO]{\thepage}
 	\renewcommand{\headrulewidth}{0pt}
 }
+
+% Do not show chapter number in section
+\renewcommand{\thesection}{\arabic{section}}
 
 % Define available theorems and their styles
 \newtheorem{theorem}{Teorema}[section]

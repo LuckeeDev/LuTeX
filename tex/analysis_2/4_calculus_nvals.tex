@@ -143,13 +143,13 @@
     Allora esistono $I_{\vb{x^0}} \in \R^{n-k}$ intorno circolare aperto di $\vb{x^0}$ e $J_{\vb{y^0}} \in \R^k$ intorno circolare aperto di $\vb{y^0}$ tali che:
     \begin{enumerate}
         \item $W=I_{\vb{x^0}}\times J_{\vb{y^0}} \subseteq A$
-        \item $\exists \vecf \in \C{1}(I_{\vb{x^0}}, J_{\vb{y^0}}) \tc \bm g(\vb{x}, \vb{y})=\vb{0} \iff \vb{y} = \bm f (\vb{x}) \with \vb{x} \in I_{\vb{x^0}}$
+        \item $\exists \vecf \in \C{1}(I_{\vb{x^0}}, J_{\vb{y^0}}) \tc \bm g(\vb{x}, \vb{y})=\vb{0} \iff \vb{y} = \vecf (\vb{x}) \with \vb{x} \in I_{\vb{x^0}}$
     \end{enumerate}
     Inoltre
     $$
         \frac{\partial f_i}{\partial x_j}(\vb{x})=-\frac
-        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_{i-1},x_j,y_{i+1},\dots,y_k}(\vb{x},\bm f(\vb{x}))}
-        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_k}(\vb{x},\bm f(\vb{x}))}
+        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_{i-1},x_j,y_{i+1},\dots,y_k}(\vb{x},\vecf(\vb{x}))}
+        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_k}(\vb{x},\vecf(\vb{x}))}
     $$
     \qed
 \end{theorem}

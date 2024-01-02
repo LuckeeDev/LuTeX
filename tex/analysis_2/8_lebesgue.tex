@@ -1,1 +1,199 @@
-\chapter{Misura di Lebesgue}
+\chapter{Misura e integrazione secondo Lebesgue}
+
+\section{Misura di Lebesgue}
+
+\begin{definition}
+	[Misura esterna]
+	Siano $X$ un insieme e $\calP(X)=\{A:A\subseteq X\}$. $\mu^*:\calP(X)\to [0,+\infty]$ è una misura esterna se soddisfa le seguenti condizioni:
+	\begin{enumerate}
+		\item $\mu^*(\varnothing)=0$
+		\item (Monotonia) Se $A\subseteq B$, allora $\mu^*(A) \leq \mu^*(B)$
+		\item (Sub-additività numerabile) $\mu^*\left(\bigcup\limits_{i=1}^\infty A_i\right)\leq \sum\limits_{i=1}^\infty \mu^*(A_i)$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	[$\sigma$-algebra]
+	Sia $X$ un insieme. $\A \subseteq \calP(X)$ è una $\sigma$-algebra se:
+	\begin{enumerate}
+		\item $\varnothing, X \in \A$
+		\item Se $A\subset \A$, allora $X \setminus A \in \A$
+		\item Se $A_j \in \A \with j \in \N$, allora $\bigcup\limits_{i=1}^\infty A_i, \bigcap\limits_{i=1}^\infty A_i \in \A$
+	\end{enumerate}
+\end{definition}
+
+\begin{prop}
+	Se $C \subseteq \calP(X)$, allora $C$ può essere sempre completato a una $\sigma$-algebra ed esiste il completamento minimo $\A(C)$ che è la $\sigma$-algebra più piccola in $\calP(X)$ contenente $C$.
+	$$
+		\A(C)=\cap\{\A:\A \text{ è una } \sigma \text{-algebra in } \calP(X), C \subseteq \A\}
+	$$
+	\qed
+\end{prop}
+
+\begin{remark}\leavevmode
+	\begin{enumerate}
+		\item ${\varnothing,X}$ è la più piccola $\sigma$-algebra associata ad $X$
+		\item $\calP(X)$ è la più grande $\sigma$-algebra associata ad $X$
+	\end{enumerate}
+\end{remark}
+
+\begin{definition}
+	[$\sigma$-algebra di Borel]
+	Sia $(X,\tau)$ uno spazio topologico. Si definisce $\sigma$-algebra di Borel la più piccola $\sigma$-algebra in $X$ contenente $\tau$.
+\end{definition}
+
+\begin{definition}
+	[Spazio misurabile]
+	Si definisce spazio misurabile la coppia $(X,\A)$, dove $X$ è un insieme e $\A$ una $\sigma$-algebra contenuta in $\calP(X)$.
+\end{definition}
+
+\begin{definition}
+	[Misura]
+	Sia $(X,\A)$ uno spazio misurabile. $\mu:\A \to [0,\infty]$ è una misura se soddisfa le seguenti richieste:
+	\begin{enumerate}
+		\item $\mu(\varnothing)=0$
+		\item (Additività numerabile) Se $A_i \in \A \ \forall i \in \N$ sono insiemi a due a due disgiunti, allora $$\displaystyle\mu\left(\bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^\infty \mu(A_i)$$
+	\end{enumerate}
+	$\mu$ si dice finita se $\mu(X)<+\infty$. $\mu$ si dice $\sigma$-finita se esistono $A_i \with i \in \N$ insiemi misurabili di misura finita e $X=\bigcup\limits_{i=1}^\infty A_i$.
+\end{definition}
+
+\begin{remark}
+	La proprietà di monotonia discende dal fatto che la misura è sempre definita a partire da una misura esterna.
+\end{remark}
+
+\begin{definition}
+	[Spazio di misura]
+	$(X,\A,\mu)$ è detto spazio di misura.
+\end{definition}
+
+\begin{definition}
+	[Spazio di misura completo]
+	$(X,\A,\mu)$ è uno spazio di misura completo se $\forall N \in \A \tc \mu(N)=0$ tutti i suoi sottoinsiemi sono misurabili.
+\end{definition}
+
+\begin{theorem}
+	[Successioni monotone in uno spazio di misura]
+	Sia $(X,\A,\mu)$ uno spazio di misura.
+	\begin{enumerate}
+		\item Se $A_i \in \A$ è una successione crescente, cioè $A_i \subseteq A_{i+1} \ \forall i \in \N$, allora $\mu\left(\bigcup\limits_{i=1}^\infty A_i\right) = \lim\limits_{i\to + \infty}\mu(A_i)$
+		\item Se $A_i \in \A$ è una successione decrescente, cioè $A_i \supseteq A_{i+1} \ \forall i \in \N$ e $\exists j \in \N \tc \mu(A_j) < + \infty$, allora $\mu\left(\bigcap\limits_{i=1}^\infty A_i\right)=\lim\limits_{i\to +\infty}\mu(A_i)$
+	\end{enumerate}
+	\qed
+\end{theorem}
+
+\begin{definition}
+	[Intervallo]
+	Sia $(\R^n,\tau)$ lo spazio topologico euclideo. Si definisce intervallo $R=[a_1,b_1]\times\cdots[a_n,b_n] \subseteq \R^n$. La misura elementare di $R$ è $\mu(R)=\prod\limits_{j=1}^n(b_j-a_j)$. Si indica con $\calR$ l'insieme degli intervalli di $\R^n$: $\calR=\{A \in \calP(\R^n):A \text{ è un intervallo}\}$.
+\end{definition}
+
+\begin{definition}
+	[Misura esterna di Lebesgue]
+	Si definisce la misura esterna di Lebesgue $\mu^*:\calP(\R^n)\to [0,+\infty]$ tale che, se $E \in \calP(\R^n)$,
+	$$
+		\mu^*(E)=\inf \left\{\sum\limits_{j=1}^\infty \mu(R_j):R_j \in \calR \ \forall j \in \N \e E \subseteq \bigcup\limits_{j=1}^\infty R_j\right\}
+	$$
+\end{definition}
+
+\begin{theorem}
+	$\mu^*$ è una misura esterna, cioè
+	\begin{enumerate}
+		\item $\mu^*(\varnothing)=0$
+		\item Se $A \subseteq B$, allora $\mu^*(A)\leq \mu^*(B)$
+		\item Se $A_i \subseteq \R^n, i \in \N$, allora $\mu^*\left(\bigcup\limits_{i=1}^\infty A_i\right)\leq \sum\limits_{i=1}^\infty \mu^*(A_i)$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{prop}
+	La misura elementare di un intervallo $R \in \calR$ coincide con la misura esterna di Lebesgue dell'intervallo.
+	\qed
+\end{prop}
+
+\subsection{Metodo di Carathéodory}
+
+\begin{definition}
+	[Insieme misurabile secondo Carathéodory]
+	Siano $X$ un insieme e $\mu^*:\calP \to [0,+\infty]$ una misura esterna su $X$. $A\subseteq X$ è misurabile secondo Carathéodory se $\forall E \subseteq X, \ \mu^*(E)=\mu^*(A\cap E) + \mu^*(A^c \cap E)$, dove $A^c=X\setminus A$.
+\end{definition}
+
+\begin{theorem}
+	Siano $X$ un insieme e $\mu^*$ una misura esterna su $\calP(X)$. Allora l'insieme $\A \subseteq \calP(X)$ degli insiemi misurabili secondo Carathéodory è una $\sigma$-algebra e $\restr{\mu^*}{\A}$ è una misura.
+	\qed
+\end{theorem}
+
+\begin{definition}
+	[Misura di Lebesgue in $\R^n$]
+	Sia $\mathcal{L}(\R^n)$ la $\sigma$-algebra degli insiemi misurabili secondo Carathéodory rispetto alla misura esterna di Lebesgue. La misura di Lebesgue è $\mu=\restr{\mu^*}{\mathcal{L}(\R^n)}$.
+\end{definition}
+
+\begin{theorem}
+	[Completezza della misura di Lebesgue]\leavevmode
+	\begin{enumerate}
+		\item $\forall N \subseteq \R^n$ con misura esterna nulla, $N \in \mathcal{L}(\R^n)$
+		\item $\forall M \subseteq N \with \mu(N)=0, \ M \in \mathcal{L}(\R^n)$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{definition}
+	[Insieme di misura nulla]
+	$E \subseteq \R^n$ ha misura di Lebesgue nulla se e solo se $\forall \varepsilon > 0$ esiste un ricoprimento numerabile di $E$ con intervalli tale che $E \subseteq \bigcup\limits_{j=1}^\infty R_j, R_j \in \calR \e \sum\limits_{j=1}^\infty \mu(R_j)<\varepsilon$.
+\end{definition}
+
+\begin{theorem}
+	Sia $\mathcal{B}(\R^n)$ la $\sigma$-algebra di Borel in $\R^n$. Allora
+	\begin{enumerate}
+		\item $\mathcal{B}(\R^n)$ è la più piccola $\sigma$-algebra che contenga $\mathcal{R}$, cioè gli intervalli di $\R^n$.
+		\item $\mathcal{B}(\R^n)\subset \mathcal{L}(\R^n)$
+		\item $\mathcal{B}(\R^n)$ non è completo rispetto alla misura di Lebesgue
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}\leavevmode
+	\begin{enumerate}
+		\item Sia $A\subseteq\R^n$, allora $\mu^*(A)=\inf\{\mu(U):A\subseteq U \with U \text{ aperto}\}$. In particolare, se $A$ è misurabile allora $\mu^*(A)=\mu(A)$
+		\item Se $A \in \mathcal{L}(\R^n)$, allora $\mu(A)=\sup\{\mu(K):K \text{ compatto}, K \subseteq A\}$
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	$A \in \mathcal{L}(\R^n) \iff \forall \varepsilon > 0 \ \exists V \text{ chiuso}, U \text{ aperto}, V \subseteq A \subseteq U \tc \mu(U\setminus V) < \varepsilon$.\qed
+\end{corollary}
+
+\begin{definition}
+	[$G_\delta \e F_\sigma$]
+	Si definiscono i seguenti insiemi:
+	\begin{itemize}
+		\item $G_\delta = \{G \subseteq \R^n:G=\bigcap\limits_{j=1}^\infty U_j, U_j \text{ aperto } \forall j \in \N\} \subseteq \mathcal{B}(\R^n)$
+		\item $F_\sigma = \{F \subseteq \R^n:F=\bigcup\limits_{j=1}^\infty C_j, C_j \text{ chiuso } \forall j \in \N\} \subseteq \mathcal{B}(\R^n)$
+	\end{itemize}
+\end{definition}
+
+\begin{theorem}
+	$\forall A \in \mathcal{L}(\R^n) \ \exists G \in G_\delta, F \in F_\sigma \tc F \subseteq A \subseteq G \e \mu(G\setminus A)=\mu(A\setminus F)=0$. In altre parole, ogni insieme misurabile secondo Lebesgue è approssimato a meno di insiemi di misura nulla da un insieme in $F_\sigma$ per difetto e da un insieme in $G_\delta$ per eccesso.
+	\qed
+\end{theorem}
+
+\begin{corollary}
+	Il completamento della $\sigma$-algebra di Borel è la $\sigma$-algebra degli insiemi misurabili secondo Lebesgue. Per ottenerla vengono aggiunti gli insiemi di misura nulla.\qed
+\end{corollary}
+
+\begin{theorem}
+	[Invarianza della misura di Lebesgue per isometrie]\leavevmode
+	\begin{enumerate}
+		\item Siano $A\subseteq \R^n$ e $\vb{h} \in \R^n$. Sia $A_{\vb{h}}=\{\vb{x}+\vb{h}:\vb{x}\in A\}$ il traslato di $A$. Allora $A \in \mathcal{L}(\R^n)\iff A_{\vb{h}} \in \mathcal{L}(\R^n)$ e in tal caso $\mu(A)=\mu(A_{\vb{h}})$.
+		\item Siano $Q\in \mathcal{O}(n)$ (il gruppo delle matrici ortogonali in $\R^n$) e $E\subseteq \R^n$. Allora $E \in \mathcal{L}(\R^n) \iff QE \in \mathcal{L}(\R^n)$ e in tal caso $\mu(E)=\mu(QE)$.
+		\item Siano $T: \R^n \to \R^n$ un'applicazione lineare con $\det T \neq 0$ e $A \subseteq \R^n$. Allora $A \in \mathcal{L}(\R^n) \iff TA \in \mathcal{L}(\R^n)$ e in tal caso $\mu(TA) = \abs{\det T}\mu(A)$.
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\section{Integrale di Lebesgue}

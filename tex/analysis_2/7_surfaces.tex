@@ -90,16 +90,16 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \begin{definition}
 	[Flusso]
-	Sia $A\subseteq \R^3$ un aperto e sia $\Sigma \subseteq A$ una superficie orientabile con orientamento $\hat{\bm \nu}$ indotto dalla parametrizzazione $\vb{r}:\overline{\Omega}\to\Sigma$. Sia inoltre $\vb{f} \in \C{0}(A,\R^3)$ un campo vettoriale. Il flusso di $\vb{f}$ attraverso $\Sigma$ è
+	Sia $A\subseteq \R^3$ un aperto e sia $\Sigma \subseteq A$ una superficie orientabile con orientamento $\hat{\bm \nu}$ indotto dalla parametrizzazione $\vb{r}:\overline{\Omega}\to\Sigma$. Sia inoltre $\vecf \in \C{0}(A,\R^3)$ un campo vettoriale. Il flusso di $\vecf$ attraverso $\Sigma$ è
 	$$
-		\iint_\Sigma \ip{\vb{f}}{\hat{\bm\nu}}\dd S = \iint_{\overline{\Omega}}\ip{\vb{f}(\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v
+		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S = \iint_{\overline{\Omega}}\ip{\vecf(\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v
 	$$
 \end{definition}
 
 \begin{remark}
 	Se $\vb{r}$ induce l'orientamento opposto,
 	$$
-		\iint_\Sigma \ip{\vb{f}}{\hat{\bm\nu}}\dd S = -\iint_{\overline{\Omega}}\ip{(\vb{f}\circ\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S = -\iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
 	$$
 \end{remark}
 
@@ -107,9 +107,9 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \begin{definition}
 	[Rotore]
-	Sia $\vb{f}\in \C{1}(A\subseteq \R^3,\R^3)$ con $A$ aperto un campo vettoriale. Si definisce rotore di $\vb{f}$
+	Sia $\vecf\in \C{1}(A\subseteq \R^3,\R^3)$ con $A$ aperto un campo vettoriale. Si definisce rotore di $\vecf$
 	$$
-		\rot \vb{f}=\curl \vb{f}=\det
+		\rot \vecf=\curl \vecf=\det
 		\begin{bmatrix}
 			\hat{\vb{i}} & \hat{\vb{j}} & \hat{\vb{k}}\\
 			\partial_x & \partial_y & \partial_z\\
@@ -121,9 +121,9 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \begin{theorem}
 	[di Stokes o del rotore]
-	Siano $A \subseteq \R^3$ un aperto, $\vb{f} \in \C{1}(A,\R^3)$, $\Sigma \subseteq A$ una superficie regolare con bordo con orientamento $\hat{\bm \nu}$ e $(\partial \Sigma,\hat{\bm \tau})$ il suo bordo con orientamento indotto canonicamente. Allora
+	Siano $A \subseteq \R^3$ un aperto, $\vecf \in \C{1}(A,\R^3)$, $\Sigma \subseteq A$ una superficie regolare con bordo con orientamento $\hat{\bm \nu}$ e $(\partial \Sigma,\hat{\bm \tau})$ il suo bordo con orientamento indotto canonicamente. Allora
 	$$
-		\iint_\Sigma \ip{\rot \vb{f}}{\hat{\bm \nu}}\dd \sigma = \int_{\partial\Sigma}\ip{\vb{f}}{\hat{\bm \tau}}\dd s
+		\iint_\Sigma \ip{\rot \vecf}{\hat{\bm \nu}}\dd \sigma = \int_{\partial\Sigma}\ip{\vecf}{\hat{\bm \tau}}\dd s
 	$$
 \end{theorem}
 
@@ -134,9 +134,9 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \paragraph{Teorema di Stokes tramite le forme differenziali}
 
-Il teorema di Stokes può essere espresso anche tramite l'integrazione di una forma differenziale d'area (o 2-forma), ricavata applicando l'operatore differenziale esterno alla 1-forma associata al lavoro (Def. \ref{def:1form}).
+Il teorema di Stokes può essere espresso anche tramite l'integrazione di una forma differenziale d'area (o 2-forma), ricavata applicando l'operatore differenziale esterno alla 1-forma associata al lavoro (Def. \ref{def:1form}, Cap. \ref{chap:curves}).
 $$
-	\dd \omega = \ip{\rot \vb{f}}{\hat{\bm \nu}} \dd u \wedge \dd v
+	\dd \omega = \ip{\rot \vecf}{\hat{\bm \nu}} \dd u \wedge \dd v
 $$
 Di conseguenza,
 $$
@@ -160,17 +160,17 @@ $$
 
 \begin{definition}
 	[Divergenza]
-	Sia $\vb{f} \in \C{1}(A\subseteq\R^3,\R^3)$ un campo vettoriale. Si definisce divergenza di $\vb{f}$
+	Sia $\vecf \in \C{1}(A\subseteq\R^3,\R^3)$ un campo vettoriale. Si definisce divergenza di $\vecf$
 	$$
-		\divop \vb{f}=\divergence \vb{f}=\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z} \in \R
+		\divop \vecf=\divergence \vecf=\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z} \in \R
 	$$
 \end{definition}
 
 \begin{theorem}
 	[di Gauss o della divergenza]
-	Siano $A\subseteq \R^3$ un aperto regolare, $\vb{f} \in \C{1}(\overline{A},\R^3) \e (\partial A, \hat{\bm \nu})$ la frontiera di $A$ orientata canonicamente. Allora
+	Siano $A\subseteq \R^3$ un aperto regolare, $\vecf \in \C{1}(\overline{A},\R^3) \e (\partial A, \hat{\bm \nu})$ la frontiera di $A$ orientata canonicamente. Allora
 	$$
-		\iiint_A \divop \vb{f}(x,y,z)\dd x \dd y \dd z = \iint_{\partial A}\ip{\vb{f}}{\hat{\bm \nu}}\dd \sigma
+		\iiint_A \divop \vecf(x,y,z)\dd x \dd y \dd z = \iint_{\partial A}\ip{\vecf}{\hat{\bm \nu}}\dd \sigma
 	$$
 \end{theorem}
 
@@ -180,7 +180,7 @@ $$
 
 \paragraph{Teorema di Gauss tramite le forme differenziali}
 
-Anche nel caso del teorema di Gauss è possibile esprimere l'enunciato del teorema in termini di forme differenziali. Sia $\omega = f_1 \dd y \wedge \dd z + f_2 \dd z \wedge \dd x + f_3 \dd x \wedge \dd y$ la forma differenziale d'area associata al campo $\vb{f}$. Applicando l'operatore differenziale esterno, si ottiene che
+Anche nel caso del teorema di Gauss è possibile esprimere l'enunciato del teorema in termini di forme differenziali. Sia $\omega = f_1 \dd y \wedge \dd z + f_2 \dd z \wedge \dd x + f_3 \dd x \wedge \dd y$ la forma differenziale d'area associata al campo $\vecf$. Applicando l'operatore differenziale esterno, si ottiene che
 $$
 	\dd \omega = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)\dd x \wedge \dd y \wedge \dd z
 $$

@@ -1,4 +1,4 @@
-\chapter{Curve e lavoro}
+\chapter{Curve e lavoro}\label{chap:curves}
 
 \section{Curve in forma parametrica}
 
@@ -126,19 +126,19 @@
 
 \begin{definition}
 	[Campo vettoriale]
-	Sia $A\subseteq \R^n$ un aperto connesso. Una funzione $\vb{f}: A \to \R^n$ continua è detta campo vettoriale.
+	Sia $A\subseteq \R^n$ un aperto connesso. Una funzione $\vecf: A \to \R^n$ continua è detta campo vettoriale.
 \end{definition}
 
 \begin{definition}
 	[$1$-forma differenziale]\label{def:1form}
-	Si definisce 1-forma differenziale $\omega=\ip{\vb{f}(\vb{x})}{\dd \vb{x}}$.
+	Si definisce 1-forma differenziale $\omega=\ip{\vecf(\vb{x})}{\dd \vb{x}}$.
 \end{definition}
 
 \begin{definition}
 	[Lavoro]
-	Sia $\gamma \subseteq A$ una curva regolare (a tratti) orientabile con orientamento $\hat{\bm\tau}$. Il lavoro di $\vb{f}$ lungo $\gamma$ è
+	Sia $\gamma \subseteq A$ una curva regolare (a tratti) orientabile con orientamento $\hat{\bm\tau}$. Il lavoro di $\vecf$ lungo $\gamma$ è
 	$$
-		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\ip{\vb{f}(\vb{x})}{\dd \vb{x}}=\int_\gamma \ip{\vb{f}}{\hat{\bm\tau}}\dd s
+		L_{\gamma,\hat{\bm\tau}}=\int_{\gamma,\hat{\bm\tau}}\omega=\int_{\gamma, \hat{\bm\tau}}\ip{\vecf(\vb{x})}{\dd \vb{x}}=\int_\gamma \ip{\vecf}{\hat{\bm\tau}}\dd s
 	$$
 	dove $s$ è l'ascissa curvilinea.
 \end{definition}
@@ -149,7 +149,7 @@
 
 Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si assume che l'orientamento indotto dalla parametrizzazione sia compatibile con $\hat{\bm\tau}$, allora il lavoro si può calcolare come segue:
 $$
-	L_{\gamma, \hat{\bm\tau}} = \int_a^b\ip{\vb{f}(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
+	L_{\gamma, \hat{\bm\tau}} = \int_a^b\ip{\vecf(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
 $$
 
 \begin{theorem}
@@ -169,21 +169,21 @@ $$
 
 \begin{definition}
 	[Campo vettoriale conservativo]
-	Siano $A \subseteq \R^n$ un aperto connesso e $\vb{f} \in \C{0}(A,\R^n)$. $\vb{f}$ è un campo vettoriale conservativo se $\exists U \in \C{1}(A,\R) \tc$
+	Siano $A \subseteq \R^n$ un aperto connesso e $\vecf \in \C{0}(A,\R^n)$. $\vecf$ è un campo vettoriale conservativo se $\exists U \in \C{1}(A,\R) \tc$
 	$$
-		\vb{f}(\vb{x})=\grad U(\vb{x}) \ \forall \vb{x} \in A
+		\vecf(\vb{x})=\grad U(\vb{x}) \ \forall \vb{x} \in A
 	$$
-	In tal caso $U$ è detto potenziale del campo $\vb{f}$.
+	In tal caso $U$ è detto potenziale del campo $\vecf$.
 \end{definition}
 
 \begin{prop}
-	Siano $\vb{f} \in \C{0}(A,\R^n)$ con $A$ aperto connesso e $U \in \C{1}(A,\R)$ un suo potenziale. Allora $V\in \C{1}(A,\R)$ è un potenziale di $\vb{f} \iff \exists k \in \R \tc V(\vb{x})=U(\vb{x}) + k \ \forall \vb{x} \in A$.
+	Siano $\vecf \in \C{0}(A,\R^n)$ con $A$ aperto connesso e $U \in \C{1}(A,\R)$ un suo potenziale. Allora $V\in \C{1}(A,\R)$ è un potenziale di $\vecf \iff \exists k \in \R \tc V(\vb{x})=U(\vb{x}) + k \ \forall \vb{x} \in A$.
 	\qed
 \end{prop}
 
 \begin{theorem}
 	[Campi vettoriali conservativi e lavoro]
-	Sia $\vb{f} \in \C{0}(A,\R^n)$ un campo conservativo definito in $A\subseteq\R^n$ aperto e connesso e sia $U \in \C{1}(A,\R)$ un suo potenziale. Allora, se $(\gamma,\hat{\bm\tau}) \subseteq A$ è una curva regolare a tratti orientabile con primo estremo $\vb{x}_i$ e secondo estremo $\vb{x}_f$,
+	Sia $\vecf \in \C{0}(A,\R^n)$ un campo conservativo definito in $A\subseteq\R^n$ aperto e connesso e sia $U \in \C{1}(A,\R)$ un suo potenziale. Allora, se $(\gamma,\hat{\bm\tau}) \subseteq A$ è una curva regolare a tratti orientabile con primo estremo $\vb{x}_i$ e secondo estremo $\vb{x}_f$,
 	$$
 		L_{\gamma, \hat{\bm\tau}}=U(\vb{x}_f)-U(\vb{x}_i)
 	$$
@@ -195,9 +195,9 @@ $$
 
 \begin{theorem}
 	[Caratterizzazione dei campi vettoriali conservativi]
-	Siano $A\subseteq\R^n$ un aperto connesso, $\vb{f} \in \C{0}(A,\R^n)$. Allora le seguenti affermazioni sono equivalenti:
+	Siano $A\subseteq\R^n$ un aperto connesso, $\vecf \in \C{0}(A,\R^n)$. Allora le seguenti affermazioni sono equivalenti:
 	\begin{enumerate}
-		\item $\vb{f}$ è un campo vettoriale conservativo
+		\item $\vecf$ è un campo vettoriale conservativo
 		\item Per ogni coppia di curve regolari a tratti orientate $(\gamma_1,\hat{\bm\tau_1}), (\gamma_2,\hat{\bm\tau_2})$ con estremi coincidenti e $\gamma_1,\gamma_2 \subseteq A$ vale
 		$$
 			L_{\gamma_1,\hat{\bm\tau_1}}=L_{\gamma_2,\hat{\bm\tau_2}}
@@ -212,14 +212,14 @@ $$
 
 \begin{definition}
 	[Campo vettoriale irrotazionale]
-	Siano $A\subseteq\R^n$ un aperto connesso e $\vb{f} \in \C{1}(A,\R^n)$. $\vb{f}$ è detto irrotazionale se ha matrice jacobiana simmetrica, ovvero se
+	Siano $A\subseteq\R^n$ un aperto connesso e $\vecf \in \C{1}(A,\R^n)$. $\vecf$ è detto irrotazionale se ha matrice jacobiana simmetrica, ovvero se
 	$$
 		\frac{\partial f_i}{\partial x_j}(\vb{x})=\frac{\partial f_j}{\partial x_i}(\vb{x}) \ \forall \vb{x} \in A \ \forall i,j \in [n]
 	$$
 \end{definition}
 
 \begin{theorem}
-	Se $\vb{f} \in \C{1}(A,\R^n)$ con $A$ aperto connesso è conservativo, allora è irrotazionale.
+	Se $\vecf \in \C{1}(A,\R^n)$ con $A$ aperto connesso è conservativo, allora è irrotazionale.
 \end{theorem}
 
 \begin{proof}
@@ -227,7 +227,7 @@ $$
 \end{proof}
 
 \begin{theorem}
-	Sia $\vb{f} \in \C{1}(\R^2\setminus{(0,0)}, \R^2)$ un campo vettoriale irrotazionale. Se, detta $\gamma$ la circonferenza di raggio unitario centrata in $(0,0)$ e orientamento arbitrario, $L_{\gamma, \hat{\bm\tau}}=0$, allora $\vb{f}$ è conservativo.
+	Sia $\vecf \in \C{1}(\R^2\setminus{(0,0)}, \R^2)$ un campo vettoriale irrotazionale. Se, detta $\gamma$ la circonferenza di raggio unitario centrata in $(0,0)$ e orientamento arbitrario, $L_{\gamma, \hat{\bm\tau}}=0$, allora $\vecf$ è conservativo.
 \end{theorem}
 
 \begin{proof}
@@ -255,10 +255,10 @@ $$
 
 \begin{lemma}
 	[di Poincarè]
-	Sia $A \subseteq \R^n$ aperto convesso oppure stellato rispetto a un punto oppure semplicemente connesso. Sia $\vb{f}\in \C{1}(A,\R^n)$ un campo vettoriale irrotazionale. Allora $\vb{f}$ è conservativo in $A$.
+	Sia $A \subseteq \R^n$ aperto convesso oppure stellato rispetto a un punto oppure semplicemente connesso. Sia $\vecf\in \C{1}(A,\R^n)$ un campo vettoriale irrotazionale. Allora $\vecf$ è conservativo in $A$.
 	\qed
 \end{lemma}
 
 \begin{corollary}
-	Siano $A \subseteq \R^n$ un aperto connesso e $\vb{f} \in \C{1}(A,\R^n)$ un campo vettoriale irrotazionale. Allora $\forall B\subseteq A$ connesso oppure stellato oppure semplicemente connesso $\vb{f}$ è conservativo se ristretto a $B$.
+	Siano $A \subseteq \R^n$ un aperto connesso e $\vecf \in \C{1}(A,\R^n)$ un campo vettoriale irrotazionale. Allora $\forall B\subseteq A$ connesso oppure stellato oppure semplicemente connesso $\vecf$ è conservativo se ristretto a $B$.
 \end{corollary}
