@@ -258,3 +258,94 @@
 	[Integrale di Lebesgue di una funzione misurabile non negativa]
 	Se $A\in \mathcal{L}(\R^n) \e f:A\to [0,+\infty)$ è misurabile, allora $\int_Af=\sup\{\int_A \varphi_k:\varphi_k \leq f, \varphi_k \text{ è una funzione semplice positiva}\}$. In particolare, $f$ è detta sommabile se $\int_A f<+\infty$.
 \end{definition}
+
+\begin{theorem}\leavevmode
+	\begin{enumerate}
+		\item Ogni funzione misurabile non negativa definita in un insieme misurabile è integrabile secondo Lebesgue
+		\item Se $f,g:A\to [0,+\infty]$ sono misurabili in $A\in \mathcal{L}(\R^n)$, allora $f+cg \with c \in \R^+$ è misurabile e $\int_A (f+cg)=\int_Af+c\int_Ag$
+		\item Se $f,g:A\to[0,+\infty]$ sono misurabili in $A\in\mathcal{L}(\R^n) \e f\leq g$, allora $\int_Af\leq\int_Ag$
+		\item Se $B\subseteq A \with B\in \mathcal{L}(\R^n)$, allora $\int_Bf=\int_A\chi_Bf$
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	[Proprietà delle funzioni misurabili]
+	Siano $A \in \mathcal{L}(\R^n), \ f,g:A\to\R$ misurabili e $c \in \R$. Allora $f+g,\ cf,\ \dfrac{f}{g},\ \abs{f},\ \max\{f,g\} \e \min\{f,g\}$ sono misurabili in $A$. Nel caso della divisione, $g\neq 0 \ \forall \vb{x} \in A$.
+	\qed
+\end{theorem}
+
+\begin{theorem}
+	[Misurabilità e convergenza puntuale]
+	Siano $A \in \mathcal{L}(\R^n)$, $f_k:A\to\R \with k \in \N$ funzioni misurabili e $f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x})$. Allora $f$ è misurabile.\qed
+\end{theorem}
+
+\begin{definition}
+	[Funzione integrabile di segno variabile]
+	Siano $A\in\mathcal{L}(\R^n) \e f:A\to\R$. Si definiscono la parte positiva $f_+$ e la parte negativa $f_-$ di $f$ come nella Definizione \ref{def:ppos_pneg} del Capitolo \ref{chap:peano_jordan}. $f_+ \e f_-$ sono misurabili. Se almeno uno fra $\int_A f_+ \e \int_A f_-$ è finito, si definisce $\int_A f= \int_A f_+ - \int_A f_-$. Se $\int_A f_+,\int_A f_- <+\infty, \ f$ è detta sommabile.
+\end{definition}
+
+\begin{theorem}[Proprietà dell'integrale di Lebesgue]
+	Se $A \in \mathcal{L}(\R^n), \ f,g:A \to \overline{\R}$ sono misurabili e sommabili secondo Lebesgue, allora:
+	\begin{enumerate}
+		\item (Linearità) $\forall c \in \R, \ f+cg$ è sommabile e $\int_A(f+cg)=\int_Af+c\int_Ag$
+		\item (Monotonia) Se $f\leq g$, allora $\int_Af\leq\int_Ag$
+		\item $\abs{f}$ è sommabile e $\abs{\int_Af}\leq\int_A\abs{f}$
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Integrale di Riemann e di Lebesgue]\leavevmode
+	\begin{enumerate}
+		\item Se $f:[a,b]\to\R$ è integrabile secondo Riemann, allora $f$ è integrabile secondo Lebesgue e $$\int_{a(\mathcal{R})}^bf=\int_{a(\mathcal{L})}^{b}f$$
+		\item Sia $f:[a,b]\to\R$ misurabile secondo Lebesgue. Allora $f$ è integrabile secondo Riemann se e solo se soddisfa queste condizioni:
+		\begin{enumerate}[a.]
+			\item $f$ è limitata
+			\item L'insieme dei punti di discontinuità di $f$ ha misura di Lebesgue nulla
+			\qed
+		\end{enumerate}
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	[di Fubini]
+	Sia $f:\R^n\times\R^m\to\R$ misurabile secondo Lebesgue. $\abs{f}$ è sommabile in $\R^n\times\R^m$ se e solo se almeno uno dei seguenti integrali esiste finito: $\int_{\R^n}\left(\int_{\R^m}\abs{f}\right)<+\infty$ oppure $\int_{\R^m}\left(\int_{\R^n}\abs{f}\right)<+\infty$. In tal caso $f$ è sommabile e 
+	$$
+		\iint_{\R^n\times\R^m}f(\vb{x},\vb{y})\dd \vb{x} \dd \vb{y} = \int_{\R^n}\dd \vb{x}\left(\int_{\R^m} \dd \vb{y} f(\vb{x},\vb{y})\right)=\int_{\R^m}\dd \vb{y} \left(\int_{\R^n}\dd \vb{x} f(\vb{x},\vb{y})\right)
+	$$
+	\qed
+\end{theorem}
+
+\subsection{Lebesgue e i limiti di successioni}
+
+\begin{theorem}
+	[Successioni di funzioni sommabili uniformemente convergenti]
+	Siano $A\in \mathcal{L}(\R^n)$ limitato e $f_k,f:A\to\R \with k \in \N$ misurabili. Se $f_k \rightrightarrows f$ in $A$ e $f_k$ è sommabile $\forall k \in \N$, allora $f$ è sommabile e $\int_A f = \lim\limits_{k\to+\infty}\int_Af_k$.
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{theorem}
+	[Convergenza monotona]
+	Siano $A \in \mathcal{L}(\R^n)$ e $f_k:A\to[0,+\infty)$ una successione crescente di funzioni misurabili. Allora
+	\begin{enumerate}
+		\item $f_k$ sono integrabili secondo Lebesgue
+		\item $f_k$ convergono puntualmente a $f: A\to[0,+\infty]$: $$f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x})=\sup_kf_k(\vb{x})$$
+		\item $f$ è misurabile
+		\item $\displaystyle\int_Af=\lim_{k\to+\infty}\int_Af_k$
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	[della convergenza dominata]
+	Siano $A\in \mathcal{L}(\R^n)$ e $f_n:A\to\R$ misurabili. Sotto le seguenti ipotesi:
+	\begin{enumerate}[a.]
+		\item $\exists g:A\to[0,+\infty)$ sommabile tale che $\abs{f_n}\leq g\ \forall n \in \N \e \int_Ag<+\infty$
+		\item $f_n\xrightarrow[n\to+\infty]{A}f$, cioè che $f$ sia il limite puntuale di $f_n$
+	\end{enumerate}
+	allora $f_n,f$ sono sommabili e $\int_Af=\lim\limits_{n\to+\infty}\int_Af_n$.
+	\qed
+\end{theorem}
