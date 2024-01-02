@@ -197,3 +197,64 @@
 \end{theorem}
 
 \section{Integrale di Lebesgue}
+
+\begin{definition}
+	[Funzione semplice]
+	Siano $E_j \subseteq \R^n \with j=1,\dots,k$ insiemi misurabili secondo Lebesgue e $C_j \in \R$. Sia inoltre $\chi_{E_j}$ la funzione caratteristica dell'insieme $E_k$ definita come segue:
+	$$
+		\chi_{E_j}(\vb{x}) =
+		\begin{cases}
+			1 & \vb{x} \in E_j\\
+			0 & \vb{x} \notin E_j
+		\end{cases}
+	$$
+	$\varphi: \R^n \to [0, +\infty)$ definita come $\varphi(\vb{x})=\sum\limits_{j=1}^k C_j \chi_{E_j}(\vb{x})$ è detta funzione semplice. $\varphi$ è una funzione semplice positiva se $C_j \geq 0 \ \forall j=1,\dots,k$.
+\end{definition}
+
+\begin{definition}
+	[Integrale secondo Lebesgue di una funzione semplice positiva]
+	Sia $\varphi(\vb{x})=\sum\limits_{j=1}^k C_j \chi_{E_j}(\vb{x})$ con $C_j \geq 0 \ \forall j=1,\dots,k$. Si definisce integrale secondo Lebesgue di $\varphi$
+	$$
+		\idotsint_{\R^n}\varphi(x_1,\dots,x_n)\dd x_1 \cdots \dd x_n = \sum_{j=1}^kC_j\mu(E_j)
+	$$
+	con la convenzione che se $C_j=0$ e $\mu(E_j)=+\infty$, allora $C_j\mu(E_j)=0$.
+	Inoltre $\varphi$ si dice sommabile se $\int_{\R^n} \varphi < + \infty$.
+\end{definition}
+
+\begin{theorem}
+	[Proprietà dell'integrale di Lebesgue sulle funzioni semplici positive]\leavevmode
+	\begin{enumerate}
+		\item (Linearità) Se $\varphi,\psi$ sono funzioni semplici positive e $c\in \R^+$, allora $c\varphi + \psi$ è una funzione semplice positiva e $\int(c\varphi + \psi)=c\int\varphi +\int\psi$
+		\item (Monotonia) Se $\varphi, \psi$ sono funzioni semplici positive e $\varphi \leq \psi \ \forall \vb{x} \in \R^n$, allora  $\int \varphi \leq \int \psi$
+		\qed
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	[Funzione misurabile secondo Lebesgue]
+	Siano $A \in \mathcal{L}(\R^n) \e f:A\to [0,+\infty]$. $f$ è misurabile secondo Lebesgue se $\forall \beta \in \R, \ \{\vb{x}\in A:f(\vb{x})<\beta\} \in \mathcal{L}(\R^n)$.
+\end{definition}
+
+\begin{remark}
+	Le funzioni semplici sono misurabili secondo Lebesgue.
+\end{remark}
+
+\begin{theorem}
+	[Limite puntuale e integrale di Lebesgue]
+	Siano $A \in \mathcal{L}(\R^n) \e f_k:A \to [0,+\infty] \with k\in \N$ una successione di funzioni misurabili secondo Lebesgue non negative tale che $\lim\limits_{k\to +\infty}f_k(\vb{x})=f(\vb{x}) \ \forall \vb{x} \in A$. Allora $f$ è misurabile secondo Lebesgue.
+	\qed
+\end{theorem}
+
+\begin{theorem}
+	[Caratterizzazione delle funzioni misurabili positive]
+	Siano $A \subseteq \R^n$ misurabile secondo Lebesgue e $f:A\to [0,+\infty]$ misurabile secondo Lebesgue. Allora esiste una successione crescente di funzioni semplici non negative $\varphi_k:A\to [0,+\infty)$ convergenti ad $f$ puntualmente. Inoltre se $f$ è limitata, la convergenza delle $\varphi_k$ a $f$ è uniforme.
+\end{theorem}
+
+\begin{proof}
+	% TODO
+\end{proof}
+
+\begin{definition}
+	[Integrale di Lebesgue di una funzione misurabile non negativa]
+	Se $A\in \mathcal{L}(\R^n) \e f:A\to [0,+\infty)$ è misurabile, allora $\int_Af=\sup\{\int_A \varphi_k:\varphi_k \leq f, \varphi_k \text{ è una funzione semplice positiva}\}$. In particolare, $f$ è detta sommabile se $\int_A f<+\infty$.
+\end{definition}
