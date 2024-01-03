@@ -3,13 +3,21 @@
 \section{Elementi di topologia}
 
 \begin{definition}[Spazio metrico]
-    Si consideri un insieme $X$ e una funzione $d: X \to [0, +\infty)$ con le seguenti proprietà $\forall x,y,z \in X$:
+    Si consideri un insieme $X$ e una funzione $d: X\times X \to [0, +\infty)$ con le seguenti proprietà $\forall x,y,z \in X$:
     \begin{enumerate}
         \item $d(x,y) \geq 0$ e $d(x,y) \iff  x = y$
         \item $d(x,y) = d(y,x) \  \forall x, y \in X$
         \item $d(x,y) \leq d(x,z) + d(z,y)$
     \end{enumerate}
-    Chiamiamo spazio metrico la coppia $(X, d)$.
+    Si definisce spazio metrico la coppia $(X, d)$. Esempi di spazio metrico sono i seguenti:
+    \begin{itemize}
+        \item $\R^n$ con la metrica $p$, di cui la metrica euclidea è il caso con $p=2$: $d_p(\vb{x},\vb{y})=\left(\sum\limits_{i=1}^n \abs{x_i-y_i}^p\right)^{\frac{1}{p}}$
+        \item $\R^n$ con la metrica delta: $\delta(\vb{x},\vb{y})=\begin{cases}
+            0 &\vb{x}=\vb{y}\\
+            1 &\vb{x}\neq\vb{y}
+        \end{cases}$
+        \item $X=\{f:[a,b]\to\R, \text{ continue}\}$ con la metrica a infinito: $d_\infty(f,g)=\max\limits_{a\leq x\leq b}\abs{f(x)-g(x)}$
+    \end{itemize}
 \end{definition}
 
 \begin{definition}[Topologia]
@@ -22,7 +30,7 @@
 \end{definition}
 
 \begin{definition}[Intorno circolare aperto o palla aperta]
-    Sia dato $x_0 \in X$. Si definisce intorno circolare aperto di $x_0$ di raggio $r$ l'insieme $B_r(x_0)=\{x \in X : d(x, x_0) < r\}$.
+    Sia dato $x_0 \in X$. Si definisce intorno circolare aperto di $x_0$ di raggio $r>0$ l'insieme $B_r(x_0)=\{x \in X : d(x, x_0) < r\}$.
 \end{definition}
 
 \begin{definition}
@@ -102,8 +110,12 @@
 \end{definition}
 
 \begin{prop}
-    Sia $(X, d)$ uno spazio metrico. $A \subseteq X, \ x,y \in X \then \abs{d(x,A)-d(y,A)}\leq d(x,y)$. \qed
+    Sia $(X, d)$ uno spazio metrico. $A \subseteq X, \ x,y \in X \then \abs{d(x,A)-d(y,A)}\leq d(x,y)$.
 \end{prop}
+
+\begin{proof}
+    
+\end{proof}
 
 \begin{definition}
     [Diametro]
@@ -211,6 +223,18 @@
     Si consideri lo spazio metrico euclideo $(\R^n, d_2)$. Ogni insieme infinito e limitato possiede almeno un punto di accumulazione. \qed
 \end{theorem}
 
+\begin{prop}
+    Siano $(X,d)$ uno spazio metrico e $A\subseteq X$. Allora
+    \begin{enumerate}
+        \item $D(A)\subseteq \overline{A}$
+        \item $\overline{A} = A \cup D(A)$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    
+\end{proof}
+
 \begin{definition}
     [Punto isolato]
     $x \in A$ è un punto isolato di $A$ se $x \notin \text{D}(A)$, ovvero se non è un punto di accumulazione per $A$.
@@ -226,6 +250,11 @@
         \item $\norm{\lambda \vb{x}} = \abs{\lambda}\norm{\vb{x}}$
         \item $\norm{\vb{x} + \vb{y}} \leq \norm{\vb{x}} + \norm{\vb{y}}$
     \end{enumerate}
+    I seguenti sono esempi di norme:
+    \begin{itemize}
+        \item La norma euclidea in $\R^n$: $\norm{\vb{x}}_2=\sqrt{\sum\limits_{i=1}^nx_i^2}$
+        \item La norma a infinito in $\R^n$: $\norm{\vb{x}}_\infty = \max\limits_{1 \leq i \leq n}x_i$
+    \end{itemize}
 \end{definition}
 
 \begin{definition}
@@ -239,9 +268,13 @@
     \end{enumerate}
 \end{definition}
 
+\begin{remark}
+    Si noti che la struttura di spazio vettoriale dotato di prodotto interno induce automaticamente la struttura di spazio normato, che a sua volte induce una distanza e quindi una topologia sull'insieme.
+\end{remark}
+
 \begin{definition}
     [Ortogonale]
-    Siano $\vb{x}, \vb{y} \in X$. Si dice che $\vb{x}$ è ortogonale a $\vb{y}$ e si scrive $\vb{x} \perp \vb{y}$ se $\ip{\vb{x}}{\vb{y}}$.
+    Siano $\vb{x}, \vb{y} \in X$. Si dice che $\vb{x}$ è ortogonale a $\vb{y}$ e si scrive $\vb{x} \perp \vb{y}$ se $\ip{\vb{x}}{\vb{y}}=0$.
 \end{definition}
 
 \section{Successioni}
@@ -296,5 +329,5 @@
 
 \begin{theorem}
     [Scambio fra limite e derivata]
-    Siano $f_n, f, f_n', g: I \to \R$ tali che $d_\infty(f_n, f) \xrightarrow{n\to + \infty} 0$ e $d_\infty(f_n', g) \xrightarrow{n \to +\infty} 0$. Allora $f$ è derivabile in $I$ e $f'(t) = g(t)$. \qed
+    Siano $f_n, f, f_n', g: I \to \R$ tali che $f_n \rightrightarrows f$ e $f_n' \rightrightarrows g$. Allora $f$ è derivabile in $I$ e $f'(t) = g(t)$. \qed
 \end{theorem}
