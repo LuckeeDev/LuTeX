@@ -20,7 +20,7 @@
         
         \item $f$ trasforma successioni convergenti in $X$ in successioni convergenti in $Y$, cioè $\forall \{x_n\}_{n \in \N}, x_n \in X \ \forall n \tc \exists x \in X$ per cui $\displaystyle \lim_{n \to +\infty}d_x(x_n, x)=0$, si ha che $\displaystyle \lim_{n \to +\infty}d_y(f(x),f(x_n))=0$.
         
-        \item $\forall x \in X, \forall V \subseteq Y$ intorno circolare aperto di $f(x)$, $\exists U \subseteq X$ intorno circolare aperto di $x$ tale che $f(U) \subseteq f(V)$.
+        \item $\forall x \in X, \forall V \subseteq Y$ intorno circolare aperto di $f(x)$, $\exists U \subseteq X$ intorno circolare aperto di $x$ tale che $f(U) \subseteq V$.
 
         \item $\forall V$ aperto in $Y$, $f^{-1}(V)$ è aperto in $X$, dove $f^{-1}(V)=\{x \in X : f(x) \in V\}$.
         \qed
@@ -52,7 +52,7 @@
 
 \begin{theorem}
     [Relazioni fra regolarità delle funzioni]
-    Siano $(X, d_x), (Y, d_y)$ spazi metrici e $f:x \to Y$. Allora:
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici e $f:X \to Y$. Allora:
     \begin{enumerate}
         \item Se $f$ è uniformemente continua, allora è continua.
         \item Se $f$ è lipschitziana, allora è uniformemente continua.
@@ -61,14 +61,14 @@
     \end{enumerate}
 \end{theorem}
 
-\begin{theorem}
+\begin{prop}
     Si consideri lo spazio euclideo $(\R^n,d)$.
     \begin{enumerate}
         \item $x \in \overline{A} \iff \exists \{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N \tc d(x, x_k) \xrightarrow{k \to + \infty} 0$
 
         \item $A \subseteq \R^n$ è compatto $\iff \forall\{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N$ esiste una sottosuccessione $x_{k_l}$ convergente in $A$.
     \end{enumerate}
-\end{theorem}
+\end{prop}
 
 \begin{proof}
     % TODO
@@ -119,6 +119,11 @@
     [Spazio metrico completo]
     $(X, d)$ è uno spazio metrico completo se ogni successione di Cauchy in $X$ ha limite in $X$ rispetto a $d$.
 \end{definition}
+
+\begin{theorem}
+    [Principio di Cantor]
+    Sia $(X,d)$ uno spazio metrico. $(X,d)$ è completo se e solo se per ogni successione di insiemi chiusi non vuoti tali che $F_k \in X, F_{k+1}\subseteq F_k$ si ha che $\bigcap\limits_{k=1}^{\infty}F_k\neq\varnothing$.
+\end{theorem}
 
 \begin{definition}
     [Insieme denso]
