@@ -1,4 +1,4 @@
-\chapter{Funzioni fra spazi metrici}
+\chapter{Funzioni fra spazi metrici}\label{chap:functions}
 
 \section{Funzioni e regolarità}
 
@@ -8,7 +8,7 @@
 \end{definition}
 
 \begin{definition}
-    [Funzione continua fra spazi metrici]
+    [Funzione continua fra spazi metrici]\label{def:f_cont}
     Siano $(X, d_x), (Y, d_y)$ spazi metrici. $f: X \to Y$ si dice continua se $\forall x_0 \in X, \ \forall \varepsilon > 0 \ \exists \delta > 0 \tc d_y(f(x), f(x_0)) < \varepsilon \ \forall x \in A \tc d_x(x, x_0) < \delta$.
 \end{definition}
 
@@ -156,7 +156,7 @@
 \end{theorem}
 
 \begin{theorem}
-    [di permanenza del segno]
-    Sia $f: A \subseteq \R^n \to \R$ continua in $x_0 \in A$. Se $f(x_0)>0$, allora $\exists \varepsilon > 0 \tc f(x) > 0 \ \forall x \in B_\varepsilon(x_0)$.
+    [di permanenza del segno]\label{thm:sign}
+    Sia $f: A \subseteq \R^n \to \R$ continua in $\vb{x_0}\in A$. Se $f(\vb{x_0})>0$, allora $\exists \varepsilon > 0 \tc f(\vb{x}) > 0 \ \forall \vb{x} \in B_\varepsilon(\vb{x_0})$.
     \qed
 \end{theorem}

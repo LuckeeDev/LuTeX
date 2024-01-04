@@ -125,8 +125,52 @@
 \end{theorem}
 
 \begin{proof}
-    [Dimostrazione per $n=2$ e $k=1$.] % TODO
+    [Dimostrazione per $n=2$ e $k=1$.]
+    La dimostrazione si articola in tre passaggi: innanzitutto si costruisce $f$, poi ne si verifica la continuità e infine si calcola la sua derivata.
+
+
+    Per ipotesi, $\partial_yg(x_0,y_0) \neq 0$. Ai fini della dimostrazione, si supponga che $\partial_yg(x_0,y_0) > 0$. Per il teorema di permanenza del segno (Thm. \ref{thm:sign}, Cap. \ref{chap:functions}), esiste una scatola $W=[x_0-\delta,x_0+\delta]\times[y_0-\varepsilon,y_0+\varepsilon]\with \delta,\varepsilon>0 \tc \partial_yg(x,y)>0\ \forall (x,y)\in W$. Sia $h(y)=g(x_0,y)\in\C{1}$. Per quanto appena detto, $h(y)$ è una funzione strettamente crescente nell'intervallo $[y_0-\varepsilon, y_0+\varepsilon]$, per cui $h(y_0-\varepsilon)<0=h(y_0)<h(y_0+\varepsilon)$. Si è appena dimostrato che nel punto medio delle basi del rettangolo la funzione $g$ assume segni discordi. Applicando nuovamente il teorema di permanenza del segno, questa volta alla funzione $g(x,y)$ sulle basi del rettangolo, si ha che esiste un intervallo $[x_0-\delta ', x_0+\delta ']$ all'interno del quale $g(x,y_0-\varepsilon)<0<g(x,y_0+\varepsilon)$. Si noti che $\delta$ potrebbe non coincidere con $\delta '$, quindi, detto $\delta=\min\{\delta,\delta '\}$, per comodità la base del rettangolo sarà ancora $[x_0-\delta,x_0+\delta]$.
+    
+
+    Sia ora la funzione $\tilde{h}(y)=g(\overline{x},y) \in \C{1} \with \overline{x} \in [x_0-\delta,x_0+\delta]$ definita per $y \in [y_0-\varepsilon,y_0+\varepsilon]$. Per quanto detto in precedenza, $\tilde{h}(y_0-\varepsilon)<0<\tilde{h}(y_0+\varepsilon)$. Di conseguenza, per il teorema degli zeri, $\exists!\ \overline{y} \in [y_0-\varepsilon,y_0+\varepsilon] \tc \tilde{h}(\overline{y})=g(\overline{x},\overline{y})=0$. È quindi possibile definire $f:[x_0-\delta,x_0+\delta]\to[y_0-\varepsilon,y_0+\varepsilon] \tc f(\overline{x})=\overline{y} \ \forall\, \overline{x} \in [x_0-\delta,x_0+\delta]$.
+
+
+    Sia $(\overline{x},f(\overline{x}))\in W$. Per verificare la continuità di $f$, si fissi $\overline{\varepsilon}>0$. Allora, per lo stesso ragionamento applicato in precedenza, $g(\overline{x},f(\overline{x})-\overline{\varepsilon})<0=g(\overline{x},f(\overline{x}))<g(\overline{x}, f(\overline{x})+\overline{\varepsilon})$. Per questo motivo, $\exists \overline{\delta} \tc g(x,f(\overline{x})-\overline{\varepsilon}) < 0 < g(x,f(\overline{x})+\overline{\varepsilon}) \ \forall x \in [\overline{x}-\overline{\delta},\overline{x}+\overline{\delta}]\cap[x_0-\delta,x_0+\delta]$. Questo garantisce che $f(\overline{x})-\overline{\varepsilon} < f(x) < f(\overline{x})+\overline{\varepsilon}$, che è esattamente la definizione di continuità (Def. \ref{def:f_cont}, Cap. \ref{chap:functions}).
+
+
+    Per calcolare la derivata di $f$ in $x_1$, che è $\displaystyle\lim_{x_2\to x_1}\frac{f(x_2)-f(x_1)}{x_2-x_1}$, si introduce la funzione ausiliaria $\bm \varphi=(\varphi_1,\varphi_2):[0,1]\to W$ definita come segue:
+    $$
+        \begin{cases}
+            x=\varphi_1(t)=x_1+t(x_2-x_1)\\
+            y=\varphi_2(t)=f(x_1)+t(f(x_2)-f(x_1))
+        \end{cases}
+    $$
+    Sia ora $h(t)=(g\circ\bm\varphi)(t) \in \C{1}([0,1],\R)$. Per il teorema del valor medio di Lagrange, $h(1)-h(0)=h'(c) \with c \in [0,1]$.
+    \begin{equation}
+        h(1)-h(0)=g(\bm\varphi(1))-g(\bm\varphi(0))=g(x_2,f(x_2))-g(x_1,f(x_1))=0\label{eq:h1_h0}
+    \end{equation}
+    Inoltre,
+    \begin{align}
+        h'(c)
+        &=\innerproduct{\grad g(\bm\varphi(c))}{\bm\varphi'(c)}=\notag\\
+        &=\frac{\partial g}{\partial x}(\bm\varphi(c))[x_2-x_1]+\frac{\partial g}{\partial y}(\bm\varphi(c))[f(x_2)-f(x_1)]\label{eq:der_h}
+    \end{align}
+    Siano ora $\xi=\xi(c)=x_1+c(x_2-x_1) \e \eta=\eta(c)=f(x_1)+c(f(x_2)-f(x_1))$. Unendo i risultati delle equazioni \eqref{eq:h1_h0} e \eqref{eq:der_h} e considerando che $\partial_yg(x,y)\neq 0 \ \forall (x,y) \in W$, si conclude che
+    \begin{gather*}
+        \frac{\partial g}{\partial x}(\xi,\eta)[x_2-x_1]+\frac{\partial g}{\partial y}(\xi,\eta)[f(x_2)-f(x_1)]=0\\
+        \frac{f(x_2)-f(x_1)}{x_2-x_1}=-\frac{\partial_x g(\xi,\eta)}{\partial_y g(\xi,\eta)}
+    \end{gather*}
+    Se $x_2$ tende a $x_1$, $f(x_2)\to f(x_1)$ e $\eta \to f(x_1)$ perché $f$ è continua e, essendo $\xi$ intermedio fra $x_2$ e $x_1$, $\xi \to x_1$. In conclusione,
+    \begin{align*}
+        \frac{\dd f}{\dd x}(x_1)&=\lim_{x_2\to x_1}-\frac{\partial_x g(\xi,\eta)}{\partial_y g(\xi,\eta)}=\\
+        &=\lim_{(\xi,\eta)\to(x_1,f(x_1))}-\frac{\partial_x g(\xi,\eta)}{\partial_y g(\xi,\eta)}=\\
+        &=-\frac{\partial_x g(x_1,f(x_1))}{\partial_y g(x_1,f(x_1))}
+    \end{align*}
 \end{proof}
+
+\begin{remark}
+    Questa è alta pasticceria.
+\end{remark}
 
 \begin{theorem}
     [Caso generale con $k$ equazioni in $n$ incognite]
