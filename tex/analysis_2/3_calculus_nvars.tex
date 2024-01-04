@@ -49,7 +49,30 @@
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Si dimostra ciascun punto separatamente.
+    \begin{enumerate}
+        \item Si verifica che la distanza fra $f(\vb{x})$ e $f(\vb{x_0})$ tende a $0$ se $\vb{x}$ tende a $\vb{x_0}$.
+        \begin{align*}
+            \abs{f(\vb{x})-f(\vb{x_0})}&=\abs{\innerproduct{\vb{m}}{\vb{x}-\vb{x_0}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})}\leq\\
+            &\leq\abs{\innerproduct{\vb{m}}{\vb{\vb{x}-\vb{x_0}}}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})\leq\\
+            &\leq\norm{\vb{m}}\norm{\vb{x}-\vb{x_0}}+o(\norm{\vb{x}-\vb{x_0}})\xrightarrow{\vb{x}\to\vb{x_0}} 0
+        \end{align*}
+
+        \item Si studi il limite che definisce la derivata parziale $j$-esima di $f$ in $\vb{x_0}$.
+        \begin{align*}
+            \frac{\partial f}{\partial x_j}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\vb{e}}_j)-f(\vb{x_0})}{t}=\\
+            &=\lim_{t\to 0}\frac{\innerproduct{\vb{m}}{t\hat{\vb{e}}_j} + o(\abs{t})}{t}=\\
+            &=\innerproduct{\vb{m}}{\hat{\vb{e}}_j}=m_j
+        \end{align*}
+        La derivata parziale di $f$ rispetto a $x_j$ è la $j$-esima componente del vettore $\vb{m}$, quindi $\vb{m}=\grad f(\vb{x_0})$.
+
+        \item Come nel punto 2, si studi il limite che definisce la derivata direzionale di $f$ in $\vb{x_0}$.
+        \begin{align*}
+            \frac{\partial f}{\partial \hat{\bm \nu}}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\bm \nu})-f(\vb{x_0})}{t}=\\
+            &=\lim_{t\to 0}\frac{\innerproduct{\grad f(\vb{x_0})}{t\hat{\bm \nu}} + o(\abs{t})}{t}=\\
+            &=\innerproduct{\grad f(\vb{x_0})}{\hat{\bm \nu}}
+        \end{align*}
+    \end{enumerate}
 \end{proof}
 
 \begin{definition}
