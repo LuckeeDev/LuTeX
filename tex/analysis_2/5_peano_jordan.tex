@@ -402,14 +402,28 @@ $$\bm\Phi(\rho,\theta)=
     y=\rho \sin \theta
 \end{cases}
 $$
+
 Il determinante della matrice jacobiana di $\bm\Phi(\rho,\theta)$ è $\rho$. Di conseguenza, $\det J_{\bm\Phi}=0$ solo sul segmento $\{0\}\times[0,2\pi]$, che ha misura nulla nello spazio $(\rho,\theta)$ e che viene trasformato nel punto $(0,0)\in\R^2$, che ha misura nulla in $\R^2$.
 Inoltre $\bm\Phi(\rho,\theta)$ non è iniettiva sul segmento $\{0\}\times[0,2\pi]$ e sull'insieme $[0,+\infty)\times\{0,2\pi\}$, che hanno entrambi misura nulla nello spazio $(\rho,\theta)$. Il primo viene trasformato nel punto $(0,0)\in\R^2$ e il secondo nel semiasse $x$ positivo, ovvero $[0,+\infty)\times\{0\} \in \R^2$. Entrambi hanno misura nulla in $\R^2$.
 
-Per quanto detto, $\bm\Phi$ è un cambiamento di variabile ammissibile per il teorema \ref{thm:int_var}. Sia $f\in \C{0}(\bm\Phi(A),\R^2)$ con $K\subseteq[0,+\infty)\times[0,2\pi]$ compatto e misurabile, allora si ha
-$$\iint_{\bm\Phi(A)} f(x,y)\dd x \dd y=\iint_A (f\circ \bm\Phi)(\rho,\theta)\dd \rho \dd \theta$$
+Per quanto detto, $\bm\Phi$ è un cambiamento di variabile ammissibile per il teorema \ref{thm:int_var}. Sia $f\in \C{0}(\bm\Phi(K),\R^2)$ con $K\subseteq[0,+\infty)\times[0,2\pi]$ compatto e misurabile, allora si ha
+$$\iint_{\bm\Phi(K)} f(x,y)\dd x \dd y=\iint_K (f\circ \bm\Phi)(\rho,\theta)\rho\dd \rho \dd \theta$$
 
 \paragraph{Coordinate sferiche in $\R^3$}
-% TODO
+La trasformazione in coordinate sferiche nello spazio $\bm\Phi:[0,+\infty)\times[0,\pi]\times[0,2\pi] \to \R^3$ è definita come segue:
+$$
+\bm\Phi(\rho,\theta,\varphi)=
+\begin{cases}
+    x=\rho\sin\theta\cos\varphi\\
+    y=\rho\sin\theta\sin\varphi\\
+    z=\rho\cos\theta
+\end{cases}
+$$
+
+Il determinante della matrice jacobiana di $\bm\Phi(\rho,\theta,\varphi)$ è $\rho^2\sin\theta$. Il determinante si annulla quindi nel rettangolo $Z=\{0\}\times[0,\pi]\times[0,2\pi]$ e sull'insieme $[0,+\infty)\times\{\frac{\pi}{2},\frac{3}{2}\pi\}\times[0,2\pi]$, che hanno misura nulla e sono trasformati in insiemi di misura nulla. Inoltre $\bm\Phi(\rho,\theta,\varphi)$ non è iniettiva sul rettangolo $Z$ e sull'insieme $[0,+\infty)\times[0,\pi]\times\{0,2\pi\}$, tuttavia entrambi hanno misura nulla nello spazio $(\rho,\theta,\varphi)$ e sono trasformati in insiemi di misura nulla in $\R^3$, rispettivamente l'origine e il semipiano positivo del piano $xz$.
+
+$\bm\Phi$ è un cambiamento di variabile ammissibile per il teorema \ref{thm:int_var}. Sia $f \in \C{0}(\bm\Phi(K),\R^2)$ con $K\subseteq[0,+\infty)\times[0,\pi]\times[0,2\pi]$ compatto e misurabile, allora si ha
+$$\iiint_{\bm\Phi(K)}f(x,y,z)\dd x \dd y \dd z=\iiint_K(f\circ\bm\Phi)(\rho,\theta,\varphi)\rho^2\sin\theta  \dd \rho \dd \theta \dd \varphi$$
 
 \paragraph{Coordinate cilindriche in $\R^3$}
 % TODO
