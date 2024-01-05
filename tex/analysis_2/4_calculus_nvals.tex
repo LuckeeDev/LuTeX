@@ -274,20 +274,41 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
     [Condizioni con funzione di Lagrange]
     Siano $f,g_1,\dots,g_k \in \C{2}(A\subseteq\R^n, \R) \with A$ aperto e $\Gamma = \{ \vb{x} \in A: g_1 (\vb{x})=0, \dots, g_k(\vb{x})=0 \}$ una varietà regolare.
     \begin{enumerate}
-        \item Se $\vb{x_0} \in \Gamma$ è punto di minimo condizionato di $f$ a $\Gamma$, allora $\exists \overline{\lambda}_1,\dots,\overline{\lambda}_k \in \R \tc$
+        \item Se $\vb{x_0} \in \Gamma$ è punto di minimo (massimo) condizionato di $f$ a $\Gamma$, allora $\exists \overline{\lambda}_1,\dots,\overline{\lambda}_k \in \R \tc$
         \begin{enumerate}[a.]
-            \item $\grad f(\vb{x_0})=\displaystyle \sum_{j=1}^k \overline{\lambda}_j \grad g_j(\vb{x_0})$
-            \item $\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}} \geq 0 \ \forall \vb{h} \in T_{\vb{x_0}}\Gamma$, ovvero la restrizione della forma quadratica associata alla matrice $\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)$ allo spazio $T_{\vb{x_0}}\Gamma$ è definita positiva o semidefinita positiva 
+            \item $\grad f(\vb{x_0})=\sum\limits_{j=1}^k \overline{\lambda}_j \grad g_j(\vb{x_0})$
+            \item $\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}} \geq 0 \ (\leq 0) \ \forall \vb{h} \in T_{\vb{x_0}}\Gamma$, ovvero la restrizione della forma quadratica associata alla matrice $\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)$ allo spazio $T_{\vb{x_0}}\Gamma$ è definita positiva o semidefinita positiva (definita negativa o semidefinita negativa)
         \end{enumerate}
         \item Se $\vb{x_0} \in \Gamma$ soddisfa per una qualche scelta di $(\overline{\lambda}_1,\dots,\overline{\lambda}_k)$:
         \begin{enumerate}[a.]
-            \item $\grad f(\vb{x_0})=\displaystyle\sum_{j=1}^k\overline{\lambda}_j \grad g_j (\vb{x_0})$
-            \item $\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}} > 0 \ \forall \vb{h} \in T_{\vb{x_0}}\Gamma$
+            \item $\grad f(\vb{x_0})=\sum\limits_{j=1}^k\overline{\lambda}_j \grad g_j (\vb{x_0})$
+            \item $\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}} > 0\ (<0) \ \forall \vb{h} \in T_{\vb{x_0}}\Gamma$
         \end{enumerate}
-        allora $\vb{x_0}$ è punto di minimo condizionato di $f$ a $\Gamma$.
+        allora $\vb{x_0}$ è punto di minimo (massimo) condizionato di $f$ a $\Gamma$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-    [Dimostrazione del punto 2.] % TODO
+    [Dimostrazione del punto 2.]
+    La matrice hessiana della funzione langrangiana è la seguente:
+    $$
+        H_{\mathcal{L}}(\vb{x})=
+        \begin{bmatrix}
+            H_f(\vb{x})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x})
+            & -[J_{\vb{g}}(\vb{x})]^T\\
+            -J_{\vb{g}}(\vb{x}) & \vb{O}
+        \end{bmatrix}
+    $$
+    Applicando la formula di Taylor,
+    \begin{align*}
+        f(\vb{x})-f(\vb{x_0})&=\mathcal{L}(\vb{x};\overline{\lambda}_1,\dots,\overline{\lambda}_k)-\mathcal{L}(\vb{x_0};\overline{\lambda}_1,\dots,\overline{\lambda}_k)=\\
+        &=\frac{1}{2}\innerproduct{(\vb{x}-\vb{x_0},\vb{0})}{H_{\mathcal{L}}(\vb{x_0})(\vb{x}-\vb{x_0},\vb{0})}+o(\norm{\vb{x}-\vb{x_0}}^2)=\\
+        &=\frac{1}{2}\innerproduct{\vb{x}-\vb{x_0}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{x}-\vb{x_0})}+o(\norm{\vb{x}-\vb{x_0}}^2)
+    \end{align*}
+    Sia ora $\vb{x}=\bm\varphi(t)\in \C{1}((-\delta,\delta),\R^n) \tc \bm\varphi(0)=\vb{x_0} \e \bm\varphi'(0)=\vb{h} \in T_{\vb{x_0}}\Gamma$. Allora $\vb{x}=\vb{x_0}+t\vb{h}+\vb{o}(\abs{t})$ per $\abs{t}\to 0$. Di conseguenza,
+    \begin{gather*}
+        f(\vb{x})-f(\vb{x_0})=\frac{t^2}{2}\innerproduct{\vb{h}+\vb{o}(1)}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{h}+\vb{o}(1))}+o(\norm{\vb{h}+\vb{o}(1)}^2t^2)=\\
+        =\frac{t^2}{2}\innerproduct{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}}(1+o(1))\geq 0
+    \end{gather*}
+    Quindi $\vb{x_0}$ è minimo locale.
 \end{proof}
