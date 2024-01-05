@@ -213,7 +213,7 @@
 \end{definition}
 
 \begin{theorem}
-    [di Fermat]
+    [di Fermat]\label{thm:fermat}
     Sia $A \subseteq \R^n$ un aperto e $f: A \to \R$. Se $\vb{x_0} \in A$ è massimo o minimo locale per $f$ ed esiste il gradiente di $f$ in $\vb{x_0}$, allora $\grad f(\vb{x_0})=\vb{0}$, cioè $\vb{x_0}$ è punto critico di $f$.
 \end{theorem}
 
@@ -284,5 +284,30 @@ Matrici diverse possono essere associate alla stessa forma quadratica, infatti �
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Si dimostrano i punti \textit{1} e \textit{3}. I punti \textit{2} e \textit{4} hanno la dimostrazione identica, il punto \textit{5} non è stato affrontato.
+    \begin{enumerate}
+        \item $\vb{x_0}$ è un punto di minimo locale per $f$ e il suo gradiente esiste perché $f\in\C{2}$, allora per il teorema \ref{thm:fermat} $\grad f(\vb{x_0}) = \vb{0}$. Sia $F:(-\varepsilon,\varepsilon)\to \R$ definita come segue:
+        $$
+            F(t)=f(\vb{x_0}+t\hat{\bm\nu})\with \hat{\bm\nu} \in \R^n\tc \norm{\hat{\bm\nu}}=1
+        $$
+        Allora per costruzione $t=0$ è un punto di minimo locale per $F$. Per questo motivo,
+        \begin{align*}
+            0&\leq F''(0)=\lim_{h\to 0}\frac{\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0}+h\hat{\bm\nu})-\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})}{h}=\\
+            &=\lim_{h\to 0}\sum_{i=1}^n\frac{[\partial_i f(\vb{x_0 + h\hat{\bm\nu}})-\partial_i f(\vb{x_0})]\nu_i}{h}=\\
+            &=\sum_{i=1}^{n}\frac{\partial}{\partial \hat{\bm\nu}}\frac{\partial f}{\partial x_i}(\vb{x_0})\nu_i=\\
+            &=\sum_{i=1}^n\sum_{j=1}^{n}=\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})\nu_i\nu_j=\innerproduct{\hat{\bm\nu}}{H_f(\vb{x_0})\hat{\bm\nu}}
+        \end{align*}
+        Questo significa che $H_f(\vb{x_0})$ è definita positiva o semidefinita positiva.
+        \addtocounter{enumi}{1}
+        \item Si applichi la formula di Taylor alla funzione $f$ nel punto $\vb{x_0}$. Allora, essendo $\grad f(\vb{x_0})=\vb{0}$,
+        $$
+            f(\vb{x_0}+\vb{h})-f(\vb{x_0}) = \frac{1}{2}\innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{h}^2) \with \norm{h}\to 0
+        $$
+        Sia $\overline{\lambda}>0$ il minimo degli autovalori di $H_f(\vb{x_0})$, allora vale la seguente maggiorazione:
+        \begin{gather*} 
+            \innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}\geq \overline{\lambda}\norm{\vb{h}^2}\\
+            \then f(\vb{x_0}+\vb{h})-f(\vb{x_0})\geq \norm{h}^2\left(\frac{1}{2}\overline{\lambda}+o(1)\right)\geq 0
+        \end{gather*}
+        Per cui $\vb{x_0}$ è un punto di minimo locale per $f$.
+    \end{enumerate}
 \end{proof}
