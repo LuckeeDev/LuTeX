@@ -112,7 +112,14 @@
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    $f$ ha le derivate parziali continue in tutto $A$, quindi è differenziabile per il teorema \ref{thm:diff_tot}. Ai fini di questo passaggio, si consideri $A\subseteq\R^2$ e sia $(x_0,y_0)\in\R^2$. Sia $(x,y)$ un punto qualsiasi nella palla di raggio $\varepsilon>0$ centrata in $(x_0,y_0)$. Applicando il teorema del valor medio di Lagrange, si ottiene che
+    \begin{align*}
+        f(x,y)-f(x_0,y_0)&=f(x,y)+f(x,y_0)-f(x,y_0)-f(x_0,y_0)=\\
+        &=\frac{\partial f}{\partial x}(c,y_0)[x-x_0]+\frac{\partial f}{\partial y}(x,d)[y-y_0]=0
+    \end{align*}
+    Quindi $\exists \varepsilon > 0 \tc \forall \vb{x}\in B_\varepsilon(\vb{x_0})\cap A\ f(\vb{x})=f(\vb{x_0})$.
+    
+    $A$ è un insieme aperto, quindi essendo connesso è anche connesso per archi. Questo significa che, per qualsiasi $\vb{x},\vb{y} \in A$ è possibile costruire un'applicazione $\vb{r}:[0,1]\to A$ continua tale che $\vb{r}(0)=\vb{x} \e \vb{r}(1)=\vb{y}$. Sia $\overline{t}=\sup\{t \in [a,b]:f(\vb{r}(t))=f(\vb{x})\}$. Per assurdo, si supponga che sia $\overline{t}<1$. Questo è in diretta contraddizione con quanto detto in precedenza, perché vorrebbe dire che non è possibile trovare una palla centrata in $\vb{r}(\overline{t})$ in cui la funzione è costante. Quindi $\overline{t}=1$ e la funzione è costante.
 \end{proof}
 
 \section{Derivate di ordine superiore}
