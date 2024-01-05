@@ -57,14 +57,19 @@
 
 \begin{theorem}
     [Differenziale della funzione inversa]
-    Siano $A,B \subseteq \R^n$ aperti e sia $\vecf:A\to B \in \C{1}$. Allora vale che
+    Siano $A,B \subseteq \R^n$ aperti e sia $\vecf:A\to B$ un diffeomorfismo $\C{1}$. Allora vale che
     $$
-        J_{\vecf^{-1}}(\vb{y}) = \left(J_{\vecf}(\vecf^{-1}(\vb{y})) \right)^{-1} \ \forall \vb{y} \in B
+        J_{\vecf^{-1}}(\vb{y}) = \left(J_{\vecf}\left(\vecf^{-1}\left(\vb{y}\right)\right) \right)^{-1} \ \forall \vb{y} \in B
     $$
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    $\vecf$ è invertibile perché è un diffeomorfismo. Di conseguenza,
+    \begin{gather*}
+        \vecf\left(\vecf^{-1}(\vb{y})\right)=\vb{y}
+        \then J_{\vecf}\left(\vecf^{-1}(\vb{y})\right)\cdot J_{\vecf^{-1}}(\vb{y})=\text{id}_{n\times n}
+        \then J_{\vecf^{-1}}(\vb{y})=\left(J_{\vecf}\left(\vecf^{-1}(\vb{y})\right)\right)^{-1}
+    \end{gather*}
 \end{proof}
 
 \section{Varietà regolari}
