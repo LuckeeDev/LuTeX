@@ -16,14 +16,14 @@
 
 \begin{definition}
     [Pluri-intervallo]
-    Siano $I_1,\dots,I_k$ intervalli semi-aperti superiormente a due a due disgiunti. Si definisce pluri-intervallo l'unione $\displaystyle P=\bigcup_{j=1}^kI_j$. La misura di $P$ è $\mu_n(P)=\displaystyle \sum_{j=1}^k\mu_n(I_j)$. 
+    Siano $I_1,\dots,I_k$ intervalli semi-aperti superiormente a due a due disgiunti. Si definisce pluri-intervallo l'unione $P=\bigcup\limits_{j=1}^kI_j$. La misura di $P$ è $\mu_n(P)=\sum\limits_{j=1}^k\mu_n(I_j)$. 
     L'insieme dei pluri-intervalli di $\R^n$ viene indicato con $\mathcal{P}$.
 \end{definition}
 
 \begin{lemma}
     Valgono le seguenti proposizioni:
     \begin{itemize}
-        \item Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\displaystyle \bigcup_{j=1}^k P_j, \bigcap_{j=1}^kP_j \in \mathcal{P}$
+        \item Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\bigcup\limits_{j=1}^k P_j, \bigcap\limits_{j=1}^kP_j \in \mathcal{P}$
         \item Se $P_1,P_2 \in \mathcal{P}$, allora $P_2 \setminus P_1 \in \mathcal{P}$
         \qed
     \end{itemize}
@@ -42,17 +42,13 @@
         $$
             \mu_n(P\cup Q) + \mu_n (P \cap Q) = \mu_n (P) + \mu_n (Q)
         $$
+        \item (Sottrattività) Se $P,Q \in \mathcal{P} \then \mu_n(P\setminus Q)=\mu_n(P)-\mu_n(P\cap Q)$. In particolare, se $Q \subseteq P$, allora $\mu_n(P\setminus Q) = \mu_n (P)-\mu_n(Q)$
         \qed
     \end{enumerate}
 \end{theorem}
 
 \begin{corollary}
-    Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\displaystyle \mu_n\left(\bigcup_{j=1}^kP_j\right) \leq \sum_{j=1}^k\mu_n(P_j)$. Ovvero, vale la proprietà di subadditività finita per $\mu_n$ su $\mathcal{P}$.
-    \qed
-\end{corollary}
-
-\begin{corollary}
-    Se $P,Q \in \mathcal{P} \then \mu_n(P\setminus Q)=\mu_n(P)-\mu_n(P\cap Q)$. In particolare, se $Q \subseteq P$, allora $\mu_n(P\setminus Q) = \mu_n (P)-\mu_n(Q)$.
+    Se $P_1,\dots,P_k \in \mathcal{P}$, allora $\mu_n\left(\bigcup\limits_{j=1}^kP_j\right) \leq \sum\limits_{j=1}^k\mu_n(P_j)$. Ovvero, vale la proprietà di subadditività finita per $\mu_n$ su $\mathcal{P}$.
     \qed
 \end{corollary}
 
@@ -95,7 +91,7 @@
 \begin{lemma} Valgono le seguenti proposizioni:
     \begin{enumerate}
         \item $\mathcal{P} \subseteq \J_b(\R^n)$. Tutti i pluri-intervalli sono misurabili secondo Peano-Jordan e la misura coincide con quella definita in modo elementare.
-        \item Se $X_1,\dots,X_k \in \J_b(\R^n)$, allora $\displaystyle\bigcup_{j=1}^k X_j, \bigcap_{j=1}^kX_j \in \J_b(\R^n)$
+        \item Se $X_1,\dots,X_k \in \J_b(\R^n)$, allora $\bigcup\limits_{j=1}^k X_j, \bigcap\limits_{j=1}^kX_j \in \J_b(\R^n)$
         \item Se $X,Y \in \J_b(\R^n)\then X \setminus Y \in \J_b(\R^n)$
         \qed
     \end{enumerate}
@@ -127,7 +123,7 @@
         $$
         \item (Modularità) Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\cup Y)+\mu_n(X\cap Y)=\mu_n(X)+\mu_n(Y)$
         \item (Monotonia) Se $X,Y \in \J_b(\R^n) \e X \subseteq Y$, allora $\mu_n(X) \leq \mu_n(Y)$
-        \item Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
+        \item (Sottrattività) Se $X,Y \in \J_b(\R^n)$, allora $\mu_n(X\setminus Y)=\mu_n(X)-\mu_n(Y)$. In particolare, se $Y \subseteq X \then \mu_n (X \setminus Y)=\mu_n(X)-\mu_n(Y)$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -135,9 +131,9 @@
 \begin{theorem}
     [Caratterizzazione degli insiemi di misura nulla]\leavevmode
     \begin{enumerate}
-        \item $\mathring X = \varnothing \iff \mu_n^{(i)}=0$
+        \item $\mathring X = \varnothing \iff \mu_n^{(i)}(X)=0$
         \item $X \in \J_b(\R^n) \e \mu_n(X)=0 \iff \forall \varepsilon >0 \ \exists P \in \mathcal{P} \tc P \supseteq X \e \mu_n(P)< \varepsilon$
-        \item $X \in \J_b(\R^n) \e \mu_n(X)=0 \iff \mathring = \varnothing \e X \in \J_b(\R^n)$
+        \item $X \in \J_b(\R^n) \e \mu_n(X)=0 \iff \mathring X = \varnothing \e X \in \J_b(\R^n)$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -156,9 +152,9 @@
     \begin{enumerate}
         \item $\forall k \in \N, \ X_k \in \J_b(\R^n)$
         \item $X_k \subseteq X_{k+1}$
-        \item $\bigcup_{k=1}^{+\infty}X_k = \R^n$,
+        \item $\bigcup\limits_{k=1}^{\infty}X_k = \R^n$,
     \end{enumerate}
-    allora $\mu_n(X)=\displaystyle\lim_{k\to + \infty}\mu_n(X\cap X_k)$.
+    allora $\mu_n(X)=\lim\limits_{k\to + \infty}\mu_n(X\cap X_k)$.
     \qed
 \end{theorem}
 
@@ -173,10 +169,10 @@
 \end{theorem}
 
 \begin{theorem}
-    [Proprietà di $\J(\R^n)$]
+    [Proprietà di $\J(\R^n)$]\label{thm:prop_J}
     $\J(\R^n)$ gode delle seguenti proprietà:
     \begin{enumerate}
-        \item (Additività finita) Se $X_1,\dots,X_k \in \J(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup_{j=1}^kX_j \in \J(\R^n)$ e
+        \item (Additività finita) Se $X_1,\dots,X_k \in \J(\R^n), \ X_i \cap X_j = \varnothing \ \forall i, j \in [k]$, allora $\bigcup\limits_{j=1}^kX_j \in \J(\R^n)$ e
         $$
             \mu_n\left(\bigcup_{j=1}^kX_j\right) = \sum_{j=1}^k\mu_n(X_j)
         $$
@@ -192,6 +188,10 @@
         \qed
     \end{enumerate}
 \end{theorem}
+
+\begin{remark}
+    Nel punto \textit{3.} del teorema \ref{thm:prop_J} è importante non spostare termini dell'espressione da una parte all'altra dell'uguaglianza. Essendo $X \e Y$ insiemi non necessariamente limitati, si rischierebbe di avere una sottrazione $\infty - \infty$.
+\end{remark}
 
 \begin{lemma}
     $X \in \J(\R^n) \iff \partial X \in \J(\R^n) \e \mu_n(\partial X)=0$.
@@ -238,7 +238,7 @@
 \end{theorem}
 
 \begin{theorem}
-    [Proprietà dell'integrale di Riemann]
+    [Proprietà delle funzioni sommabili]
     Siano $A \in \J(\R^n), \ f,g: A \to \R$ limitate e sommabili secondo Riemann. Valgono le seguenti proprietà:
     \begin{enumerate}
         \item (Linearità) $\forall a,b \in \R, \ af + bg$ è sommabile e $\idotsint_A(af+bg)=a\idotsint_A f+b\idotsint_A g$
@@ -318,12 +318,12 @@
         \item $\forall \lambda \in [a,b], \ \sez_\lambda(K)$ è un insieme misurabile e
         \item $\forall \lambda < a \e \lambda > b, \ \sez_\lambda (K) = \varnothing$,
     \end{enumerate}
-    allora $K$ è un solido di Cavalieri.
+    allora $K$ è detto solido di Cavalieri.
 \end{definition}
 
 \begin{axiom}
     [di Cavalieri]
-    Se $V$ e $W$ sono solidi di Cavalieri rispetto allo stesso asse $\hat{\lambda}$ e $\mu_2(\sez_\lambda(V))\leq\mu_2(\sez_\lambda(W)) \ \forall \lambda \in [a,b]$, allora $\mu_3(V)\leq \mu_3(W)$. Inoltre, se $\mu_2(\sez_\lambda(V))=\mu_2(\sez_\lambda(W))$, allora $\mu_3(V)=\mu_3(W)$.
+    Se $V$ e $W$ sono solidi di Cavalieri rispetto allo stesso asse $\hat{\lambda}$, $\mu_2(\sez_\lambda(V))\leq\mu_2(\sez_\lambda(W)) \ \forall \lambda \in [a,b]$ e $\mu_2(\sez_\lambda(V))=\mu_2(\sez_\lambda(W))=0 \ \forall \lambda \notin [a,b]$, allora $\mu_3(V)\leq \mu_3(W)$. Inoltre, se $\mu_2(\sez_\lambda(V))=\mu_2(\sez_\lambda(W))$, allora $\mu_3(V)=\mu_3(W)$.
 \end{axiom}
 
 \begin{theorem}
@@ -358,8 +358,27 @@
 
 \subsection{Cambiamento di variabile nell'integrale multiplo}
 
+Per comprendere il significato del cambiamento di variabile nell'integrale multiplo, è opportuno ricordare le principali caratteristiche delle applicazioni lineari.
+
+\begin{definition}
+    [Applicazione lineare]
+    Sia $\vb{A}:\R^n\to\R^n$ un'applicazione. Essa è detta lineare se possiede le seguenti proprietà:
+    \begin{enumerate}
+        \item $\vb{A}(\vb{u}+\vb{v})=\vb{A}(\vb{u})+\vb{A}(\vb{v}) \ \forall \vb{u},\vb{v}\in \R^n$
+        \item $\vb{A}(\lambda\vb{v})=\lambda \vb{A}(\vb{v}) \ \forall \lambda \in \R, \ \forall \vb{v} \in \R^n$ 
+    \end{enumerate}
+    Inoltre, detta $M_A \in \mathcal{M}_{n\times n}$ la matrice associata all'applicazione $\vb{A}$, il valore assoluto del suo determinante rappresenta il fattore di cui viene riscalata la misura di un qualsiasi $Q\subseteq \R^n$ attraverso l'applicazione.
+    $$\mu_n(\vb{A}(Q))=\abs{\det M_A}\mu_n(Q)$$
+\end{definition}
+
+\begin{remark}
+    Si noti che nel caso lineare $\det M_A \neq 0 \then A$ biunivoca da $\R^n$ in $\R^n$.
+\end{remark}
+
+Nel caso non lineare, quindi con un'applicazione $\bm\varphi$ qualsiasi, non esiste un fattore di scala valido per tutto lo spazio, ma localmente è possibile approssimare la trasformazione con una trasformazione lineare. Il fattore di scala infinitesimo è rappresentato dal determinante della matrice jacobiana dell'applicazione. Inoltre non vale l'osservazione appena fatta ed è quindi necessario richiedere sia che $\bm\varphi$ sia iniettiva sia che abbia $\det J_{\bm\varphi} \neq 0$.
+
 \begin{theorem}
-    Siano $A \subseteq \R^n$ aperto, $\bm\varphi \in \C{1}(A,\R^n), \bm\varphi \ \inj \e \det J_{\bm\varphi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\varphi(K)$ è compatto e misurabile e vale
+    Siano $A \subseteq \R^n$ aperto, $\bm\varphi \in \C{1}(A,\R^n), \bm\varphi \inj \e \det J_{\bm\varphi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\varphi(K)$ è compatto e misurabile e vale
     $$
         \mu_n(\bm\varphi(K))=\idotsint_K \abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1 \cdots \dd u_n
     $$
@@ -371,7 +390,7 @@
 \end{theorem}
 
 \begin{remark}
-    Il teorema del cambiamento di variabile continua a valere nel caso di perdita di iniettività o $\det J_{\bm\varphi}\neq 0$ su insiemi di misura nulla che sono trasformati in insiemi di misura nulla.
+    Il teorema del cambiamento di variabile continua a valere nel caso di perdita di iniettività o di $\det J_{\bm\varphi}\neq 0$ su insiemi di misura nulla che sono trasformati in insiemi di misura nulla.
 \end{remark}
 
 \paragraph{Coordinate polari nel piano}
