@@ -4,7 +4,7 @@
 
 \begin{definition}
     [Derivata parziale]
-    Sia $f: A \subseteq \R^n \to \R$. Si definisce derivata parziale $j$-esima di $f$ in $\vb{x_0}$ il valore del seguente limite, se esiste finito:
+    Sia $f: A \subseteq \R^n \to \R$ con $A$ aperto. Si definisce derivata parziale $j$-esima di $f$ in $\vb{x_0}$ il valore del seguente limite, se esiste finito:
     $$
         \frac{\partial f}{\partial x_j} (\vb{x_0}) = \displaystyle \lim_{h\to 0} \frac{f(\vb{x_0} + h\vb{\hat{e}_j}) - f(\vb{x_0})}{h} \in \R
     $$
@@ -39,7 +39,7 @@
 \end{definition}
 
 \begin{theorem}
-    [Proprietà delle funzioni differenziabili]
+    [Proprietà delle funzioni differenziabili]\label{thm:prop_diff}
     Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$ e $f:A \to \R$ una funzione differenziabile. Allora:
     \begin{enumerate}
         \item $f$ è continua in $\vb{x_0}$
@@ -58,7 +58,7 @@
             &\leq\norm{\vb{m}}\norm{\vb{x}-\vb{x_0}}+o(\norm{\vb{x}-\vb{x_0}})\xrightarrow{\vb{x}\to\vb{x_0}} 0
         \end{align*}
 
-        \item Si studi il limite che definisce la derivata parziale $j$-esima di $f$ in $\vb{x_0}$.
+        \item Si studia il limite che definisce la derivata parziale $j$-esima di $f$ in $\vb{x_0}$.
         \begin{align*}
             \frac{\partial f}{\partial x_j}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\vb{e}}_j)-f(\vb{x_0})}{t}=\\
             &=\lim_{t\to 0}\frac{\innerproduct{\vb{m}}{t\hat{\vb{e}}_j} + o(\abs{t})}{t}=\\
@@ -66,7 +66,7 @@
         \end{align*}
         La derivata parziale di $f$ rispetto a $x_j$ è la $j$-esima componente del vettore $\vb{m}$, quindi $\vb{m}=\grad f(\vb{x_0})$.
 
-        \item Come nel punto 2, si studi il limite che definisce la derivata direzionale di $f$ in $\vb{x_0}$.
+        \item Come nel punto \textit{2}, si studia il limite che definisce la derivata direzionale di $f$ in $\vb{x_0}$.
         \begin{align*}
             \frac{\partial f}{\partial \hat{\bm \nu}}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\bm \nu})-f(\vb{x_0})}{t}=\\
             &=\lim_{t\to 0}\frac{\innerproduct{\grad f(\vb{x_0})}{t\hat{\bm \nu}} + o(\abs{t})}{t}=\\
@@ -75,13 +75,17 @@
     \end{enumerate}
 \end{proof}
 
+\begin{remark}
+    Si noti che dal punto \textit{3} del teorema \ref{thm:prop_diff} si evince che la direzione di massima variazione della funzione nel punto $\vb{x_0}$ sia esattamente la direzione del gradiente di $f$ in $\vb{x_0}$.
+\end{remark}
+
 \begin{definition}
     [Insieme di livello]
     Siano $A \subseteq \R^n$ un aperto, $f:A \to \R$ e $c \in \R$. Si definisce insieme di livello l'insieme $M_c = \{ \vb{x} \in A : f(\vb{x})=c\}\subseteq A$.
 \end{definition}
 
 \begin{theorem}
-    [del differenziale totale]
+    [del differenziale totale]\label{thm:diff_tot}
     Siano $A \subseteq \R^n$ un aperto e $f: A \to \R$ derivabile in $A$. Se $\frac{\partial f}{\partial x_j} (\vb{x})$ sono continue in $\vb{x_0} \ \forall j \in [n]$, allora $f$ è differenziabile in $\vb{x_0}$.
 \end{theorem}
 
@@ -110,14 +114,14 @@
 
 \begin{definition}
     [Insieme $\C{k}(A, \R)$]
-    Si definisce l'insieme delle funzioni derivabili con continuità $k$ volte in $A$:
+    Si definisce l'insieme delle funzioni derivabili con continuità $k$ volte in $A\subseteq\R^n$ aperto:
     $$
         \displaystyle \C{k}(A,\R) = \left\{ f: A \to \R \tc \ \exists \frac{\partial f}{\partial x_i},\dots,\frac{\partial ^2 f}{\partial x_i \partial x_j}, \dots, \frac{\partial ^k f}{\partial x_{i_1}\cdots\partial x_{i_k}} \text{ continue in } A \right\}
     $$
 \end{definition}
 
 \begin{remark}
-    Si noti che devono essere continue tutte le combinazioni possibili di derivate, che crescono molto velocemente ($n^k$).
+    Si noti che per il teorema \ref{thm:diff_tot} è sufficiente che siano continue le derivate $k$-esime, perché le altre lo sono di conseguenza. Devono comunque essere continue tutte le combinazioni possibili di derivate, che crescono molto velocemente ($n^k$ combinazioni per le derivate di ordine $k$).
 \end{remark}
 
 \begin{theorem}
@@ -194,7 +198,12 @@
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Sia $F_j(t)=f(\vb{x_0}+t\hat{\vb{e}}_j):(-\varepsilon,\varepsilon)\to\R$, dove $\hat{\vb{e}}_j$ è il $j$-esimo vettore della base canonica. Per costruzione $t=0$ è un punto di massimo o minimo locale per $F_j$, di conseguenza per il teorema di Fermat in una dimensione $$\frac{\dd F_j}{\dd t}(0)=0$$
+    Inoltre, si ha che
+    \begin{align*}
+        \frac{\dd F_j}{\dd t}(0) =\lim_{h\to0}\frac{F(h)-F(0)}{h}= \lim_{h\to 0}\frac{f(\vb{x_0}+h\hat{\vb{e}}_j)-f(\vb{x_0})}{h}=\frac{\partial f}{\partial x_j}(\vb{x_0})
+    \end{align*}
+    Dove nell'ultima uguaglianza si è usato il fatto che per ipotesi esistono tutte le derivate parziali di $f$. In conclusione, ogni componente del gradiente è nulla quindi si ha la tesi.
 \end{proof}
 
 \subsection{Forme quadratiche}
