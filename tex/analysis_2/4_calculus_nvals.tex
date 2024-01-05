@@ -81,8 +81,19 @@
 
 \begin{definition}
     [Vettore tangente]
-    Il vettore $\vb{h} \in \R^n$ è tangente a $\Gamma$ in $\vb{x_0}$ se $\exists \varphi: (-\varepsilon, \varepsilon) \to \Gamma \subseteq \R^n$ di classe $\C{1} \tc \varphi (0) = \vb{x_0} \e \varphi ' (0) = \vb{h}$.
+    Il vettore $\vb{h} \in \R^n$ è tangente a $\Gamma$ in $\vb{x_0}$ se $\exists \bm\varphi: (-\varepsilon, \varepsilon) \to \Gamma \subseteq \R^n$ di classe $\C{1} \tc \bm\varphi (0) = \vb{x_0} \e \bm\varphi ' (0) = \vb{h}$.
 \end{definition}
+
+Per ricavare i vettori appartenenti allo spazio tangente si definisce $\vb{G}=(\vb{g}\circ\bm\varphi):(-\varepsilon,\varepsilon)\to\R^k$. Considerando che la funzione $\vb{g}$ non varia spostandosi sulla varietà regolare (cioè variando il parametro $t$ della funzione $\bm\varphi$), si ha che:
+$$
+    \vb{0}=\frac{\dd \vb{G}}{\dd t}(0)=J_{\vb{g}}(\bm\varphi(0))\cdot \bm\varphi'(0)=
+    \begin{bmatrix}
+        \innerproduct{\grad g_1(\vb{x_0})}{\vb{h}}\\
+        \vdots\\
+        \innerproduct{\grad g_k(\vb{x_0})}{\vb{h}}
+    \end{bmatrix}
+$$
+Dall'ultimo termine si deduce che $\vb{h}$ deve essere perpendicolare a tutti i gradienti delle componenti della funzione $\vb{g}$.
 
 \begin{definition}
     [Spazio tangente]
@@ -100,7 +111,7 @@
     [Spazio normale]
     Se $\Gamma$ è una varietà regolare $(n-k)$-dimensionale e $\vb{x_0} \in \Gamma$, si definisce lo spazio normale come segue:
     $$
-        N_{\vb{x_0}}\Gamma = \left\{ \vb{h}=(h_1,\dots,h_n) \in \R^n : \exists \lambda_1, \dots, \lambda_k \in \R \e \vb{h}=\sum_{j=1}^n \lambda_j \grad g_j(\vb{x_0}) \right\}
+        N_{\vb{x_0}}\Gamma = \left\{ \vb{h}=(h_1,\dots,h_n) \in \R^n : \exists \lambda_1, \dots, \lambda_k \in \R \e \vb{h}=\sum_{j=1}^k \lambda_j \grad g_j(\vb{x_0}) \right\}
     $$
     Si noti che $\dim N_{\vb{x_0}}\Gamma = k$.
 \end{definition}
