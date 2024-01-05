@@ -93,7 +93,7 @@ $$
         \innerproduct{\grad g_k(\vb{x_0})}{\vb{h}}
     \end{bmatrix}
 $$
-Dall'ultimo termine si deduce che $\vb{h}$ deve essere perpendicolare a tutti i gradienti delle componenti della funzione $\vb{g}$.
+Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i gradienti delle componenti della funzione $\vb{g}$.
 
 \begin{definition}
     [Spazio tangente]
@@ -243,7 +243,7 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere perpendicolare a tutti i 
     Si ha così la tesi.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:fermat_cond}
     Sotto le ipotesi del teorema \ref{thm:fermat_cond}, $\grad f (\vb{x_0}) \in N_{\vb{x_0}}\Gamma$. Questo fatto ne dà un'intuitiva interpretazione geometrica.
     \qed
 \end{corollary}
@@ -262,7 +262,12 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere perpendicolare a tutti i 
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Il gradiente di $\mathcal{L}$ è
+    $$
+        \grad \mathcal{L}(\vb{x};\lambda_1,\dots,\lambda_k)=\left(\grad f(\vb{x})-\sum_{j=1}^{k}\lambda_j\grad g_j(\vb{x}),-g_1(\vb{x}),\dots,-g_k(\vb{x})\right)
+    $$
+    Se $\vb{x_0}$ è un punto estremante condizionato per $f$ a $\Gamma$, allora $\grad f(\vb{x_0})\in N_{\vb{x_0}}\Gamma$ per il corollario \ref{cor:fermat_cond}. Questo significa che $\exists \overline{\lambda}_1,\dots,\overline{\lambda}_k \tc \grad f(\vb{x_0}) = \sum\limits_{j=1}^k\overline{\lambda}_j\grad g_j(\vb{x_0})$. Di conseguenza, le prime $n$ componenti del gradiente di $\mathcal{L}$ in $\vb{x_0}$ sono nulle. Le ultime $k$ componenti sono nulle in $\vb{x_0}$ perché $\vb{x_0}\in\Gamma$ quindi è soluzione del sistema di equazioni $\vb{g}(\vb{x})=\vb{0}$.
+    In conclusione, $(\vb{x_0},\overline{\lambda}_1,\dots,\overline{\lambda}_k)$ è un punto critico libero per $\mathcal{L}$.
 \end{proof}
 
 \begin{theorem}
