@@ -375,26 +375,38 @@ Per comprendere il significato del cambiamento di variabile nell'integrale multi
     Si noti che nel caso lineare $\det M_A \neq 0 \then A$ biunivoca da $\R^n$ in $\R^n$.
 \end{remark}
 
-Nel caso non lineare, quindi con un'applicazione $\bm\varphi$ qualsiasi, non esiste un fattore di scala valido per tutto lo spazio, ma localmente è possibile approssimare la trasformazione con una trasformazione lineare. Il fattore di scala infinitesimo è rappresentato dal determinante della matrice jacobiana dell'applicazione. Inoltre non vale l'osservazione appena fatta ed è quindi necessario richiedere sia che $\bm\varphi$ sia iniettiva sia che abbia $\det J_{\bm\varphi} \neq 0$.
+Nel caso non lineare, quindi con un'applicazione $\bm\Phi$ qualsiasi, non esiste un fattore di scala valido per tutto lo spazio, ma localmente è possibile approssimare la trasformazione con una trasformazione lineare. Il fattore di scala infinitesimo è rappresentato dal determinante della matrice jacobiana dell'applicazione. Inoltre non vale l'osservazione appena fatta ed è quindi necessario richiedere sia che $\bm\Phi$ sia iniettiva sia che abbia $\det J_{\bm\Phi} \neq 0$.
 
 \begin{theorem}
-    Siano $A \subseteq \R^n$ aperto, $\bm\varphi \in \C{1}(A,\R^n), \bm\varphi \inj \e \det J_{\bm\varphi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\varphi(K)$ è compatto e misurabile e vale
+    [Cambiamento di variabile nell'integrale multiplo]\label{thm:int_var}
+    Siano $A \subseteq \R^n$ aperto, $\bm\Phi \in \C{1}(A,\R^n)$, $\bm\Phi$ iniettiva e $\det J_{\bm\Phi} \neq 0$ in $A$. Allora, se $K \subseteq A$ è compatto e misurabile, anche $\bm\Phi(K)$ è compatto e misurabile e vale
     $$
-        \mu_n(\bm\varphi(K))=\idotsint_K \abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1 \cdots \dd u_n
+        \mu_n(\bm\Phi(K))=\idotsint_K \abs{\det J_{\bm\Phi}(u_1,\dots,u_n)}\dd u_1 \cdots \dd u_n
     $$
-    Inoltre, se $f \in \C{0}(\bm\varphi(K),\R)$, allora
+    Inoltre, se $f \in \C{0}(\bm\Phi(K),\R)$, allora
     $$
-        \idotsint_{\bm\varphi(K)}f(x_1,\dots,x_n)\dd x_1 \cdots \dd x_n=\idotsint_K (f \circ \bm\varphi)(u_1,\dots,u_n)\abs{\det J_{\bm\varphi}(u_1,\dots,u_n)}\dd u_1\cdots \dd u_n
+        \idotsint_{\bm\Phi(K)}f(x_1,\dots,x_n)\dd x_1 \cdots \dd x_n=\idotsint_K (f \circ \bm\Phi)(u_1,\dots,u_n)\abs{\det J_{\bm\Phi}(u_1,\dots,u_n)}\dd u_1\cdots \dd u_n
     $$
     \qed
 \end{theorem}
 
 \begin{remark}
-    Il teorema del cambiamento di variabile continua a valere nel caso di perdita di iniettività o di $\det J_{\bm\varphi}\neq 0$ su insiemi di misura nulla che sono trasformati in insiemi di misura nulla.
+    Il teorema del cambiamento di variabile continua a valere nel caso di perdita di iniettività o di $\det J_{\bm\Phi}\neq 0$ su insiemi di misura nulla che sono trasformati in insiemi di misura nulla.
 \end{remark}
 
 \paragraph{Coordinate polari nel piano}
-% TODO
+La trasformazione in coordinate polari nel piano $\bm\Phi:[0,+\infty)\times[0,2\pi]\to\R^2$ è definita come segue:
+$$\bm\Phi(\rho,\theta)=
+\begin{cases}
+    x=\rho \cos \theta\\
+    y=\rho \sin \theta
+\end{cases}
+$$
+Il determinante della matrice jacobiana di $\bm\Phi(\rho,\theta)$ è $\rho$. Di conseguenza, $\det J_{\bm\Phi}=0$ solo sul segmento $\{0\}\times[0,2\pi]$, che ha misura nulla nello spazio $(\rho,\theta)$ e che viene trasformato nel punto $(0,0)\in\R^2$, che ha misura nulla in $\R^2$.
+Inoltre $\bm\Phi(\rho,\theta)$ non è iniettiva sul segmento $\{0\}\times[0,2\pi]$ e sull'insieme $[0,+\infty)\times\{0,2\pi\}$, che hanno entrambi misura nulla nello spazio $(\rho,\theta)$. Il primo viene trasformato nel punto $(0,0)\in\R^2$ e il secondo nel semiasse $x$ positivo, ovvero $[0,+\infty)\times\{0\} \in \R^2$. Entrambi hanno misura nulla in $\R^2$.
+
+Per quanto detto, $\bm\Phi$ è un cambiamento di variabile ammissibile per il teorema \ref{thm:int_var}. Sia $f\in \C{0}(\bm\Phi(A),\R^2)$ con $K\subseteq[0,+\infty)\times[0,2\pi]$ compatto e misurabile, allora si ha
+$$\iint_{\bm\Phi(A)} f(x,y)\dd x \dd y=\iint_A (f\circ \bm\Phi)(\rho,\theta)\dd \rho \dd \theta$$
 
 \paragraph{Coordinate sferiche in $\R^3$}
 % TODO
