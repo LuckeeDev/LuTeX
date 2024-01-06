@@ -66,12 +66,25 @@
     \begin{enumerate}
         \item $x \in \overline{A} \iff \exists \{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N \tc d(x, x_k) \xrightarrow{k \to + \infty} 0$
 
-        \item $A \subseteq \R^n$ è compatto $\iff \forall\{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N$ esiste una sottosuccessione $x_{k_l}$ convergente in $A$.
+        \item $A \subseteq \R^n$ è compatto $\iff \forall\{x_k\}_{k\in \N}, x_k \in A \ \forall k \in \N$ esiste una sottosuccessione $x_{k_m}$ convergente in $A$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    % TODO
+    Si dimostra ciascun punto separatamente.
+    \begin{enumerate}
+        \item Sia $x \in \overline{A} \then x$ è aderente ad $A$, cioè $\forall \varepsilon > 0\ B_\varepsilon(x)\cap A \neq \varnothing$. Sia $\varepsilon=1/k$. Si può definire una successione tale che $x_k \in B_{1/k}(x)\cap A$, quindi tale che $d(x_k,x)\xrightarrow{k\to+\infty}0$.
+                
+        Viceversa, siano $x_k \in A, x \in X \tc d(x,x_k)\xrightarrow{k\to+\infty}0$. Allora $d(x,A)=\inf\limits_{y\in A}d(x,y)\leq d(x,x_k)\xrightarrow{k\to+\infty}0\then x \in \overline{A}$.
+
+        \item $\{x_k\}_{k\in\N}$ è una successione in A. Si presentano due casi:
+        \begin{enumerate}[a.]
+            \item L'insieme dei valori della successione è finito, ovvero $\exists y_1,\dots,y_p\in A$ tali che $\forall k \ x_k \in \{y_1,\dots,y_p\}$. Sia $N_j=\{k\in\N:x_k=y_j\} \with j=1,\dots,p$. Almeno uno degli $N_j$ è numerabile, si supponga in $j=\overline{j}$. Si può estrarre la sottosuccessione $x_{k_m}=y_{\overline{j}}\xrightarrow{m\to+\infty}y_{\overline{j}}$.
+            \item L'insieme dei valori della successione è infinito, ma, essendo $A$ limitato, è anch'esso limitato. Per il teorema di Bolzano-Weierstrass (Thm. \ref{thm:BW}, Cap. \ref{chap:topology}), $\{x_k, k \in \N\}$ possiede almeno un punto di accumulazione $a \in X$. Di conseguenza, è possibile definire $\forall m \in \N\ x_{k_m}\neq a \in B_{1/m}(a)\cap A$. Per quanto detto, $a$ è aderente ad $A$, il quale essendo compatto è anche chiuso, ovvero contiene i suoi punti di aderenza. Questo dimostra che $a \in A$.
+        \end{enumerate}
+        
+        Viceversa, $\forall \{x_k\}_{k\in\N} \with x_k \in A$ è possibile estrarre una sottosuccessione convergente a $x \in A$. Se $A$ non fosse limitato, $\forall k \in \N$ si potrebbe costruire una successione $x_{m_k} \tc \norm{x_{m_k}}\geq k$, che è chiaramente illimitata. Questo è assurdo, perché non sarebbe possibile estrarvi una sottosuccessione convergente. Sia $x \in \overline{A}$. Per il punto \textit{1} del teorema $\exists \{x_k\}_{k\in\N} \with x_k \in A \tc x_k\xrightarrow[k\to+\infty]{d}x$. Qualunque sottosuccessione di $x_k$ converge allo stesso limite, quindi $x \in A$. Di conseguenza, $A$ è chiuso perché $A=\overline{A}$.
+    \end{enumerate}
 \end{proof}
 
 \begin{theorem}
@@ -112,7 +125,7 @@
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Sia $x_0$ il limite della successione $x_n$. Per la definizione di successione convergente, $\forall \varepsilon > 0 \ \exists \overline{n} \tc \forall n>\overline{n}\ d(x_n,x_0) < \varepsilon$. Inoltre, per le proprietà della distanza (Def. \ref{def:distance}, Cap. \ref{chap:topology}) $d(x_m,x_p)\leq d(x_,x_0)+d(x_0,x_p) < 2\varepsilon \ \forall m,p \geq \overline{n}$.
 \end{proof}
 
 \begin{definition}
