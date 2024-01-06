@@ -30,4 +30,4 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ## Crediti
 
-Questo sito è basato sul template [PubTeX](https://github.com/jonhue/pubtex).
+Molti lavori che si trovano su questa pagina sono stati svolti in collaborazione con [est1ntore](https://github.com/est1ntore) e [ronzo13](https://github.com/ronzo13).
