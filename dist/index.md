@@ -14,6 +14,9 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 -   [Misura della costante di gravitazione universale tramite un pendolo di torsione](https://luckeedev.github.io/LuTeX/cavendish.pdf)  
     La relazione dell'esperienza di laboratorio conclusiva del primo anno in cui è stata misurata la costante di gravitazione universale.
 
+-   [Five nights at DIFA](https://luckeedev.github.io/LuTeX/fnad.pdf)  
+    Descrizione del gioco "Five nights at DIFA", il progetto per l'esame del corso "Programmazione per la Fisica".
+
 ### Secondo anno
 
 -   [Risalita di bolle in un liquido](https://luckeedev.github.io/LuTeX/bubbles.pdf)  

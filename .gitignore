@@ -6,5 +6,5 @@
 *.fls
 *.fdb_latexmk
 *.out
-*.pdf
 *.dvi
+tex/*/*.pdf

@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{menukeys}
+\usepackage{amsmath}
+\usepackage[italian]{babel}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\newcommand{\quotes}[1]{``#1''}
+
+\title{Five nights at DIFA}
+\author{Lorenzo Redighieri\\Luca Zoppetti}
+\date{12 Giugno 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Five nights at DIFA è un gioco 2D sviluppato come progetto d'esame per il corso di Programmazione per la Fisica dell'anno accademico 2022-2023. L'obiettivo del protagonista è fuggire dai sotterranei di un edificio in cui imperversa un terribile virus. All'interno del progetto sono implementati il modello SIR e semplici algoritmi utili alla realizzazione di giochi.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\section{Il progetto}
+Il gioco è stato realizzato interamente in \verb|C++| con l'ausilio di alcuni strumenti di sviluppo che verranno trattati più in dettaglio nella sezione \ref{section:tools}. Sono state utilizzate due librerie esterne:
+\begin{itemize}
+    \item \verb|SFML|, per il rendering grafico degli elementi di gioco e per la gestione dei movimenti delle entità all'interno del gioco;
+    \item \verb|tmxlite|, una libreria per la lettura di mappe in formato \verb|.tmx|.
+\end{itemize}
+Le mappe \verb|.tmx| (quella di gioco e quella di test) che si trovano nell'archivio del progetto sono state disegnate con il programma esterno Tiled, che non è necessario per la compilazione e l'esecuzione del codice.
+
+L'archivio del progetto è strutturato in diverse sotto-cartelle per tenere organizzati il codice e le risorse utili all'esecuzione del programma:
+\begin{itemize}
+    \item \verb|assets|, contenente le mappe e tutte le \textit{texture} usate nel gioco;
+    \item \verb|modules|, utilizzata in combinazione con \verb|CMake| per rilevare la libreria esterna \verb|tmxlite|;
+    \item \verb|src|, contenente tutto il codice sorgente suddiviso in cartelle contenenti una classe ciascuna, la quale è separata in un \textit{header file}, un file sorgente e un file di test;
+    \item \verb|test|, utilizzata per creare un eseguibile contenente i test con \verb|doctest|.
+\end{itemize}
+
+\subsection{Istruzioni per la compilazione}
+La procedura descritta in seguito fa riferimento alla piattaforma Ubuntu \verb|22.04| (o equivalentemente a un sistema Windows con \verb|WSL|), su cui devono essere già installati \verb|CMake, git| e \verb|g++|. Per compilare il programma è necessario installare anche le due librerie esterne. \verb|SFML| è disponibile tramite il package manager di Ubuntu, quindi può essere installato con il seguente comando:
+\begin{verbatim}
+    $ sudo apt install libsfml-dev
+\end{verbatim}
+Al contrario, \verb|tmxlite| dev'essere scaricato e compilato dalla sua \href{https://github.com/fallahn/tmxlite}{\textit{repository}} di GitHub. È possibile farlo seguendo questi passaggi:
+\begin{verbatim}
+    $ git clone https://github.com/fallahn/tmxlite
+    $ cd tmxlite/tmxlite
+    $ mkdir build && cd build
+    $ cmake .. -DTMXLITE_STATIC_LIB=TRUE
+    $ sudo make install
+\end{verbatim}
+Estraendo l'archivio contenente il codice, è ora possibile proseguire con la compilazione. Il codice può essere compilato in \textit{Debug} mode, che abilita l'\textit{address sanitizer}, o in \textit{Release} mode. In entrambi i casi bisogna seguire la medesima procedura di compilazione dalla cartella principale del progetto:
+\begin{verbatim}
+    $ cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug/Release
+    $ cmake --build build
+\end{verbatim}
+Per eseguire i test si può lanciare il seguente comando:
+\begin{verbatim}
+    $ build/all.test
+\end{verbatim}
+Per far partire il gioco si utilizza invece il seguente:
+\begin{verbatim}
+    $ build/fnad
+\end{verbatim}
+In \textit{Debug} mode vengono segnalati dei \textit{memory leak} dall'\textit{address sanitizer}. Essi sono dovuti a codice presente nelle librerie esterne e non sono dovuti a codice scritto direttamente nel progetto.
+
+\subsection{Obiettivo del gioco}
+Il protagonista si trova catapultato nei sotterranei del Dipartimento di Fisica e Astronomia dell'Università di Bologna. Al suo interno imperversa una feroce epidemia che dilaga seguendo il modello SIR\footnote{Per la descrizione del modello si rimanda alla sezione \ref{section:sir}} e che rende i personaggi presenti nel gioco aggressivi nei confronti del protagonista. Il suo obiettivo è quello di raccogliere tre chiavi entro un tempo limite per poter fuggire da una delle porte presenti nei sotterranei prima che i nemici lo colpiscano tre volte.
+
+\subsection{Comandi}
+Per selezionare il livello all'inizio del gioco si possono utilizzare i tasti da \keys{1} a \keys{5} della tastiera o i tasti da \keys{1} a \keys{5} del tastierino numerico (con \keys{NumLock} attivato). Per muoversi all'interno della mappa sono disponibili i tasti \keys{W}, \keys{A}, \keys{S}, \keys{D} o le freccette (\keys{\arrowkeyup}, \keys{\arrowkeyleft}, \keys{\arrowkeydown}, \keys{\arrowkeyright}). Non è disponibile alcun altro comando\footnote{In realtà nel gioco è presente anche un piccolo \textit{easter egg}.}, le chiavi vengono raccolte automaticamente e per vincere è sufficiente passare sopra una porta dopo aver raccolto tre chiavi. Per chiudere il gioco dopo aver visto la schermata con il risultato si può premere \keys{INVIO}.
+
+\section{Strumenti di sviluppo}\label{section:tools}
+Per migliorare la qualità del prodotto finale sono stati utilizzati diversi software che vengono spiegati dettagliamente nel seguito.
+\subsection{CMake}
+\verb|CMake| è uno strumento di gestione del processo di \textit{build} che è stato fondamentale per la realizzazione del progetto. Esso ha permesso di organizzare tutti i comandi necessari alla compilazione in un semplice file di configurazione che è riportato nell'archivio del progetto, \verb|CMakeLists.txt|. In breve, il file di configurazione di \verb|CMake| esegue questi passaggi:
+\begin{itemize}
+    \item imposta delle avvertenze da mostrare durante la compilazione per prevenire alcuni errori comuni;
+    \item abilita l'\textit{address sanitizer} in \textit{Debug} mode per segnalare eventuali \textit{memory leak};
+    \item cerca le librerie esterne \verb|SFML| e \verb|tmxlite|;
+    \item crea un eseguibile per il programma contenente tutti i file sorgente e collega le librerie esterne;
+    \item costruisce un eseguibile di test unendo tutti i file di test e i rispettivi file sorgente, collegando anche in questo caso le librerie esterne.
+\end{itemize}
+
+\subsection{Clang Format}
+Clang Format è uno strumento di formattazione del codice che è stato utilizzato per applicare regole di formattazione comuni a tutti i file del progetto. È stata utilizzata la configurazione \quotes{google} fornita da Clang Format senza apportarvi alcuna modifica. Tutto il codice \verb|C++| del progetto è stato formattato con questo strumento.
+
+\subsection{Git e GitHub}
+Per tenere traccia delle modifiche effettuate nel corso del progetto è stato utilizzato Git, un sistema di \textit{version control} che permette di consolidare insiemi di modifiche apportate al codice in unità dette \textit{commit}. Per la condivisione della \textit{repository} creata con Git è stato utilizzato \href{https://github.com/LuckeeDev/fnad}{GitHub}, un servizio online per la condivisione di codice. GitHub offre diversi strumenti per facilitare la collaborazione, che sono stati usati ampiamente per il completamento del progetto. Ogni modifica è stata effettuata tramite un'apposita \textit{Pull Request}, all'interno della quale sono stati sfruttati gli strumenti di discussione e di revisione del codice offerti dalla piattaforma. Inoltre, fino al momento dell'aggiunta delle \textit{texture} dei personaggi è stata utilizzata una \textit{GitHub Action} apposita per la compilazione del programma e l'esecuzione dei test automatica ad ogni \textit{push} e ad ogni \textit{Pull Request}. Dopo aver aggiunto le \textit{texture} non è stato più possibile adottare questa strategia di testing perché le macchine virtuali di GitHub su cui vengono eseguite le \textit{Actions} non sono dotate di scheda grafica.
+
+\section{Strategie utilizzate}
+
+\subsection{Il modello SIR}\label{section:sir}
+Il modello SIR è stato implementato nei file \verb|epidemic.hpp| ed \verb|epidemic.cpp|. Sono state create due \verb|struct|: \verb|SIRState|, contenente tre \verb|double|, e \verb|SIRParams|, contenente due \verb|double|. \verb|SIRState| indica lo stato del modello SIR considerando S, I e R come variabili continue, mentre \verb|SIRParams| indica i parametri $\beta$ e $\gamma$ che regolano l'andamento dell'epidemia.\\
+È stata infine creata una classe, chiamata \verb|Epidemic|, avente i seguenti dati membri:
+\begin{itemize}
+    \item \verb|sir_state_| (di tipo \verb|SIRState|), indica lo stato in tempo reale dell'epidemia;
+    \item \verb|sir_params_| (di tipo \verb|SIRParams|), indica i parametri che regolano l'andamento dell'epidemia;
+    \item  \verb|enemies_| (di tipo \verb|std::vector<fnad::Enemy>|), contiene la popolazione di nemici a cui viene applicato il modello SIR;
+    \item \verb|days_per_second_| (di tipo \verb|double const|), indica quanti giorni del modello SIR passano ogni secondo di gioco (il suo valore è $0.5$).
+\end{itemize}
+Il costruttore di \verb|fnad::Epidemic| non accetta parametri e quando viene chiamato istanzia un'epidemia di default con i seguenti valori:
+\begin{itemize}
+    \item  \verb|sir_state_ = {1., 1., 0.}|,
+    \item \verb|sir_params_ = {0.7, 0.05}|.
+\end{itemize}
+Questa scelta permette di impostare l'epidemia in seguito alla scelta del livello di gioco da parte dell'utente. La creazione vera e propria di un oggetto di tipo \verb|fnad::Epidemic| avviene infatti tramite il metodo pubblico \verb|resetSIRState|, il quale prende in input un oggetto \verb|fnad::SIRState|, da cui estrae i valori da assegnare a \verb|sir_state_|, e un oggetto \verb|fnad::Map|, dal quale ottiene i dati necessari per generare i nemici nei punti corretti della mappa. L'oggetto \verb|fnad::Map| possiede un dato membro di tipo \verb|std::vector<fnad::Spawner>| (chiamato \verb|spawners_|), il quale contiene una collezione di oggetti \verb|fnad::Spawner| (che verranno chiamati \textit{spawners}). Ogni \textit{spawner} rappresenta una certa regione della mappa ed è dotato di un metodo pubblico (\verb|getSpawnPoint|) che restituisce un punto casuale all'interno di essa. A ciascun nemico viene dunque associato casualmente uno \textit{spawner} con probabilità proporzionale all'area di quest'ultimo, il quale assegna una posizione sulla mappa al nemico tramite il metodo \verb|getSpawnPoint|.
+
+L'evoluzione dell'epidemia è gestita dal metodo pubblico \verb|evolve|. Questa funzione prende in input un oggetto di tipo \verb|sf::Time| (che chiameremo \verb|dt|) e un altro di tipo \verb|fnad::Character| (che chiameremo \verb|character|). \verb|dt| indica il tempo passato nel gioco, che viene utilizzato per capire di quanto deve evolvere l'epidemia seguendo il modello SIR. Invece \verb|character| serve per determinare il movimento dei nemici infetti. Infatti \verb|evolve|, oltre a gestire l'evoluzione logica della pandemia, ne gestisce anche quella fisica, stabilendo lo spostamento grafico da applicare ad ogni oggetto contenuto nel vettore \verb|enemies_|: i nemici infetti che \quotes{vedono}\footnote{Un nemico \quotes{vede} il personaggio se il segmento che li congiunge non interseca alcun muro della mappa. Questo aspetta verrà trattato nella sezione \ref{section:vision}} il personaggio si muovono verso di lui, mentre tutti gli altri (tranne i rimossi) compiono un moto casuale.\\
+Ogni volta che viene chiamato il metodo \verb|evolve| (quindi ogni \textit{frame} di gioco) viene aggiornato il dato membro \verb|sir_state_| tramite le seguenti equazioni:
+\begin{align*}
+    S_i &= S_{i-1} - \beta \frac{S_{i-1}}{N} I_{i-1} \Delta T\\
+    I_i &= I_{i-1} + \left( \beta \frac{S_{i-1}}{N} I_{i-1} - \gamma I_{i-1} \right) \Delta T\\
+    R_i &= R_{i-1} + \gamma I_{i-1} \Delta T
+\end{align*}
+dove $S_i$, $I_i$ e $R_i$ indicano, rispettivamente, i valori delle variabili \verb|sir_state_.s|, \verb|sir_state_.i| e \verb|sir_state_.r| nell'$i$-esimo frame di gioco, $S_{i - 1}$, $I_{i - 1}$ e $R_{i - 1}$ indicano i valori posseduti dalle stesse variabili nel frame precedente, $N$ indica il numero totale di nemici (pari alla dimensione di \verb|enemies_|), $\beta$ e $\gamma$ indicano i valori delle variabili \verb|sir_params_.beta| e \verb|sir_params_.gamma| (costanti durante l'intera partita) e $\Delta T$ indica il valore di \verb|dt|.\\
+Il dato membro \verb|sir_state_| rappresenta lo stato continuo dell'epidemia (\verb|s|, \verb|i| e \verb|r| sono \verb|double|), ma ai fini del gioco serve una rappresentazione discreta di tale stato (avrebbe poco senso infettare un numero non intero di nemici). È dunque necessario tradurre questi \verb|double| in tre \verb|int|. A tale scopo, all'interno di evolve, ciascun dato membro di \verb|sir_state_| viene arrotondato all'intero ad esso più vicino e, confrontando l'\verb|int| così ottenuto con il numero corrente di nemici suscettibili, infetti o rimossi si è in grado di calcolare il numero di nemici da infettare e da rimuovere per aggiornare lo stato dell'epidemia.
+
+\subsection{Gestione delle collisioni}
+Per gestire le collisioni con i muri, assieme alla mappa grafica è stata creata una \quotes{mappa logica} con il programma esterno Tiled. Essa consta di quattro livelli di oggetti rettangolari che vengono interpretati dal programma per creare il mondo di gioco. In particolare, il primo livello è quello contenente i muri, il secondo gli \textit{spawner} di nemici, il terzo le uscite e il quarto le chiavi. Per contenere tutte queste informazioni è stata creata la classe \verb|fnad::Map|, che tiene al suo interno quattro vettori contenenti elementi rispettivamente di tipo \verb|fnad::Wall| (semplicemente un alias per il tipo di \verb|SFML| \verb|sf::FloatRect|), \verb|fnad::Spawner|, \verb|fnad::Exit| (anch'esso un alias di \verb|sf::FloatRect|) e \verb|fnad::Key|.
+
+L'oggetto di tipo \verb|fnad::Map| viene creato all'interno della classe \verb|fnad::Game|, responsabile della gestione dei loop di gioco, e viene poi passato a ciascuna entità che viene creata dal gioco. La classe \verb|fnad::Entity| conserva una referenza alla mappa e la utilizza ogni volta che viene chiamato il metodo \verb|safeMove| per applicare il movimento richiesto tenendo conto della presenza dei muri. Il metodo sopra citato funziona analizzando le collisioni separatamente sull'asse $x$ e sull'asse $y$, per evitare che un movimento in diagonale possa permettere a un'entità di superare l'angolo di un muro senza essere bloccata. L'algoritmo cerca i muri con cui è avvenuta una collisione tramite il metodo di \verb|SFML| \verb|intersects| e seleziona fra questi il più vicino al punto di partenza dell'entità. Successivamente, calcola la correzione da applicare su ciascuno dei due assi cartesiani per riportare l'entità al bordo del muro. Il metodo \verb|safeMove| ritorna un oggetto di tipo \verb|fnad::Collision| che è poi utilizzato dal metodo di movimento casuale della classe \verb|fnad::Enemy| per invertire la direzione nel caso in cui ci sia stato un contatto con un muro.
+
+\subsection{Visione dei nemici}\label{section:vision}
+Come accennato in precedenza, per determinare il movimento dei nemici infetti è necessario verificare che essi \quotes{vedano} il personaggio. Se non lo vedono si muovono casualmente, altrimenti si dirigono verso di lui.\\
+Per verificare se il personaggio rientra nel campo visivo di un nemico è stato scritto un metodo pubblico di \verb|fnad::Enemy| chiamato \verb|sees|, che prende in input un oggetto di tipo \verb|fnad::Character| (il personaggio) e restituisce un \verb|bool| (\verb|true| se vede il personaggio, \verb|false| se non lo vede). Per determinare questo risultato, viene innanzitutto ricavata l'equazione della retta (che indicheremo con $r$) che congiunge il personaggio e il nemico. Successivamente, per ogni muro della mappa vengono calcolate le equazioni delle rette contenenti i suoi quattro lati al fine di trovare i punti di intersezione tra la retta $r$ e le quattro rette del muro. Se almeno uno di questi punti appartiene al segmento che congiunge il personaggio e il nemico, allora la funzione restituisce \verb|false|, altrimenti restituisce \verb|true|.
+
+\subsection{Rendering grafico}
+\subsubsection{Lo sfondo}
+Per ottimizzare il rendering grafico di un componente molto elaborato come lo sfondo è stata utilizzata la classe di \verb|SFML| \verb|sf::RenderTexture|. Essa funziona in modo molto simile a una finestra, permettendo di disegnare qualsiasi elemento si desideri su di essa. Tuttavia, al contrario di una finestra, essa non viene mostrata immediatamente, ma può essere tenuta in memoria ed essere utilizzata in seguito a seconda della necessità, ad esempio per essere disegnata proprio su una finestra.
+
+La logica della rappresentazione dello sfondo è stata implementata nella classe \verb|fnad::Background|. Il suo costruttore accetta come input una mappa disegnata con Tiled (di tipo \verb|tmx::Map|) e ne legge tutti i \textit{tileset} (delle particolari immagini che contengono tutti i blocchi per costruire il mondo disegnato con Tiled) per caricare le corrispondenti \textit{texture} in una mappa privata all'interno della classe. In seguito, il costruttore procede a leggere tutti i livelli a partire dal quinto in poi. I primi quattro livelli sono infatti riservati alla costruzione logica della mappa, con i muri, gli \textit{spawner} di nemici, le chiavi e le uscite. Ciascuno di questi livelli viene passato alla funzione \verb|drawLayerToBackground| insieme ai \textit{tileset} letti in precedenza. Il livello viene letto a partire dall'angolo in alto a sinistra, scorrendo tutti i blocchi verso destra e scendendo poi alla riga di blocchi successiva. Ciascun blocco viene mappato così a un corrispondente oggetto di tipo \verb|fnad::Tile|, che indica il \textit{tileset} di riferimento e un quadrato utilizzato per \quotes{ritagliare} la \textit{texture} intera del \textit{tileset} all'immagine necessaria per rappresentare il singolo blocco. Per ciascun blocco viene successivamente creato un \verb|sf::Sprite|, ovvero un oggetto dotato di una \textit{texture}, su cui viene caricata la \textit{texture} del blocco e che viene disegnato nella posizione corretta all'interno della \verb|sf::RenderTexture|. In seguito al processo di lettura, la \textit{texture} completa viene stampata su un apposito \verb|sf::Sprite|, che viene poi richiamato dal metodo \verb|Background::draw| per essere disegnato sulla finestra all'interno del \textit{loop} di gioco.
+
+\subsubsection{I personaggi}
+Per animare i personaggi sono state utilizzate delle sequenze di sei immagini per ognuna delle quattro direzioni in cui può muoversi ciascuna entità. Le classi \verb|fnad::Character| e \verb|fnad::Enemy| sono state dotate di un metodo pubblico \verb|animate|, dentro al quale è stata gestita la logica delle animazioni.\\
+Per minimizzare gli sprechi di risorse sono state caricate solo tre \textit{texture}: due per il personaggio (in movimento e in posizione statica) e una per i nemici, che non sono mai fermi. Dato che in una partita viene istanziato un solo oggetto di tipo \verb|fnad::Character| e molti oggetti di tipo \verb|fnad::Enemy|, a quest'ultimo è stato aggiunto un dato membro \verb|static| di tipo \verb|sf::Texture|, così da tenere in memoria un'unica \textit{texture} condivisa fra tutti i nemici. Sono stati aggiunti due dati membri di tipo \verb|sf::Texture| anche a \verb|fnad::Character|, tuttavia non sono stati messi \verb|static| perché in ogni caso viene sempre istanziato un unico oggetto di questo tipo per ogni partita.
+
+Per l'animazione di \verb|fnad::Character| serve innanzitutto decidere se utilizzare la \textit{texture} statica o quella dinamica. In seguito, in base alla direzione del personaggio, viene scelta una regione della \textit{texture} all'interno della quale vi sono i sei disegni con cui costruire l'animazione. Una volta determinata tale regione di interesse, con l'aiuto di un dato membro di \verb|fnad::Character| di tipo \verb|sf::Clock| e della funzione \verb|setTextureRect|, viene creata l'animazione ridimensionando ogni decimo di secondo la \textit{texture} del personaggio in modo che vengano mostrate in sequenza le sei immagini contenute nella regione di interesse.
+
+L'animazione di \verb|fnad::Enemy| funziona in maniera pressoché identica a quella di \verb|fnad::Character|, con l'unica differenza che non è necessario controllare se il nemico si stia muovendo o se sia fermo, poiché i nemici sono costantemente in movimento.
+
+\section{Testing e debugging}
+Ciascun componente del gioco è stato accuratamente testato, ove possibile tramite l'utilizzo di \textit{unit tests}. Per scrivere i test è stato utilizzato \verb|doctest|, uno strumento di testing \textit{single-header} il cui codice è scritto nel file \verb|doctest.h| dell'archivio. In alcuni casi, soprattutto per i componenti grafici del gioco, non è stato possibile testare le funzionalità tramite codice, quindi sono state adottate altre strategie.
+
+\subsection{I test sulle classi di gioco}
+I test scritti mirano a verificare che tutta la logica richiamata dalla classe \verb|fnad::Game| per gestire gli eventi di gioco si comporti come previsto. Per quanto riguarda le entità è stata verificata soprattutto la correttezza dei movimenti: il protagonista deve muoversi correttamente secondo l'input dell'utente, i nemici devono spostarsi in modo differente a seconda del loro stato SIR, e tutte le entità in generale non devono collidere con i muri. Inoltre, sono stati scritti dei test per verificare le collisioni fra i nemici e il protagonista, che devono portare a una diminuzione dei punti vita di quest'ultimo.
+
+Per la classe \verb|fnad::Epidemic| è stato verificato che l'evoluzione di una pandemia d'esempio ritornasse i risultati attesi e che, in seguito a un arbitrario numero di iterazioni, il vettore di nemici rimanesse sincronizzato con lo stato SIR continuo. Per le altre classi di gioco (\verb|fnad::Background|, \verb|fnad::Map|, \verb|fnad::Key|, \verb|fnad::Spawner|) è stato verificato che la loro creazione producesse gli oggetti attesi e che essi interagissero correttamente con il protagonista.
+
+\subsection{Metodologie di debug grafico}
+Per studiare il comportamento del programma dal punto di vista grafico sono state adottate altre strategie. Ad esempio, sono state create diverse mappe con più livelli grafici per verificare che ogni oggetto disegnato con Tiled venisse effettivamente disegnato a schermo. Inoltre, la mappa è stata esplorata più volte per verificare il corretto posizionamento dei muri. Durante il corso del progetto sono stati anche creati piccoli programmi separati per studiare il comportamento di alcune funzionalità specifiche di \verb|SFML|, come i testi e le texture.
+
+\end{document}
