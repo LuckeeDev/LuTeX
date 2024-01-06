@@ -17,6 +17,7 @@ jobs:
                   root_file: |
                       tex/analysis_2/analysis_2.tex
                       tex/bubbles/bubbles.tex
+                      tex/cavendish/cavendish.tex
             - name: Move PDFs
               run: mv ./tex/*/*.pdf dist
               shell: bash

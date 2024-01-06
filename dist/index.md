@@ -9,6 +9,11 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ## Progetti
 
+### Primo anno
+
+-   [Misura della costante di gravitazione universale tramite un pendolo di torsione](https://luckeedev.github.io/LuTeX/cavendish.pdf)  
+    La relazione dell'esperienza di laboratorio conclusiva del primo anno in cui è stata misurata la costante di gravitazione universale.
+
 ### Secondo anno
 
 -   [Risalita di bolle in un liquido](https://luckeedev.github.io/LuTeX/bubbles.pdf)  
