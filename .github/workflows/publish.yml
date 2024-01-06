@@ -19,6 +19,7 @@ jobs:
                       tex/bubbles/bubbles.tex
                       tex/cavendish/cavendish.tex
                       tex/fnad/fnad.tex
+                      tex/maxwell/maxwell.tex
             - name: Move PDFs
               run: mv ./tex/*/*.pdf dist
               shell: bash

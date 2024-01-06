@@ -11,6 +11,9 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ### Primo anno
 
+-   [Misura del momento d’inerzia di un disco non omogeneo](https://luckeedev.github.io/LuTeX/maxwell.pdf)  
+    La relazione dell'esperienza di laboratorio in cui è stato misurato il momento d'inerzia di un disco non omogeneo utilizzando il pendolo di Maxwell.
+
 -   [Misura della costante di gravitazione universale tramite un pendolo di torsione](https://luckeedev.github.io/LuTeX/cavendish.pdf)  
     La relazione dell'esperienza di laboratorio conclusiva del primo anno in cui è stata misurata la costante di gravitazione universale.
 
