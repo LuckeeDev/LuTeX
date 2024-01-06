@@ -2,7 +2,7 @@
 
 \section{Elementi di topologia}
 
-\begin{definition}[Spazio metrico]
+\begin{definition}[Spazio metrico]\label{def:distance}
     Si consideri un insieme $X$ e una funzione $d: X\times X \to [0, +\infty)$ con le seguenti proprietà $\forall x,y,z \in X$:
     \begin{enumerate}
         \item $d(x,y) \geq 0$ e $d(x,y) \iff  x = y$
@@ -62,7 +62,7 @@
 \end{prop}
 
 \begin{definition}
-    [Distanza di un punto da un insieme]
+    [Distanza di un punto da un insieme]\label{def:d_point_set}
     Sia $(X,d)$ spazio metrico. Si considerino $A \subseteq X, x \in X$. La distanza di $x$ da $A$ è $d(x,A)=\inf\{d(x,y) : y \in A\}$.
 \end{definition}
 
@@ -114,7 +114,7 @@
 \end{prop}
 
 \begin{proof}
-    % TODO
+    Sia $z \in A$. Allora, per le proprietà della distanza (Def. \ref{def:distance}), $d(x,z)\leq d(x,y)+d(y,z)\then \abs{d(x,z)-d(y,z)}\leq d(x,y)$. Passando all'estremo inferiore, per la definizione \ref{def:d_point_set} si ottiene la tesi: $\inf\limits_{z\in A}\abs{d(x,z)-d(y,z)}\leq d(x,y)\then \abs{d(x,A)-d(y,A)}\leq d(x,y)$.
 \end{proof}
 
 \begin{definition}
@@ -213,6 +213,14 @@
     Siano $(X, d)$ uno spazio metrico e $A \subseteq X$. $x_0 \in X$ è un punto di accumulazione per $A$ se $\forall \varepsilon > 0 \ (B_\varepsilon(x_0)\setminus \{x_0\})\cap A \neq \varnothing$.
 \end{definition}
 
+\begin{remark}
+    Si presentano due casi:
+    \begin{itemize}
+        \item Se $x_0 \in A$, si richiede che ogni intorno circolare di $A$ contenga punti di $A$ distinti da $x_0$
+        \item Se $x_0 \notin A$, si richiede che sia aderente ad $A$, ovvero che $x_0 \in \partial A$
+    \end{itemize}
+\end{remark}
+
 \begin{definition}
     [Derivato di un insieme]
     Si definisce derivato di $A$ e si indica con $\text{D}(A)$ l'insieme dei punti di accumulazione di $A$.
@@ -232,7 +240,10 @@
 \end{prop}
 
 \begin{proof}
-    % TODO
+    [Dimostrazione del punto 2.]
+    Sia $x \in \overline{A}=A\cup\partial A\then$ o $x \in A$ oppure $x\notin A \e x\in X\setminus A$ è aderente ad $A$. Questo significa che $\forall \varepsilon > 0 \ B_\varepsilon(x)\cap A \neq \varnothing$, cioè che $x$ è un punto di accumulazione per $A$. Quindi $\overline{A}\subseteq A \cup D(A)$.
+
+    Viceversa, se $x\in A\cup D(A)$ ci sono due casi: o $x \in A$ oppure $x \in X\setminus A \e x \in D(A)\then x \in \partial A\then x \in \overline{A}$. Quindi $A\cup D(A)\subseteq \overline{A}$, da cui la tesi.
 \end{proof}
 
 \begin{definition}
@@ -299,7 +310,7 @@
 \end{definition}
 
 \begin{definition}
-    [Convergenza uniforme]
+    [Convergenza uniforme]\label{def:unif_conv}
     Si dice che $f_n$ converge uniformemente a $f$ e si indica con $f_n \rightrightarrows f$ se $d_\infty(f_n, f) = \sup\limits_{x \in I}\abs{f_n(x) - f(x)} \xrightarrow{n \to + \infty} 0$.
 \end{definition}
 
@@ -324,7 +335,27 @@
 \end{theorem}
 
 \begin{proof}
-    % TODO
+    Si dimostra ciascun punto separatamente.
+    \begin{enumerate}
+        \item Sia $x_0$ un punto fissato nell'intervallo $I$ e $x$ un generico punto appartenente allo stesso intervallo. Allora
+        $$
+            \abs{f(x)-f(x_0)}\leq\abs{f(x)-f_n(x)}+\abs{f_n(x)-f_n(x_0)}+\abs{f_n(x_0)-f(x_0)}
+        $$
+        Fissato $\varepsilon > 0$, per la definizione \ref{def:unif_conv} di convergenza uniforme $\exists \overline{n} \tc \forall n > \overline{n}$,
+        $$\abs{f(x)-f_n(x)}+\abs{f_n(x_0)-f(x_0)}\leq 2 \sup_{t \in I}\abs{f_n(t)-f(t)}<2\varepsilon$$
+        Inoltre, per la continuità di $f_n$ $\exists \delta>0 \tc \forall x \in [x_0-\delta,x_0+\delta]$, $\abs{f_n(x)-f_n(x_0)}<\varepsilon$.
+        In conclusione, $\abs{f(x)-f(x_0)} < 3\varepsilon \ \forall x \in [x_0-\delta,x_0+\delta]$, che è la definizione di continuità.
+        \item $\abs{f_n(x)-f(x)}\leq \sup\limits_{t\in I}\abs{f_n(t)-f(t)}\xrightarrow{n\to+\infty}0$
+        \item Si dimostra la convergenza in media di $f_n$ a $f$.
+        $$
+            \int_I\abs{f_n(t)-f(t)}\dd t \leq \int_I\sup_{x\in I}\abs{f_n(x)-f(x)}\dd x=\sup_{x \in I}\abs{f_n(x)-f(x)}\cdot\abs{I}\xrightarrow{n\to +\infty}0
+        $$
+        La prima affermazione si dimostra invece come segue:
+        $$
+            \int_I\abs{f(t)}\dd t\leq \int_I\left[\abs{f_n(t)-f(t)}+\abs{f_n(t)}\right]\dd t=\int_I\abs{f_n(t)-f(t)}\dd t+\int_I\abs{f_n(t)}\dd t<+\infty
+        $$
+        Il primo termine può essere considerato piccolo a piacere, e in ogni caso limitato, perché $f_n$ converge in media a $f$. Il secondo termine invece è limitato per ipotesi.
+    \end{enumerate}
 \end{proof}
 
 \begin{theorem}
