@@ -11,6 +11,9 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ### Primo anno
 
+-   [Calibrazione di una termocoppia](https://luckeedev.github.io/LuTeX/thermocouple.pdf)  
+    La prima esperienza di laboratorio, in cui è stata misurata la costante di calibrazione di una termocoppia.
+
 -   [Misura del momento d’inerzia di un disco non omogeneo](https://luckeedev.github.io/LuTeX/maxwell.pdf)  
     La relazione dell'esperienza di laboratorio in cui è stato misurato il momento d'inerzia di un disco non omogeneo utilizzando il pendolo di Maxwell.
 

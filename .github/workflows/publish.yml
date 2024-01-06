@@ -20,6 +20,7 @@ jobs:
                       tex/cavendish/cavendish.tex
                       tex/fnad/fnad.tex
                       tex/maxwell/maxwell.tex
+                      tex/thermocouple/thermocouple.tex
             - name: Move PDFs
               run: mv ./tex/*/*.pdf dist
               shell: bash
