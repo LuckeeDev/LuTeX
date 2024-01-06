@@ -20,18 +20,18 @@
 
 \begin{definition}
 	[Superficie orientabile]
-	$\Sigma \in \R^3$ è una superficie orientabile se $\exists \vb{N}:\Sigma \to \R^3 \tc \\ \vb{N}(x,y,z)\in N_{(x,y,z)}\Sigma \e \norm{\vb{N}(x,y,z)}=1 \ \forall (x,y,z) \in \Sigma$, ovvero se esiste un campo continuo di versori normali a $\Sigma$.
+	$\Sigma \in \R^3$ è una superficie orientabile se $\exists \vb{N}:\Sigma \to \R^3 \in \C{0}$ tale che $\vb{N}(x,y,z)\in N_{(x,y,z)}\Sigma \e \norm{\vb{N}(x,y,z)}=1 \ \forall (x,y,z) \in \Sigma$, ovvero se esiste un campo continuo di versori normali a $\Sigma$.
 \end{definition}
 
 \begin{remark}
 	Diffeomorfismi crescenti, ovvero con $\det J_\varphi>0$, non variano l'orientamento della superficie. Diffeomorfismi decrescenti inducono l'orientamento opposto.
 \end{remark}
 
-Sia $\vb{r}:\overline{\Omega} \to \Sigma$ una parametrizzazione regolare. Allora $\vb{n}(u,v)=\frac{\partial \vb{r}}{\partial u}\wedge\frac{\partial \vb{r}}{\partial v} \in N_{\vb{r}(u,v)}\Sigma$ e si può definire il campo di versori normale alla superficie come
+Sia $\vb{r}:\overline{\Omega} \to \Sigma$ una parametrizzazione regolare. Le derivate parziali di $\vb{r}$ rispetto a $u \e v$ appartengono allo spazio tangente a $\Sigma$ in $\vb{r}(u,v)$, allora il loro prodotto vettoriale $\vb{n}(u,v)=\left(\frac{\partial \vb{r}}{\partial u}\wedge\frac{\partial \vb{r}}{\partial v}\right)(u,v) \in N_{\vb{r}(u,v)}\Sigma$ e si può definire il campo di versori normale alla superficie come
 $$
-	\vb{N}(u,v)=\frac{\vb{n}(u,v)}{\norm{\vb{n}(u,v)}}
+	\vb{N}(u,v)=\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}\in N_{\vb{r}(u,v)}\Sigma
 $$
-Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che l'espressione di $\vb{N}$ dipende dal segno di $\det J_\varphi$.
+Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede che l'espressione di $\vb{N}$ dipende dal segno di $\det J_{\bm\varphi}$.
 
 \begin{definition}
 	[Superficie regolare con bordo]
@@ -57,13 +57,13 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \begin{definition}
 	[Orientamento canonico di $\partial \Sigma$]
-	Sia $\vb{r}: \overline{\Omega} \bijarrow \Sigma \in \C{1} \tc \rank J_{\vb{r}}(u,v)=2 \ \forall (u,v) \in \overline{\Omega}$ una parametrizzazione che induce l'orientamento $\hat{\bm\nu}$ su $\Sigma$. Siano inoltre $\gamma_1 \subset \partial\Omega$ e $\bm\varphi: [a,b]\to \gamma_1 \in \C{1}$ una parametrizzazione regolare semplice a tratti che induce l'orientamento canonico $\vb{T}$ su $\gamma_1$.
+	Sia $\vb{r}: \overline{\Omega} \bijarrow \Sigma \in \C{1}$ tale che $\rank J_{\vb{r}}(u,v)=2 \ \forall (u,v) \in \overline{\Omega}$ una parametrizzazione che induce l'orientamento $\hat{\bm\nu}$ su $\Sigma$. Siano inoltre $\gamma_1 \subset \partial\Omega$ e $\bm\varphi: [a,b]\to \gamma_1 \in \C{1}$ una parametrizzazione regolare semplice a tratti che induce l'orientamento canonico $\vb{T}$ su $\gamma_1$.
 	Allora $\vb{r}\circ \bm\varphi:[a,b]\to \partial\Sigma_1$ è una parametrizzazione regolare semplice a tratti che induce l'orientamento $\hat{\bm\tau}$ canonico rispetto a $\hat{\bm\nu}$.
 \end{definition}
 
 \begin{definition}
 	[Superficie regolare a tratti]
-	Siano $\Sigma_1,\dots,\Sigma_p$ superfici regolari con bordo, allora $\displaystyle\Sigma = \bigcup_{j=1}^p \Sigma_j$ è una superficie regolare a tratti se $\forall i,j \in [p] \with i \neq j \ \Sigma_i \cap \Sigma_j \subseteq \displaystyle\bigcup_{k=1}^p\partial \Sigma_k$.
+	Siano $\Sigma_1,\dots,\Sigma_p$ superfici regolari con bordo, allora $\Sigma = \bigcup\limits_{j=1}^p \Sigma_j$ è una superficie regolare a tratti se $\forall i,j \in [p] \with i \neq j \ \Sigma_i \cap \Sigma_j \subseteq \bigcup\limits_{k=1}^p\partial \Sigma_k$.
 \end{definition}
 
 \begin{definition}
@@ -91,9 +91,11 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 \begin{definition}
 	[Flusso]
 	Sia $A\subseteq \R^3$ un aperto e sia $\Sigma \subseteq A$ una superficie orientabile con orientamento $\hat{\bm \nu}$ indotto dalla parametrizzazione $\vb{r}:\overline{\Omega}\to\Sigma$. Sia inoltre $\vecf \in \C{0}(A,\R^3)$ un campo vettoriale. Il flusso di $\vecf$ attraverso $\Sigma$ è
-	$$
-		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S = \iint_{\overline{\Omega}}\ip{\vecf(\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v
-	$$
+	\begin{align*}
+		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S 
+		&=\iint_{\overline{\Omega}}\innerproduct{(\vecf\circ\vb{r})(u,v)}{\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}}\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}\dd u \dd v=\\
+		&= \iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v\\
+	\end{align*}
 \end{definition}
 
 \begin{remark}
@@ -129,15 +131,43 @@ Applicando un diffeomorfismo $\varphi$ all'aperto regolare $\Omega$ si vede che 
 
 \begin{proof}
 	[Dimostrazione in un caso particolare.]
-	% TODO
+	Si consideri il rettangolo $W=\{(x,y,0)\in[a,b]\times[c,d]\}$ posto nel piano $xy$ con orientamento $\hat{\vb{k}}$. Il flusso del rotore di $\vecf$ attraverso il rettangolo è
+	\begin{align*}
+		\iint_W \ip{\rot \vecf}{\hat{\bm \nu}}\dd \sigma
+		&= \iint_{W}\left(\frac{\partial f_2}{\partial x}(x,y,0)-\frac{\partial f_1}{\partial y}(x,y,0)\right)\dd x \dd y=\\
+		&=\int_c^d \dd y\int_a^b\frac{\partial f_2}{\partial x}(x,y,0)\dd x-
+		\int_a^b\dd x\int_c^d\frac{\partial f_1}{\partial y}(x,y,0)\dd y=\\
+		&=\int_c^d(f_2(b,y,0)-f_2(a,y,0))\dd y+\int_a^b(f_1(x,c,0)-f_1(x,d,0))\dd x
+	\end{align*}
+	Il lavoro di $\vecf$ sul bordo del rettangolo $W$ orientato canonicamente rispetto a $\hat{\vb{k}}$ è la somma dei lavori sui tratti del bordo, ovvero
+	\begin{align*}
+		&\int_a^bf_1(x,c,0)\dd x+\int_c^df_2(b,y,0)+\int_b^af_1(x,d,0)+\int_d^cf_2(a,y,0)=\\
+		=&\int_a^b(f_1(x,c,0)-f_1(x,d,0))\dd x+\int_c^d(f_2(b,y,0)-f_2(a,y,0))\dd y
+	\end{align*}
+	I due integrali coincidono.
 \end{proof}
 
 \paragraph{Teorema di Stokes tramite le forme differenziali}
 
-Il teorema di Stokes può essere espresso anche tramite l'integrazione di una forma differenziale d'area (o 2-forma), ricavata applicando l'operatore differenziale esterno alla 1-forma associata al lavoro (Def. \ref{def:1form}, Cap. \ref{chap:curves}).
-$$
-	\dd \omega = \ip{\rot \vecf}{\hat{\bm \nu}} \dd u \wedge \dd v
-$$
+Il teorema di Stokes può essere espresso anche tramite l'integrazione di una forma differenziale d'area (o 2-forma), ricavata applicando l'operatore differenziale esterno alla 1-forma associata al lavoro (Def. \ref{def:1form}, Cap. \ref{chap:curves}) usando le tre regole seguenti:
+\begin{enumerate}[a.]
+	\item $\dd(\dd \alpha)=0$
+	\item $\dd \alpha \wedge \dd \alpha=0$
+	\item $\dd \alpha \wedge \dd \beta = -\dd \beta \wedge \dd \alpha$
+\end{enumerate}
+
+\begin{align*}
+	\dd \omega =& \dd (f_1 \dd x+f_2 \dd y+f_3 \dd z)=\\
+	&=\dd f_1\wedge \dd x +\dd f_2 \wedge \dd y +\dd f_3 \wedge \dd z=\\
+	&=\left( \frac{\partial f_1}{\partial x}\dd x + \frac{\partial f_1}{\partial y}\dd y + \frac{\partial f_1}{\partial z}\dd z \right)\wedge \dd x+\\
+	&+\left( \frac{\partial f_2}{\partial x}\dd x + \frac{\partial f_2}{\partial y}\dd y + \frac{\partial f_2}{\partial z}\dd z \right)\wedge \dd y +\\ 
+	&+\left(\frac{\partial f_3}{\partial x}\dd x + \frac{\partial f_3}{\partial y}\dd y + \frac{\partial f_3}{\partial z}\dd z\right) \wedge \dd z= \\
+	&=\left(\frac{\partial f_3}{\partial y}-\frac{\partial f_2}{\partial z}\right)\dd y \wedge \dd z+
+	\left(\frac{\partial f_1}{\partial z}-\frac{\partial f_3}{\partial x}\right)\dd z \wedge \dd x+
+	\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)\dd x \wedge \dd y
+	=\\
+	&=\ip{\rot \vecf}{\hat{\bm \nu}} \dd u \wedge \dd v
+\end{align*}
 Di conseguenza,
 $$
 	\iint\limits_{\Sigma,\hat{\bm \nu}} \dd \omega = \int\limits_{\partial \Sigma,\hat{\bm \tau}} \omega
@@ -176,15 +206,26 @@ $$
 
 \begin{proof}
 	[Giustificazione in un caso semplice.]
+	Si consideri il cubo $Q=\{(x,y,z)\in[0,L]\times[0,L]\times[0,L]\}$. Il flusso del campo $\vecf$ attraverso le facce di $\partial Q$ parallele al piano $xz$ è
+	$$
+		\iint_{\partial Q_y}\innerproduct{\vecf}{\hat{\bm\nu}}=-\iint_{[0,L]\times[0,L]}f_2(x,0,z)\dd x \dd z
+		+\iint_{[0,L]\times[0,L]}f_2(x,L,z)\dd x \dd z
+	$$
+	L'integrale del termine della divergenza dipendente da $y$ è
+	$$
+		\iiint_{Q}\frac{\partial f_2}{\partial y}(x,y,z)\dd x \dd y \dd z=\iint_{[0,L]\times[0,L]}(f_2(x,L,z)-f_2(x,0,z))\dd x \dd z
+	$$
+	I due integrali coincidono ed è possibile applicare lo stesso ragionamento alle variabili $x$ e $z$.
 \end{proof}
 
 \paragraph{Teorema di Gauss tramite le forme differenziali}
 
-Anche nel caso del teorema di Gauss è possibile esprimere l'enunciato del teorema in termini di forme differenziali. Sia $\omega = f_1 \dd y \wedge \dd z + f_2 \dd z \wedge \dd x + f_3 \dd x \wedge \dd y$ la forma differenziale d'area associata al campo $\vecf$. Applicando l'operatore differenziale esterno, si ottiene che
-$$
-	\dd \omega = \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)\dd x \wedge \dd y \wedge \dd z
-$$
-
+Anche nel caso del teorema di Gauss è possibile esprimere l'enunciato del teorema in termini di forme differenziali. Sia $\omega = f_1 \dd y \wedge \dd z + f_2 \dd z \wedge \dd x + f_3 \dd x \wedge \dd y$ la forma differenziale d'area associata al flusso del campo $\vecf$. Applicando l'operatore differenziale esterno, si ottiene che
+\begin{align*}
+	\dd \omega &=\dd(f_1 \dd y \wedge \dd z + f_2 \dd z \wedge \dd x + f_3 \dd x \wedge \dd y)=\\
+	&=\dd f_1 \wedge \dd y \wedge \dd z+ \dd f_2\wedge\dd z \wedge \dd x+\dd f_3\dd\wedge x \wedge \dd y=\\
+	&= \left(\frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \frac{\partial f_3}{\partial z}\right)\dd x \wedge \dd y \wedge \dd z\\
+\end{align*}
 Di conseguenza, si può scrivere
 $$
 	\iiint\limits_A \dd \omega = \iint\limits_{\partial A^+}\omega
@@ -192,5 +233,5 @@ $$
 dove $\partial A^+$ è la frontiera di $A$ orientata canonicamente.
 
 \begin{remark}
-	Si noti che il teorema di Gauss e il teorema di Stokes sono casi particolari dello stesso teorema applicato a dimensioni diverse.
+	Si noti che la somiglianza fra il teorema di Gauss e il teorema di Stokes è dovuta al fatto che essi sono casi particolari dello stesso teorema applicato a dimensioni diverse.
 \end{remark}
