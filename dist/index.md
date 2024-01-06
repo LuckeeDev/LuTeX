@@ -33,4 +33,4 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ## Crediti
 
-Molti lavori che si trovano su questa pagina sono stati svolti in collaborazione con [est1ntore](https://github.com/est1ntore) e [ronzo13](https://github.com/ronzo13).
+Molti lavori che si trovano su questa pagina sono stati realizzati in collaborazione con [est1ntore](https://github.com/est1ntore) e [ronzo13](https://github.com/ronzo13).
