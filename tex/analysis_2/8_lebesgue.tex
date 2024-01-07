@@ -32,7 +32,7 @@
 
 \begin{remark}\leavevmode
 	\begin{enumerate}
-		\item ${\varnothing,X}$ è la più piccola $\sigma$-algebra associata ad $X$
+		\item $\{\varnothing,X\}$ è la più piccola $\sigma$-algebra associata ad $X$
 		\item $\calP(X)$ è la più grande $\sigma$-algebra associata ad $X$
 	\end{enumerate}
 \end{remark}
@@ -104,7 +104,15 @@
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	[Dimostrazione del punto 3.]
+	Sia $\varepsilon>0$. $\forall i \in \N$ è possibile trovare un ricoprimento di $A_i$ tale che
+	$$A_i\subseteq \bigcup\limits_{j=1}^\infty R_{ij} \e \sum\limits_{j=1}^\infty \mu^*(R_{ij})\leq \mu^*(A_i)+\frac{\varepsilon}{2^i}$$
+	Si noti che l'unico caso da dimostrare è quello in cui $\mu^*(A_i)<+\infty \ \forall i \e \sum\limits_{i=1}^\infty \mu^*(A_i)<+\infty$, perché altrimenti è ovvio che $\mu^*\left(\bigcup\limits_{i=1}^\infty A_i\right)\leq +\infty$. $\bigcup\limits_{i,j=1}^\infty R_{ij}$ è un ricoprimento di $E=\bigcup\limits_{i=1}^\infty A_i$.
+	\begin{gather*}
+		\mu^*(E)=\mu^*\left(\bigcup_{i=1}^\infty A_i\right)\leq \sum_{i,j=1}^{\infty}\mu^*(R_{ij})=\sum_{i=1}^\infty\left(\sum_{j=1}^{\infty}\mu^*(R_{ij})\right)\leq\\
+		\leq\sum_{i=1}^{\infty}\left(\mu^*(A_i)+\frac{\varepsilon}{2^i}\right)=\sum_{i=1}^\infty \mu^*(A_i)+\varepsilon\\
+		\then \mu^*\left(\bigcup_{i=1}^\infty A_i\right)\leq \sum_{i=1}^\infty \mu^*(A_i)
+	\end{gather*}
 \end{proof}
 
 \begin{prop}
@@ -116,7 +124,7 @@
 
 \begin{definition}
 	[Insieme misurabile secondo Carathéodory]
-	Siano $X$ un insieme e $\mu^*:\calP \to [0,+\infty]$ una misura esterna su $X$. $A\subseteq X$ è misurabile secondo Carathéodory se $\forall E \subseteq X, \ \mu^*(E)=\mu^*(A\cap E) + \mu^*(A^c \cap E)$, dove $A^c=X\setminus A$.
+	Siano $X$ un insieme e $\mu^*:\calP \to [0,+\infty]$ una misura esterna su $X$. $A\subseteq X$ è misurabile secondo Carathéodory se $\forall E \subseteq X, \ \mu^*(E)=\mu^*(A\cap E) + \mu^*\left(A^C \cap E\right)$, dove $A^C=X\setminus A$.
 \end{definition}
 
 \begin{theorem}
@@ -130,7 +138,8 @@
 \end{definition}
 
 \begin{theorem}
-	[Completezza della misura di Lebesgue]\leavevmode
+	[Completezza della misura di Lebesgue]
+	La misura di Lebesgue è una misura completa, cioè:
 	\begin{enumerate}
 		\item $\forall N \subseteq \R^n$ con misura esterna nulla, $N \in \mathcal{L}(\R^n)$
 		\item $\forall M \subseteq N \with \mu(N)=0, \ M \in \mathcal{L}(\R^n)$
@@ -138,8 +147,16 @@
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	Si dimostra ciascun punto separatamente.
+	\begin{enumerate}
+		\item Siano $\mu^*(N)=0 \e E \subseteq \R^n$. Si noti che per la proprietà di subadditività è ovvio che $\mu^*(E)\leq \mu^*(E\cap N)+\mu^*\left(E\cap N^C\right)$, quindi resta da dimostrare solo che $\mu^*(E)\geq\mu^*\left(E\cap N^C\right)+\mu^*(E\cap N)$. $E \cap N \subseteq N\then \mu^*(E\cap N)\leq\mu^*(N)=0\then \mu^*(E\cap N)=0$. Inoltre $E\supseteq E\cap N^C$, quindi $\mu^*(E)\geq \mu^*\left(E\cap N^C\right)=\mu^*\left(E\cap N^C\right)+\mu^*(E\cap N)$. Quindi $N$ è misurabile secondo Carathéodory.
+		\item $\forall M\subseteq N \ \mu^*(M)\leq\mu^*(N)=0$, quindi anche $M\in \mathcal{L}(\R^n)$.
+	\end{enumerate}
 \end{proof}
+
+\begin{remark}
+	Nella dimostrazione non viene usata la definizione di misura esterna di Lebesgue. Tutte le misure costruite con il metodo di Carathéodory sono complete.
+\end{remark}
 
 \begin{definition}
 	[Insieme di misura nulla]
@@ -251,7 +268,19 @@
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	Per ogni $k\in \N$, si consideri l'intervallo $[0,2^k]$ nell'insieme dei valori di $f$ e lo si divida in $2^{2k}$ sottointervalli di ampiezza $2^{-k}$.
+	$$
+		I_{k,l}=\left[\frac{l}{2^k},\frac{l+1}{2^k}\right) \with l=1,\dots,2^{2k}-1
+	$$
+	Si definisca $J_k=[2^k,+\infty]$. Siano inoltre
+	$$
+		E_{k,l}=f^{-1}(I_{k,l}) \e F_k=f^{-1}(J_k)
+	$$
+	$E_{k,l} \e F_k$ sono misurabili. Allora la successione
+	$$
+		\varphi_k=\sum_{l=0}^{2^{2k}-1}\frac{l}{2^k}\chi_{E_{k,l}}+2^k\chi_{F_k}
+	$$
+	soddisfa alla tesi del teorema.   
 \end{proof}
 
 \begin{definition}
@@ -324,7 +353,12 @@
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	$f$ è sommabile:
+	$$\displaystyle\abs{\int_A (f-f_k)}\leq \int_A\abs{f-f_k}\leq \int_A\sup_{x \in A}\abs{f-f_k}=M_k\mu_n(A)\xrightarrow{k\to+\infty}0$$
+	Inoltre
+	$$
+		\int_Af=\int_A(f-f_k)+\int_Af_k\then \int_Af=\lim_{k\to+\infty}\int_Af_k
+	$$
 \end{proof}
 
 \begin{theorem}
