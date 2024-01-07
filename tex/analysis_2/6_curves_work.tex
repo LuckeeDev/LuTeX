@@ -81,7 +81,7 @@
 
 \begin{definition}
 	[Lunghezza di una curva]
-	Siano $\gamma$ una curva e sia $\mathcal{D}_P=\vb{x_0},\dots,\vb{x_k}\in \gamma$ una suddivisione di $\gamma$. Si definisce lunghezza della curva $\gamma$ $L_\gamma = \sup\limits_{P}\sum\limits_{j=1}^{k}\norm{\vb{x_j}-\vb{x_{j-1}}}$.
+	Siano $\gamma$ una curva e sia $\mathcal{D}_P=\vb{x}_0,\dots,\vb{x}_k\in \gamma$ una suddivisione di $\gamma$. Si definisce lunghezza della curva $\gamma$ $L_\gamma = \sup\limits_{P}\sum\limits_{j=1}^{k}\norm{\vb{x}_j-\vb{x}_{j-1}}$.
 \end{definition}
 
 \begin{theorem}
@@ -96,8 +96,8 @@
 \begin{proof}
 	Si dimostra solo la disuguaglianza $L_P \leq \int\limits_{a}^{b}\norm{\vb{r}'(t)}\dd t \ \forall P$. Siano $a=t_0<t_1<\cdots<t_k=b$ i valori nell'intervallo $[a,b]$ corrispondenti ai punti della suddivisione $\mathcal{D}_P$.
 	\begin{gather*}
-		\vb{x_j}-\vb{x_{j-1}}=\vb{r}(t_j)-\vb{r}(t_{j-1})=\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t\\
-		\then L_P=\sum_{j=1}^{k}\norm{\vb{x_j}-\vb{x_{j-1}}}=\sum_{j=1}^{k}\norm{\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t}\leq\\
+		\vb{x}_j-\vb{x}_{j-1}=\vb{r}(t_j)-\vb{r}(t_{j-1})=\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t\\
+		\then L_P=\sum_{j=1}^{k}\norm{\vb{x}_j-\vb{x}_{j-1}}=\sum_{j=1}^{k}\norm{\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t}\leq\\
 		\leq\sum_{j=1}^{k}\int_{t_{j-1}}^{t_j}\norm{\vb{r}'(t)}\dd t=\int_{a}^{b}\norm{\vb{r}'(t)}\dd t
 	\end{gather*}
 \end{proof}
@@ -208,7 +208,7 @@ $$
 \end{prop}
 
 \begin{theorem}
-	[Campi vettoriali conservativi e lavoro]
+	[Campi vettoriali conservativi e lavoro]\label{thm:cvc_work}
 	Sia $\vecf \in \C{0}(A,\R^n)$ un campo conservativo definito in $A\subseteq\R^n$ aperto e connesso e sia $U \in \C{1}(A,\R)$ un suo potenziale. Allora, se $(\gamma,\hat{\bm\tau}) \subseteq A$ è una curva regolare a tratti orientabile con primo estremo $\vb{x}_i$ e secondo estremo $\vb{x}_f$,
 	$$
 		L_{\gamma, \hat{\bm\tau}}=U(\vb{x}_f)-U(\vb{x}_i)
@@ -216,7 +216,14 @@ $$
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	Sia $\vb{r}:[a,b]\suarrow\gamma$ una parametrizzazione regolare a tratti che induce $\hat{\bm\tau}$.
+	\begin{align*}
+		L_{\gamma,\hat{\bm\tau}}
+		&=\int_{a}^{b}\innerproduct{\vecf (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
+		&=\int_{a}^{b}\innerproduct{\grad U (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
+		&=\int_{a}^{b}\frac{\dd}{\dd t}(U\circ \vb{r})(t)\dd t=\\
+		&=U(\vb{x}_f)-U(\vb{x}_i)
+	\end{align*}
 \end{proof}
 
 \begin{theorem}
@@ -232,9 +239,9 @@ $$
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
-	% TODO
-\end{proof}
+\begin{remark}
+	Il punto \textit{1} implica il punto \textit{2} per il teorema \ref{thm:cvc_work}. I punti \textit{2} e \textit{3} sono ovviamente equivalenti. Dimostrare che il punto \textit{2} implica il punto \textit{1} comporta verificare che $U(\vb{x})=\int_{\gamma,\hat{\bm\tau}}\innerproduct{\vecf}{\hat{\bm\tau}}\dd s$ è $\C{1}$ in $A$ e che è un potenziale per $\vecf$. Occorre utilizzare piccoli spostamenti e studiare come varia $\vecf$.
+\end{remark}
 
 \begin{definition}
 	[Campo vettoriale irrotazionale]
@@ -249,7 +256,12 @@ $$
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	$U(\vb{x})$ è $\C{2}$, quindi vale il teorema di Schwarz (Thm. \ref{thm:schwarz}, Cap. \ref{chap:nvars}).
+	$$
+		\frac{\partial f_i}{\partial x_j}(\vb{x})
+		=\frac{\partial}{\partial x_j}\left(\frac{\partial U}{\partial x_i}(\vb{x})\right)=\frac{\partial}{\partial x_i}\left(\frac{\partial U}{\partial x_j}(\vb{x})\right)
+		=\frac{\partial f_j}{\partial x_i}(\vb{x})
+	$$
 \end{proof}
 
 \begin{theorem}
