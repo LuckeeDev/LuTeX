@@ -88,9 +88,9 @@ Per ricavare i vettori appartenenti allo spazio tangente si definisce $\vb{G}=(\
 $$
     \vb{0}=\frac{\dd \vb{G}}{\dd t}(0)=J_{\vb{g}}(\bm\varphi(0))\cdot \bm\varphi'(0)=
     \begin{bmatrix}
-        \innerproduct{\grad g_1(\vb{x_0})}{\vb{h}}\\
+        \ip{\grad g_1(\vb{x_0})}{\vb{h}}\\
         \vdots\\
-        \innerproduct{\grad g_k(\vb{x_0})}{\vb{h}}
+        \ip{\grad g_k(\vb{x_0})}{\vb{h}}
     \end{bmatrix}
 $$
 Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i gradienti delle componenti della funzione $\vb{g}$.
@@ -168,7 +168,7 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
     Inoltre,
     \begin{align}
         h'(c)
-        &=\innerproduct{\grad g(\bm\varphi(c))}{\bm\varphi'(c)}=\notag\\
+        &=\ip{\grad g(\bm\varphi(c))}{\bm\varphi'(c)}=\notag\\
         &=\frac{\partial g}{\partial x}(\bm\varphi(c))[x_2-x_1]+\frac{\partial g}{\partial y}(\bm\varphi(c))[f(x_2)-f(x_1)]\label{eq:der_h}
     \end{align}
     Siano ora $\xi=\xi(c)=x_1+c(x_2-x_1) \e \eta=\eta(c)=f(x_1)+c(f(x_2)-f(x_1))$. Unendo i risultati delle equazioni \eqref{eq:h1_h0} e \eqref{eq:der_h} e considerando che $\partial_yg(x,y)\neq 0 \ \forall (x,y) \in W$, si conclude che
@@ -237,8 +237,8 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
     Di conseguenza, per il teorema di Fermat in una dimensione,
     \begin{align*}
         0&=F'(0)=\frac{\dd }{\dd t}(f\circ\bm\varphi)(0)=\\
-        &=\innerproduct{\grad f(\bm\varphi(0))}{\bm\varphi'(0)}=\\
-        &=\innerproduct{\grad f(\vb{x_0})}{\hat{\bm\nu}}=\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})
+        &=\ip{\grad f(\bm\varphi(0))}{\bm\varphi'(0)}=\\
+        &=\ip{\grad f(\vb{x_0})}{\hat{\bm\nu}}=\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})
     \end{align*}
     Si ha così la tesi.
 \end{proof}
@@ -302,13 +302,13 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
     Applicando la formula di Taylor,
     \begin{align*}
         f(\vb{x})-f(\vb{x_0})&=\mathcal{L}(\vb{x};\overline{\lambda}_1,\dots,\overline{\lambda}_k)-\mathcal{L}(\vb{x_0};\overline{\lambda}_1,\dots,\overline{\lambda}_k)=\\
-        &=\frac{1}{2}\innerproduct{(\vb{x}-\vb{x_0},\vb{0})}{H_{\mathcal{L}}(\vb{x_0})(\vb{x}-\vb{x_0},\vb{0})}+o(\norm{\vb{x}-\vb{x_0}}^2)=\\
-        &=\frac{1}{2}\innerproduct{\vb{x}-\vb{x_0}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{x}-\vb{x_0})}+o(\norm{\vb{x}-\vb{x_0}}^2)
+        &=\frac{1}{2}\ip{(\vb{x}-\vb{x_0},\vb{0})}{H_{\mathcal{L}}(\vb{x_0})(\vb{x}-\vb{x_0},\vb{0})}+o(\norm{\vb{x}-\vb{x_0}}^2)=\\
+        &=\frac{1}{2}\ip{\vb{x}-\vb{x_0}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{x}-\vb{x_0})}+o(\norm{\vb{x}-\vb{x_0}}^2)
     \end{align*}
     Sia ora $\vb{x}=\bm\varphi(t)\in \C{1}((-\delta,\delta),\R^n) \tc \bm\varphi(0)=\vb{x_0} \e \bm\varphi'(0)=\vb{h} \in T_{\vb{x_0}}\Gamma$. Allora $\vb{x}=\vb{x_0}+t\vb{h}+\vb{o}(\abs{t})$ per $\abs{t}\to 0$. Di conseguenza,
     \begin{gather*}
-        f(\vb{x})-f(\vb{x_0})=\frac{t^2}{2}\innerproduct{\vb{h}+\vb{o}(1)}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{h}+\vb{o}(1))}+o(\norm{\vb{h}+\vb{o}(1)}^2t^2)=\\
-        =\frac{t^2}{2}\innerproduct{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}}(1+o(1))\geq 0
+        f(\vb{x})-f(\vb{x_0})=\frac{t^2}{2}\ip{\vb{h}+\vb{o}(1)}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{h}+\vb{o}(1))}+o(\norm{\vb{h}+\vb{o}(1)}^2t^2)=\\
+        =\frac{t^2}{2}\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}}(1+o(1))\geq 0
     \end{gather*}
     Quindi $\vb{x_0}$ è minimo locale.
 \end{proof}

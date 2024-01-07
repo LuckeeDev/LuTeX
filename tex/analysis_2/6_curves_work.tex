@@ -37,11 +37,15 @@
 	\end{enumerate}
 \end{theorem}
 
+\begin{remark}
+	Quando si trattano curve in forma parametrica si considera la classe di equivalenza delle parametrizzazioni con lo stesso sostegno definita come segue: $\vb{r}\sim\bm\rho \iff \exists \varphi \in \C{1}([\alpha,\beta],[a,b])$ diffeomorfismo tale che $\bm\rho=\vb{r}\circ\varphi$.
+\end{remark}
+
 \begin{definition}
-	[Curva orientabile]
+	[Curva orientabile]\label{def:curve_or}
 	$\gamma \subseteq \R^n$ connesso e compatto è orientabile se $\exists \vb{T}: \gamma \to \R^n$ continua tale che $\forall \vb{x} \in \gamma \ \vb{T}(\vb{x})\in T_{\vb{x}}\gamma \e \norm{\vb{T}(\vb{x})}=1$. In altre parole, è necessario che esista un campo continuo di versori tangenti alla curva. Si definisce orientamento indotto dalla parametrizzazione $\vb{r}$ il campo di versori
 	$$
-		T(x)=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}} \in T_{\vb{x}}\gamma
+		\vb{T}(\vb{x})=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}} \in T_{\vb{x}}\gamma
 	$$
 \end{definition}
 
@@ -51,15 +55,17 @@
 
 \begin{theorem}
 	[Effetto del cambio di parametrizzazione sull'orientamento]
-	Sia $\gamma$ orientabile e sia $\vb{T}(\vb{x})=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}}$. Vi sono due casi:
+	Sia $\gamma$ orientabile e sia $\vb{T}(\vb{x})$ come nella definizione \ref{def:curve_or}. Sia $\varphi:[\alpha,\beta]\to[a,b]$ un diffeomorfismo $\C{1}$ e sia $\bm\rho=\vb{r}\circ\varphi$ una nuova parametrizzazione di $\gamma$. Vi sono due casi:
 	\begin{enumerate}[a.]
-		\item $\varphi$ è un diffeomorfismo crescente, quindi l'orientamento indotto da $\bm\rho$ è lo stesso di $\vb{r}$
-		\item $\varphi$ è un diffeomorfismo decrescente, quindi l'orientamento indotto da $\bm\rho$ è opposto a quello indotto da $\vb{r}$
+		\item $\varphi$ è un diffeomorfismo crescente, allora l'orientamento indotto da $\bm\rho$ è lo stesso di $\vb{r}$
+		\item $\varphi$ è un diffeomorfismo decrescente, allora l'orientamento indotto da $\bm\rho$ è opposto a quello indotto da $\vb{r}$
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
-	% TODO
+\begin{proof} Si nota immediatamente che il segno dell'orientamento dipende esclusivamente dal segno della derivata di $\varphi$.
+	$$
+		\bm\rho'(\tau)=\vb{r}'(\varphi(\tau))\frac{\dd \varphi}{\dd \tau}(\tau)
+	$$
 \end{proof}
 
 \begin{definition}
@@ -102,7 +108,7 @@
 	\end{gather*}
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:length_invariance}
 	La lunghezza di una curva regolare non dipende dalla parametrizzazione.
 \end{prop}
 
@@ -145,8 +151,9 @@
 	$$
 		s(t)=\int_a^t\norm{\vb{r}'(u)}\dd u
 	$$
-	$s(t)$ è detta ascissa curvilinea e $s^{-1}(t)$ è un cambio di parametrizzazione ammissibile per $\gamma$, essendo un diffeomorfismo crescente da $[0,L_\gamma]$ in $[a,b]$.
+	$s(t)$ è detta ascissa curvilinea.
 \end{definition}
+$s\in\C{1}([a,b],[0,L_\gamma])$ è iniettiva e suriettiva. Inoltre $s'(t)=\norm{\vb{r}'(t)}\neq0 \ \forall t \in [a,b]$. Per questo $s$ è invertibile con inversa a sua volta $\C{1}$. $s^{-1}$ è quindi un cambiamento di variabile ammissibile e solitamente negli integrali si sottintende di star utilizzando l'ascissa curvilinea.
 
 \section{Lavoro}
 
@@ -175,7 +182,9 @@
 
 Se si considera la parametrizzazione $\vb{r}: [a,b]\suarrow \gamma$, dove si assume che l'orientamento indotto dalla parametrizzazione sia compatibile con $\hat{\bm\tau}$, allora il lavoro si può calcolare come segue:
 $$
-	L_{\gamma, \hat{\bm\tau}} = \int_a^b\ip{\vecf(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
+	L_{\gamma, \hat{\bm\tau}}
+	=\int_{a}^{b}\ip{\vecf(\vb{r}(t))}{\frac{\vb{r}'(t)}{\norm{\vb{r}'(t)}}}\norm{\vb{r}'(t)}\dd t
+	=\int_a^b\ip{\vecf(\vb{r} (t))}{\frac{\dd \vb{r}}{\dd t} (t)}\dd t
 $$
 
 \begin{theorem}
@@ -188,7 +197,10 @@ $$
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	La dimostrazione è identica a quella della proposizione \ref{prop:length_invariance} in cui si applica il cambiamento di variabile all'integrale, con la differenza che la derivata del diffeomorfismo non è all'interno del valore assoluto per cui il segno del lavoro varia a seconda del segno di quest'ultima.
+	$$
+		L_{\gamma,\hat{\bm\tau}_\rho}=\int_{\alpha}^{\beta}\ip{\vecf(\vb{r}(\varphi(u)))}{\frac{\dd \vb{r}}{\dd t}(\varphi(u))}\frac{\dd \varphi}{\dd u}(u)\dd u
+	$$
 \end{proof}
 
 \section{Campi vettoriali conservativi}
@@ -219,8 +231,8 @@ $$
 	Sia $\vb{r}:[a,b]\suarrow\gamma$ una parametrizzazione regolare a tratti che induce $\hat{\bm\tau}$.
 	\begin{align*}
 		L_{\gamma,\hat{\bm\tau}}
-		&=\int_{a}^{b}\innerproduct{\vecf (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
-		&=\int_{a}^{b}\innerproduct{\grad U (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
+		&=\int_{a}^{b}\ip{\vecf (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
+		&=\int_{a}^{b}\ip{\grad U (\vb{r}(t))}{\vb{r}'(t)}\dd t=\\
 		&=\int_{a}^{b}\frac{\dd}{\dd t}(U\circ \vb{r})(t)\dd t=\\
 		&=U(\vb{x}_f)-U(\vb{x}_i)
 	\end{align*}
@@ -240,7 +252,7 @@ $$
 \end{theorem}
 
 \begin{remark}
-	Il punto \textit{1} implica il punto \textit{2} per il teorema \ref{thm:cvc_work}. I punti \textit{2} e \textit{3} sono ovviamente equivalenti. Dimostrare che il punto \textit{2} implica il punto \textit{1} comporta verificare che $U(\vb{x})=\int_{\gamma,\hat{\bm\tau}}\innerproduct{\vecf}{\hat{\bm\tau}}\dd s$ è $\C{1}$ in $A$ e che è un potenziale per $\vecf$. Occorre utilizzare piccoli spostamenti e studiare come varia $\vecf$.
+	Il punto \textit{1} implica il punto \textit{2} per il teorema \ref{thm:cvc_work}. I punti \textit{2} e \textit{3} sono ovviamente equivalenti. Dimostrare che il punto \textit{2} implica il punto \textit{1} comporta verificare che $U(\vb{x})=\int_{\gamma,\hat{\bm\tau}}\ip{\vecf}{\hat{\bm\tau}}\dd s$ è $\C{1}$ in $A$ e che è un potenziale per $\vecf$. Occorre utilizzare piccoli spostamenti e studiare come varia $\vecf$.
 \end{remark}
 
 \begin{definition}
@@ -300,15 +312,15 @@ $$
 \begin{proof}
 	Sia $\lambda$ una qualsiasi curva chiusa nel piano. L'unico caso da analizzare è quello in cui l'insieme che ha come bordo $\lambda$ contiene al suo interno il punto $(0,0)$, poiché si sa già che $\vecf$ è conservativo su qualsiasi curva che non racchiude $(0,0)$ per il corollario \ref{cor:loc_cons}. Si definisca la curva $\Gamma_\varepsilon$\footnote{Qui sarebbe stato opportuno un disegno, ma per questioni di tempo non è stato possibile aggiungerlo.}, ottenuta separando di $\varepsilon>0$ due estremi della curva $\lambda$ e due estremi della curva $\gamma$, per poi connetterli fra loro con due tratti chiamati $s_\varepsilon^1$ e $s_\varepsilon^2$. Il lavoro di $\vecf$ lungo $\Gamma_\varepsilon$ è nullo perché $\Gamma_\varepsilon$ è contenuta in un insieme semplicemente connesso (non racchiude il punto $(0,0)$). Il lavoro su $\Gamma_\varepsilon$ è la somma dei lavori su $\lambda_\varepsilon,\gamma_\varepsilon,s_\varepsilon^1 \e s_\varepsilon^2$. Mandando $\varepsilon \to 0$, $\Gamma_\varepsilon \to \Gamma$, cioè $s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}, \lambda_\varepsilon \to \lambda \e \gamma_\varepsilon \to \gamma$.
 	$$
-		\int_{s_{\varepsilon}^1}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon^1}+\int_{s_{\varepsilon}^2}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon^2}
+		\int_{s_{\varepsilon}^1}\ip{\vecf}{\hat{\bm\tau}_\varepsilon^1}+\int_{s_{\varepsilon}^2}\ip{\vecf}{\hat{\bm\tau}_\varepsilon^2}
 		\xrightarrow[s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}]{\varepsilon\to 0}
-		\int_{\tilde{s}}\innerproduct{\vecf}{\hat{\bm\tau}}\dd s+\int_{\tilde{s}}\innerproduct{\vecf}{-\hat{\bm\tau}}\dd s=0
+		\int_{\tilde{s}}\ip{\vecf}{\hat{\bm\tau}}\dd s+\int_{\tilde{s}}\ip{\vecf}{-\hat{\bm\tau}}\dd s=0
 	$$
 	Di conseguenza,
 	\begin{gather*}
-		0=\int_{\Gamma_\varepsilon}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon}\xrightarrow[\lambda_\varepsilon\to\lambda,\gamma_\varepsilon\to\gamma]
-		{\varepsilon\to 0}\int_\gamma \innerproduct{\vecf}{\hat{\bm\tau}}\dd s+\int_\lambda\innerproduct{\vecf}{\hat{\bm\tau}}\dd s\\
-		\then \int_\lambda \innerproduct{\vecf}{\hat{\bm\tau}}\dd s=0
+		0=\int_{\Gamma_\varepsilon}\ip{\vecf}{\hat{\bm\tau}_\varepsilon}\xrightarrow[\lambda_\varepsilon\to\lambda,\gamma_\varepsilon\to\gamma]
+		{\varepsilon\to 0}\int_\gamma \ip{\vecf}{\hat{\bm\tau}}\dd s+\int_\lambda\ip{\vecf}{\hat{\bm\tau}}\dd s\\
+		\then \int_\lambda \ip{\vecf}{\hat{\bm\tau}}\dd s=0
 	\end{gather*}
 	Dove nell'ultimo passaggio è stata usata l'ipotesi che il lavoro su $\gamma$ sia nullo.
 \end{proof}

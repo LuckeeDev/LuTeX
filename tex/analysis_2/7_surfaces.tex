@@ -93,7 +93,7 @@ Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede c
 	Sia $A\subseteq \R^3$ un aperto e sia $\Sigma \subseteq A$ una superficie orientabile con orientamento $\hat{\bm \nu}$ indotto dalla parametrizzazione $\vb{r}:\overline{\Omega}\to\Sigma$. Sia inoltre $\vecf \in \C{0}(A,\R^3)$ un campo vettoriale. Il flusso di $\vecf$ attraverso $\Sigma$ è
 	\begin{align*}
 		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S 
-		&=\iint_{\overline{\Omega}}\innerproduct{(\vecf\circ\vb{r})(u,v)}{\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}}\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}\dd u \dd v=\\
+		&=\iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}}\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}\dd u \dd v=\\
 		&= \iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v\\
 	\end{align*}
 \end{definition}
@@ -207,7 +207,7 @@ $$
 	[Giustificazione in un caso semplice.]
 	Si consideri il cubo $Q=\{(x,y,z)\in[0,L]\times[0,L]\times[0,L]\}$. Il flusso del campo $\vecf$ attraverso le facce di $\partial Q$ parallele al piano $xz$ è
 	$$
-		\iint_{\partial Q_y}\innerproduct{\vecf}{\hat{\bm\nu}}=-\iint_{[0,L]\times[0,L]}f_2(x,0,z)\dd x \dd z
+		\iint_{\partial Q_y}\ip{\vecf}{\hat{\bm\nu}}=-\iint_{[0,L]\times[0,L]}f_2(x,0,z)\dd x \dd z
 		+\iint_{[0,L]\times[0,L]}f_2(x,L,z)\dd x \dd z
 	$$
 	L'integrale del termine della divergenza dipendente da $y$ è

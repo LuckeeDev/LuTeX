@@ -53,24 +53,24 @@
     \begin{enumerate}
         \item Si verifica che la distanza fra $f(\vb{x})$ e $f(\vb{x_0})$ tende a $0$ se $\vb{x}$ tende a $\vb{x_0}$.
         \begin{align*}
-            \abs{f(\vb{x})-f(\vb{x_0})}&=\abs{\innerproduct{\vb{m}}{\vb{x}-\vb{x_0}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})}\leq\\
-            &\leq\abs{\innerproduct{\vb{m}}{\vb{\vb{x}-\vb{x_0}}}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})\leq\\
+            \abs{f(\vb{x})-f(\vb{x_0})}&=\abs{\ip{\vb{m}}{\vb{x}-\vb{x_0}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})}\leq\\
+            &\leq\abs{\ip{\vb{m}}{\vb{\vb{x}-\vb{x_0}}}}+o(\norm{\vb{\vb{x}-\vb{x_0}}})\leq\\
             &\leq\norm{\vb{m}}\norm{\vb{x}-\vb{x_0}}+o(\norm{\vb{x}-\vb{x_0}})\xrightarrow{\vb{x}\to\vb{x_0}} 0
         \end{align*}
 
         \item Si studia il limite che definisce la derivata parziale $j$-esima di $f$ in $\vb{x_0}$.
         \begin{align*}
             \frac{\partial f}{\partial x_j}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\vb{e}}_j)-f(\vb{x_0})}{t}=\\
-            &=\lim_{t\to 0}\frac{\innerproduct{\vb{m}}{t\hat{\vb{e}}_j} + o(\abs{t})}{t}=\\
-            &=\innerproduct{\vb{m}}{\hat{\vb{e}}_j}=m_j
+            &=\lim_{t\to 0}\frac{\ip{\vb{m}}{t\hat{\vb{e}}_j} + o(\abs{t})}{t}=\\
+            &=\ip{\vb{m}}{\hat{\vb{e}}_j}=m_j
         \end{align*}
         La derivata parziale di $f$ rispetto a $x_j$ è la $j$-esima componente del vettore $\vb{m}$, quindi $\vb{m}=\grad f(\vb{x_0})$.
 
         \item Come nel punto \textit{2}, si studia il limite che definisce la derivata direzionale di $f$ in $\vb{x_0}$.
         \begin{align*}
             \frac{\partial f}{\partial \hat{\bm \nu}}&=\lim_{t\to 0}\frac{f(\vb{x_0}+t\hat{\bm \nu})-f(\vb{x_0})}{t}=\\
-            &=\lim_{t\to 0}\frac{\innerproduct{\grad f(\vb{x_0})}{t\hat{\bm \nu}} + o(\abs{t})}{t}=\\
-            &=\innerproduct{\grad f(\vb{x_0})}{\hat{\bm \nu}}
+            &=\lim_{t\to 0}\frac{\ip{\grad f(\vb{x_0})}{t\hat{\bm \nu}} + o(\abs{t})}{t}=\\
+            &=\ip{\grad f(\vb{x_0})}{\hat{\bm \nu}}
         \end{align*}
     \end{enumerate}
 \end{proof}
@@ -100,7 +100,7 @@
     \end{equation}
     Unendo le equazioni \eqref{eq:diff_tot_1} e \eqref{eq:diff_tot_2}, si può scrivere il seguente limite:
     \begin{align*}
-        &\lim_{\norm{(x-x_0,y-y_0)}\to 0}\frac{f(x,y)-f(x_0,y_0)-\innerproduct{\grad f(x_0,y_0)}{(x-x_0,y-y_0)}}{\norm{(x-x_0,y-y_0)}}=\\
+        &\lim_{\norm{(x-x_0,y-y_0)}\to 0}\frac{f(x,y)-f(x_0,y_0)-\ip{\grad f(x_0,y_0)}{(x-x_0,y-y_0)}}{\norm{(x-x_0,y-y_0)}}=\\
         =&\lim_{\norm{(x-x_0,y-y_0)}\to 0}o(1)\frac{x-x_0+y-y_0}{\norm{(x-x_0,y-y_0)}}=0
     \end{align*}
     Che è esattamente la definizione di differenziabilità, da cui la tesi. Si noti che la frazione nell'ultimo passaggio è limitata per $(x,y)\to(x_0,y_0)$.
@@ -313,17 +313,17 @@ Matrici diverse possono essere associate alla stessa forma quadratica, infatti �
             0&\leq F''(0)=\lim_{h\to 0}\frac{\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0}+h\hat{\bm\nu})-\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})}{h}=\\
             &=\lim_{h\to 0}\sum_{i=1}^n\frac{[\partial_i f(\vb{x_0 + h\hat{\bm\nu}})-\partial_i f(\vb{x_0})]\nu_i}{h}=\\
             &=\sum_{i=1}^{n}\frac{\partial}{\partial \hat{\bm\nu}}\frac{\partial f}{\partial x_i}(\vb{x_0})\nu_i=\\
-            &=\sum_{i=1}^n\sum_{j=1}^{n}=\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})\nu_i\nu_j=\innerproduct{\hat{\bm\nu}}{H_f(\vb{x_0})\hat{\bm\nu}}
+            &=\sum_{i=1}^n\sum_{j=1}^{n}=\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})\nu_i\nu_j=\ip{\hat{\bm\nu}}{H_f(\vb{x_0})\hat{\bm\nu}}
         \end{align*}
         Questo significa che $H_f(\vb{x_0})$ è definita positiva o semidefinita positiva.
         \addtocounter{enumi}{1}
         \item Si applichi la formula di Taylor alla funzione $f$ nel punto $\vb{x_0}$. Allora, essendo $\grad f(\vb{x_0})=\vb{0}$,
         $$
-            f(\vb{x_0}+\vb{h})-f(\vb{x_0}) = \frac{1}{2}\innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{h}^2) \with \norm{h}\to 0
+            f(\vb{x_0}+\vb{h})-f(\vb{x_0}) = \frac{1}{2}\ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{h}^2) \with \norm{h}\to 0
         $$
         Sia $\overline{\lambda}>0$ il minimo degli autovalori di $H_f(\vb{x_0})$, allora vale la seguente maggiorazione:
         \begin{gather*} 
-            \innerproduct{\vb{h}}{H_f(\vb{x_0})\vb{h}}\geq \overline{\lambda}\norm{\vb{h}^2}\\
+            \ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}\geq \overline{\lambda}\norm{\vb{h}^2}\\
             \then f(\vb{x_0}+\vb{h})-f(\vb{x_0})\geq \norm{h}^2\left(\frac{1}{2}\overline{\lambda}+o(1)\right)\geq 0
         \end{gather*}
         Per cui $\vb{x_0}$ è un punto di minimo locale per $f$.
