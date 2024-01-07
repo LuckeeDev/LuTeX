@@ -49,7 +49,7 @@
 
 \begin{definition}
 	[Misura]
-	Sia $(X,\A)$ uno spazio misurabile. $\mu:\A \to [0,\infty]$ è una misura se soddisfa le seguenti richieste:
+	Sia $(X,\A)$ uno spazio misurabile. $\mu:\A \to [0,+\infty]$ è una misura se soddisfa le seguenti richieste:
 	\begin{enumerate}
 		\item $\mu(\varnothing)=0$
 		\item (Additività numerabile) Se $A_i \in \A \ \forall i \in \N$ sono insiemi a due a due disgiunti, allora $$\displaystyle\mu\left(\bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^\infty \mu(A_i)$$
@@ -124,7 +124,7 @@
 
 \begin{definition}
 	[Insieme misurabile secondo Carathéodory]
-	Siano $X$ un insieme e $\mu^*:\calP \to [0,+\infty]$ una misura esterna su $X$. $A\subseteq X$ è misurabile secondo Carathéodory se $\forall E \subseteq X, \ \mu^*(E)=\mu^*(A\cap E) + \mu^*\left(A^C \cap E\right)$, dove $A^C=X\setminus A$.
+	Siano $X$ un insieme e $\mu^*:\calP(X) \to [0,+\infty]$ una misura esterna su $X$. $A\subseteq X$ è misurabile secondo Carathéodory se $\forall E \subseteq X, \ \mu^*(E)=\mu^*(A\cap E) + \mu^*\left(A^C \cap E\right)$, dove $A^C=X\setminus A$.
 \end{definition}
 
 \begin{theorem}
@@ -182,7 +182,7 @@
 \end{theorem}
 
 \begin{corollary}
-	$A \in \mathcal{L}(\R^n) \iff \forall \varepsilon > 0 \ \exists V \text{ chiuso}, U \text{ aperto}, V \subseteq A \subseteq U \tc \mu(U\setminus V) < \varepsilon$.\qed
+	$A \in \mathcal{L}(\R^n) \iff \forall \varepsilon > 0 \ \exists V \text{ chiuso},\ U \text{ aperto},\ V \subseteq A \subseteq U \tc \mu(U\setminus V) < \varepsilon$.\qed
 \end{corollary}
 
 \begin{definition}
@@ -292,8 +292,8 @@
 	[Proprietà dell'integrale di funzioni misurabili non negative]\leavevmode
 	\begin{enumerate}
 		\item Ogni funzione misurabile non negativa definita in un insieme misurabile è integrabile secondo Lebesgue
-		\item Se $f,g:A\to [0,+\infty]$ sono misurabili in $A\in \mathcal{L}(\R^n)$, allora $f+cg \with c \in \R^+$ è misurabile e $\int_A (f+cg)=\int_Af+c\int_Ag$
-		\item Se $f,g:A\to[0,+\infty]$ sono misurabili in $A\in\mathcal{L}(\R^n) \e f\leq g$, allora $\int_Af\leq\int_Ag$
+		\item (Linearità) Se $f,g:A\to [0,+\infty]$ sono misurabili in $A\in \mathcal{L}(\R^n)$, allora $f+cg \with c \in \R^+$ è misurabile e $\int_A (f+cg)=\int_Af+c\int_Ag$
+		\item (Monotonia) Se $f,g:A\to[0,+\infty]$ sono misurabili in $A\in\mathcal{L}(\R^n) \e f\leq g$, allora $\int_Af\leq\int_Ag$
 		\item Se $B\subseteq A \with B\in \mathcal{L}(\R^n)$, allora $\int_Bf=\int_A\chi_Bf$
 		\qed
 	\end{enumerate}
@@ -301,7 +301,7 @@
 
 \begin{theorem}
 	[Proprietà delle funzioni misurabili]
-	Siano $A \in \mathcal{L}(\R^n), \ f,g:A\to\R$ misurabili e $c \in \R$. Allora $f+g,\ cf,\ \dfrac{f}{g},\ \abs{f},\ \max\{f,g\} \e \min\{f,g\}$ sono misurabili in $A$. Nel caso della divisione, $g\neq 0 \ \forall \vb{x} \in A$.
+	Siano $A \in \mathcal{L}(\R^n), \ f,g:A\to\R$ misurabili e $c \in \R$. Allora $f+g,\ cf,\ f/g,\ \abs{f},\ \max\{f,g\} \e \min\{f,g\}$ sono misurabili in $A$. Nel caso della divisione, $g(\vb{x})\neq 0 \ \forall \vb{x} \in A$.
 	\qed
 \end{theorem}
 
@@ -312,7 +312,7 @@
 
 \begin{definition}
 	[Funzione integrabile di segno variabile]
-	Siano $A\in\mathcal{L}(\R^n) \e f:A\to\R$. Si definiscono la parte positiva $f_+$ e la parte negativa $f_-$ di $f$ come nella Definizione \ref{def:ppos_pneg} del Capitolo \ref{chap:peano_jordan}. $f_+ \e f_-$ sono misurabili. Se almeno uno fra $\int_A f_+ \e \int_A f_-$ è finito, si definisce $\int_A f= \int_A f_+ - \int_A f_-$. Se $\int_A f_+,\int_A f_- <+\infty, \ f$ è detta sommabile.
+	Siano $A\in\mathcal{L}(\R^n) \e f:A\to\R$ misurabile secondo Lebesgue. Si definiscono la parte positiva $f_+$ e la parte negativa $f_-$ di $f$ come nella Definizione \ref{def:ppos_pneg} del Capitolo \ref{chap:peano_jordan}. $f_+ \e f_-$ sono misurabili. Se almeno uno fra $\int_A f_+ \e \int_A f_-$ è finito, si definisce $\int_A f= \int_A f_+ - \int_A f_-$. Se $\int_A f_+,\int_A f_- <+\infty, \ f$ è detta sommabile.
 \end{definition}
 
 \begin{theorem}[Proprietà dell'integrale di Lebesgue]
