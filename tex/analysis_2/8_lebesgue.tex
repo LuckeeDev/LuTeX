@@ -189,8 +189,8 @@
 	[$G_\delta \e F_\sigma$]
 	Si definiscono i seguenti insiemi:
 	\begin{itemize}
-		\item $G_\delta = \{G \subseteq \R^n:G=\bigcap\limits_{j=1}^\infty U_j, U_j \text{ aperto } \forall j \in \N\} \subseteq \mathcal{B}(\R^n)$
-		\item $F_\sigma = \{F \subseteq \R^n:F=\bigcup\limits_{j=1}^\infty C_j, C_j \text{ chiuso } \forall j \in \N\} \subseteq \mathcal{B}(\R^n)$
+		\item $G_\delta = \left\{G \subseteq \R^n:G=\bigcap\limits_{j=1}^\infty U_j, U_j \text{ aperto } \forall j \in \N\right\} \subseteq \mathcal{B}(\R^n)$
+		\item $F_\sigma = \left\{F \subseteq \R^n:F=\bigcup\limits_{j=1}^\infty C_j, C_j \text{ chiuso } \forall j \in \N\right\} \subseteq \mathcal{B}(\R^n)$
 	\end{itemize}
 \end{definition}
 
@@ -249,7 +249,7 @@
 
 \begin{definition}
 	[Funzione misurabile secondo Lebesgue]
-	Siano $A \in \mathcal{L}(\R^n) \e f:A\to [0,+\infty]$. $f$ è misurabile secondo Lebesgue se $\forall \beta \in \R, \ \{\vb{x}\in A:f(\vb{x})<\beta\} \in \mathcal{L}(\R^n)$.
+	Siano $A \in \mathcal{L}(\R^n) \e f:A\to \R$. $f$ è misurabile secondo Lebesgue se $\forall \beta \in \R, \ \{\vb{x}\in A:f(\vb{x})<\beta\} \in \mathcal{L}(\R^n)$.
 \end{definition}
 
 \begin{remark}
@@ -288,7 +288,8 @@
 	Se $A\in \mathcal{L}(\R^n) \e f:A\to [0,+\infty)$ è misurabile, allora $\int_Af=\sup\{\int_A \varphi_k:\varphi_k \leq f, \varphi_k \text{ è una funzione semplice positiva}\}$. In particolare, $f$ è detta sommabile se $\int_A f<+\infty$.
 \end{definition}
 
-\begin{theorem}\leavevmode
+\begin{theorem}
+	[Proprietà dell'integrale di funzioni misurabili non negative]\leavevmode
 	\begin{enumerate}
 		\item Ogni funzione misurabile non negativa definita in un insieme misurabile è integrabile secondo Lebesgue
 		\item Se $f,g:A\to [0,+\infty]$ sono misurabili in $A\in \mathcal{L}(\R^n)$, allora $f+cg \with c \in \R^+$ è misurabile e $\int_A (f+cg)=\int_Af+c\int_Ag$
@@ -335,6 +336,12 @@
 		\end{enumerate}
 	\end{enumerate}
 \end{theorem}
+
+Le funzioni $f:[a,b]\to\R$ continue in $[a,b]$ oppure monotone in $[a,b]$ sono integrabili secondo Riemann e quindi anche secondo Lebesgue. La funzione di Dirichlet ($\chi_{\mathbb{Q}\cap[0,1]}$) non è integrabile secondo Riemann, ma lo è secondo Lebesgue e ha integrale nullo. La funzione
+$$
+	f(x)=\frac{\dd}{\dd x}\left[x\cos(\frac{1}{x})\right] \with x \in [0,1]
+$$
+non è integrabile secondo Lebesgue, ma è integrabile in senso generalizzato secondo Riemann.
 
 \begin{theorem}
 	[di Fubini]

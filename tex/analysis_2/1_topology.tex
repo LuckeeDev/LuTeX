@@ -114,7 +114,7 @@
 \end{prop}
 
 \begin{proof}
-    Sia $z \in A$. Allora, per le proprietà della distanza (Def. \ref{def:distance}), $d(x,z)\leq d(x,y)+d(y,z)\then \abs{d(x,z)-d(y,z)}\leq d(x,y)$. Passando all'estremo inferiore, per la definizione \ref{def:d_point_set} si ottiene la tesi: $\inf\limits_{z\in A}\abs{d(x,z)-d(y,z)}\leq d(x,y)\then \abs{d(x,A)-d(y,A)}\leq d(x,y)$.
+    Sia $z \in A$. Allora, per le proprietà della distanza (Def. \ref{def:distance}), $d(x,z)\leq d(x,y)+d(y,z)\then \abs{d(x,z)-d(y,z)}\leq d(x,y)$. Passando all'estremo inferiore, per la Definizione \ref{def:d_point_set} si ottiene la tesi: $\inf\limits_{z\in A}\abs{d(x,z)-d(y,z)}\leq d(x,y)\then \abs{d(x,A)-d(y,A)}\leq d(x,y)$.
 \end{proof}
 
 \begin{definition}
@@ -342,7 +342,7 @@
         $$
             \abs{f(x)-f(x_0)}\leq\abs{f(x)-f_n(x)}+\abs{f_n(x)-f_n(x_0)}+\abs{f_n(x_0)-f(x_0)}
         $$
-        Fissato $\varepsilon > 0$, per la definizione \ref{def:unif_conv} di convergenza uniforme $\exists \overline{n} \tc \forall n > \overline{n}$,
+        Fissato $\varepsilon > 0$, per la Definizione \ref{def:unif_conv} di convergenza uniforme $\exists \overline{n} \tc \forall n > \overline{n}$,
         $$\abs{f(x)-f_n(x)}+\abs{f_n(x_0)-f(x_0)}\leq 2 \sup_{t \in I}\abs{f_n(t)-f(t)}<2\varepsilon$$
         Inoltre, per la continuità di $f_n$ $\exists \delta>0 \tc \forall x \in [x_0-\delta,x_0+\delta]$, $\abs{f_n(x)-f_n(x_0)}<\varepsilon$.
         In conclusione, $\abs{f(x)-f(x_0)} < 3\varepsilon \ \forall x \in [x_0-\delta,x_0+\delta]$, che è la definizione di continuità.
