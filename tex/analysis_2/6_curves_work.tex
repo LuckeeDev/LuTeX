@@ -18,12 +18,12 @@
 
 \begin{definition}
 	[Parametrizzazione semplice aperta]
-	Si dice parametrizzazione semplice aperta una funzione $\vb{r}: [a,b]\bijarrow\R^n \in \C{1}$. Si noti che $\vb{r}$ è un omeomorfismo.
+	Si dice parametrizzazione semplice aperta una funzione $\vb{r}: [a,b]\bijarrow\vb{r}([a,b]) \in \C{1}$. Si noti che $\vb{r}$ è un omeomorfismo.
 \end{definition}
 
 \begin{definition}
 	[Parametrizzazione semplice chiusa]
-	Si dice parametrizzazione semplice chiusa una funzione $\vb{r}: [a,b]\bijarrow \vb{r}((a,b)) \e \vb{r}(a)=\vb{r}(b)$.
+	Si dice parametrizzazione semplice chiusa una funzione $\vb{r}: (a,b)\bijarrow \vb{r}((a,b)) \e \vb{r}(a)=\vb{r}(b)$.
 \end{definition}
 
 \begin{theorem}
@@ -39,7 +39,7 @@
 
 \begin{definition}
 	[Curva orientabile]
-	$\gamma \subseteq \R^n$ connesso e compatto è orientabile se $\exists \vb{T}: \gamma \to \R^n \tc \forall \vb{x} \in \gamma \ \vb{T}(\vb{x})\in T_{\vb{x}}\gamma \e \norm{\vb{T}(\vb{x})}=1$. In altre parole, è necessario che esista un campo continuo di versori tangenti alla curva. Si definisce orientamento indotto dalla parametrizzazione $\vb{r}$ il campo di versori
+	$\gamma \subseteq \R^n$ connesso e compatto è orientabile se $\exists \vb{T}: \gamma \to \R^n$ continua tale che $\forall \vb{x} \in \gamma \ \vb{T}(\vb{x})\in T_{\vb{x}}\gamma \e \norm{\vb{T}(\vb{x})}=1$. In altre parole, è necessario che esista un campo continuo di versori tangenti alla curva. Si definisce orientamento indotto dalla parametrizzazione $\vb{r}$ il campo di versori
 	$$
 		T(x)=\frac{\vb{r}'(r^{-1}(\vb{x}))}{\norm{\vb{r}'(r^{-1}(\vb{x}))}} \in T_{\vb{x}}\gamma
 	$$
@@ -79,8 +79,13 @@
 
 \section{Integrali curvilinei}
 
-\begin{theorem}
+\begin{definition}
 	[Lunghezza di una curva]
+	Siano $\gamma$ una curva e sia $\mathcal{D}_P=\vb{x_0},\dots,\vb{x_k}\in \gamma$ una suddivisione di $\gamma$. Si definisce lunghezza della curva $\gamma$ $L_\gamma = \sup\limits_{P}\sum\limits_{j=1}^{k}\norm{\vb{x_j}-\vb{x_{j-1}}}$.
+\end{definition}
+
+\begin{theorem}
+	[Lunghezza di una curva regolare]
 	Se $\gamma$ è una curva regolare, allora la lunghezza di $\gamma$ è
 	$$
 		L_\gamma = \int_a^b\norm{\vb{r}'(t)}\dd t
@@ -89,7 +94,12 @@
 \end{theorem}
 
 \begin{proof}
-	% TODO
+	Si dimostra solo la disuguaglianza $L_P \leq \int\limits_{a}^{b}\norm{\vb{r}'(t)}\dd t \ \forall P$. Siano $a=t_0<t_1<\cdots<t_k=b$ i valori nell'intervallo $[a,b]$ corrispondenti ai punti della suddivisione $\mathcal{D}_P$.
+	\begin{gather*}
+		\vb{x_j}-\vb{x_{j-1}}=\vb{r}(t_j)-\vb{r}(t_{j-1})=\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t\\
+		\then L_P=\sum_{j=1}^{k}\norm{\vb{x_j}-\vb{x_{j-1}}}=\sum_{j=1}^{k}\norm{\int_{t_{j-1}}^{t_j}\vb{r}'(t)\dd t}\leq\\
+		\leq\sum_{j=1}^{k}\int_{t_{j-1}}^{t_j}\norm{\vb{r}'(t)}\dd t=\int_{a}^{b}\norm{\vb{r}'(t)}\dd t
+	\end{gather*}
 \end{proof}
 
 \begin{prop}
@@ -97,7 +107,23 @@
 \end{prop}
 
 \begin{proof}
-	% TODO
+	Siano $\vb{r}\in\C{1}([a,b],\R^n)$ una parametrizzazione regolare di $\gamma$, $\varphi:[\alpha,\beta]\to[a,b]$ un diffeomorfismo $\C{1}$ e $\bm{\rho}=\vb{r}\circ\varphi$.
+	\begin{equation}\label{eq:length_curve}
+		\int_{\alpha}^{\beta}\norm{\frac{\dd \bm\rho}{\dd \tau}(\tau)}\dd \tau
+		=\int_{\alpha}^{\beta}\abs{\frac{\dd \varphi}{\dd \tau}(\tau)}\norm{\frac{\dd \vb{r}}{\dd t}(\varphi(\tau))}\dd \tau
+	\end{equation}
+	Si presentano due casi:
+	\begin{enumerate}[a.]
+		\item Se $\varphi$ è un diffeomorfismo crescente, la \eqref{eq:length_curve} diventa come segue:
+		$$
+			\int_{\alpha}^{\beta}\frac{\dd \varphi}{\dd \tau}(\tau)\norm{\frac{\dd \vb{r}}{\dd t}(\varphi(\tau))}\dd \tau=\int_{a}^{b}\norm{\frac{\dd \vb{r}}{\dd t}(t)}\dd t=L_\gamma
+		$$
+		\item Se $\varphi$ è un diffeomorfismo crescente, il valore assoluto cambia il segno della sua derivata e la \eqref{eq:length_curve} diventa come segue:
+		$$
+		\int_{\alpha}^{\beta}-\frac{\dd \varphi}{\dd \tau}(\tau)\norm{\frac{\dd \vb{r}}{\dd t}(\varphi(\tau))}\dd \tau=\int_{a}^{b}\norm{\frac{\dd \vb{r}}{\dd t}(t)}\dd t=L_\gamma
+		$$
+	\end{enumerate}
+	Dove in entrambi i casi è stato usato il teorema del cambiamento di variabile nell'integrale.
 \end{proof}
 
 \begin{prop}
