@@ -264,14 +264,6 @@ $$
 	$$
 \end{proof}
 
-\begin{theorem}
-	Sia $\vecf \in \C{1}(\R^2\setminus{(0,0)}, \R^2)$ un campo vettoriale irrotazionale. Se, detta $\gamma$ la circonferenza di raggio unitario centrata in $(0,0)$ e orientamento arbitrario, $L_{\gamma, \hat{\bm\tau}}=0$, allora $\vecf$ è conservativo.
-\end{theorem}
-
-\begin{proof}
-	% TODO
-\end{proof}
-
 \begin{definition}
 	[Insieme convesso]
 	$A \subseteq \R^n$ aperto è un insieme convesso se $\forall \vb{x},\vb{y} \in A$ il segmento $[\vb{x},\vb{y}] \subseteq A$.
@@ -297,6 +289,26 @@ $$
 	\qed
 \end{lemma}
 
-\begin{corollary}
+\begin{corollary}\label{cor:loc_cons}
 	Siano $A \subseteq \R^n$ un aperto connesso e $\vecf \in \C{1}(A,\R^n)$ un campo vettoriale irrotazionale. Allora $\forall B\subseteq A$ connesso oppure stellato oppure semplicemente connesso $\vecf$ è conservativo se ristretto a $B$.
 \end{corollary}
+
+\begin{theorem}
+	Sia $\vecf \in \C{1}(\R^2\setminus{(0,0)}, \R^2)$ un campo vettoriale irrotazionale. Se, detta $\gamma$ la circonferenza di raggio unitario centrata in $(0,0)$ e orientamento arbitrario, $L_{\gamma, \hat{\bm\tau}}=0$, allora $\vecf$ è conservativo.
+\end{theorem}
+
+\begin{proof}
+	Sia $\lambda$ una qualsiasi curva chiusa nel piano. L'unico caso da analizzare è quello in cui l'insieme che ha come bordo $\lambda$ contiene al suo interno il punto $(0,0)$, poiché si sa già che $\vecf$ è conservativo su qualsiasi curva che non racchiude $(0,0)$ per il corollario \ref{cor:loc_cons}. Si definisca la curva $\Gamma_\varepsilon$\footnote{Qui sarebbe stato opportuno un disegno, ma per questioni di tempo non è stato possibile aggiungerlo.}, ottenuta separando di $\varepsilon>0$ due estremi della curva $\lambda$ e due estremi della curva $\gamma$, per poi connetterli fra loro con due tratti chiamati $s_\varepsilon^1$ e $s_\varepsilon^2$. Il lavoro di $\vecf$ lungo $\Gamma_\varepsilon$ è nullo perché $\Gamma_\varepsilon$ è contenuta in un insieme semplicemente connesso (non racchiude il punto $(0,0)$). Il lavoro su $\Gamma_\varepsilon$ è la somma dei lavori su $\lambda_\varepsilon,\gamma_\varepsilon,s_\varepsilon^1 \e s_\varepsilon^2$. Mandando $\varepsilon \to 0$, $\Gamma_\varepsilon \to \Gamma$, cioè $s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}, \lambda_\varepsilon \to \lambda \e \gamma_\varepsilon \to \gamma$.
+	$$
+		\int_{s_{\varepsilon}^1}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon^1}+\int_{s_{\varepsilon}^2}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon^2}
+		\xrightarrow[s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}]{\varepsilon\to 0}
+		\int_{\tilde{s}}\innerproduct{\vecf}{\hat{\bm\tau}}\dd s+\int_{\tilde{s}}\innerproduct{\vecf}{-\hat{\bm\tau}}\dd s=0
+	$$
+	Di conseguenza,
+	\begin{gather*}
+		0=\int_{\Gamma_\varepsilon}\innerproduct{\vecf}{\hat{\bm\tau}_\varepsilon}\xrightarrow[\lambda_\varepsilon\to\lambda,\gamma_\varepsilon\to\gamma]
+		{\varepsilon\to 0}\int_\gamma \innerproduct{\vecf}{\hat{\bm\tau}}\dd s+\int_\lambda\innerproduct{\vecf}{\hat{\bm\tau}}\dd s\\
+		\then \int_\lambda \innerproduct{\vecf}{\hat{\bm\tau}}\dd s=0
+	\end{gather*}
+	Dove nell'ultimo passaggio è stata usata l'ipotesi che il lavoro su $\gamma$ sia nullo.
+\end{proof}
