@@ -299,6 +299,7 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
             -J_{\vb{g}}(\vb{x}) & \vb{O}
         \end{bmatrix}
     $$
+    Si supponga che essa sia definita positiva se ristretta allo spazio tangente a $\Gamma$ in $\vb{x_0}$.
     Applicando la formula di Taylor,
     \begin{align*}
         f(\vb{x})-f(\vb{x_0})&=\mathcal{L}(\vb{x};\overline{\lambda}_1,\dots,\overline{\lambda}_k)-\mathcal{L}(\vb{x_0};\overline{\lambda}_1,\dots,\overline{\lambda}_k)=\\
@@ -310,5 +311,5 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
         f(\vb{x})-f(\vb{x_0})=\frac{t^2}{2}\ip{\vb{h}+\vb{o}(1)}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{h}+\vb{o}(1))}+o(\norm{\vb{h}+\vb{o}(1)}^2t^2)=\\
         =\frac{t^2}{2}\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}}(1+o(1))\geq 0
     \end{gather*}
-    Quindi $\vb{x_0}$ è minimo locale.
+    Quindi $\vb{x_0}$ è un punto di minimo per $f$ condizionato a $\Gamma$.
 \end{proof}
