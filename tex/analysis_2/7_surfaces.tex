@@ -23,15 +23,14 @@
 	$\Sigma \in \R^3$ è una superficie orientabile se $\exists \vb{N}:\Sigma \to \R^3 \in \C{0}$ tale che $\vb{N}(x,y,z)\in N_{(x,y,z)}\Sigma \e \norm{\vb{N}(x,y,z)}=1 \ \forall (x,y,z) \in \Sigma$, ovvero se esiste un campo continuo di versori normali a $\Sigma$.
 \end{definition}
 
-\begin{remark}
-	Diffeomorfismi crescenti, ovvero con $\det J_\varphi>0$, non variano l'orientamento della superficie. Diffeomorfismi decrescenti inducono l'orientamento opposto.
-\end{remark}
-
-Sia $\vb{r}:\overline{\Omega} \to \Sigma$ una parametrizzazione regolare. Le derivate parziali di $\vb{r}$ rispetto a $u \e v$ appartengono allo spazio tangente a $\Sigma$ in $\vb{r}(u,v)$, allora il loro prodotto vettoriale $\vb{n}(u,v)=\left(\frac{\partial \vb{r}}{\partial u}\wedge\frac{\partial \vb{r}}{\partial v}\right)(u,v) \in N_{\vb{r}(u,v)}\Sigma$ e si può definire il campo di versori normale alla superficie come
+Sia $\vb{r}:\overline{\Omega} \to \Sigma$ una parametrizzazione regolare. Le derivate parziali di $\vb{r}$ rispetto a $u \e v$ appartengono allo spazio tangente a $\Sigma$ in $\vb{r}(u,v)$, allora il loro prodotto vettoriale $\vb{n}(u,v)=\left(\frac{\partial \vb{r}}{\partial u}\wedge\frac{\partial \vb{r}}{\partial v}\right)(u,v) \in N_{\vb{r}(u,v)}\Sigma$ e si definisce l'orientamento indotto dalla parametrizzazione come
 $$
 	\vb{N}(u,v)=\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}\in N_{\vb{r}(u,v)}\Sigma
 $$
-Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede che l'espressione di $\vb{N}$ dipende dal segno di $\det J_{\bm\varphi}$.
+
+\begin{remark}
+	Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si conclude che diffeomorfismi crescenti, ovvero con $\det J_\varphi>0$, non variano l'orientamento della superficie. Diffeomorfismi decrescenti, ovvero con $\det J_\varphi<0$, inducono l'orientamento opposto.
+\end{remark}
 
 \begin{definition}
 	[Superficie regolare con bordo]
@@ -48,7 +47,7 @@ Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede c
 
 \begin{definition}
 	[Frontiera orientata canonicamente]
-	Sia $\Omega \subseteq \R^2$ un aperto regolare e siano $\vb{T}(u,v)\in T_{(u,v)}\Omega$ e $\vb{N}(u,v)=(T_2(u,v),-T_1(u,v))$. $(\partial \Omega, \vb{T})$ è orientata canonicamente se $\forall (u,v) \in \partial \Omega \ \exists \lambda > 0 \tc \forall \varepsilon \in (0,\lambda)$
+	Sia $\Omega \subseteq \R^2$ un aperto regolare e siano $\vb{T}(u,v)\in T_{(u,v)}\partial\Omega$ e $\vb{N}(u,v)=(T_2(u,v),-T_1(u,v))\in N_{(u,v)}\partial\Omega$. $(\partial \Omega, \vb{T})$ è orientata canonicamente se $\forall (u,v) \in \partial \Omega \ \exists \lambda > 0 \tc \forall \varepsilon \in (0,\lambda)$
 	\begin{enumerate}[a.]
 		\item $(u,v)+\varepsilon\vb{N}(u,v) \notin \overline{\Omega}$
 		\item $(u,v)-\varepsilon\vb{N}(u,v) \in \Omega$
@@ -73,18 +72,18 @@ Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede c
 
 \begin{definition}
 	[Superficie chiusa]
-	Le superfici senza bordo e limitate in $\R^3$ si dicono chiuse. Una superficie regolare a tratti è chiusa se $\partial \Sigma = \varnothing$ e se è limitata.
+	Una superficie regolare a tratti è chiusa se $\partial \Sigma = \varnothing$ e se è limitata.
 \end{definition}
 
 \begin{definition}
 	[Area di una superficie]
 	Sia $\vb{r}:\overline{\Omega} \bijarrow \Sigma \tc \rank J_{\vb{r}}(u,v) = 2 \ \forall (u,v) \in \overline{\Omega}$.
 	$$
-		\Area (\Sigma) = \iint_\Sigma \dd S = \iint_{\overline{\Omega}} \norm{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+		\Area (\Sigma) = \iint_\Sigma \dd S = \iint_{\overline{\Omega}} \norm{\left(\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}\right)(u,v)}\dd u \dd v
 	$$
 	Inoltre, sia $f: \Sigma \to \R$ una funzione continua.
 	$$
-		\iint_\Sigma f \dd S = \iint_{\overline{\Omega}}(f\circ\vb{r})(u,v)\norm{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+		\iint_\Sigma f \dd S = \iint_{\overline{\Omega}}(f\circ\vb{r})(u,v)\norm{\left(\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}\right)(u,v)}\dd u \dd v
 	$$
 \end{definition}
 
@@ -94,14 +93,14 @@ Applicando un diffeomorfismo $\bm\varphi$ all'aperto regolare $\Omega$ si vede c
 	\begin{align*}
 		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S 
 		&=\iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\frac{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}{\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}}}\norm{(\partial_u\vb{r}\wedge\partial_v\vb{r})(u,v)}\dd u \dd v=\\
-		&= \iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}(u,v)}\dd u \dd v\\
+		&= \iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\left(\frac{\partial \vb{r}}{\partial u} \wedge \frac{\partial \vb{r}}{\partial v}\right)(u,v)}\dd u \dd v\\
 	\end{align*}
 \end{definition}
 
 \begin{remark}
 	Se $\vb{r}$ induce l'orientamento opposto,
 	$$
-		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S = -\iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r}(u,v))}{\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}}\dd u \dd v
+		\iint_\Sigma \ip{\vecf}{\hat{\bm\nu}}\dd S = -\iint_{\overline{\Omega}}\ip{(\vecf\circ\vb{r})(u,v)}{\left(\frac{\partial \vb{r}}{\partial u}\wedge \frac{\partial \vb{r}}{\partial v}\right)(u,v)}\dd u \dd v
 	$$
 \end{remark}
 
