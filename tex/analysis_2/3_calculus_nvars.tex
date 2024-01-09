@@ -310,21 +310,22 @@ Matrici diverse possono essere associate alla stessa forma quadratica, infatti �
         $$
         Allora per costruzione $t=0$ è un punto di minimo locale per $F$. Per questo motivo,
         \begin{align*}
-            0&\leq F''(0)=\lim_{h\to 0}\frac{\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0}+h\hat{\bm\nu})-\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})}{h}=\\
-            &=\lim_{h\to 0}\sum_{i=1}^n\frac{[\partial_i f(\vb{x_0 + h\hat{\bm\nu}})-\partial_i f(\vb{x_0})]\nu_i}{h}=\\
+            0&\leq F''(0)
+            =\lim_{h\to 0}\frac{\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0}+h\hat{\bm\nu})-\frac{\partial f}{\partial \hat{\bm\nu}}(\vb{x_0})}{h}=\\
+            &=\lim_{h\to 0}\sum_{i=1}^n\frac{[\partial_i f(\vb{x_0} + h\hat{\bm\nu})-\partial_i f(\vb{x_0})]\nu_i}{h}=\\
             &=\sum_{i=1}^{n}\frac{\partial}{\partial \hat{\bm\nu}}\frac{\partial f}{\partial x_i}(\vb{x_0})\nu_i=\\
-            &=\sum_{i=1}^n\sum_{j=1}^{n}=\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})\nu_i\nu_j=\ip{\hat{\bm\nu}}{H_f(\vb{x_0})\hat{\bm\nu}}
+            &=\sum_{i=1}^n\sum_{j=1}^{n}\frac{\partial^2 f}{\partial x_i \partial x_j}(\vb{x_0})\nu_i\nu_j=\ip{\hat{\bm\nu}}{H_f(\vb{x_0})\hat{\bm\nu}}
         \end{align*}
         Questo significa che $H_f(\vb{x_0})$ è definita positiva o semidefinita positiva.
         \addtocounter{enumi}{1}
         \item Si applichi la formula di Taylor alla funzione $f$ nel punto $\vb{x_0}$. Allora, essendo $\grad f(\vb{x_0})=\vb{0}$,
         $$
-            f(\vb{x_0}+\vb{h})-f(\vb{x_0}) = \frac{1}{2}\ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{h}^2) \with \norm{h}\to 0
+            f(\vb{x_0}+\vb{h})-f(\vb{x_0}) = \frac{1}{2}\ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}+o(\norm{\vb{h}}^2) \with \norm{\vb{h}}\to 0
         $$
         Sia $\overline{\lambda}>0$ il minimo degli autovalori di $H_f(\vb{x_0})$, allora vale la seguente maggiorazione:
         \begin{gather*} 
-            \ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}\geq \overline{\lambda}\norm{\vb{h}^2}\\
-            \then f(\vb{x_0}+\vb{h})-f(\vb{x_0})\geq \norm{h}^2\left(\frac{1}{2}\overline{\lambda}+o(1)\right)\geq 0
+            \ip{\vb{h}}{H_f(\vb{x_0})\vb{h}}\geq \overline{\lambda}\norm{\vb{h}}^2\\
+            \then f(\vb{x_0}+\vb{h})-f(\vb{x_0})\geq \norm{\vb{h}}^2\left(\frac{1}{2}\overline{\lambda}+o(1)\right)\geq 0
         \end{gather*}
         Per cui $\vb{x_0}$ è un punto di minimo locale per $f$.
     \end{enumerate}
