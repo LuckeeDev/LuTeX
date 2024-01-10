@@ -7,4 +7,9 @@
 *.fdb_latexmk
 *.out
 *.dvi
+
+# Local output PDFs
 tex/*/*.pdf
+
+# VSCode settings
+.vscode
