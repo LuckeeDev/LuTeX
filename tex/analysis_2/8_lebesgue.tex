@@ -128,6 +128,7 @@
 \end{definition}
 
 \begin{theorem}
+	[Costruzione della misura]
 	Siano $X$ un insieme e $\mu^*$ una misura esterna su $\calP(X)$. Allora l'insieme $\A \subseteq \calP(X)$ degli insiemi misurabili secondo Carathéodory è una $\sigma$-algebra e $\restr{\mu^*}{\A}$ è una misura.
 	\qed
 \end{theorem}
@@ -164,6 +165,7 @@
 \end{definition}
 
 \begin{theorem}
+	[Relazione fra $\mathcal{B}(\R^n)$ e $\mathcal{L}(\R^n)$]
 	Sia $\mathcal{B}(\R^n)$ la $\sigma$-algebra di Borel in $\R^n$. Allora
 	\begin{enumerate}
 		\item $\mathcal{B}(\R^n)$ è la più piccola $\sigma$-algebra che contenga $\mathcal{R}$, cioè gli intervalli di $\R^n$
@@ -173,7 +175,8 @@
 	\end{enumerate}
 \end{theorem}
 
-\begin{theorem}\leavevmode
+\begin{theorem}
+	[Misura con aperti e compatti]\leavevmode
 	\begin{enumerate}
 		\item Sia $A\subseteq\R^n$, allora $\mu^*(A)=\inf\{\mu(U):A\subseteq U \with U \text{ aperto}\}$. In particolare, se $A$ è misurabile allora $\mu^*(A)=\mu(A)$
 		\item Se $A \in \mathcal{L}(\R^n)$, allora $\mu(A)=\sup\{\mu(K):K \text{ compatto}, K \subseteq A\}$
@@ -257,13 +260,7 @@
 \end{remark}
 
 \begin{theorem}
-	[Limite puntuale e integrale di Lebesgue]
-	Siano $A \in \mathcal{L}(\R^n) \e f_k:A \to [0,+\infty] \with k\in \N$ una successione di funzioni misurabili secondo Lebesgue non negative tale che $\lim\limits_{k\to +\infty}f_k(\vb{x})=f(\vb{x}) \ \forall \vb{x} \in A$. Allora $f$ è misurabile secondo Lebesgue.
-	\qed
-\end{theorem}
-
-\begin{theorem}
-	[Caratterizzazione delle funzioni misurabili positive]
+	[Caratterizzazione delle funzioni misurabili positive tramite funzioni semplici positive]
 	Siano $A \subseteq \R^n$ misurabile secondo Lebesgue e $f:A\to [0,+\infty]$ misurabile secondo Lebesgue. Allora esiste una successione crescente di funzioni semplici non negative $\varphi_k:A\to [0,+\infty)$ convergenti ad $f$ puntualmente. Inoltre se $f$ è limitata, la convergenza delle $\varphi_k$ a $f$ è uniforme.
 \end{theorem}
 
@@ -307,7 +304,8 @@
 
 \begin{theorem}
 	[Misurabilità e convergenza puntuale]
-	Siano $A \in \mathcal{L}(\R^n)$, $f_k:A\to\R \with k \in \N$ funzioni misurabili e $f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x})$. Allora $f$ è misurabile.\qed
+	Siano $A \in \mathcal{L}(\R^n)$, $f_k:A\to\R \with k \in \N$ una successione di funzioni misurabili e $f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x}) \ \forall \vb{x} \in A$. Allora $f$ è misurabile secondo Lebesgue.
+	\qed
 \end{theorem}
 
 \begin{definition}

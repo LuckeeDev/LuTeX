@@ -190,7 +190,7 @@
 \end{theorem}
 
 \begin{remark}
-    Nel punto \textit{3.} del teorema \ref{thm:prop_J} è importante non spostare termini dell'espressione da una parte all'altra dell'uguaglianza. Essendo $X \e Y$ insiemi non necessariamente limitati, si rischierebbe di avere una sottrazione $\infty - \infty$.
+    Nel punto \textit{3.} del teorema \ref{thm:prop_J} è importante non spostare termini dell'espressione da una parte all'altra dell'uguaglianza. Essendo $X \e Y$ insiemi non necessariamente limitati, potrebbe presentarsi una forma di indecisione $\infty - \infty$.
 \end{remark}
 
 \begin{lemma}
@@ -243,7 +243,7 @@
     \begin{enumerate}
         \item (Linearità) $\forall a,b \in \R, \ af + bg$ è sommabile e $\idotsint_A(af+bg)=a\idotsint_A f+b\idotsint_A g$
         \item (Monotonia) Se $\forall \vb{x} \in A \ f(\vb{x}) \leq g(\vb{x})$, allora $\idotsint_A f \leq \idotsint_A g$
-        \item (Additività) Se $\mu_n(A) < + \infty \e A_1,A_2 \subseteq A \tc A_1 \cup A_2 = A \e A_1,A_2 \in \J(\R^n) \e \mu_n(A_1 \cap A_2)=0$, allora $\idotsint_A f= \idotsint_{A_1} f+ \idotsint_{A_2} f$
+        \item (Additività rispetto al dominio di integrazione) Se $\mu_n(A) < + \infty \e A_1,A_2 \subseteq A \tc A_1 \cup A_2 = A \e A_1,A_2 \in \J(\R^n) \e \mu_n(A_1 \cap A_2)=0$, allora $\idotsint_A f= \idotsint_{A_1} f+ \idotsint_{A_2} f$
         \qed
     \end{enumerate}
 \end{theorem}
@@ -261,6 +261,13 @@
     Sotto le ipotesi del teorema, se $A \subseteq \R^n$ è compatto e connesso e $f: A \to \R$ è continua, allora $\exists \vb{c} \in A \tc \displaystyle\frac{\idotsint_A f}{\mu_n(A)}=f(\vb{c})$.
     \qed
 \end{corollary}
+
+Alcune classi di funzioni sommabili sono le seguenti, in cui $K\subseteq\R^n$ è un insieme compatto e misurabile:
+\begin{itemize}
+    \item $f:K\to\R$ continua è sommabile
+    \item $f:K\to\R$ continua quasi ovunque è integrabile. Se $f$ è limitata, allora è anche sommabile
+    \item Siano $\vb{x_0} \in \mathring{K}$ e $f:K\setminus\{\vb{x_0}\}\to\R$. Se $\forall \varepsilon>0$ $f:K\setminus B_\varepsilon(\vb{x_0})\to\R$ è limitata e sommabile e $\exists \alpha \in (0,n) \tc \lim\limits_{\norm{\vb{x}-\vb{x_0}}\to 0}\norm{\vb{x}-\vb{x_0}}^\alpha f(\vb{x})=0$, allora $f$ è sommabile in $K\setminus\{\vb{x_0}\}$ e $\int_{K\setminus\{\vb{x_0}\}}f=\lim\limits_{l\to+\infty}\int_{K\setminus B_{1/l}(\vb{x_0})}f$
+\end{itemize}
 
 \subsection{Integrali doppi}
 
