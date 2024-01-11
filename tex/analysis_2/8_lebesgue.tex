@@ -286,9 +286,10 @@
 \end{definition}
 
 \begin{theorem}
-	[Proprietà dell'integrale di funzioni misurabili non negative]\leavevmode
+	[Proprietà dell'integrale di funzioni misurabili non negative]\label{thm:int_nonneg}
+	\leavevmode
 	\begin{enumerate}
-		\item Ogni funzione misurabile non negativa definita in un insieme misurabile è integrabile secondo Lebesgue
+		\item\label{item:mis_int} Ogni funzione misurabile non negativa definita in un insieme misurabile è integrabile secondo Lebesgue
 		\item (Linearità) Se $f,g:A\to [0,+\infty]$ sono misurabili in $A\in \mathcal{L}(\R^n)$, allora $f+cg \with c \in \R^+$ è misurabile e $\int_A (f+cg)=\int_Af+c\int_Ag$
 		\item (Monotonia) Se $f,g:A\to[0,+\infty]$ sono misurabili in $A\in\mathcal{L}(\R^n) \e f\leq g$, allora $\int_Af\leq\int_Ag$
 		\item Se $B\subseteq A \with B\in \mathcal{L}(\R^n)$, allora $\int_Bf=\int_A\chi_Bf$
@@ -303,7 +304,7 @@
 \end{theorem}
 
 \begin{theorem}
-	[Misurabilità e convergenza puntuale]
+	[Misurabilità e convergenza puntuale]\label{thm:mis_conv}
 	Siano $A \in \mathcal{L}(\R^n)$, $f_k:A\to\R \with k \in \N$ una successione di funzioni misurabili e $f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x}) \ \forall \vb{x} \in A$. Allora $f$ è misurabile secondo Lebesgue.
 	\qed
 \end{theorem}
@@ -370,13 +371,15 @@ non è integrabile secondo Lebesgue, ma è integrabile in senso generalizzato se
 	[Convergenza monotona]
 	Siano $A \in \mathcal{L}(\R^n)$ e $f_k:A\to[0,+\infty)$ una successione crescente di funzioni misurabili. Allora
 	\begin{enumerate}
-		\item $f_k$ sono integrabili secondo Lebesgue
 		\item $f_k$ convergono puntualmente a $f: A\to[0,+\infty]$: $$f(\vb{x})=\lim\limits_{k\to+\infty}f_k(\vb{x})=\sup_kf_k(\vb{x})$$
-		\item $f$ è misurabile
-		\item $\displaystyle\int_Af=\lim_{k\to+\infty}\int_Af_k$
+		\item $f$ è integrabile e $\displaystyle\int_Af=\lim_{k\to+\infty}\int_Af_k$
 		\qed
 	\end{enumerate}
 \end{theorem}
+
+\begin{remark}
+	Si noti che le $f_k$ sono integrabili per il punto \textit{\ref{item:mis_int}} del teorema \ref{thm:int_nonneg}. Inoltre $f$ è misurabile per il teorema \ref{thm:mis_conv} e quindi integrabile per il punto \textit{\ref{item:mis_int}} del teorema \ref{thm:int_nonneg}.
+\end{remark}
 
 \begin{theorem}
 	[della convergenza dominata]
