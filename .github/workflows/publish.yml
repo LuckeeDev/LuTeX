@@ -9,6 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@main
+              with:
+                  submodules: true
             - name: Compile LaTeX sources
               uses: xu-cheng/latex-action@3.1.0
               with:
