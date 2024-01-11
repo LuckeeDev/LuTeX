@@ -29,7 +29,7 @@
 \end{remark}
 
 \begin{definition}
-    [Funzione differenziabile]
+    [Funzione differenziabile]\label{def:f_diff}
     Siano $A \subseteq \R^n$ un aperto, $\vb{x_0} \in A$ e $f:A \to \R$. La funzione $f$ è differenziabile in $\vb{x_0}$ se esiste $\vb{m} = (m_1,\dots,m_n) \in \R^n \tc f(\vb{x}) = f(\vb{x_0}) + \ip{\vb{m}}{\vb{x} - \vb{x_0}} + o(\norm{\vb{x} - \vb{x_0}}) \with \norm{\vb{x}-\vb{x_0}}\to 0$.
 \end{definition}
 
@@ -190,6 +190,14 @@
 \begin{remark}
     Per il teorema \ref{thm:schwarz}, se $f$ è $\C{2}$ in $\vb{x_0} \in A$, allora $H_f(\vb{x_0})$ è simmetrica.
 \end{remark}
+
+\paragraph{Iperpiano tangente al grafico di una funzione}
+Sia $A\subseteq\R^n$ un aperto e sia $f$ una funzione differenziabile in $\vb{x_0} \in A$. Allora, per la definizione di funzione differenziabile (Def. \ref{def:f_diff}), $f(\vb{x})=f(\vb{x_0})+\ip{\grad f(\vb{x_0})}{\vb{x}-\vb{x_0}}+o(\norm{\vb{x}-\vb{x_0}}) \with \norm{\vb{x}-\vb{x_0}}\to 0$. Si può quindi definire $g(\vb{x})=f(\vb{x_0})+\ip{\grad f(\vb{x_0})}{\vb{x}-\vb{x_0}}:\R^n\to\R$, che approssima $f$ se $\vb{x}$ tende a $\vb{x_0}$. I grafici delle due funzioni, definiti in $\R^{n+1}$, sono:
+\begin{gather*}
+    \Gamma_f=\{(\vb{x},y)\in A\times\R:y=f(\vb{x})\}\\
+    \Gamma_g=\{(\vb{x},y)\in\R^n\times\R:y=f(\vb{x_0})+\ip{\grad f(\vb{x_0})}{\vb{x}-\vb{x_0}}\}
+\end{gather*}
+$\Gamma_g$ è un iperpiano $n$-dimensionale tangente a $\Gamma_f$ nel punto $\vb{x_0}$. Il concetto di approssimazione locale di una funzione può essere esteso tramite il teorema che segue.
 
 \begin{theorem}
     [Formula di Taylor di ordine $k$]
