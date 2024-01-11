@@ -1,0 +1,3 @@
+[submodule "tex/particles/code"]
+	path = tex/particles/code
+	url = https://github.com/LuckeeDev/particles
