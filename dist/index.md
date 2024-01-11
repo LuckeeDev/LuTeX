@@ -21,12 +21,15 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
     La relazione dell'esperienza di laboratorio conclusiva del primo anno in cui è stata misurata la costante di gravitazione universale.
 
 -   [Five nights at DIFA](https://luckeedev.github.io/LuTeX/fnad.pdf)  
-    Descrizione del gioco "Five nights at DIFA", il progetto per l'esame del corso "Programmazione per la Fisica".
+    Descrizione del gioco "Five nights at DIFA", il progetto per l'esame del corso "Programmazione per la Fisica". Il codice del gioco è disponibile su [GitHub](https://github.com/LuckeeDev/fnad).
 
 ### Secondo anno
 
 -   [Risalita di bolle in un liquido](https://luckeedev.github.io/LuTeX/bubbles.pdf)  
     Una piccola derivazione per calcolare il tempo di risalita di una bolla d'aria posta sul fondo di una bottiglia riempita con un liquido in quiete.
+
+-   [Particles](https://luckeedev.github.io/LuTeX/particles.pdf)  
+    La relazione del progetto per il corso di Laboratorio del secondo anno. Comprende un generatore casuale di eventi di collisione fra particelle e un programma di analisi per verificare la compatibilità dei risultati con i dati in input alla generazione. Il codice del programma è disponibile su [GitHub](https://github.com/LuckeeDev/particles).
 
 -   [Analisi Matematica 2](https://luckeedev.github.io/LuTeX/analysis_2.pdf)  
     Un breve riassunto del corso di Analisi Matematica 2 per la facoltà di Fisica dell'Università di Bologna.
