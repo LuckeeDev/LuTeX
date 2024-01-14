@@ -129,7 +129,7 @@
 
 \begin{theorem}
 	[Costruzione della misura]
-	Siano $X$ un insieme e $\mu^*$ una misura esterna su $\calP(X)$. Allora l'insieme $\A \subseteq \calP(X)$ degli insiemi misurabili secondo Carathéodory è una $\sigma$-algebra e $\restr{\mu^*}{\A}$ è una misura.
+	Siano $X$ un insieme e $\mu^*$ una misura esterna su $\calP(X)$. Allora l'insieme $\A \subseteq \calP(X)$ degli insiemi misurabili secondo Carathéodory rispetto a $\mu^*$ è una $\sigma$-algebra e $\restr{\mu^*}{\A}$ è una misura.
 	\qed
 \end{theorem}
 
@@ -385,7 +385,7 @@ non è integrabile secondo Lebesgue, ma è integrabile in senso generalizzato se
 	[della convergenza dominata]
 	Siano $A\in \mathcal{L}(\R^n)$ e $f_n:A\to\R$ misurabili. Sotto le seguenti ipotesi:
 	\begin{enumerate}[a.]
-		\item $\exists g:A\to[0,+\infty)$ sommabile tale che $\abs{f_n}\leq g\ \forall n \in \N \e \int_Ag<+\infty$
+		\item $\exists g:A\to[0,+\infty)$ sommabile tale che $\abs{f_n}\leq g\ \forall n \in \N$
 		\item $f_n\xrightarrow[n\to+\infty]{A}f$, cioè che $f$ sia il limite puntuale di $f_n$
 	\end{enumerate}
 	allora $f_n,f$ sono sommabili e $\displaystyle\int_Af=\lim\limits_{n\to+\infty}\int_Af_n$.

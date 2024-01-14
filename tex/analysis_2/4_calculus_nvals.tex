@@ -208,8 +208,8 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
     Inoltre
     $$
         \frac{\partial f_i}{\partial x_j}(\vb{x})=-\frac
-        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_{i-1},x_j,y_{i+1},\dots,y_k}(\vb{x},\vecf(\vb{x}))}
-        {\det \frac{\partial (g_1,\dots,g_k)}{\partial y_1,\dots,y_k}(\vb{x},\vecf(\vb{x}))}
+        {\det \frac{\partial (g_1,\dots,g_k)}{\partial (y_1,\dots,y_{i-1},x_j,y_{i+1},\dots,y_k)}(\vb{x},\vecf(\vb{x}))}
+        {\det \frac{\partial (g_1,\dots,g_k)}{\partial (y_1,\dots,y_k)}(\vb{x},\vecf(\vb{x}))}
     $$
     \qed
 \end{theorem}
@@ -306,7 +306,7 @@ Dall'ultimo termine si deduce che $\vb{h}$ deve essere ortogonale a tutti i grad
         &=\frac{1}{2}\ip{(\vb{x}-\vb{x_0},\vb{0})}{H_{\mathcal{L}}(\vb{x_0})(\vb{x}-\vb{x_0},\vb{0})}+o(\norm{\vb{x}-\vb{x_0}}^2)=\\
         &=\frac{1}{2}\ip{\vb{x}-\vb{x_0}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{x}-\vb{x_0})}+o(\norm{\vb{x}-\vb{x_0}}^2)
     \end{align*}
-    Sia ora $\vb{x}=\bm\varphi(t)\in \C{1}((-\delta,\delta),\R^n) \tc \bm\varphi(0)=\vb{x_0} \e \bm\varphi'(0)=\vb{h} \in T_{\vb{x_0}}\Gamma$. Allora $\vb{x}=\vb{x_0}+t\vb{h}+\vb{o}(\abs{t})$ per $\abs{t}\to 0$. Di conseguenza,
+    Sia ora $\vb{x}=\bm\varphi(t)\in \C{1}((-\delta,\delta),\Gamma) \tc \bm\varphi(0)=\vb{x_0} \e \bm\varphi'(0)=\vb{h} \in T_{\vb{x_0}}\Gamma$. Allora $\vb{x}=\vb{x_0}+t\vb{h}+\vb{o}(\abs{t})$ per $\abs{t}\to 0$. Di conseguenza,
     \begin{gather*}
         f(\vb{x})-f(\vb{x_0})=\frac{t^2}{2}\ip{\vb{h}+\vb{o}(1)}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)(\vb{h}+\vb{o}(1))}+o(\norm{\vb{h}+\vb{o}(1)}^2t^2)=\\
         =\frac{t^2}{2}\ip{\vb{h}}{\left( H_f(\vb{x_0})-\sum_{j=1}^k\overline{\lambda}_j H_{g_j}(\vb{x_0}) \right)\vb{h}}(1+o(1))\geq 0
