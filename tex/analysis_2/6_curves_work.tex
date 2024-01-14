@@ -311,7 +311,23 @@ $$
 \end{theorem}
 
 \begin{proof}
-	Sia $\lambda$ una qualsiasi curva chiusa nel piano. L'unico caso da analizzare è quello in cui l'insieme che ha come bordo $\lambda$ contiene al suo interno il punto $(0,0)$, poiché si sa già che $\vecf$ è conservativo su qualsiasi curva che non racchiude $(0,0)$ per il corollario \ref{cor:loc_cons}. Si definisca la curva $\Gamma_\varepsilon$\footnote{Qui sarebbe stato opportuno un disegno, ma per questioni di tempo non è stato possibile aggiungerlo.}, ottenuta separando di $\varepsilon>0$ due estremi della curva $\lambda$ e due estremi della curva $\gamma$, per poi connetterli fra loro con due tratti chiamati $s_\varepsilon^1$ e $s_\varepsilon^2$. Il lavoro di $\vecf$ lungo $\Gamma_\varepsilon$ è nullo perché $\Gamma_\varepsilon$ è contenuta in un insieme semplicemente connesso (non racchiude il punto $(0,0)$). Il lavoro su $\Gamma_\varepsilon$ è la somma dei lavori su $\lambda_\varepsilon,\gamma_\varepsilon,s_\varepsilon^1 \e s_\varepsilon^2$. Mandando $\varepsilon \to 0$, $\Gamma_\varepsilon \to \Gamma$, cioè $s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}, \lambda_\varepsilon \to \lambda \e \gamma_\varepsilon \to \gamma$.
+	\begin{figure}[ht]
+		\centering
+		\begin{minipage}[b]{0.45\textwidth}
+			\def\svgwidth{\textwidth}
+		  	\input{graphics/thm_circle_work_1.pdf_tex}
+		  	\caption{Il lavoro sulla circonferenza $\gamma$ è nullo per ipotesi. La curva $\lambda$ racchiude al suo interno il punto $(0,0)$.}\label{fig:thm_circle_work_1}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.45\textwidth}
+			\def\svgwidth{\textwidth}
+			\input{graphics/thm_circle_work_2.pdf_tex}
+		  	\caption{La curva $\Gamma_\varepsilon$ è composta dalla circonferenza $\gamma_\varepsilon$, dalla curva $\lambda_\varepsilon$ e dai segmenti congiungenti $s_\varepsilon^1$ e $s_\varepsilon^2$.}\label{fig:thm_circle_work_2}
+		\end{minipage}
+		\label{fig:main}
+	\end{figure}
+
+	Sia $\lambda$ una qualsiasi curva chiusa nel piano. L'unico caso da analizzare è quello in cui l'insieme che ha come bordo $\lambda$ contiene al suo interno il punto $(0,0)$ (Fig. \ref{fig:thm_circle_work_1}), poiché si sa già che $\vecf$ è conservativo su qualsiasi curva che non racchiude $(0,0)$ per il corollario \ref{cor:loc_cons}. Si definisca la curva $\Gamma_\varepsilon$ (Fig. \ref{fig:thm_circle_work_2}), ottenuta separando di $\varepsilon>0$ due estremi della curva $\lambda$ e due estremi della curva $\gamma$, per poi connetterli fra loro con due tratti chiamati $s_\varepsilon^1$ e $s_\varepsilon^2$. Il lavoro di $\vecf$ lungo $\Gamma_\varepsilon$ è nullo perché $\Gamma_\varepsilon$ è contenuta in un insieme semplicemente connesso (non racchiude il punto $(0,0)$). Il lavoro su $\Gamma_\varepsilon$ è la somma dei lavori su $\lambda_\varepsilon,\gamma_\varepsilon,s_\varepsilon^1 \e s_\varepsilon^2$. Mandando $\varepsilon \to 0$, $\Gamma_\varepsilon \to \Gamma$, cioè $s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}, \lambda_\varepsilon \to \lambda \e \gamma_\varepsilon \to \gamma$.
 	$$
 		\int_{s_{\varepsilon}^1}\ip{\vecf}{\hat{\bm\tau}_\varepsilon^1}+\int_{s_{\varepsilon}^2}\ip{\vecf}{\hat{\bm\tau}_\varepsilon^2}
 		\xrightarrow[s_\varepsilon^1,s_\varepsilon^2\to \tilde{s}]{\varepsilon\to 0}

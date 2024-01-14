@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 793.70081 1122.5197"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="thm_circle_work_2.svg"
+   inkscape:export-filename="thm_circle_work_2.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0242632"
+     inkscape:cx="412.00348"
+     inkscape:cy="642.90116"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.95622;stroke-opacity:0"
+       x="393.97522"
+       y="628.54419"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="393.97522"
+         y="628.54419">$\gamma_\varepsilon$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.95622;stroke-opacity:0"
+       x="512.39941"
+       y="530.25958"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         x="512.39941"
+         y="530.25958">$\lambda_\varepsilon$</tspan></text>
+    <g
+       id="g6"
+       transform="matrix(3.610157,0,0,3.610157,-1224.1704,-1275.5468)">
+      <path
+         style="fill:none;stroke:#ff1500;stroke-width:0.432376;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 467.00671,490.28215 c 6.25907,4.75956 18.53979,16.51133 30.38935,31.27724 1.14164,1.4226 2.27927,2.87319 3.40713,4.34819 m -91.81055,-68.75443 c 1.60138,1.24451 3.22932,2.44606 4.87509,3.60716 15.52366,10.95197 32.6349,18.30484 44.03008,24.16712"
+         id="path4"
+         sodipodi:nodetypes="csccsc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="fill:#000000;stroke:none;stroke-width:0.95622;stroke-opacity:1"
+       x="376.5881"
+       y="508.11154"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         x="376.5881"
+         y="508.11154">$s_\varepsilon^1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#000000;stroke:none;stroke-width:0.95622;stroke-opacity:1"
+       x="443.13818"
+       y="550.3078"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         x="443.13818"
+         y="550.3078">$s_\varepsilon^2$</tspan></text>
+    <path
+       id="path19"
+       style="fill-opacity:0;stroke:#000000;stroke-width:0.432376;stroke-dasharray:none"
+       d="m 457.61694,484.99615 -14.921,23.24833 c -12.25685,-10.7048 -28.29386,-17.18991 -45.84554,-17.18991 m 69.72601,69.72601 c 0,-1.40033 -0.0413,-2.79101 -0.12269,-4.17091 m 0,0 c -0.94279,-15.98035 -7.26762,-30.51333 -17.18751,-41.81199 l 17.78831,-24.22122"
+       sodipodi:nodetypes="cscccccc"
+       transform="matrix(3.6101569,0,0,3.6101569,-1224.1704,-1275.5468)" />
+    <text
+       xml:space="preserve"
+       style="fill:#000000;stroke-width:1.56094;stroke-dasharray:1.56095, 1.56095"
+       x="309.49078"
+       y="389.54834"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="309.49078"
+         y="389.54834">$\Gamma_\varepsilon$</tspan></text>
+  </g>
+</svg>
