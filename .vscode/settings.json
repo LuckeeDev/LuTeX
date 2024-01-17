@@ -3,6 +3,8 @@
 		"editor.wordWrap": "on"
 	},
 	"files.associations": {
-		"*.pdf_tex": "latex"
+		".huskyrc": "json",
+		"*.pdf_tex": "latex",
+		"resolution.C": "cpp"
 	}
 }
