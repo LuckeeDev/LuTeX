@@ -2,6 +2,8 @@
 \usepackage{listings, xcolor}
 \usepackage[hybrid]{markdown}
 \usepackage[a4paper, margin=1in]{geometry}
+\usepackage[italian]{babel}
+\usepackage[urlbordercolor={0 0 1}]{hyperref}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -38,6 +40,13 @@
 
 \maketitle
 
+\tableofcontents
+
+\section*{Introduzione}
+Questo documento contiene una collezione di macro di \href{https://root.cern}{ROOT} che ho scritto per esercitarmi in vista degli esami di Laboratorio del primo e del secondo anno della laurea in Fisica all'Università di Bologna. Tutto il codice è pubblicato anche in una \href{https://github.com/LuckeeDev/root}{\emph{repository}} pubblica su GitHub, per cui è possibile scaricarlo ed eseguirlo se si vuole capire come funziona ciascun esempio riportato di seguito. Buono studio!
+
+\newpage
+
 \section{Esami del primo anno}
 
 \markdownInput{code/exams/first_year/180608/README.md}
@@ -64,27 +73,33 @@
 \section{Esami del secondo anno}
 
 \markdownInput{code/exams/second_year/180115/README.md}
-\subsubsection{Risposta al quesito 1}
+\subsubsection{Risposta al quesito 1 (Efficienza)}
 \lstinputlisting[language=C++]{code/exams/second_year/180115/macro1.C}
-\subsubsection{Risposta al quesito 2}
+\subsubsection{Risposta al quesito 2 (Fit)}
 \lstinputlisting[language=C++]{code/exams/second_year/180115/macro2.C}
-\subsubsection{Risposta al quesito 3}
+\subsubsection{Risposta al quesito 3 (\texttt{FillRandom})}
 \lstinputlisting[language=C++]{code/exams/second_year/180115/macro3.C}
 
 \markdownInput{code/exams/second_year/180626/README.md}
-\subsubsection{Risposta al quesito 1}
+\subsubsection{Risposta al quesito 1 (Efficienza)}
 \lstinputlisting[language=C++]{code/exams/second_year/180626/macro1.C}
-\subsubsection{Risposta al quesito 2}
+\subsubsection{Risposta al quesito 2 (Fit)}
 \lstinputlisting[language=C++]{code/exams/second_year/180626/macro2.C}
-\subsubsection{Risposta al quesito 3}
+\subsubsection{Risposta al quesito 3 (\texttt{FillRandom})}
 \lstinputlisting[language=C++]{code/exams/second_year/180626/macro3.C}
 
 \section{Esercizi}
 
-\markdownInput{code/misc/gauss_uniform/README.md}
-\lstinputlisting[language=C++]{code/misc/gauss_uniform/macro.C}
+\markdownInput{code/misc/benchmark/README.md}
+\lstinputlisting[language=C++]{code/misc/benchmark/macro.C}
 
-\markdownInput{code/misc/hit_or_miss/README.md}
-\lstinputlisting[language=C++]{code/misc/hit_or_miss/macro.C}
+\markdownInput{code/misc/categories/README.md}
+\lstinputlisting[language=C++]{code/misc/categories/macro.C}
+
+\markdownInput{code/misc/efficiency/README.md}
+\lstinputlisting[language=C++]{code/misc/efficiency/macro.C}
+
+\markdownInput{code/misc/fill_random/README.md}
+\lstinputlisting[language=C++]{code/misc/fill_random/macro.C}
 
 \end{document}

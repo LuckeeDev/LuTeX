@@ -1,0 +1,8 @@
+{
+	"[latex]": {
+		"editor.wordWrap": "on"
+	},
+	"files.associations": {
+		"*.pdf_tex": "latex"
+	}
+}

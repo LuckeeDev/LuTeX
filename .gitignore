@@ -12,6 +12,3 @@
 
 # Local output PDFs
 tex/*/*.pdf
-
-# VSCode settings
-.vscode
