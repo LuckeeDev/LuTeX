@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{listings, xcolor}
+\usepackage[hybrid]{markdown}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    identifierstyle=\color{cyan},
+    basicstyle=\ttfamily\footnotesize\color{black},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Collezione di macro di ROOT}
+\author{Luca Zoppetti}
+\date{17/01/2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Esami del primo anno}
+
+\markdownInput{code/exams/first_year/180608/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/180608/macro.C}
+
+\markdownInput{code/exams/first_year/190207/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/190207/macro.C}
+
+\markdownInput{code/exams/first_year/190610/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/190610/macro.C}
+
+\markdownInput{code/exams/first_year/210623/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/210623/macro.C}
+
+\markdownInput{code/exams/first_year/220712/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/220712/macro.C}
+
+\markdownInput{code/exams/first_year/220906/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/220906/macro.C}
+
+\markdownInput{code/exams/first_year/230615/README.md}
+\lstinputlisting[language=C++]{code/exams/first_year/230615/macro.C}
+
+\section{Esami del secondo anno}
+
+\markdownInput{code/exams/second_year/180115/README.md}
+\subsubsection{Risposta al quesito 1}
+\lstinputlisting[language=C++]{code/exams/second_year/180115/macro1.C}
+\subsubsection{Risposta al quesito 2}
+\lstinputlisting[language=C++]{code/exams/second_year/180115/macro2.C}
+\subsubsection{Risposta al quesito 3}
+\lstinputlisting[language=C++]{code/exams/second_year/180115/macro3.C}
+
+\markdownInput{code/exams/second_year/180626/README.md}
+\subsubsection{Risposta al quesito 1}
+\lstinputlisting[language=C++]{code/exams/second_year/180626/macro1.C}
+\subsubsection{Risposta al quesito 2}
+\lstinputlisting[language=C++]{code/exams/second_year/180626/macro2.C}
+\subsubsection{Risposta al quesito 3}
+\lstinputlisting[language=C++]{code/exams/second_year/180626/macro3.C}
+
+\section{Esercizi}
+
+\markdownInput{code/misc/gauss_uniform/README.md}
+\lstinputlisting[language=C++]{code/misc/gauss_uniform/macro.C}
+
+\markdownInput{code/misc/hit_or_miss/README.md}
+\lstinputlisting[language=C++]{code/misc/hit_or_miss/macro.C}
+
+\end{document}

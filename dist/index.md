@@ -34,6 +34,9 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 -   [Analisi Matematica 2](https://luckeedev.github.io/LuTeX/analysis_2.pdf)  
     Un breve riassunto del corso di Analisi Matematica 2 per la facoltà di Fisica dell'Università di Bologna.
 
+-   [ROOT](https://luckeedev.github.io/LuTeX/root.pdf)  
+    Una collezione di macro di [ROOT](https://root.cern) provenienti da [questa repository](https://github.com/LuckeeDev/root), in formato PDF per essere stampate.
+
 ## Crediti
 
 Molti lavori che si trovano su questa pagina sono stati realizzati in collaborazione con [est1ntore](https://github.com/est1ntore) e [ronzo13](https://github.com/ronzo13).
