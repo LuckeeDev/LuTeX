@@ -9,7 +9,7 @@
 
 \begin{definition}
     [Funzione continua fra spazi metrici]\label{def:f_cont}
-    Siano $(X, d_x), (Y, d_y)$ spazi metrici. $f: X \to Y$ si dice continua se $\forall x_0 \in X, \ \forall \varepsilon > 0 \ \exists \delta > 0 \tc d_y(f(x), f(x_0)) < \varepsilon \ \forall x \in A \tc d_x(x, x_0) < \delta$.
+    Siano $(X, d_x), (Y, d_y)$ spazi metrici. $f: X \to Y$ si dice continua se $\forall x_0 \in X, \ \forall \varepsilon > 0 \ \exists \delta > 0 \tc d_y(f(x), f(x_0)) < \varepsilon \ \forall x \in X \tc d_x(x, x_0) < \delta$.
 \end{definition}
 
 \begin{theorem}
@@ -167,7 +167,7 @@
 
 \begin{theorem}
     [Continuità della composta]
-    Siano $A \subseteq \R^n, \ B \subseteq \R^p$, $f: A \to B$ continua e $g: B \to \R^k$ continua, allora $f\circ g: A \to \R^k$ è continua in $A$.
+    Siano $A \subseteq \R^n, \ B \subseteq \R^p$, $f: A \to B$ continua e $g: B \to \R^k$ continua, allora $g \circ f: A \to \R^k$ è continua in $A$.
     \qed
 \end{theorem}
 
