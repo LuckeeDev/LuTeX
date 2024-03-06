@@ -1,0 +1,56 @@
+\chapter{Sistemi lineari}
+
+\section{Soluzione generale}
+\lecture{3}{5 marzo 2024}
+
+Proviamo a risolvere l'equazione dell'oscillatore armonico forzato in maniera generale:
+\begin{equation}
+	\label{eq:linear}
+	m \ddot{x} + \beta \dot{x} + kx = f(t) \to x(t) = x_{omo}(t) + x_{part}(t) 
+\end{equation}
+
+È un'equazione lineare non omogenea, quindi prevede dei gradi di libertà nella soluzione omogenea (ovvero dipende dalle condizioni iniziali), mentre la soluzione particolare è fissata (non dipende dalle condizioni iniziali).
+
+\begin{lemma}
+	[Principio di sovrapposizione]
+	Se \(x_{1}(t)\) e \(x_{2}(t)\) sono due soluzioni dell'omogenea, allora \(x_{omo}(t) = a x_{1}(t) + b x_{2}(t)\) per ogni valore di \(a\) e \(b\).   
+\end{lemma}
+
+Si può introdurre un nuovo oggetto matematico: un "operatore funzionale". Al primo membro dell'equazione \eqref{eq:linear} c'è come incognita la funzione \(x\), quindi possiamo costruire un'operazione da applicare ad \(x\), \(\hat{L} \), che restituisca il primo membro dell'equazione.
+
+\[
+	\hat{L} = m \frac{\mathrm{d}^2}{\mathrm{d}t^2} + \beta \frac{\mathrm{d}}{\mathrm{d}t} + k \to \hat{L} (x) = m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + \beta \frac{\mathrm{d}x}{\mathrm{d}t} + kx
+\]
+
+L'equazione dell'oscillatore armonico diventa quindi \(\hat{L} (x) = f(t)\) con incognita \(x(t)\). Questa è detta "notazione operatoriale".
+
+\begin{definition}
+	[Classe di operatori lineari]
+	Gli operatori lineari hanno due proprietà:
+	\begin{enumerate}
+		
+		\item L'operatore si distribuisce sulla somma: \(\forall x,y\ \hat{L} (x+y) = \hat{L} (x) + \hat{L} (y)\)
+		\item \(\forall \) funzione \(x\) e \(\forall \) costante \(a\), \(\hat{L} (ax) = a \hat{L} (x)\)    
+	\end{enumerate}
+\end{definition}
+
+\begin{eg}
+	Conosciamo già esempi di operatori lineari:
+	\begin{itemize}
+		
+		\item Moltiplicazione per costante: \(\hat{L} (x)=\mu x(t)\)
+		\item Derivata (n-esima): \(\hat{L} (x) = \frac{\mathrm{d}x(t)}{\mathrm{d}t} \), \(\hat{L} (x) = \frac{\mathrm{d}^n x(t)}{\mathrm{d}t^n} \)
+		\item Integrale: \(\hat{L} (x) = \int_{}^{t} x (t^{\prime} ) \,\mathrm{d}t^{\prime}\), \(\hat{L} (x) = \int_{}^{t} x (t^{\prime} )g(t^{\prime} ) \,\mathrm{d}t^{\prime}  \) 
+		\item Qualsiasi combinazione lineare dei precedenti.
+	\end{itemize}
+\end{eg}
+
+L'equazione dell'oscillatore armonico forzato contiene combinazioni di esse, quindi \(\hat{L} \) è un operatore lineare. Studiamone le proprietà.
+
+\paragraph{Equazione omogenea}
+
+Ogni combinazione lineare di soluzioni è soluzione: se \(\hat{L} (x_{1} ) = 0\) e \(\hat{L} (x_{2}) = 0\) allora \(x_{1}(t) \) e \(x_{2}(t) \) sono soluzioni. Per la seconda proprietà degli operatori lineari anche \(ax_{1}(t),\ bx_{2}(t)  \) sono soluzioni, mentre per la prima proprietà lo è anche la loro combinazione lineare.
+
+È possibile dimostrare che, se \(\hat{L} \) ha derivate fino all'ordine \(n\), allora esistono al massimo n soluzioni indipendenti che si possono combinare, quindi n costanti arbitrarie (eventualmente da determinare conoscendo le condizioni iniziali).
+
+\paragraph{Equazione non omogenea}

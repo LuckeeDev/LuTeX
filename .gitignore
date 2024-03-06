@@ -9,6 +9,10 @@
 *.dvi
 *.md.tex
 *.markdown.*
+*.bbl
+*.run.xml
+*.bcf
+*.blg
 
 # Local output PDFs
 tex/*/*.pdf
