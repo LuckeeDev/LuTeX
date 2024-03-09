@@ -7,7 +7,7 @@ Consideriamo un intervallo di tempo ampio T tra \(-\frac{T}{2}\) e \(+\frac{T}{2
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-20-30.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-20-30.png}
 	\caption{La serie scelta.}
 \end{figure}
 
@@ -15,7 +15,7 @@ Mi limito a funzioni continue, integrabili e con \(\int_{-\infty}^{\infty} \vert
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-23-47.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-23-47.png}
 	\caption{Gli elementi della serie diventano infinitesimi se \(T \to \infty \). }
 \end{figure}
 
@@ -23,13 +23,13 @@ La pulsazione \(\omega \) è una variabile continua, anche se è data dal prodot
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-28-07.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-28-07.png}
 	\caption{Divido per \(\mathrm{d}\omega  \) per evitare che il secondo membro tenda a zero. Il risultato è una funzione continua e finita, ottenuta integrando su tutti i tempi (\(T \to \infty \) ). }
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-29-55.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-29-55.png}
 	\caption{Adesso che ho una dipendenza da \(\mathrm{d}\omega  \) posso trasformare la sommatoria in un integrale. Rappresentando tutti gli n rappresento tutte le \(\omega \).  }
 \end{figure}
 
@@ -42,7 +42,7 @@ La pulsazione \(\omega \) è una variabile continua, anche se è data dal prodot
 	\(\widetilde{f}(\omega ) \) descrive la componente di \(e^{i \omega t}\) nella funzione di partenza. La \(f(t)\) è rappresentabile come sovrapposizione continua di fasori:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{2024-03-07-09-36-07.png}
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-36-07.png}
 		\caption{Antitrasformata di Fourier.}
 	\end{figure}   
 \end{definition}
@@ -54,14 +54,14 @@ La differenza con la serie di Fourier è che nella trasformata di Fourier siamo 
 	\item \(\mathcal{F} \) è lineare:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{2024-03-07-09-40-06.png}
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-40-06.png}
 		\caption{Proprietà dell'operatore \(\mathcal{F} \). }
 	\end{figure}
 	
 	\item Le derivate diventano moltiplicazioni, come già visto con i fasori:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{2024-03-07-09-41-51.png}
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-41-51.png}
 		\caption{Alla terza riga ho l'espressione dell'antitrasformata della derivata di f, quindi il termine integrato corrisponde alla trasformata di Fourier.}
 	\end{figure}
 \end{itemize}
@@ -72,13 +72,13 @@ Iniziamo applicando ad entrambi i membri della solita equazione la trasformata d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-46-30.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-46-30.png}
 	\caption{Ottengo così un'uguaglianza fra le due trasformate. Applico la seconda proprietà della trasformata di Fourier per cui le derivate diventano moltiplicazioni. \(\widetilde{x} \) è la mia incognita. }
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-09-48-28.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-48-28.png}
 	\caption{Così ho risolto il problema nello spazio delle pulsazioni. Con l'antitrasformata di Fourier posso trovare la soluzione particolare nello spazio dei tempi.}
 \end{figure}
 
@@ -88,7 +88,7 @@ Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer 
 	\item Le equazioni differenziali lineari si trasformano in polinomi in \(\omega \):
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{2024-03-07-09-51-21.png}
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-51-21.png}
 		\caption{Posso vedere la trasformata di Fourier anche come un operatore che agisce su altri operatori.}
 	\end{figure}
 	
@@ -100,7 +100,7 @@ Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer 
 	La definizione della trasformata di Fourier può essere diversa. Noi non le useremo mai! L'importante è associare l'antitrasformata corretta in base alla definizione di trasformata che abbiamo usato. Alcuni esempi:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{2024-03-07-09-57-28.png}
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-57-28.png}
 		\caption{La prima è fatta per una questione di simmetria. La seconda è comoda per utilizzare il concetto di frequenza, che agli ingegneri sembra più naturale del concetto di pulsazione.}
 	\end{figure}
 \end{note}
@@ -144,7 +144,7 @@ La comodità delle onde meccaniche è che, propagandosi in un mezzo, esiste un s
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-10-29-38.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-29-38.png}
 	\caption{Riferimento per lo studio delle onde trasversali su una corda.}
 \end{figure}
 
@@ -154,7 +154,7 @@ La corda è elastica, uniforme, tesa e appoggiata su un piano liscio. La corda s
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-10-36-23.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-36-23.png}
 	\caption{Studio della dinamica di un tratto infinitesimo della corda.}
 \end{figure}
 
@@ -162,20 +162,20 @@ Le tensioni nella corda sono dovute al pezzo di corda al di fuori del tratto \(\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-10-41-03.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-41-03.png}
 \end{figure}
 
 Pongo \(T=T_1=T_2\). Ho verificato che il modulo tensione della corda è uguale in ogni verso (per le piccole oscillazioni). Osserviamo che \(\tan \theta _i = \frac{\partial \xi}{\partial x} \). Di conseguenza, \(\sin \theta _1 \approx \tan \theta _1= \frac{\partial \xi }{\partial x} \vert_x \) e \(\sin \theta _2 \approx \tan \theta _2 = \frac{\partial \xi }{\partial x}\vert_{x+\mathrm{d}x }  \).
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-10-47-36.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-47-36.png}
 \end{figure}
 
 L'equazione appena ricavata è molto importante. Per iniziare, considereremo casi in cui \(\mu \) è costante. È detta equazione di D'Alembert. Per ricordarci che \(\frac{\mu }{T}\) è una quantità positiva, la scriviamo come il quadrato di una quantità. Notiamo che ha le dimensioni dell'inverso di una velocità: \(\frac{\mu }{T} = \frac{1}{v^{2} } \to v=\sqrt{\frac{T}{\mu }} \). Dimensionalmente si vede che è effettivamente una velocità:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{2024-03-07-10-54-11.png}
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-54-11.png}
 \end{figure}
 L'equazione di D'Alembert è lineare, per cui vale il principio di sovrapposizione. Compaiono derivate seconde al primo grado:
 \begin{equation}

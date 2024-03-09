@@ -118,4 +118,27 @@ Come al solito, è più conveniente studiare la funzione complessa associata. Po
 \[
 	A_n = \frac{F_n e^{i \phi _n}}{m [(\omega _0 ^{2} -(n \omega )^{2} ) + i \gamma n \omega ]}
 \]
-La differenza dalle soluzioni viste in precedenza sta nel fatto che in questo caso \(\Omega \) è sostituita da \(n \omega \).
+La differenza dalle soluzioni viste in precedenza sta nel fatto che in questo caso \(\Omega \) è sostituita da \(n \omega \). La soluzione complessa è
+\begin{gather*}
+	z_n(t) = A e^{in \omega t}= \frac{F_n e^{i(n \omega t + \phi _n)}}{m [(\omega _0 ^{2} -(n \omega )^{2} )+i \gamma n \omega ]}\\
+	x(t)= \Re [z_n(t)]= \frac{F_n}{m}\Re \left[\frac{e^{i(n \omega t + \phi _n)}}{(\omega _0 ^{2} - (n \omega )^{2} )+i \gamma n \omega }\right] 
+\end{gather*}
+Le fasi \(\phi _n \) sono eliminabili utilizzando la formula nota per il coseno della somma\(\cos (\alpha +\beta )=\cos \alpha \cos \beta -\sin \alpha \sin \beta \rightsquigarrow F_n \cos (n \omega t + \phi _n) = F_n \cos \phi _n \cos (n \omega t) - F_n \sin \phi _n \sin (n \omega t) \). Si può quindi porre \(a_0 =F_0,\ a_n = F_n \cos \phi _n,\ b_n =-F_n \sin \phi _n\) per ottenere \(F_n \cos (n \omega t + \phi _n) = a_n \cos (n \omega t) + b_n \sin (n \omega t)\).
+Ottengo quindi che
+\[
+	f(t) = a_0 + \sum_{n=1}^{\infty} [a_n \cos (n \omega t) + b_n \sin (n \omega t)]
+\]
+
+\begin{theorem}
+	[Teorema delle serie di Fourier]
+	Ogni funzione \(f(t)\) limitata, periodica di periodo T, continua o con al più un numero finito di punti di discontinuità con salto (limite destro e sinistro diversi ma finiti) si può sempre approssimare con la serie
+	\[
+		f_N(t)=a_0 + \sum_{n=1}^{N } [a_n \cos (n \omega t) + b_n \sin (n \omega t)] 
+	\]
+	dove \(\omega = \frac{2\pi }{T}\).
+\end{theorem}
+
+Per opportuni valori di \(a_n\) e \(b_n\) si ha che \(f_N(t)\xrightarrow{N \to +\infty }f(t)\) su tutti i punti di continuità del dominio. Gli scarti vanno a zero se N va a infinito:
+\[
+	\forall \varepsilon,\ \exists N \text{ tale che } \int_{0}^{T} (f(t) - f_N(t))^{2}  \,\mathrm{d}t < \varepsilon 
+\]
