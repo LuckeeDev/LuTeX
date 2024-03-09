@@ -26,6 +26,7 @@ jobs:
                       tex/particles/particles.tex
                       tex/thermocouple/thermocouple.tex
                       tex/root/root.tex
+                      tex/waves/waves.tex
             - name: Move PDFs
               run: mv ./tex/*/*.pdf dist
               shell: bash
