@@ -142,3 +142,12 @@ Per opportuni valori di \(a_n\) e \(b_n\) si ha che \(f_N(t)\xrightarrow{N \to +
 \[
 	\forall \varepsilon,\ \exists N \text{ tale che } \int_{0}^{T} (f(t) - f_N(t))^{2}  \,\mathrm{d}t < \varepsilon 
 \]
+
+\paragraph{Trovare i coefficienti \(a_n\) e \(b_n\)} Per trovare i coefficienti della serie di Fourier è necessario conoscere le proprietà di ortonormalità delle funzioni trigonometriche. Per n e m interi valgono le seguenti:
+\begin{itemize}
+	
+	\item \(\int_{0}^{T} \cos (n \omega t) \cos (m \omega t) \,\mathrm{d}t = \frac{T}{2} \delta_{nm}  \) 
+	\item \(\int_{0}^{T} \sin (n \omega t) \sin (m \omega t) \,\mathrm{d}t = \frac{T}{2} \delta_{nm}  \)
+	\item \(\int_{0}^{T} \cos (n \omega t) \sin (m \omega t) \,\mathrm{d}t = 0 \)  
+\end{itemize}
+dove \(\delta_{nm} \) è il delta di Kronecker.
