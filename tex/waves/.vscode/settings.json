@@ -1,4 +1,5 @@
 {
 	"pasteImage.basePath": "${projectRoot}/figures",
-	"pasteImage.path": "${projectRoot}/figures/screenshots"
+	"pasteImage.path": "${projectRoot}/figures/screenshots",
+	"super-figure.filesToWatch": []
 }

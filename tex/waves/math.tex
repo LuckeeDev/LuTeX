@@ -84,3 +84,9 @@
 	\def\svgwidth{\columnwidth}
 	\import{./figures/}{#1.pdf_tex}
 }
+
+\newcommand{\incsvg}[2]{%
+    \def\svgwidth{\columnwidth}
+    \graphicspath{{#1}}
+    \input{#2.pdf_tex}
+}
