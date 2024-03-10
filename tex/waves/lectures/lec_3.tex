@@ -95,7 +95,7 @@ Sfruttiamo la linearità:
 
 La soluzione finale sarà quindi la somma dei quattro termini: con la somma di funzioni nella forzante ho diviso il problema in varie parti più semplici. La fisica cerca sempre equazioni lineari: ad esempio, in elettromagnetismo il primo strumento utilizzato per misurare la carica fu l'elettroscopio a foglie, tuttavia non venne utilizzato per definire la carica perché la relazione fra angolo di apertura e carica non è lineare. Le equazioni di Maxwell sono invece tutte di natura lineare: la divergenza è lineare perché contiene derivate e appaiono tutte al grado 1. Anche l'equazione di D'Alembert è un'equazione lineare, così come l'equazione di Schrodinger.
 
-Il "principio di sovrapposizione" vale quindi solo nei sistemi lineari. È l'espressione fisica del concetto di operatore lineare: cerchiamo un problema lineare perché attraverso tale principio possiamo spacchettarlo in problemi più semplici
+Il "principio di sovrapposizione" vale quindi solo nei sistemi lineari. È l'espressione fisica del concetto di operatore lineare: cerchiamo un problema lineare perché attraverso tale principio possiamo spacchettarlo in problemi più semplici.
 
 \section{Serie di Fourier}
 
@@ -209,3 +209,7 @@ Dalla definizione di \(c_n\) si ottiene che
 		f(t) = \sum_{n=-\infty}^{+\infty} c_n e^{in \omega t} \text{ con } c_n = \frac{1}{T} \int_{0}^{T} f(t) e^{-in \omega t} \,\mathrm{d}t 
 	\]
 \end{definition}
+Attraverso la serie complessa di Fourier diventa immediato risolvere un problema con forzante periodica generica. Per ogni n si ha infatti una soluzione \(x_n(t)=\frac{c_n}{m [(\omega _0 ^{2} - (n \omega )^{2} )+i \gamma n \omega ]}e^{in \omega t} \) e quindi
+\[
+	x_{part}(t)=\sum_{n=-\infty }^{\infty} \frac{c_n}{m [(\omega _0 ^{2} - (n \omega )^{2} )+i \gamma n \omega ]}e^{in \omega t}
+\]
