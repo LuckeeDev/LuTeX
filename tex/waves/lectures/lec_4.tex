@@ -69,22 +69,18 @@ La differenza con la serie di Fourier è che nella trasformata di Fourier siamo 
 \subsection{Applicazione all'oscillatore armonico forzato}
 
 Iniziamo applicando ad entrambi i membri della solita equazione la trasformata di Fourier.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-46-30.png}
 	\caption{Ottengo così un'uguaglianza fra le due trasformate. Applico la seconda proprietà della trasformata di Fourier per cui le derivate diventano moltiplicazioni. \(\widetilde{x} \) è la mia incognita. }
 \end{figure}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-48-28.png}
 	\caption{Così ho risolto il problema nello spazio delle pulsazioni. Con l'antitrasformata di Fourier posso trovare la soluzione particolare nello spazio dei tempi.}
 \end{figure}
-
 Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer questi integrali sono facilmente risolvibili numericamente. Proseguiamo con alcune osservazioni:
 \begin{enumerate}
-	
 	\item Le equazioni differenziali lineari si trasformano in polinomi in \(\omega \):
 	\begin{figure}[H]
 		\centering

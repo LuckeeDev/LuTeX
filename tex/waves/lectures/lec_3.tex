@@ -150,4 +150,62 @@ Per opportuni valori di \(a_n\) e \(b_n\) si ha che \(f_N(t)\xrightarrow{N \to +
 	\item \(\int_{0}^{T} \sin (n \omega t) \sin (m \omega t) \,\mathrm{d}t = \frac{T}{2} \delta_{nm}  \)
 	\item \(\int_{0}^{T} \cos (n \omega t) \sin (m \omega t) \,\mathrm{d}t = 0 \)  
 \end{itemize}
-dove \(\delta_{nm} \) è il delta di Kronecker.
+dove \(\delta_{nm} \) è il delta di Kronecker. È chiaro capire che il motivo di queste proprietà è dato dal fatto che, se m e n sono diversi si sta mediando una funzione sia positiva che negativa con media nulla, mentre se m e n sono uguali \(\sin \text{ e } \cos \) sono elevati al quadrato.
+
+\begin{definition}
+	[Funzione di scarto]
+	Riprendiamo la definizione precedentemente accennata di funzione di scarto:
+	\begin{gather*}
+		\lambda _N (a_0, a_n, b_n; n=1,\dots ,N)=\int_{0}^{T} (f(t)-f_N(t))^{2}  \,\mathrm{d}t=\\
+		=\int_{0}^{T} \left\{ f(t) - a_0 - \sum_{n=1}^{N} [a_n \cos (n \omega t) + b_n \sin (n \omega t)] \right\} ^{2}  \,\mathrm{d}t
+	\end{gather*}
+	Per definizione \(\lambda _N \geq 0\). 
+\end{definition}
+
+Al fine di avere la migliore possibile rappresentazione della funzione \(f(t)\) è necessario che lo scarto \(\lambda _N\) sia minimo. Considerando un parametro alla volta, \(\lambda _N(a_n, b_n)\) è una funzione quadratica e ha quindi un unico minimo \(\rightsquigarrow \) esisterà un insieme di valori \(a_n, b_n\) che minimizza il valore di \(\lambda _N\). La condizione di minimo si può esprimere come segue:
+\[
+	\frac{\partial \lambda _N (a_0, a_n,b_n;n=1,\dots ,N)}{\partial a_m}=0 
+\]
+Sviluppando i calcoli si ottiene:
+\begin{gather*}
+	-2\int_{0}^{T} \cos (m \omega t) \left\{ f(t) - a_{0} - \sum_{n=1}^{N}[a_n \cos (n \omega t) + b_n \sin (n \omega t)]   \right\} \,\mathrm{d}t = 0\\
+	\int_{0}^{T} \cos (m \omega t) f(t) \,\mathrm{d}t - \left\{a_0 \int_{0}^{T} \cos (m \omega t) \,\mathrm{d}t + \sum_{n=1}^{N} a_n \int_{0}^{T} \cos (n \omega t) \cos (m \omega t) \,\mathrm{d}t +\right.\\
+	+ \left. \sum_{n=1}^{N} b_n \int_{0}^{T} \sin (n \omega t) \cos (m \omega t) \,\mathrm{d}t\right\} = 0
+	\rightsquigarrow \int_{0}^{T} \cos (m \omega t) f(t) \,\mathrm{d}t = \frac{T}{2}a_m
+\end{gather*}
+perché per le proprietà di ortonormalità delle funzioni trigonometriche viene selezionato solo l'm-esimo termine della sommatoria contenente i termini \(a_n\).
+Di conseguenza, \(a_n = \frac{2}{T} \int_{0}^{T} \cos (n \omega t) f(t) \,\mathrm{d}t \). Allo stesso modo è possibile ricavare le espressioni per gli altri coefficienti:
+\begin{itemize}
+	
+	\item \(a_0 = \frac{1}{T} \int_{0}^{T} f(t) \,\mathrm{d}t \)
+	\item \(a_n = \frac{2}{T} \int_{0}^{T} f(t) \cos (n \omega t) \,\mathrm{d}t \)
+	\item \(b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin (n \omega t) \,\mathrm{d}t \)   
+\end{itemize}
+Si dimostra che per questa scelta di parametri \(\lambda _N \to 0 \text{ se } N \to \infty \).
+È immediato riscrivere i risultati ottenuti tramite fasori:
+\[
+	\cos (n \omega t) = \frac{e^{in \omega t} + e^{-in \omega t} }{2}
+	\hspace{1in}
+	\sin (n \omega t) = \frac{e^{in \omega t} - e^{-in \omega t}  }{2i}
+\]
+Ponendo \(c_0 = a_0 \text{, } c_n = \frac{a_n}{2} + \frac{b_n}{2i} \text{, } c_{-n} = \frac{a_n}{2} - \frac{b_n}{2i}  \), si ottiene che
+\[
+	a_n \cos (n \omega t) + b_n \sin (n \omega t) = c_n e^{in \omega t} + c_{-n} e^{-in \omega t}
+\]
+La serie di Fourier diventa quindi
+\[
+	f(t) = \sum_{n=-\infty}^{+\infty} c_n e^{in \omega t}
+\]
+Dalla definizione di \(c_n\) si ottiene che
+\begin{gather*}
+	c_n = \left(\frac{a_n}{2}+\frac{b_n}{2i}\right) = \frac{1}{T} \int_{0}^{T} f(t) \cos (n \omega t) \,\mathrm{d}t - i \frac{1}{T} \int_{0}^{T} f(t) \sin (n \omega t) \,\mathrm{d}t =\\
+	= \frac{1}{T} \int_{0}^{T} f(t) e^{-in \omega t} \,\mathrm{d}t 
+\end{gather*}
+
+\begin{definition}
+	[Serie complessa di Fourier]
+	La serie complessa di Fourier è quindi definita come 
+	\[
+		f(t) = \sum_{n=-\infty}^{+\infty} c_n e^{in \omega t} \text{ con } c_n = \frac{1}{T} \int_{0}^{T} f(t) e^{-in \omega t} \,\mathrm{d}t 
+	\]
+\end{definition}

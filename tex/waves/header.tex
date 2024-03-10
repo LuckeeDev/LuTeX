@@ -4,14 +4,13 @@
 \usepackage{textcomp}
 \usepackage[hyphens]{url}
 \usepackage[style=alphabetic,maxcitenames=1]{biblatex}
-\usepackage[colorlinks=true,linkcolor=blue,urlcolor=magenta,citecolor=violet]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=violet]{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{emptypage}
 \usepackage{subcaption}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[italian]{babel}
 \input{math.tex}
 
 
@@ -287,7 +286,8 @@
 
 \def\@lecture{}%
 \newcommand{\lecture}[2]{
-    \marginpar{\small\textsf{Lezione #1: \mbox{#2}}}
+    \def\@lecture{Lezione #1: #2}
+    \marginpar{\small\textsf{Lezione #1:\\#2}}
 }
 \usepackage{pgffor}%
 \newcommand{\lec}[2]{%
@@ -301,11 +301,11 @@
 % fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead[L]{}
-\fancyhead[R]{\@lecture}
-\fancyfoot[L]{}
-\fancyfoot[R]{\thepage}
-\fancyfoot[C]{\leftmark}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyfoot[LE, RO]{\thepage}
+\fancyfoot[LO, RE]{\@lecture}
 
 \makeatother
 

@@ -1,14 +1,37 @@
-\documentclass[a4paper]{report}
+\documentclass[openany]{book}
 \input{header.tex}
-\author{Luca Zoppetti}
-\title{Fenomeni ondulatori}
 
 \thispagestyle{empty}
 \addbibresource{ref.bib}
 \graphicspath{{figures/}}
 
-\usepackage{adjustbox}
-\usepackage{centernot}
+\usepackage[italian]{babel}
+\usepackage{adjustbox, centernot}
+
+% Customize title page
+\renewcommand{\maketitle}{
+  \begin{titlepage}
+    % Upper left corner
+    \begin{flushleft}
+      \vspace*{1cm}
+      \Large Luca Zoppetti \\
+
+      \vspace{0.5cm}
+      \Huge\textbf{Fenomeni Ondulatori}
+
+      \Large per il corso di Fisica dell'Università di Bologna
+    \end{flushleft}
+
+    \vspace*{\fill}
+
+    \noindent Questi sono gli appunti presi in aula del corso di "Fenomeni Ondulatori" che sto seguendo nel secondo semestre del secondo anno di Fisica all'Università di Bologna. Sarò grato a chiunque decida di segnalarmi eventuali errori personalmente o tramite gli \textit{Issues} della \href{https://github.com/LuckeeDev/LuTeX}{\textit{repository}} su GitHub. Buono studio!
+
+    % Lower right corner
+    \begin{flushright}
+      \today
+    \end{flushright}
+  \end{titlepage}
+}
 
 \begin{document}
 
