@@ -1,12 +1,7 @@
 \documentclass[openany]{book}
 \input{header.tex}
 
-\thispagestyle{empty}
-\addbibresource{ref.bib}
-\graphicspath{{figures/}}
-
-\usepackage[italian]{babel}
-\usepackage{adjustbox, centernot}
+\graphicspath{ {figures/} }
 
 % Customize title page
 \renewcommand{\maketitle}{
@@ -39,19 +34,21 @@
 
 \newpage
 
+\
+\thispagestyle{empty}
+
+\newpage
+
 \tableofcontents
+\thispagestyle{empty}
+
+\newpage
+
+\
+\thispagestyle{empty}
+
+\newpage
 
 \lec{3}{5}
-
-% \newpage
-%─────Appendix────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-% \appendix
-% \appendixpage
-
-% \input{appendix.tex}
-
-% \newpage
-%─────Reference──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-% \printbibliography
 
 \end{document}
