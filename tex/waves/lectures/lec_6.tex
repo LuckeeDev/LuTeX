@@ -1,1 +1,54 @@
+\subsection{Relazione di dispersione}
 \lecture{6}{14 marzo 2024}
+
+Più in generale, se il rapporto fra \(\omega \) e k non è costante, si definisce
+
+\begin{definition}
+	[Relazione di dispersione]
+	\[
+		\omega (k) = f(k)
+	\]
+	È una caratteristica del tipo di onda e del mezzo in cui viaggia.
+\end{definition}
+
+Sperimentalmente è possibile studiare la relazione di dispersione. Si possono inviare onde armoniche con diverse periodicità temporali \((T_p, \omega )\) e spaziali \((\lambda , k)\) e valutare sperimentalmente \(\omega (k) = f(k)\). Nel caso semplice dell'equazione di D'Alembert questa è lineare come detto prima.
+
+\paragraph{Mezzi non dispersivi}
+
+Se al variare di k la velocità di fase non varia, allora la relazione di dispersione è lineare e l'equazione di D'Alembert non è un'approssimazione, bensì un'equazione \textbf{esatta}. Il mezzo è detto "non dispersivo". Le onde sonore e le onde elettromagnetiche nel vuoto appartengono a questa categoria. Se le onde sonore si propagassero su mezzi dispersivi, la musica sarebbe un disastro. Le onde nei mezzi non dispersivi mantengono la loro forma durante la propagazione.
+
+\paragraph{Mezzi dispersivi}
+
+Se al variare di k la velocità di fase varia, allora la relazione di dispersione non è lineare: \(\omega (k) = f(k)\). Esempio dell'impulso gaussiano: tipicamente più lontano sono dalla sorgente, più si allarga la gobba della gaussiana. Il mezzo in questo caso è detto dispersivo e l'equazione di D'Alembert è solo una prima approssimazione, a cui andrebbero aggiunti dei termini che descrivono l'effetto dispersivo del mezzo.
+
+\[
+	\frac{\partial ^{2} \xi }{\partial x^{2} } \thickapprox \frac{1}{v^{2} }\frac{\partial ^{2} \xi }{\partial t^{2} } 
+\]
+
+Appartengono a questa categoria le onde elettromagnetiche nella materia (l'arcobaleno è dovuto a questo! Colori diversi viaggiano a velocità diverse), le onde sismiche (una stazione lontana dall'epicentro vede onde molto più lunghe di quelle vicine alla sorgente) e le onde sulla superficie dell'acqua. Le onde nei mezzi dispersivi si propagano variando anche la loro forma.
+
+\begin{eg}
+	[Mezzo dispersivo]
+	Le onde nei mezzi dispersivi soddisfano equazioni diverse dall'equazione di D'Alembert. Consideriamo per esempio
+	\[
+		\frac{\partial ^{2} \xi }{\partial x^{2} } + a \frac{\partial ^4 \xi }{\partial x^4}  = \frac{1}{v^{2} }\frac{\partial ^{2} \xi }{\partial t^{2} } 
+	\]
+	Considero un'onda armonica: \(\xi (x,t) = A \cos (kx - \omega t)\), è un tentativo.
+	\begin{gather*}
+		\frac{\partial ^{2} \xi }{\partial x^{2} } = - k^{2} A \cos (kx - \omega t)\\
+		\frac{\partial ^4 \xi }{\partial x^4} = k^{4} A \cos (kx - \omega t)\\
+		\frac{\partial ^{2} \xi }{\partial t^{2} } = - \omega ^2 A \cos (kx - \omega t)\\
+		\rightsquigarrow - k^{2} A + a k^{4} A = \frac{1}{v^{2} }(- \omega ^2 A)\\ 
+	\end{gather*}
+	Dove nell'ultimo passaggio i coseni si sono semplificati (grazie alla linearità!). Si prosegue trovando la relazione di dispersione: \(\omega ^{2} = v ^{2} (k^{2} -ak^4) \rightsquigarrow \omega = vk\sqrt{1-ak^2} \). Se \(ak^{2} \ll 1 \implies \omega = vk\) e il mezzo appare non dispersivo. Per \(0<ak^{2} <1\) il mezzo invece è dispersivo. In generale, quando studio un mezzo non dispersivo devo trovare che al limite la relazione di dispersione tende a quella di un mezzo dispersivo.
+	\[
+		v_f = \frac{\omega }{k} = v\sqrt{1-ak^{2} } \rightsquigarrow v= \frac{\omega }{k}\frac{1}{\sqrt{1-ak^{2} } } 
+	\]
+	\(v\) è solo il parametro dell'equazione di D'Alembert. La velocità di fase \(v_f\) è riferita a una sola frequenza.
+\end{eg}
+
+Generalizzando quanto detto in precedenza per mezzi non dispersivi, si può scrivere
+\[
+	\xi (x,t) = \sum_{n=-\infty }^{\infty} [c_n e^{i(k_n x - \omega _n t)} + d_n e^{i(k_n x + \omega _n t)}]
+\]
+La trattazione di onde progressive e regressive è identica, con la differenza che dobbiamo ricordarci che ogni onda ha una sua velocità di fase.
