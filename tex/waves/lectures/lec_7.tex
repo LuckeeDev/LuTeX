@@ -1,1 +1,135 @@
-\lecture{7}{18 marzo 2024}
+\section{Studio di un'onda progressiva}
+
+\lecture{7}{19 marzo 2024}
+
+Studiamo ora il caso generico di una forza applicata alla sorgente dell'onda su una corda. (Finora abbiamo studiato un moto noto sulla sorgente, non una forza generica).
+
+\begin{figure}[H]
+	\centering
+	% TODO: edit to remove little arrow at the bottom
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-12-22.png}
+\end{figure}
+
+Impostando l'equazione della dinamica per il moto dell'anello posto in \(x=0\) otteniamo:
+\[
+	\vec{F_e} + \vec{T} +\vec{R_v}  = \mathrm{d}m \vec{a} \rightsquigarrow \begin{dcases}
+		T\cos \theta + R_v = \mathrm{d} m a_x\\
+		F_y + T\sin \theta =\mathrm{d} m a_y  \\
+	\end{dcases}
+\]
+
+Facendo tendere \(\mathrm{d} m \to 0\), i membri di destra tendono a zero.
+\[
+	\begin{dcases}
+		T\cos \theta + R_v = 0\\
+		F_y + T\sin \theta = 0  \\
+	\end{dcases}
+	\rightsquigarrow F_y = -T\sin \theta \thickapprox -T \tan \theta = -T \frac{\partial \xi }{\partial x}
+\]
+Di conseguenza \(F_y = -T \left. \frac{\partial \xi }{\partial x}\right\vert_x=0 \). In questo sistema si producono esclusivamente onde progressive (\(f(x-vt)\) ), se ci fosse un + al posto del - tratteremmo invece onde regressive.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-22-13.png}
+\end{figure}
+Per quanto scritto sopra,
+\[
+	\frac{\partial \xi }{\partial x} = - \frac{1}{v} \frac{\partial \xi }{\partial t} \rightsquigarrow F_y(t) = \frac{T}{v}\frac{\partial \xi (0,t)}{\partial t} 
+\]
+La derivata parziale di \(\xi \) calcolata nel punto 0 rappresenta la velocità verticale del punto sorgente, che verrà indicata con \(v_c(t)\). Inoltre possiamo definire l'impedenza meccanica della corda.
+\begin{definition}
+	[Impedenza meccanica]
+	Si definisce impedenza meccanica:
+	\[
+		Z=\frac{T}{v}= T \sqrt{\frac{\mu }{T}} = \sqrt{\mu T}  
+	\]
+\end{definition} 
+L'effetto della forzante è quindi quello di mettere in moto il primo punto della corda con una velocità proporzionale alla forza (di solito non è così!):
+\[
+	F_y(t) = Zv_c(t)
+\]
+Usare \(v\) e \(Z\) al posto di T e \(\mu \) ci permetterà di trovare risultati molto più generali.
+
+\paragraph{C'è una forza viscosa?}
+
+Sembra che nel sistema ci sia una forza viscosa che porta la forza a essere proporzionale alla velocità. Si possono interpretare le formule come se la corda fosse in grado di applicare una forza dipendente dalla velocità: \(F_v(t) = -Z v_c(t)\). L'energia non viene dissipata, è assorbita e utilizzata per mettere in moto punti sempre più lontani della corda.
+
+\begin{note}
+	\(v_c(t)\) è sempre in fase con la forzante, quindi siamo sistematicamente in una situazione di risonanza.
+\end{note}
+
+\subsection{Energia e potenza}
+
+Il lavoro compiuto dalla forzante è \(\delta L = \vec{F} \cdot \mathrm{d} \vec{s} = F_y \mathrm{d} y = F_y \frac{\mathrm{d}\xi }{\mathrm{d}t} \mathrm{d} t = F_y v_c \mathrm{d} t \). Tuttavia, per quanto ricavato prima so che
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-33-56.png}
+\end{figure}
+
+E la potenza risulta quindi:
+\[
+	\mathcal{P} = \frac{\delta L}{\mathrm{d} t} = -T \left. \frac{\partial \xi }{\partial x} \right\vert_{x=0} \frac{\partial \xi (0,t)}{\partial t} 
+\]
+Tuttavia la relazione è più generale, che vale per ogni punto della corda:
+\[
+	\mathcal{P} = -T \frac{\partial \xi }{\partial x} \frac{\partial \xi }{\partial t}
+\]
+Per le onde progressive sappiamo già che 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-37-15.png}
+	\caption{Relazione fra la derivata temporale e spaziale per le onde progressive.}
+	\label{fig:dt-dx-onda-prog}
+\end{figure}
+Di conseguenza la potenza può essere riscritta:
+\begin{gather*}
+	\mathcal{P} (x,t) = \frac{T}{v}\left(\frac{\partial \xi (x,t)}{\partial t}\right)^{2}  = Tv\left(\frac{\partial \xi (x,t)}{\partial x} \right)^{2} \\
+	\mathcal{P} (x,t) = Z \left(\frac{\partial \xi (x,t)}{\partial t}\right)^{2}
+\end{gather*}
+Si vede subito che la potenza è sempre maggiore o uguale a zero. Quanto ricavato è valido in generale per tutte le onde meccaniche.
+
+\paragraph{Energia cinetica}
+Consideriamo un tratto di corda infinitesima in moto con velocità \(v=\frac{\partial \xi }{\partial t} \). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-44-58.png}
+	\caption{L'immagine di riferimento per lo studio di energia cinetica e potenziale sulla corda.}
+	\label{fig:energia-corda}
+\end{figure}
+Ottengo che 
+\[
+	\mathrm{d} K = \frac{1}{2} \mathrm{d} m v ^{2} = \frac{1}{2} \mu \left( \frac{\partial \xi }{\partial t}  \right) ^{2} \mathrm{d} x
+\]
+Da cui posso definire una densità lineare di energia cinetica:
+\[
+	u_K(x,t) = \frac{\mathrm{d}K}{\mathrm{d}x} = \frac{1}{2} \mu \left( \frac{\partial \xi }{\partial t}  \right) ^{2} 
+\]
+
+\paragraph{Energia potenziale}
+
+Si fa riferimento sempre alla figura \ref{fig:energia-corda}. Il tratto infinitesimo di corda viene allungato facendo lavoro contro la tensione della corda: \(\delta L = -T (\mathrm{d}l - \mathrm{d} x ) = -T(\sqrt{\mathrm{d}x^{2} + \mathrm{d} y ^{2}   } - \mathrm{d} x )\). Applicando l'approssimazione delle piccole oscillazioni otteniamo che
+\begin{gather*}
+	\delta L = -T \mathrm{d} x \left( \sqrt{1+ \left( \frac{\partial \xi }{\partial x}  \right)^{2}  } -1  \right) \thickapprox -T \mathrm{d} x \left( 1+\frac{1}{2} \left( \frac{\partial \xi }{\partial x}  \right)^{2} + \cdots - 1  \right) \thickapprox \\
+	\thickapprox -\frac{1}{2}T \left( \frac{\partial \xi }{\partial x}  \right)^{2} \mathrm{d} x\\
+	u_P(x,t) = -\frac{\delta L}{\mathrm{d} x} = \frac{1}{2}T\left( \frac{\partial \xi }{\partial x}  \right) ^{2} 
+\end{gather*}
+Dove nell'ultima riga abbiamo definito la densità di energia potenziale.
+
+\paragraph{Energia meccanica}
+Possiamo definire la densità di energia meccanica:
+\begin{definition}
+	[Densità lineare di energia meccanica]
+	\[
+		u(x,t) = \frac{1}{2} \mu \left( \frac{\partial \xi }{\partial t}  \right) ^{2} + \frac{1}{2}T\left( \frac{\partial \xi }{\partial x}  \right) ^{2}
+	\]
+\end{definition}
+Nel caso di onde progressive abbiamo le formule già viste che collegano la derivata in x alla derivata in t (Fig. \ref{fig:dt-dx-onda-prog}), quindi possiamo ricavare la seguente uguaglianza:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-56-45.png}
+\end{figure}
+L'energia potenziale e l'energia cinetica sono uguali istante per istante in ogni punto! Quindi l'energia totale è il doppio dell'energia cinetica e il doppio dell'energia potenziale. La potenza e l'energia trasmessa sono inoltre proporzionali:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-58-19.png}
+\end{figure}
