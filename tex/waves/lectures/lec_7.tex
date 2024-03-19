@@ -27,7 +27,7 @@ Facendo tendere \(\mathrm{d} m \to 0\), i membri di destra tendono a zero.
 	\end{dcases}
 	\rightsquigarrow F_y = -T\sin \theta \thickapprox -T \tan \theta = -T \frac{\partial \xi }{\partial x}
 \]
-Di conseguenza \(F_y = -T \left. \frac{\partial \xi }{\partial x}\right\vert_x=0 \). In questo sistema si producono esclusivamente onde progressive (\(f(x-vt)\) ), se ci fosse un + al posto del - tratteremmo invece onde regressive.
+Di conseguenza \(F_y = -T \left. \frac{\partial \xi }{\partial x}\right\vert_x=0 \). In questo sistema si producono esclusivamente onde progressive (\(f(x-vt)\)), se ci fosse un + al posto del - tratteremmo invece onde regressive.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-22-13.png}
@@ -64,14 +64,14 @@ Il lavoro compiuto dalla forzante è \(\delta L = \vec{F} \cdot \mathrm{d} \vec{
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-19-11-33-56.png}
+	\includegraphics[width=0.45\textwidth]{screenshots/2024-03-19-11-33-56.png}
 \end{figure}
 
 E la potenza risulta quindi:
 \[
-	\mathcal{P} = \frac{\delta L}{\mathrm{d} t} = -T \left. \frac{\partial \xi }{\partial x} \right\vert_{x=0} \frac{\partial \xi (0,t)}{\partial t} 
+	\mathcal{P} = \frac{\delta L}{\mathrm{d} t} = -T \left. \frac{\partial \xi }{\partial x} \right\vert_{x=0} \left. \frac{\partial \xi}{\partial t}\right\vert_{x=0} 
 \]
-Tuttavia la relazione è più generale, che vale per ogni punto della corda:
+Tuttavia la relazione è più generale e vale per ogni punto della corda:
 \[
 	\mathcal{P} = -T \frac{\partial \xi }{\partial x} \frac{\partial \xi }{\partial t}
 \]
@@ -127,12 +127,12 @@ Possiamo definire la densità di energia meccanica:
 Nel caso di onde progressive abbiamo le formule già viste che collegano la derivata in x alla derivata in t (Fig. \ref{fig:dt-dx-onda-prog}), quindi possiamo ricavare la seguente uguaglianza:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-56-45.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-11-56-45.png}
 \end{figure}
 L'energia potenziale e l'energia cinetica sono uguali istante per istante in ogni punto! Quindi l'energia totale è il doppio dell'energia cinetica e il doppio dell'energia potenziale. La potenza e l'energia trasmessa sono inoltre proporzionali:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-58-19.png}
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-19-11-58-19.png}
 \end{figure}
 
 \subsection{Scambi di energia}
@@ -166,7 +166,7 @@ Quanto trovato ora è valido per ogni onda meccanica, sia regressiva che progres
 Le onde meccaniche trasportano energia e potenza, come appena accennato. Ricaviamo la potenza e l'energia media:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-12-28-50.png}
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-19-12-28-50.png}
 \end{figure}
 Ricordiamo che invece lo spostamento medio (in cui non compare l'oscillazione elevata al quadrato) è nullo: \(\langle \xi (x,t)\rangle  = \frac{1}{T_P} \int_{0}^{T_P} \xi (x,t)rm  \,\mathrm{d}t =0\).
 Le formule ricordano quelle dell'oscillatore armonico: dipendenza dal quadrato dell'ampiezza e dal quadrato della pulsazione.
@@ -174,7 +174,7 @@ Le formule ricordano quelle dell'oscillatore armonico: dipendenza dal quadrato d
 Ricordando che \(\mathcal{P} (x,t) = Z \omega ^{2} A ^{2} \cos ^{2} (kx-\omega t)\),
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-19-12-32-43.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-12-32-43.png}
 \end{figure}
 Ho ritrovato la formula dell'oscillatore armonico per l'energia presente in un tratto di corda lungo \(\lambda: E = \frac{1}{2}m \omega ^{2} A^{2}  \), ovvero in un periodo \(T_P\).
 
@@ -196,10 +196,10 @@ Per una singola onda armonica si ritrova il risultato già visto: \(I = \langle 
 	\centering
 	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-12-40-52.png}
 \end{figure}
-Che permette di ricavare un'espressione dell'intensità come serie analoga a quanto visto per una singola onda (N.B.: restano solo i termini \(\sin (k_n x- \omega _n t) \sin (k_m x- \omega _m t)\) e \(\cos (k_n x- \omega _n t) \cos (k_m x- \omega _m t)\)  ) con \(m=n\):
+Che permette di ricavare un'espressione dell'intensità come serie analoga a quanto visto per una singola onda (N.B.: restano solo i termini \(\sin (k_n x- \omega _n t) \sin (k_m x- \omega _m t)\) e \(\cos (k_n x- \omega _n t) \cos (k_m x- \omega _m t)\)) con \(m=n\):
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-12-42-32.png}
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-19-12-42-32.png}
 \end{figure}
 Dove è stato posto \(I_n = \frac{1}{2} Z \omega ^{2} _n (a^{2} _n + b ^{2} _n )\). Questo ci permette di rappresentare lo spettro di potenza dell'onda in funzione della pulsazione, perché \(I_n\) è funzione di \(\omega _n\).
 
