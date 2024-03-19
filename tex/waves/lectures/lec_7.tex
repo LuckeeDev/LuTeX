@@ -6,8 +6,9 @@ Studiamo ora il caso generico di una forza applicata alla sorgente dell'onda su 
 
 \begin{figure}[H]
 	\centering
-	% TODO: edit to remove little arrow at the bottom
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-12-22.png}
+	\caption{Schema della corda studiata.}
+	\label{fig:corda-forzata}
 \end{figure}
 
 Impostando l'equazione della dinamica per il moto dell'anello posto in \(x=0\) otteniamo:
@@ -63,7 +64,7 @@ Il lavoro compiuto dalla forzante è \(\delta L = \vec{F} \cdot \mathrm{d} \vec{
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-33-56.png}
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-19-11-33-56.png}
 \end{figure}
 
 E la potenza risulta quindi:
@@ -77,7 +78,7 @@ Tuttavia la relazione è più generale, che vale per ogni punto della corda:
 Per le onde progressive sappiamo già che 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-37-15.png}
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-19-11-37-15.png}
 	\caption{Relazione fra la derivata temporale e spaziale per le onde progressive.}
 	\label{fig:dt-dx-onda-prog}
 \end{figure}
@@ -92,7 +93,7 @@ Si vede subito che la potenza è sempre maggiore o uguale a zero. Quanto ricavat
 Consideriamo un tratto di corda infinitesima in moto con velocità \(v=\frac{\partial \xi }{\partial t} \). 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-44-58.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-11-44-58.png}
 	\caption{L'immagine di riferimento per lo studio di energia cinetica e potenziale sulla corda.}
 	\label{fig:energia-corda}
 \end{figure}
@@ -133,3 +134,81 @@ L'energia potenziale e l'energia cinetica sono uguali istante per istante in ogn
 	\centering
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-11-58-19.png}
 \end{figure}
+
+\subsection{Scambi di energia}
+Si fa riferimento alla figura \ref{fig:corda-forzata}. L'energia immessa dalla forzante serve ad indurre un'onda nella corda e viene incamerata dalla corda nella sua forma (è il ruolo della forza viscosa). Quindi l'energia raccolta da ogni elemento della corda viene persa passandola all'elemento di corda adiacente! Questo trasporto di energia è necessario per mettere in moto elementi lontani della corda dove l'onda non è ancora arrivata.
+
+\begin{eg}
+	Consideriamo una semicorda omogenea (con tensione T e densità di massa \(\mu \)) il cui estremo è sottoposto al moto \(\xi (0,t) = -A \sin \omega t = A \sin (-\omega t)\), che produce un'onda progressiva: \(\xi (x,t) = A \sin (kx - \omega t)\).
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-12-20-11.png}
+	\end{figure}
+	Ritrovo inoltre quanto già visto, ovvero che energia cinetica ed energia potenziale sono istante per istante, punto per punto, uguali.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-12-22-16.png}
+	\end{figure}
+	Tutte le forme di energia appena ricavate dipendono da \(kx-\omega t\)! Quindi esse sono soluzioni delle equazioni di D'Alembert.
+	\[
+		\frac{\partial ^{2} \mathcal{P} (x,t)}{\partial x^{2} } = \frac{1}{v^{2} }\frac{\partial ^{2} \mathcal{P} (x,t)}{\partial t^{2} } \hspace{1cm}
+		\frac{\partial ^{2} u (x,t)}{\partial x^{2} } = \frac{1}{v^{2} }\frac{\partial ^{2} u(x,t)}{\partial t^{2} }  
+	\]
+\end{eg}
+Quanto trovato ora è valido per ogni onda meccanica, sia regressiva che progressiva! Ogni volta che ho un'onda meccanica ho delle onde di potenza e delle onde di densità lineare di energia meccanica.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-12-26-23.png}
+	\caption{Conseguenze della dipendenza di \(u_K\) e \(u_P\) da \((kx-\omega t)\).}
+\end{figure}
+
+\subsection{Trasporto di energia e potenza}
+Le onde meccaniche trasportano energia e potenza, come appena accennato. Ricaviamo la potenza e l'energia media:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-12-28-50.png}
+\end{figure}
+Ricordiamo che invece lo spostamento medio (in cui non compare l'oscillazione elevata al quadrato) è nullo: \(\langle \xi (x,t)\rangle  = \frac{1}{T_P} \int_{0}^{T_P} \xi (x,t)rm  \,\mathrm{d}t =0\).
+Le formule ricordano quelle dell'oscillatore armonico: dipendenza dal quadrato dell'ampiezza e dal quadrato della pulsazione.
+\paragraph{Energia trasmessa in un periodo}
+Ricordando che \(\mathcal{P} (x,t) = Z \omega ^{2} A ^{2} \cos ^{2} (kx-\omega t)\),
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-19-12-32-43.png}
+\end{figure}
+Ho ritrovato la formula dell'oscillatore armonico per l'energia presente in un tratto di corda lungo \(\lambda: E = \frac{1}{2}m \omega ^{2} A^{2}  \), ovvero in un periodo \(T_P\).
+
+\subsection{Intensità}
+
+Si definisce l'intensità dell'onda meccanica.
+
+\begin{definition}
+	[Intensità]
+	Per le onde periodiche, si definisce l'intensità dell'onda:
+	\[
+		I = \frac{E(\Delta t)}{\Delta t} = \frac{1}{T_P}\int_{0}^{T_P} \mathcal{P} (x,t) \,\mathrm{d}r = \langle \mathcal{P}  \rangle = \left\langle Z \left( \frac{\partial \xi (x,t)}{\partial t} ^{2}  \right)  \right\rangle 
+	\]
+	\(I\) è misurata in watt.
+\end{definition}
+
+Per una singola onda armonica si ritrova il risultato già visto: \(I = \langle \mathcal{P}  \rangle = \frac{1}{2}Z \omega ^{2} A ^{2} \). Se l'onda è periodica può essere scritta in serie di Fourier, che per le onde periodiche progressive (N.B.: non scriviamo \(a_0\) perché nel calcolo della potenza compaiono solo derivate e quindi questo termine costante non ha rilevanza) è
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-12-40-52.png}
+\end{figure}
+Che permette di ricavare un'espressione dell'intensità come serie analoga a quanto visto per una singola onda (N.B.: restano solo i termini \(\sin (k_n x- \omega _n t) \sin (k_m x- \omega _m t)\) e \(\cos (k_n x- \omega _n t) \cos (k_m x- \omega _m t)\)  ) con \(m=n\):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-19-12-42-32.png}
+\end{figure}
+Dove è stato posto \(I_n = \frac{1}{2} Z \omega ^{2} _n (a^{2} _n + b ^{2} _n )\). Questo ci permette di rappresentare lo spettro di potenza dell'onda in funzione della pulsazione, perché \(I_n\) è funzione di \(\omega _n\).
+
+\begin{note}
+	Domande tipiche da orale:
+	\begin{itemize}
+		
+		\item Perché non si definisce l'intensità per onde impulsive?
+		\item Quale grandezza fisica potrebbe sostituire l'intensità per le onde impulsive?
+		\item Qual è l'espressione dello spettro di potenza se uso la serie complessa di Fourier?
+	\end{itemize}
+\end{note}
