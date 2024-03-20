@@ -109,3 +109,58 @@ Si vede immediatamente che la massima onda trasmessa si ha per \(I_r=0 \implies 
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-13-59.png}
 \end{figure}
 %TODO: una figura incollata non è poi stata usata. Modifica pfig per prendere un parametro per la larghezza, tipo 0.6pfig
+
+\section{Onde stazionarie}
+Studiamo una corda fissata a un estremo, che può essere pensato come una corda con \(\mu _0 \to \infty \). Consideriamo un'onda regressiva proveniente dalla regione \(x>0\):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-31-36.png}
+\end{figure}
+Nel caso limite in cui \(Z_0 \gg Z\) abbiamo che \(A_t \to 0,\ A_r=-A_i\). L'onda riflessa è un'onda progressiva ribaltata rispetto all'onda incidente:
+\[
+	\xi _r(x,t)=-A_i \cos (kx -\omega t + \varphi _1)
+\]
+L'onda incidente e quella riflessa hanno la stessa intensità, quindi complessivamente l'onda risultante (\(\xi (x,t) = \xi _i (x,t)+\xi _r(x,t)\)) non trasporta energia. È detta \emph{onda stazionaria}. Il punto \(x=0\) è un vincolo per la corda, quindi
+\begin{gather*}
+	A_i [\cos (-\omega t + \varphi _0) - \cos (-\omega t + \varphi _1)]=0 \iff \varphi _1 = \varphi _0\\
+	\xi (x,t) = A_i [\cos (-kx -\omega t + \varphi _0) - \cos (kx- \omega t + \varphi _0)]
+\end{gather*}
+Ricordando che \(\cos \alpha - \cos \beta  = -2 \sin \left( \frac{\alpha +\beta }{2} \right)\sin \left(\frac{\alpha - \beta }{2}\right)  \), possiamo scrivere in un altro modo \(\xi (x,t)\):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-40-21.png}
+\end{figure}
+La formula appena ricavata può essere ricavata come segue: ogni punto della corda oscilla nel tempo con un'ampiezza massima data da \(A \sin (kx)\). Esistono dei punti fissi (nodi) e dei punti dove l'oscillazione è massima (ventri):
+\begin{itemize}
+	\item Nodo: \(\sin (kx) = 0 \implies kx = n\pi \rightsquigarrow x= \frac{n \pi }{k}\) con \(n\) intero
+	\item Ventre: \(\sin (kx) = \pm 1 \implies kx = \left( n+ \frac{1}{2} \right) \pi \rightsquigarrow x = \left( n + \frac{1}{2} \right) \frac{\pi }{k}  \)  
+\end{itemize}
+
+\subsection{Corda vincolata a due estremi}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-46-00.png}
+\end{figure}
+La differenza con quanto fatto prima è che ora dobbiamo imporre due vincoli, in \(x=0\) e in \(x=L\), dove in ogni istante deve valere \(\xi (0,t)=\xi (L,t)=0\). Passiamo da \(k\) continui a \(k\) discreti: \(\xi (L,t) = 0 \rightsquigarrow \sin (kL)=0\rightsquigarrow k=n \pi /L\) con \(n\) intero. Stiamo \emph{quantizzando} il numero d'onda (succederà anche in meccanica quantistica!), quindi saranno quantizzate anche le lunghezze d'onda, le pulsazioni e le frequenze:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-49-52.png}
+\end{figure}
+\paragraph{Armonica fondamentale}
+L'onda armonica ottenuta ponendo \(n=1\) è conosciuta come "armonica fondamentale".
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-50-49.png}
+\end{figure}
+\(n\) corrisponde al numero di ventri. Sommando armoniche con \(n\) diverso si possono ottenere forme diverse, se invece compare solo un'armonica parliamo di "oscillazioni di modo normale".
+Le frequenze che si ottengono dalle oscillazioni di modo normale sono dette "frequenze proprie" o "autofrequenze". Qualunque onda che viaggia su una corda vincolata ai due estremi può essere espresse come combinazione lineare di armoniche fondamentali:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-10-55-47.png}
+\end{figure}
+\paragraph{Una chitarra}
+Nella chitarra classica ci sono sei corde vincolate di diverso materiale: tipicamente tre sono di metallo e tre di nylon, avendo densità diverse permettono di coprire uno spettro più ampio di frequenze.
+\[
+	\nu _n = n \frac{\nu }{2L} = n \frac{1}{2L} \sqrt{\frac{T}{\mu }} 
+\]
+Essendo la frequenza dipendente dalla tensione, accordare la chitarra significa trovare la tensione giusta della corda per suonare la nota corretta. Suonando poggio le dita sulla tastiera per accorciare la lunghezza della corda e suonare una nota diversa.
