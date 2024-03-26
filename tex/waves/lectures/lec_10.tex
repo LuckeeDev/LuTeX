@@ -1,6 +1,6 @@
+\lecture{10}{26 marzo 2024}
 \section{Onde sonore}
 
-\lecture{10}{26 marzo 2024}
 
 Le onde sonore viaggiano in generale in tre dimensioni, oggi ci limiteremo al caso unidimensionale facendole viaggiare in un tubo. Le onde sulla corda sono trasversali rispetto alla direzione di propagazione dell'onda, esse hanno bisogno di qualcosa di solido per propagarsi perché sono necessari dei vincoli sulle posizioni dei punti. Nei liquidi e nei gas le onde trasversali non sono quindi possibili, mentre avvengono onde longitudinali (oscillazione nella stessa direzione del moto).
 Se ho una direzione di propagazione ben precisa le onde sono trattabili a tutti gli effetti come onde scalari.
@@ -75,3 +75,79 @@ E anche onde di pressione \(p(x,t)\):
 \begin{equation}
 	p(x,t) = P_0 - \gamma P_0 \frac{\partial \xi }{\partial x} \rightsquigarrow \frac{\partial ^{2} p}{\partial x^{2} } = \frac{\rho _0}{\gamma P_0} \frac{\partial ^{2} p}{\partial t ^{2} }  
 \end{equation}
+
+\subsection{Analisi energetica delle onde sonore}
+
+Il diaframma applica una forza sul gas data da \(F_x = S p(x,t)\), quindi il suo lavoro risulta \(\delta L = F_x \mathrm{d} x = S p(x,t) \dot{\xi }(x,t) \mathrm{d} t\), quindi
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-26-12-16-55.png}
+\end{figure}
+Dividendo per il tempo otteniamo la potenza:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-26-12-17-38.png}
+\end{figure}
+Il primo termine ha media nulla perché la media dello spostamento spaziale nel tempo è nulla, quindi il primo termine non è un'energia associata all'onda perché non viaggia. L'unico termine che ci interessa è il secondo, che rappresenta l'energia effettivamente immessa nel tubo e che ha la possibilità di propagarsi:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{screenshots/2024-03-26-12-20-51.png}
+\end{figure} 
+È proporzionale alla sezione del tubo, questo ci torna comodo perché in generale quando parliamo di intensità vogliamo una quantità definita punto per punto e non su una superficie. Quindi definisco l'intensità delle onde sonore.
+\begin{definition}
+	[Intensità di onda sonora]
+	Si definisce intensità di onda sonora:
+	\begin{equation}
+		I = \left\langle \frac{\mathcal{P} }{S} \right\rangle = \left\langle -\gamma P_0 \frac{\partial \xi }{\partial x} \frac{\partial \xi }{\partial t}  \right\rangle 
+	\end{equation}
+	È una quantità puntuale e si misura in \unit{W / m^2}.
+\end{definition}
+Per le onde progressive la derivata spaziale è proporzionale alla derivata temporale, quindi posso scrivere
+\begin{equation}
+	I \left\langle \frac{\gamma P_0}{v} \left( \frac{\partial \xi }{\partial t}  \right) ^{2}   \right\rangle = \left\langle v \gamma P_0 \left( \frac{\partial \xi }{\partial x}  \right)^{2}   \right\rangle 
+\end{equation}
+\begin{definition}
+	[Impedenza acustica specifica]
+	Si definisce l'impedenza acustica specifica:
+	\begin{equation}
+		Z = \frac{\gamma P_0}{v} = \sqrt{\gamma P_0 \rho _0} 
+	\end{equation}
+\end{definition}
+Utilizzando l'impedenza appena definita si scrive che
+\begin{equation}
+	I = \left\langle Z \left( \frac{\partial \xi }{\partial t}  \right) ^{2}  \right\rangle,
+\end{equation}
+% TODO: aggiungi ref a equazione corda
+che ha una forma identica a quella che compariva sulla corda, ma con diverse unità di misura!
+\paragraph{Impedenza come causa-effetto}
+Avevamo già detto che l'impedenza compariva come costante di proporzionalità fra una causa e il suo effetto. Cerchiamo una relazione di questo tipo in questo caso. Ricordiamo che
+\begin{gather}
+	p(x,t) = P_0 - \gamma P_0 \frac{\partial \xi }{\partial x}\\
+	\delta p = - \gamma P_0 \frac{\partial \xi }{\partial x} = \frac{\gamma  P_0}{v} \frac{\partial \xi }{\partial t} = Z \frac{\partial \xi }{\partial t} 
+\end{gather}
+dove la variazione di pressione è la causa dello spostamento del gas.
+
+\paragraph{Come udiamo il suono}
+Il nostro timpano si comporta esattamente come un oscillatore armonico forzato all'arrivo di un'onda sonora. Possiamo immaginarlo come un oscillatore con un fattore di qualità molto piccolo, perché il timpano è sensibili a frequenze fra \(20 \unit{Hz}\) e \(20000 \unit{Hz}\). La massima sensibilità è attorno ai \(2-3 \unit{kHz}\), le frequenze della voce stanno fra i \(20 \unit{Hz}\) e i \(4 \unit{kHz}\). L'intensità minima percepibile è \(I_0 = 10^{-12} \unit{W / m^2}\) e la soglia del dolore è convenzionalmente definita come \(I_{dol} = 1 \unit{W / m^2}\). L'intensità massima, che provoca un immediato danno meccanico all'orecchio, è \(I_{max} = 10 \unit{W / m^2}\). Questi valori sono convenzionalmente assegnati perché poi in realtà variano in base alla frequenza del suono e da persona a persona.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-26-12-39-25.png}
+\end{figure}
+L'intervallo di intensità sonora in cui l'orecchio umano è sensibile è enorme: tredici ordini di grandezza! Per questo motivo è più comodo studiarla in scala logaritmica, definendo il livello sonoro in deciBel:
+\begin{equation}
+	\beta _s = 10 \log_{10} \left( \frac{I}{I_0} \right) \unit{dB}
+\end{equation}
+Di conseguenza, il limite di udibilità è \(\beta _s = 0 \unit{dB}\), la soglia del dolore \(\beta _s = 120 \unit{dB}\) e il danno permanente immediato a \(\beta _s = 130 \unit{dB}\).
+
+\paragraph{Giustificazione delle approssimazioni}
+Calcoliamo l'intensità e l'ampiezza delle oscillazioni delle molecole d'aria con un suono armonico di frequenza \(f= 1 \unit{kHz}\), livello sonoro \(\beta _s = 50 \unit{dB}\) e in aria standard:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-26-12-45-53.png}
+\end{figure}
+Si nota che l'ampiezza delle oscillazioni è molto inferiore rispetto alla lunghezza d'onda del suono. Si nota lo stesso fatto anche per le variazioni di densità e di pressione:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-26-12-49-46.png}
+\end{figure}
+Essendo tutte variazioni molto piccole, le equazioni di D'Alembert sono quelle \emph{corrette} per le onde sonore, pur avendo applicato alcune approssimazioni al nostro modello. Questo significa che tutte le onde viaggiano alla stessa velocità (per fortuna, altrimenti sentiremmo la musica diversamente a seconda della distanza dalla sorgente!).
