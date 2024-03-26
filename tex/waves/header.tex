@@ -17,6 +17,7 @@
 
 
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, csquotes}
+\mathtoolsset{showonlyrefs=true}
 \usepackage{geometry}
 \usepackage{mathrsfs}
 \usepackage{cancel}
@@ -289,7 +290,7 @@
 \def\@lecture{}%
 \newcommand{\lecture}[2]{
     \def\@lecture{Lezione #1: #2}
-    \marginpar{\small\textsf{Lezione #1:\\#2}}
+    \section*{Lezione #1:\\#2}
 }
 \usepackage{pgffor}%
 \newcommand{\lec}[2]{%
