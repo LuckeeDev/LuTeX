@@ -1,28 +1,3 @@
-% quiver style
-\usepackage{tikz-cd}
-% `calc` is necessary to draw curved arrows.
-\usetikzlibrary{calc}
-% `pathmorphing` is necessary to draw squiggly arrows.
-\usetikzlibrary{decorations.pathmorphing}
-
-% A TikZ style for curved arrows of a fixed height, due to AndréC.
-\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
-					.. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
-					and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
-					.. (\tikztotarget)\tikztonodes}},
-	settings/.code={\tikzset{quiver/.cd,#1}
-			\def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
-	quiver/.cd,pos/.initial=0.35,height/.initial=0}
-
-% TikZ arrowhead/tail styles.
-\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
-\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
-\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
-% TikZ arrow styles.
-\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
-
-% useful macro for class
-\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
 \newcommand\quotient[2]{
 	\mathchoice
 	{% \displaystyle
@@ -39,46 +14,8 @@
 	}
 }
 
-\newcommand{\True}{\textsf{True}}
-\newcommand{\T}{\textsf{T}}
-\newcommand{\False}{\textsf{False}}
-\newcommand{\F}{\textsf{F}}
-\newcommand{\act}{\rotatebox[origin=c]{-180}{\(\,\circlearrowright\,\)}}
-
 \usepackage{physics}
-\usepackage{complexity}
-
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\Span}{span}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\vol}{vol}
-\DeclareMathOperator{\dist}{dist}
-\DeclareMathOperator{\diam}{diam}
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator{\dom}{dom}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\Cov}{Cov}
-
-\let\implies\Rightarrow
-\let\impliedby\Leftarrow
-\let\iff\Leftrightarrow
-
-\usepackage{stmaryrd} % for \lightning
-\newcommand\conta{\scalebox{1.1}{\(\lightning\)}}
-
 \usepackage{bm}
-\usepackage{bbm}
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
 
 \newcommand{\incsvg}[2]{%
     \def\svgwidth{\columnwidth}

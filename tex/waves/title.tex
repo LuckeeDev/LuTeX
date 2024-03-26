@@ -1,0 +1,28 @@
+\usepackage{titling}
+% Required for \today
+\usepackage[italian]{datetime2}
+
+% Customize title page
+\renewcommand{\maketitle}{
+  \begin{titlepage}
+    % Upper left corner
+    \begin{flushleft}
+      \vspace*{1cm}
+      \Large \theauthor \\
+
+      \vspace{0.5cm}
+      \Huge\textbf{Fenomeni Ondulatori}
+
+      \Large per il corso di Fisica dell'Università di Bologna
+    \end{flushleft}
+
+    \vspace*{\fill}
+
+    \noindent Questi sono gli appunti presi in aula del corso di "Fenomeni Ondulatori" che sto seguendo nel secondo semestre del secondo anno di Fisica all'Università di Bologna. Sarò grato a chiunque decida di segnalarmi eventuali errori personalmente o tramite gli \emph{Issues} della \href{https://github.com/LuckeeDev/LuTeX}{\emph{repository}} su GitHub. Buono studio!
+
+    % Lower right corner
+    \begin{flushright}
+      \thedate
+    \end{flushright}
+  \end{titlepage}
+}

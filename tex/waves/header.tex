@@ -29,7 +29,7 @@
 
 \usepackage{caption}
 \captionsetup{belowskip=0pt}
-\geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+\geometry{a4paper,margin=2.5cm}
 
 % for the big braces
 \usepackage{bigdelim}
@@ -45,7 +45,7 @@
 % si unitx
 \usepackage{siunitx}
 \sisetup{locale = IT}
-\renewcommand\vec[1]{\mathbf{#1}}
+\renewcommand\vec[1]{\bm{\mathbf{#1}}}
 \newcommand\mat[1]{\mathbf{#1}}
 
 
@@ -293,8 +293,8 @@
 \usepackage{pgffor}%
 \newcommand{\lec}[2]{%
     \foreach \c in {#1,...,#2}{%
-            \IfFileExists{lectures/lec_\c.tex} {%
-                \input{lectures/lec_\c.tex}%
+            \IfFileExists{./lectures/lec_\c.tex} {%
+                \input{./lectures/lec_\c.tex}%
             }{}%
         }%
 }
@@ -309,9 +309,10 @@
 
 \fancypagestyle{fancy}{%
     \fancyhf{}%
-    \fancyhead[LE]{\textbf{\thepage}\hskip4mm\leftmark}%
-    \fancyhead[RO]{\nouppercase{\rightmark}\hskip4mm\textbf{\thepage}}%
+    \fancyhead[LE]{\textbf{\thepage}\hskip5mm\leftmark}%
+    \fancyhead[RO]{\nouppercase{\rightmark}\hskip5mm\textbf{\thepage}}%
     \fancyhead[LO,RE]{\thelecture}%
+    \renewcommand{\headrulewidth}{0pt}%
 }
 
 \pagestyle{fancy}
@@ -367,3 +368,5 @@
 % end appendix autoref patch
 
 \setcounter{tocdepth}{1}
+
+\graphicspath{ {figures/} }
