@@ -47,13 +47,17 @@ Guardiamo la prima equazione: stiamo eguagliando funzioni periodiche scritte com
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-20-09-46-35.png}
 \end{figure}
 Quanto trovato non è ancora sufficiente, perché sembra che a seconda delle caratteristiche dell'onda (i numeri d'onda) la riflessione e la trasmissione avvengano in maniera diversa.
-\[
-	\implies \begin{dcases}
-		A_t = \frac{2Z_1}{Z_1 + Z_2}A_i\\
-		A_r = \frac{Z_1 - Z_2}{Z_1 + Z_2}A_i\\
-	\end{dcases}
-\]
-Sostituendo le impedenze troviamo che le ampiezze riflesse e trasmesse non dipendono dall'onda! Si presenta solo l'impedenza, quindi valgono per tutte le onde e non solo quelle armoniche. Studiamo i casi limite di queste formule:
+\begin{formula}
+	[Riflessione e trasmissione]
+	Sostituendo le impedenze troviamo che le ampiezze riflesse e trasmesse non dipendono dall'onda! Si presenta solo l'impedenza, quindi valgono per tutte le onde e non solo quelle armoniche.
+	\[
+		\begin{dcases}
+			A_t = \frac{2Z_1}{Z_1 + Z_2}A_i\\
+			A_r = \frac{Z_1 - Z_2}{Z_1 + Z_2}A_i\\
+		\end{dcases}
+	\]
+\end{formula}
+Studiamo i casi limite di queste formule:
 \begin{enumerate}
 	\item Se \(Z_1 = Z_2\), ovvero se la corda è omogenea, non avviene riflessione: \(A_t = A_i,\ A_r = 0\) 
 	\item Se \(Z_1 \gg Z_2\), \(A_t = 2A_i,\ A_r=A_i\): la corda 2 è sottile e l'onda trasmessa ha ampiezza doppia di quella incidente, mentre l'onda riflessa ha lo stesso segno di quella incidente.  

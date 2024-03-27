@@ -14,8 +14,16 @@
 	}
 }
 
+\usepackage[locale = IT]{siunitx}
 \usepackage{physics}
 \usepackage{bm}
+
+% Silence siunitx physics warning
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+\renewcommand\vec[1]{\bm{\mathbf{#1}}}
 
 \newcommand{\incsvg}[2]{%
     \def\svgwidth{\columnwidth}

@@ -1,77 +1,19 @@
 \usepackage[italian]{babel}
 
 % basics
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage[hyphens]{url}
-\usepackage[style=alphabetic,maxcitenames=1]{biblatex}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=violet]{hyperref}
 \usepackage{graphicx}
+\graphicspath{ {figures/} }
+
 \usepackage{float}
-\usepackage{booktabs}
-\usepackage{emptypage}
-\usepackage{subcaption}
 \usepackage[usenames,dvipsnames]{xcolor}
-\input{math.tex}
 
-
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, csquotes}
+\usepackage{amsmath, mathtools, amsthm, amssymb, csquotes}
 \mathtoolsset{showonlyrefs=true}
-\usepackage{geometry}
-\usepackage{mathrsfs}
-\usepackage{cancel}
-\usepackage{systeme}
-
-\usepackage[inline, shortlabels]{enumitem}
-\usepackage{multicol}
-\setlength\multicolsep{0pt}
+\usepackage[a4paper,margin=2.5cm]{geometry}
 
 \usepackage{caption}
 \captionsetup{belowskip=0pt}
-\geometry{a4paper,margin=2.5cm}
-
-% for the big braces
-\usepackage{bigdelim}
-
-% correct
-\definecolor{correct}{HTML}{009900}
-\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
-\newcommand\green[1]{{\color{correct}{#1}}}
-
-% hide parts
-\newcommand\hide[1]{}
-
-% si unitx
-\usepackage{siunitx}
-\sisetup{locale = IT}
-\renewcommand\vec[1]{\bm{\mathbf{#1}}}
-\newcommand\mat[1]{\mathbf{#1}}
-
-
-% tikz
-\usepackage{tikz}
-\usetikzlibrary{intersections, angles, quotes, positioning}
-\usetikzlibrary{arrows.meta}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.13}
-
-
-\tikzset{
-    force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
-}
-
-% Algorithm Env
-\usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered,resetcount,algochapter]{algorithm2e}
-\SetKwComment{Comment}{// }{}
-\SetArgSty{textsl}
-\def\algocflineautorefname{Algorithm}
-\counterwithin{algocfline}{chapter}
-
-% Clear out the item autoref name
-\makeatletter
-\def\itemautorefname{\@gobble}
-\makeatother
 
 % theorems
 \makeatother
@@ -82,6 +24,7 @@
 
 \theoremstyle{definition}
 
+% Style theorem boxes
 \declaretheoremstyle[
     headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
     mdframed={
@@ -192,17 +135,6 @@
         }
 ]{notgrayline}
 
-% \declaretheoremstyle[
-% 	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
-% 	numbered=no,
-% 	mdframed={
-% 			linewidth=2pt,
-% 			rightline=false, topline=false, bottomline=false,
-% 			linecolor=RawSienna, backgroundcolor=RawSienna!1,
-% 		},
-% 	qed=\qedsymbol
-% ]{thmproofbox}
-
 \declaretheoremstyle[
     headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
     numbered=no,
@@ -226,26 +158,26 @@
 ]{thmanswerbox}
 
 \declaretheoremstyle[
-    headfont=\bfseries\sffamily\color{Violet!70!black}, bodyfont=\normalfont,
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
     mdframed={
             linewidth=2pt,
             rightline=false, topline=false, bottomline=false,
-            linecolor=Violet, backgroundcolor=Violet!1,
+            linecolor=NavyBlue,
             nobreak=false
         }
-]{conjpurplebox}
+]{formulabox}
 
 \declaretheorem[style=thmgreenbox, name=Definizione, numberwithin=section]{definition}
 \declaretheorem[style=thmgreen2box, name=Definizione, numbered=no]{definition*}
-\declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
-\declaretheorem[style=thmred2box, name=Theorem, numbered=no]{theorem*}
+\declaretheorem[style=thmredbox, name=Teorema, numberwithin=section]{theorem}
+\declaretheorem[style=thmred2box, name=Teorema, numbered=no]{theorem*}
 \declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
-\declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
-\declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
-\declaretheorem[style=thmpinkbox, name=Problem, numberwithin=section]{problem}
-\declaretheorem[style=thmpinkbox, name=Problem, numbered=no]{problem*}
-\declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
-\declaretheorem[style=conjpurplebox, name=Conjecture, numberwithin=section]{conjecture}
+\declaretheorem[style=thmredbox, name=Proposizione, numberwithin=section]{proposition}
+\declaretheorem[style=thmredbox, name=Corollario, numberwithin=section]{corollary}
+\declaretheorem[style=thmpinkbox, name=Problema, numberwithin=section]{problem}
+\declaretheorem[style=thmpinkbox, name=Problema, numbered=no]{problem*}
+\declaretheorem[style=thmblue2box, name=Affermazione, numbered=no]{claim}
+\declaretheorem[style=formulabox, name=Formula, numbered=no]{formula}
 
 % Redefine proof environment to get a full control.
 \makeatletter
@@ -271,24 +203,16 @@
 \declaretheorem[style=thmblueline, numbered=no, name=Nota]{note}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Esercizio]{exercise}
 \declaretheorem[style=notgrayline, numbered=no, name=Come già visto]{prev}
-\declaretheorem[style=thmgreen3box, numbered=no, name=Intuition]{intuition}
+\declaretheorem[style=thmgreen3box, numbered=no, name=Intuizione]{intuition}
 \declaretheorem[style=notgraybox, numbered=no, name=Notazione]{notation}
 \declaretheorem[style=thmanswerbox, numbered=no, name=Risposta]{tmpanswer}
 \newenvironment{answer}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpanswer}}{\null\hfill\popQED\end{tmpanswer}}
 
-
-\usepackage{etoolbox}
 \renewcommand{\qed}{\null\hfill\(\blacksquare\)}
 
-\def\testdateparts#1{\dateparts#1\relax}
-\def\dateparts#1 #2 #3 #4 #5\relax{
-    \marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
-}
-
-\newcommand{\thelecture}{}%
 \newcommand{\lecture}[2]{
-    \renewcommand{\thelecture}{Lezione #1: #2}%
-    \section*{\thelecture}%
+    \global\def\thelecture{Lezione #1: #2}
+    \section*{\thelecture}
 }
 \usepackage{pgffor}%
 \newcommand{\lec}[2]{%
@@ -307,66 +231,12 @@
     \renewcommand{\headrulewidth}{0pt}
 }
 
-\fancypagestyle{fancy}{%
-    \fancyhf{}%
-    \fancyhead[LE]{\textbf{\thepage}\hskip5mm\leftmark}%
-    \fancyhead[RO]{\nouppercase{\rightmark}\hskip5mm\textbf{\thepage}}%
-    \fancyhead[LO,RE]{\thelecture}%
-    \renewcommand{\headrulewidth}{0pt}%
-}
+\fancyhf{}%
+\fancyhead[LE]{\textbf{\thepage}\hskip5mm\leftmark}%
+\fancyhead[RO]{\nouppercase{\rightmark}\hskip5mm\textbf{\thepage}}%
+\fancyhead[LO,RE]{\thelecture}%
+\renewcommand{\headrulewidth}{0pt}%
 
 \pagestyle{fancy}
 
-% notes
-\usepackage[color=pink]{todonotes}
-\usepackage{marginnote}
-\let\marginpar\marginnote
-
-% Fix some stuff
-% %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
-% \pdfsuppresswarningpagegroup=1
-
-% Appendix environment
-\usepackage{appendix}
-\def\chapterautorefname{Section}
-\def\sectionautorefname{Section}
-\def\appendixautorefname{Appendix}
-\renewcommand\appendixname{Appendix}
-\renewcommand\appendixtocname{Appendix}
-\renewcommand\appendixpagename{Appendix}
-% begin appendix autore patch [\autoref subsections in appendix](https://tex.stackexchange.com/questions/149807/autoref-subsections-in-appendix)
-\makeatletter
-\patchcmd{\hyper@makecurrent}{%
-    \ifx\Hy@param\Hy@chapterstring
-        \let\Hy@param\Hy@chapapp
-    \fi
-}{%
-    \iftoggle{inappendix}{%true-branch
-        % list the names of all sectioning counters here
-        \@checkappendixparam{chapter}%
-        \@checkappendixparam{section}%
-        \@checkappendixparam{subsection}%
-        \@checkappendixparam{subsubsection}%
-        \@checkappendixparam{paragraph}%
-        \@checkappendixparam{subparagraph}%
-    }{}%
-}{}{\errmessage{failed to patch}}
-
-\newcommand*{\@checkappendixparam}[1]{%
-    \def\@checkappendixparamtmp{#1}%
-    \ifx\Hy@param\@checkappendixparamtmp
-        \let\Hy@param\Hy@appendixstring
-    \fi
-}
-\makeatletter
-
-\newtoggle{inappendix}
-\togglefalse{inappendix}
-
-\apptocmd{\appendix}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
-\apptocmd{\subappendices}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
-% end appendix autoref patch
-
 \setcounter{tocdepth}{1}
-
-\graphicspath{ {figures/} }
