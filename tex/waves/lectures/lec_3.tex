@@ -102,8 +102,8 @@ Il "principio di sovrapposizione" vale quindi solo nei sistemi lineari. È l'esp
 Trattiamo ora uno degli strumenti più potenti per risolvere equazioni lineari, tra cui problemi di forzante generica scomponendola in casi particolari. Come generalizziamo quanto studiato finora?
 \begin{enumerate}
 	
-	\item Primo passo: consideriamo \(f(t)\) periodica con periodo T. Quando una funzione è periodica la possiamo risolvere se il periodo è limitato.
-	\item Secondo passo: funzione periodica per cui periodo è su asse reale. Consideriamo cioè una funzione periodica di periodo \(T \to \infty \).  
+	\item Primo passo: consideriamo \(f(t)\) periodica con periodo T. Quando una funzione è periodica la possiamo risolvere se il periodo è limitato. Questo è il caso del tema di questa sezione, la serie di Fourier.
+	\item Secondo passo: funzione periodica per cui periodo è su asse reale. Consideriamo cioè una funzione periodica di periodo \(T \to \infty \). Questo verrà trattato invece con la trasformata di Fourier. 
 \end{enumerate}
 
 Iniziamo costruendo una forzante particolare, periodica, per cui posso anche moltiplicare la pulsazione per una costante, con fase iniziale:
@@ -175,19 +175,21 @@ Sviluppando i calcoli si ottiene:
 \end{gather*}
 perché per le proprietà di ortonormalità delle funzioni trigonometriche viene selezionato solo l'm-esimo termine della sommatoria contenente i termini \(a_n\).
 Di conseguenza, \(a_n = \frac{2}{T} \int_{0}^{T} \cos (n \omega t) f(t) \,\mathrm{d}t \). Allo stesso modo è possibile ricavare le espressioni per gli altri coefficienti:
+\begin{formula}
+	[Coefficienti della serie di Fourier]\leavevmode
 \begin{itemize}
-	
 	\item \(a_0 = \frac{1}{T} \int_{0}^{T} f(t) \,\mathrm{d}t \)
 	\item \(a_n = \frac{2}{T} \int_{0}^{T} f(t) \cos (n \omega t) \,\mathrm{d}t \)
 	\item \(b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin (n \omega t) \,\mathrm{d}t \)   
 \end{itemize}
+\end{formula}
 Si dimostra che per questa scelta di parametri \(\lambda _N \to 0 \text{ se } N \to \infty \).
 È immediato riscrivere i risultati ottenuti tramite fasori:
-\[
-	\cos (n \omega t) = \frac{e^{in \omega t} + e^{-in \omega t} }{2}
-	\hspace{1in}
-	\sin (n \omega t) = \frac{e^{in \omega t} - e^{-in \omega t}  }{2i}
-\]
+\begin{align}
+	\cos (n \omega t) &= \frac{e^{in \omega t} + e^{-in \omega t} }{2}
+	&
+	\sin (n \omega t) &= \frac{e^{in \omega t} - e^{-in \omega t}  }{2i}
+\end{align}
 Ponendo \(c_0 = a_0 \text{, } c_n = \frac{a_n}{2} + \frac{b_n}{2i} \text{, } c_{-n} = \frac{a_n}{2} - \frac{b_n}{2i}  \), si ottiene che
 \[
 	a_n \cos (n \omega t) + b_n \sin (n \omega t) = c_n e^{in \omega t} + c_{-n} e^{-in \omega t}
