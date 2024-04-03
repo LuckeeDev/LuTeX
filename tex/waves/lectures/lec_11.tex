@@ -78,3 +78,90 @@ Sperimentalmente si verifica spesso \(v_g < v_f\), questo fenomeno è detto "dis
 \begin{note}
 	Non abbiamo utilizzato alcuna proprietà specifica delle onde sonore, questi fenomeni avvengono con ogni tipo di onda!
 \end{note}
+
+\section{Effetto Doppler}
+L'effetto Doppler (classico) consiste nel cambiamento della frequenza dei suoni percepiti quando vi è moto relativo tra la sorgente e chi riceve le onde sonore. Un esempio è la sirena delle ambulanze. Chiameremo S la sorgente e R il ricevitore. I moti sono sempre valutati rispetto al sistema di riferimento in cui il mezzo è a riposo. Valutiamo i seguenti quattro casi:
+\begin{enumerate}
+	\item S e R fermi rispetto al mezzo.
+	\item S in moto rispetto al mezzo, R fermo.
+	\item R in moto, S fermo.
+	\item Sia S che R in moto rispetto al mezzo.
+\end{enumerate}
+Immaginiamo che la sorgente invii un segnale semplice con una periodicità \(T_p\). Allora i suoni saranno emessi ai tempi \(t_{1s} = 0,\ t_{2s} = T_p,\ t_{3s} = 2T_p\).
+\paragraph{Caso 1: S e R fermi}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-03-10-33-12.png}
+\end{figure}
+Se \(v_m\) è la velocità delle onde nel mezzo e \(L\) è la distanza fra S e R, allora i tempi di arrivo saranno:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-03-10-34-50.png}
+\end{figure}
+Quindi la differenza di tempo d'arrivo fra due segnali è sempre \(T_p\), il che rende la frequenza sentita dal ricevitore identica alla frequenza emessa dalla sorgente.
+
+\paragraph{Caso 2: S in moto, R fermo} Consideriamo la sorgente in moto con velocità \(v_s\) in avvicinamento al ricevitore.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-03-10-36-23.png}
+\end{figure}
+Il tempo di ricezione del primo segnale è \(t_{1R} = \quotient{L}{v_m} \), mentre il tempo di ricezione del secondo segnale è
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-03-10-38-48.png}
+\end{figure}
+Quindi l'intervallo dei segnali al ricevitore è
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-03-10-39-19.png}
+\end{figure}
+La frequenza percepita dal ricevitore aumenta!
+\[
+	f_R = \frac{1}{T_p \left( 1- \frac{v_s}{v_m} \right) } = \frac{f_S}{1- \frac{v_s}{v_m}} > f_S
+\]
+Se vogliamo studiare il caso in cui la sorgente si allontana dal ricevitore, è sufficiente cambiare segno alla velocità \(v_s\). Si ottiene che
+\[
+	f_R = \frac{1}{T_p \left( 1+ \frac{v_s}{v_m} \right)  = \frac{f_s}{1 + \frac{v_s}{v_m}}} < f_S
+\]
+
+\paragraph{Caso 3: S ferma, R in moto} Il ricevitore è in moto a velocità \(v_R\) in avvicinamento alla sorgente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-03-10-44-02.png}
+\end{figure}
+Il primo segnale è emesso quando R dista \(L\) da S. Nel tempo di propagazione il ricevitore si è spostato di uno spazio pari a \(v_R t_{1R} \), quindi il segnale ha percorso uno spazio pari a \(L- v_R t_{1R} \). Si ottiene che
+\[
+	t_{1R} = \frac{L- v_R t_{1R} }{v_m} \rightsquigarrow t_{1R} = \frac{L}{v_m} \frac{1}{1+ \frac{v_R}{v_m}}
+\]
+Con un ragionamento analogo si ottiene che 
+\[
+	t_{nR}  = n T_p + \frac{L-v_R t_{2R} }{v_m} \rightsquigarrow t_{nR} = \frac{L}{v_m} \frac{1}{1 + \quotient{v_R}{v_m}} + \frac{n T_p}{1+ \quotient{v_R}{v_m} }
+\]
+Quindi l'intervallo fra i segnali ricevuti è
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-03-10-49-27.png}
+\end{figure}
+Che ci permette di calcolare la frequenza percepita dal ricevitore:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-03-10-49-54.png}
+\end{figure}
+Come nel caso 2, si può cambiare il segno della velocità \(v_R\) per studiare il caso in allontanamento:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-03-10-50-52.png}
+\end{figure}
+
+\paragraph{Caso 4: S ed R in moto} Qui andiamo di ragionamento. Consideriamo il caso in cui S ed R sono entrambe in avvicinamento (per semplicità). Se la sorgente è in moto, le onde nel mezzo hanno una frequenza 
+\[
+	f_m = \frac{f_s}{1 - \quotient{v_S}{v_m} }
+\]
+come nel secondo caso, perché avevamo studiato un osservatore fermo, ossia solidale con il mezzo. Poiché il ricevitore è in moto le onde vengono ricevuta con un'altra frequenza:
+\[
+	f_R = f_m \left( 1+ \frac{v_R}{v_m} \right) = f_S \frac{1+ \frac{v_R}{v_m}}{1- \frac{v_S}{v_m}}
+\]
+Con ragionamenti simili a prima si ottiene la frequenza percepita dal ricevitore con altre combinazioni di velocità relative al mezzo.
+\begin{note}
+	Quanto fatto vale per qualunque onda meccanica con velocità dirette lungo la congiungente fra sorgente e ricevitore.
+\end{note}
