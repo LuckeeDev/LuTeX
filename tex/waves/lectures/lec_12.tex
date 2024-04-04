@@ -13,7 +13,7 @@ Procederemo per maniera euristica. Ricordiamo il significato dei termini nell'eq
 	\centering
 	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-04-09-31-11.png}
 \end{figure}
-che può essere riscritta semplicemente utilizzando il laplaciano:
+\noindent che può essere riscritta semplicemente utilizzando il laplaciano:
 \begin{equation} \label{eq:dalembert3d}
 	\laplacian{\xi (\vec{r} , t)}= \frac{1}{v^{2} }\frac{\partial ^{2} \xi }{\partial t ^{2} } 
 \end{equation}
@@ -24,7 +24,7 @@ Questa equazione ha diverse proprietà già viste per l'equazione in una dimensi
 	\[
 		\hat{L} = \left( \laplacian - \frac{1}{v^{2} }\frac{\partial ^{2} }{\partial t ^{2} }  \right) \to \hat{L} (\xi (\vec{r} , t))=0
 	\]
-	L'equazione appena scritta può essere rappresentata più semplicemente con \(\Box \xi (\vec{r} , t) = 0\).	
+	L'equazione appena scritta può essere rappresentata più semplicemente con \(\square \xi (\vec{r} , t) = 0\).	
 	\item Vale il principio di sovrapposizione.
 \end{itemize}
 Si nota immediatamente che il caso unidimensionale è un caso limite dell'equazione \eqref{eq:dalembert3d} in cui \(\xi (\vec{r} , t)\) dipende esclusivamente da \(x\). L'unica differenza è che in questo caso l'onda è definita in tutto lo spazio e non solo sull'asse \(x\).
@@ -64,8 +64,11 @@ Studiamo il moto del massimo dell'onda: \(s=xu_x + yu_y - vt = 0 \rightsquigarro
 	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-04-09-57-56.png}
 	\caption{La retta blu va immaginata come un piano in tre dimensioni perpendicolare alla direzione individuata dal versore \(\hat{\vec{u}} \) che si muove con velocità \(v\).}
 \end{figure}
-% TODO: recupera definizione fronti d'onda
 Queste onde sono dette onde piane, sembra che serva un piano infinito per generarle! In realtà sono generalmente impiegate come approssimazione di onde reali che altrimenti non sarebbero piane (quindi in una zona piccola lontana dalla sorgente).
+\begin{definition}
+	[Fronte d'onda]
+	Il luogo dei punti di uguale ampiezza è detto fronte d'onda ed è rappresentabile come un piano che trasla.
+\end{definition}
 
 \paragraph{Onde armoniche piane}
 Nel caso tridimensionale un'onda armonica può essere scritta come \(\xi (\vec{r},t ) = A \cos (k \hat{\vec{u}} \cdot \vec{r} - \omega t)\). Questa è detta onda armonica piana.
@@ -76,4 +79,9 @@ Nel caso tridimensionale un'onda armonica può essere scritta come \(\xi (\vec{r
 	\]
 	\(\vec{k}\) individua la direzione di moto dell'onda e il suo modulo è il numero d'onda \(k\). \(\vec{k}\) è quindi perpendicolare ai fronti d'onda.
 \end{definition}
-% TODO: recupera serie di Fourier L18 per onde tridimensionali
+% TODO recupera serie di Fourier L18 per onde tridimensionali
+Grazie al principio di sovrapposizione possiamo applicare un ragionamento simile alla serie di Fourier anche per le onde piane in tre dimensioni. Ponendo \(\xi _{\vec{k}}(\vec{r}, t) = A_{\vec{k}}\cos (\vec{k}\cdot \vec{r} - \omega _k t + \varphi _k )\), una soluzione generica sarà data da
+\[
+	\xi (\vec{r}, t)= \sum_{\vec{k}}\xi _{\vec{k}}(\vec{r},t) = \sum_{\vec{k}}A_{\vec{k}} \cos (\vec{k}\cdot \vec{r} - \omega _k t + \varphi _k )  
+\]
+dove la sommatoria vale su un insieme discreto di valori di \(\vec{k}, \omega _k = v \vert \vec{k} \vert = vk\).
