@@ -30,9 +30,9 @@ Questa equazione ha diverse proprietà già viste per l'equazione in una dimensi
 Si nota immediatamente che il caso unidimensionale è un caso limite dell'equazione \eqref{eq:dalembert3d} in cui \(\xi (\vec{r} , t)\) dipende esclusivamente da \(x\). L'unica differenza è che in questo caso l'onda è definita in tutto lo spazio e non solo sull'asse \(x\).
 
 \paragraph{Soluzioni dell'equazione}
-Al contrario del caso unidimensionale, in tre dimensioni abbiamo due soluzioni (una per ciascun verso di propagazione) per ogni direzione disponibile dello spazio. In altre parole, \(\forall \hat{\vec{u}}, \forall f,g \in \mathcal{C} ^{2}  \), \(\xi (\hat{\vec{u}} \cdot \vec{r} - vt )\) e \(\xi (\vec{r} , t)= g(\hat{\vec{u}} \cdot \vec{r} + vt)\) sono soluzioni.
+Al contrario del caso unidimensionale, in tre dimensioni abbiamo due soluzioni (una per ciascun verso di propagazione) per ogni direzione disponibile dello spazio. In altre parole, \(\forall \vec{\hat{u}}, \forall f,g \in \mathcal{C} ^{2}  \), \(\xi (\vec{\hat{u}} \cdot \vec{r} - vt )\) e \(\xi (\vec{r} , t)= g(\vec{\hat{u}} \cdot \vec{r} + vt)\) sono soluzioni.
 \begin{proof}
-	Poniamo \(s=\hat{\vec{u}} \cdot \vec{r} - vt \), \(\xi (\vec{r}, t)=f(s)\).
+	Poniamo \(s=\vec{\hat{u}} \cdot \vec{r} - vt \), \(\xi (\vec{r}, t)=f(s)\).
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.6\textwidth]{screenshots/2024-04-04-09-47-49.png}
@@ -46,14 +46,14 @@ Al contrario del caso unidimensionale, in tre dimensioni abbiamo due soluzioni (
 	\[
 		\frac{1}{v^{2} }\frac{\partial ^{2} \xi }{\partial t^{2} } = \frac{1}{v^{2} } v^{2} f^{\prime\prime} = f^{\prime\prime} 
 	\]
-	L'unico aspetto che conta ai fini della dimostrazione è che \(f^{\prime\prime} \) esista! Quindi \(f(\hat{\vec{u}} \cdot \vec{r} - vt)\) è una soluzione dell'equazione di D'Alembert. Più precisamente è un'onda progressiva nella direzione e verso individuata da \(\hat{\vec{u}}\).
+	L'unico aspetto che conta ai fini della dimostrazione è che \(f^{\prime\prime} \) esista! Quindi \(f(\vec{\hat{u}} \cdot \vec{r} - vt)\) è una soluzione dell'equazione di D'Alembert. Più precisamente è un'onda progressiva nella direzione e verso individuata da \(\vec{\hat{u}}\).
 \end{proof}
 
 \paragraph{Cerchiamo il conforto del passato}
-Quando \(\hat{\vec{u}} \equiv \hat{\vec{i}} \), \(\hat{\vec{u}} \cdot \vec{r} = x \rightsquigarrow \xi (\vec{r},t ) = f(x-vt) = \xi (x,t)\), che è l'onda progressiva in una dimensione già conosciuta ma che si muove nella direzione delle \(x\) positive, con la differenza, come detto prima, che questa volta l'onda occupa tutto lo spazio.
+Quando \(\vec{\hat{u}} \equiv \vec{\hat{i}} \), \(\vec{\hat{u}} \cdot \vec{r} = x \rightsquigarrow \xi (\vec{r},t ) = f(x-vt) = \xi (x,t)\), che è l'onda progressiva in una dimensione già conosciuta ma che si muove nella direzione delle \(x\) positive, con la differenza, come detto prima, che questa volta l'onda occupa tutto lo spazio.
 
 \paragraph{Struttura delle onde}
-Consideriamo per ora onde con \(u_z = 0\), \(\hat{\vec{u}} \equiv u_x \hat{\vec{i}} + u_y \hat{\vec{j}} \rightsquigarrow \hat{\vec{u}} \cdot \vec{r}\). Consideriamo un'onda impulsiva con un solo massimo in \(s=0\).
+Consideriamo per ora onde con \(u_z = 0\), \(\vec{\hat{u}} \equiv u_x \vec{\hat{i}} + u_y \vec{\hat{j}} \rightsquigarrow \vec{\hat{u}} \cdot \vec{r}\). Consideriamo un'onda impulsiva con un solo massimo in \(s=0\).
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{screenshots/2024-04-04-09-56-08.png}
@@ -62,7 +62,7 @@ Studiamo il moto del massimo dell'onda: \(s=xu_x + yu_y - vt = 0 \rightsquigarro
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-04-09-57-56.png}
-	\caption{La retta blu va immaginata come un piano in tre dimensioni perpendicolare alla direzione individuata dal versore \(\hat{\vec{u}} \) che si muove con velocità \(v\).}
+	\caption{La retta blu va immaginata come un piano in tre dimensioni perpendicolare alla direzione individuata dal versore \(\vec{\hat{u}} \) che si muove con velocità \(v\).}
 \end{figure}
 Queste onde sono dette onde piane, sembra che serva un piano infinito per generarle! In realtà sono generalmente impiegate come approssimazione di onde reali che altrimenti non sarebbero piane (quindi in una zona piccola lontana dalla sorgente).
 \begin{definition}
@@ -71,11 +71,11 @@ Queste onde sono dette onde piane, sembra che serva un piano infinito per genera
 \end{definition}
 
 \paragraph{Onde armoniche piane}
-Nel caso tridimensionale un'onda armonica può essere scritta come \(\xi (\vec{r},t ) = A \cos (k \hat{\vec{u}} \cdot \vec{r} - \omega t)\). Questa è detta onda armonica piana.
+Nel caso tridimensionale un'onda armonica può essere scritta come \(\xi (\vec{r},t ) = A \cos (k \vec{\hat{u}} \cdot \vec{r} - \omega t)\). Questa è detta onda armonica piana.
 \begin{definition}
 	[Vettore d'onda]
 	\[
-		\vec{k} = k \hat{\vec{u}} 
+		\vec{k} = k \vec{\hat{u}} 
 	\]
 	\(\vec{k}\) individua la direzione di moto dell'onda e il suo modulo è il numero d'onda \(k\). \(\vec{k}\) è quindi perpendicolare ai fronti d'onda.
 \end{definition}
