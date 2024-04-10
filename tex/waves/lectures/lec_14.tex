@@ -94,3 +94,75 @@ L'equazione \eqref{eq:polarizzazione_ellittica} si riduce a quella di una circon
 	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-10-09-57-37.png}
 \end{figure}
 In generale, il verso di rotazione si determina guardando l'onda che sta arrivando. Se, guardando arrivare l'onda, vedo il vettore ruotare in senso antiorario si parla di \emph{polarizzazione destrorsa}, altrimenti di \emph{polarizzazione sinistrorsa}. La polarizzazione destrorsa si avrà per \(-\pi \leq \beta \leq 0\), la polarizzazione sinistrorsa per \(0\leq \beta \leq \pi \). La polarizzazione è una relazione nello spazio tra le componenti di un'onda vettoriale, quindi si può verificare anche per le onde stazionarie!
+\begin{remark}
+	Quando si parla di polarizzazione ellittica non vale il principio di sovrapposizione! Devo avere \textbf{una sola onda armonica}. 
+\end{remark}
+
+\begin{note}
+	Domanda tipica da orale: nella polarizzazione ellittica abbiamo la stessa pulsazione, ma vuol dire che siamo in una situazione di interferenza? No! Perché non sono sullo stesso asse.
+\end{note}
+
+\section{Principio di Huygens-Fresnel}
+Qui in realtà non è necessario che l'onda sia vettoriale, quindi useremo le onde scalari per parlarne. Le onde sembrano propagarsi in linea retta, ma non è necessariamente vero! Ad esempio, noi sentiamo il suono anche se fra noi e la sorgente c'è un ostacolo. Stessa cosa vale per le onde elettromagnetiche. Marconi ha acceso una lampadina a New York dando il comando da Genova (che regaz). Anche le onde del mare, passando attraverso degli scogli, iniziano a propagarsi circolarmente invece che linearmente.
+
+Questi fenomeni si descrivono bene attraverso il principio di Huygens-Fresnel, che è un "principio di classe B" perché in realtà è contenuto nelle equazioni di D'Alembert.
+\begin{theorem}
+	[Principio di Huygens-Fresnel]
+	Ogni punto del fronte d'onda può essere considerato una nuova sorgente di onde sferiche, che si propagano in tutte le direzioni, con le stesse \(\nu \) e \(\omega \) dell'onda iniziale.
+\end{theorem}
+Noto un fronte d'onda al tempo t, si costruisce quello a \(t+ \mathrm{d} t\). Esempio:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{screenshots/2024-04-10-10-24-36.png}
+\end{figure}
+Non devo solo conoscere il fronte d'onda, ma anche la direzione di moto del fronte d'onda. Mi serve quindi almeno un'informazione in più. Matematicamente scriviamo che
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-10-10-26-15.png}
+\end{figure}
+Dove \(f(\theta )\) deve descrivere l'ampiezza al variare dell'angolo \(\theta \) nella figura seguente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{screenshots/2024-04-10-10-27-25.png}
+\end{figure}
+Fresnel ipotizzò che \(f(\theta )= \frac{1}{2}(1+ \cos \theta )\). All'indietro così ho interferenza distruttiva. Applichiamola molto qualitativamente a un'onda piana:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-10-10-28-36.png}
+\end{figure}
+In ottica geometrica, questo si traduce nel principio secondo cui l'angolo di incidenza di un raggio luminoso è uguale all'angolo di riflessione.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-10-10-31-33.png}
+\end{figure}
+Studiamo la motivazione fisica dietro a questo principio. Supponiamo che ci sia una parete infinita con un'apertura su cui arriva un'onda armonica piana scalare (per semplicità, altrimenti si applica alle tre componenti vettoriali). Sia l'onda \(\xi (z,t)=A \cos (kz-\omega t)=A \Re [e^{i(kz - \omega t)}]\). Sul piano \(\xi (0,t)= A \Re [e^{-i \omega t} ]\).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-10-10-34-16.png}
+\end{figure}
+Pongo \(s(x,y,z,t)= \vert \vec{r}-\vec{r}^{\prime} \vert \) e \(\cos \theta = \quotient{(\vec{r}-\vec{r}^{\prime} )\cdot \vec{\hat{k}}}{\vert \vec{r}-\vec{r}^{\prime} \vert } \). Applicando il principio si ottiene
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-10-10-37-37.png}
+\end{figure}
+\subsection{Limite dei piccoli angoli e diffrazione}
+Se \(\vert \vec{r}^{\prime}  \vert \ll z \) possiamo trascurare la dipendenza angolare, ottenendo
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-10-10-39-02.png}
+\end{figure}
+Nel caso di onde non armoniche occorrerà chiaramente svilupparle in serie di Fourier. Scopriamo che le onde a lunghezza d'onda elevata saranno soppresse, quelle a lunghezza d'onda piccola rispetto all'apertura saranno poco deviate, mentre quelle con lunghezze d'onda confrontabili con l'apertura saranno quelle maggiormente deviate!
+
+È la capacità delle onde di proseguire oltre gli ostacoli, eventualmente cambiando la forma del fronte d'onda!
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-04-10-10-43-31.png}
+\end{figure}
+Nell'immagine delle due aperture in alto a destra capiamo che le due onde genereranno interferenza perché hanno le stesse caratteristiche temporali.
+Se ad esempio l'ostacolo che causa la diffrazione è un dischetto, sull'asse del disco avrò interferenza costruttiva e percepirò il segnale come se non ci fosse l'ostacolo.
+
+Questi fenomeni avvengono anche con le onde sonore. In un generico punto dello spazio le onde sonore possono arrivare con una differenza di fase a causa della differenza nel percorso. Potrebbero addirittura avere intensità nulla!
+
+\begin{note}
+	Di questa lezione non sono importanti tanto i dettagli matematici quanto i concetti. L'integrale del principio di Huygens-Fresnel è molto complesso, quindi non ci sarà mai un esercizio in merito.
+\end{note}
