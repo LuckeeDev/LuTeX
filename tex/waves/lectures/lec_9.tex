@@ -38,31 +38,31 @@ L'esercizio sopra è il motivo per cui non ha senso parlare di intensità per le
 \end{exercise}
 
 \subsection{Approfondimento: analisi di Fourier per onde stazionarie}
-Consideriamo come prima una corda vincolata in \(x=0\) e \(x=L\):
+Consideriamo come prima una corda vincolata in \(x=0\) e \(x=L\) (si applica l'equazione \eqref{eq:fourier_standing}):
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{screenshots/2024-03-21-09-44-56.png}
 \end{figure}
-Devo capire come determinare i coefficienti \(a_n\) e \(b_n\). Supponiamo di conoscere forma e velocità della corda a \(t=0\): \(\xi (x,0) = f(x),\ \dot{\xi }(x,0)=g(x)\). Impongo la condizione iniziale sulla forma:
-\[
+Devo capire come determinare i coefficienti \(a_n\) e \(b_n\). Supponiamo di conoscere forma e velocità della corda a \(t=0\): \(\xi (x,0) = f(x),\ \dot{\xi }(x,0)=g(x)\). Impongo la condizione iniziale sulla forma (\(\sin (0)=0,\ \cos (0)=0\) quindi restano solo i coefficienti \(a_n\)):
+\begin{equation}\label{eq:fourierxix0}
 	\xi (x,0)= \sum_{n=1}^{\infty} a_n \sin (nkx) \equiv f(x)
-\]
+\end{equation}
 Le definizioni già viste di ortonormalità delle funzioni valgono anche nello spazio delle coordinate, non solo in quello dei tempi:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{screenshots/2024-03-21-09-49-54.png}
 \end{figure}
-Quindi \(\cos (nkx)\) e \(\sin (nkx)\) costituiscono una base ortogonale per tutte le funzioni periodiche di \(\lambda = \frac{2\pi }{k}\) nello spazio. Tuttavia nessuna delle funzioni \(\cos (nkx)\) soddisfa i vincoli, abbiamo trovato una base troppo grande per rappresentare il nostro problema! Le funzioni \(\sin (nkx)\) con \(k=\pi / L\) sono una base completa in [0,L] per cui vale:
+Quindi \(\cos (nkx)\) e \(\sin (nkx)\) costituiscono una base ortogonale per tutte le funzioni periodiche di \(\lambda = \frac{2\pi }{k}\) nello spazio. Tuttavia nessuna delle funzioni \(\cos (nkx)\) soddisfa i vincoli (perché \(\cos (0)=1\)), abbiamo trovato una base troppo grande per rappresentare il nostro problema! Le funzioni \(\sin (nkx)\) con \(k=\pi / L\) sono una base completa in [0,L] per cui vale:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-21-09-53-31.png}
 \end{figure}
-Per trovare i coefficienti \(a_n\) posso moltiplicare entrambi i membri per \(\sin (mkx)\) e integrare in [0,L]:
+Per trovare i coefficienti \(a_n\) posso moltiplicare entrambi i membri dell'equazione \eqref{eq:fourierxix0} per \(\sin (mkx)\) e integrare in [0,L]:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{screenshots/2024-03-21-09-54-27.png}
 \end{figure}
-Da cui si ottiene che \(a_n = \frac{2}{L} \int_{0}^{L} f(x) \sin (nkx) \,\mathrm{d}x\). Dalla condizione sulla velocità si possono trovare i coefficienti \(b_n\):
+Da cui si ottiene che \(a_n = \quotient{2}{L} \int_{0}^{L} f(x) \sin (nkx) \,\mathrm{d}x\) per le proprietà di ortonormalità descritte in precedenza. Dalla condizione sulla velocità si possono trovare i coefficienti \(b_n\):
 \[
 	\dot{\xi }(x,t) = \sum_{n=1}^{\infty} \sin (nkx)[-n \omega a_n \sin (n \omega t) + n \omega b_n \cos (n \omega t)]
 \]
