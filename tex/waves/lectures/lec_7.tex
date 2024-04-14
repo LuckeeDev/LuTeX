@@ -75,12 +75,9 @@ Tuttavia la relazione è più generale e vale per ogni punto della corda:
 	\mathcal{P} = -T \frac{\partial \xi }{\partial x} \frac{\partial \xi }{\partial t}
 \]
 Per le onde progressive sappiamo già che 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-19-11-37-15.png}
-	\caption{Relazione fra la derivata temporale e spaziale per le onde progressive.}
-	\label{fig:dt-dx-onda-prog}
-\end{figure}
+\begin{align}\label{eq:derivatives_prog_wave}
+	\frac{\partial \xi }{\partial t} &= -v \frac{\partial \xi }{\partial x} & \frac{\partial \xi }{\partial x} &=-\frac{1}{v}\frac{\partial \xi }{\partial t}    
+\end{align}
 Di conseguenza la potenza può essere riscritta:
 \begin{gather*}
 	\mathcal{P} (x,t) = \frac{T}{v}\left(\frac{\partial \xi (x,t)}{\partial t}\right)^{2}  = Tv\left(\frac{\partial \xi (x,t)}{\partial x} \right)^{2} \\
@@ -123,7 +120,7 @@ Possiamo definire la densità di energia meccanica:
 		u(x,t) = \frac{1}{2} \mu \left( \frac{\partial \xi }{\partial t}  \right) ^{2} + \frac{1}{2}T\left( \frac{\partial \xi }{\partial x}  \right) ^{2}
 	\]
 \end{definition}
-Nel caso di onde progressive abbiamo le formule già viste che collegano la derivata in x alla derivata in t (\autoref{fig:dt-dx-onda-prog}), quindi possiamo ricavare la seguente uguaglianza:
+Nel caso di onde progressive abbiamo le formule già viste nell'equazione \eqref{eq:derivatives_prog_wave} che collegano la derivata in x alla derivata in t, quindi possiamo ricavare la seguente uguaglianza:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-19-11-56-45.png}
@@ -186,7 +183,7 @@ Si definisce l'intensità dell'onda meccanica.
 	[Intensità]\label{def:intensita}
 	Per le onde periodiche, si definisce l'intensità dell'onda:
 	\[
-		I = \frac{E(\Delta t)}{\Delta t} = \frac{1}{T_P}\int_{0}^{T_P} \mathcal{P} (x,t) \,\mathrm{d}r = \langle \mathcal{P}  \rangle = \left\langle Z \left( \frac{\partial \xi (x,t)}{\partial t} \right)^{2}   \right\rangle 
+		I = \frac{E(\Delta t)}{\Delta t} = \frac{1}{T_P}\int_{0}^{T_P} \mathcal{P} (x,t) \,\mathrm{d}t = \langle \mathcal{P}  \rangle = \left\langle Z \left( \frac{\partial \xi (x,t)}{\partial t} \right)^{2}   \right\rangle 
 	\]
 	\(I\) è misurata in watt.
 \end{definition}

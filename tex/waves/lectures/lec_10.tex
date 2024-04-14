@@ -86,12 +86,12 @@ Il diaframma applica una forza sul gas data da \(F_x = S p(x,t)\), quindi il suo
 Dividendo per il tempo otteniamo la potenza:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{screenshots/2024-03-26-12-17-38.png}
+	\includegraphics[width=0.35\textwidth]{screenshots/2024-03-26-12-17-38.png}
 \end{figure}
 Il primo termine ha media nulla perché la media dello spostamento spaziale nel tempo è nulla, quindi il primo termine non è un'energia associata all'onda perché non viaggia. L'unico termine che ci interessa è il secondo, che rappresenta l'energia effettivamente immessa nel tubo e che ha la possibilità di propagarsi:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{screenshots/2024-03-26-12-20-51.png}
+	\includegraphics[width=0.2\textwidth]{screenshots/2024-03-26-12-20-51.png}
 \end{figure} 
 È proporzionale alla sezione del tubo, questo ci torna comodo perché in generale quando parliamo di intensità vogliamo una quantità definita punto per punto e non su una superficie. Quindi definisco l'intensità delle onde sonore.
 \begin{definition}
@@ -104,13 +104,13 @@ Il primo termine ha media nulla perché la media dello spostamento spaziale nel 
 \end{definition}
 Per le onde progressive la derivata spaziale è proporzionale alla derivata temporale, quindi posso scrivere
 \begin{equation}
-	I \left\langle \frac{\gamma P_0}{v} \left( \frac{\partial \xi }{\partial t}  \right) ^{2}   \right\rangle = \left\langle v \gamma P_0 \left( \frac{\partial \xi }{\partial x}  \right)^{2}   \right\rangle 
+	I =\left\langle \frac{\gamma P_0}{v} \left( \frac{\partial \xi }{\partial t}  \right) ^{2}   \right\rangle = \left\langle v \gamma P_0 \left( \frac{\partial \xi }{\partial x}  \right)^{2}   \right\rangle 
 \end{equation}
 \begin{definition}
 	[Impedenza acustica specifica]
 	Si definisce l'impedenza acustica specifica:
 	\begin{equation}
-		Z = \frac{\gamma P_0}{v} = \sqrt{\gamma P_0 \rho _0} 
+		Z = \frac{\gamma P_0}{v} = \sqrt{\gamma P_0 \rho _0} =\rho _0 v
 	\end{equation}
 \end{definition}
 Utilizzando l'impedenza appena definita si scrive che
@@ -147,6 +147,6 @@ Calcoliamo l'intensità e l'ampiezza delle oscillazioni delle molecole d'aria co
 Si nota che l'ampiezza delle oscillazioni è molto inferiore rispetto alla lunghezza d'onda del suono. Si nota lo stesso fatto anche per le variazioni di densità e di pressione:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-26-12-49-46.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-26-12-49-46.png}
 \end{figure}
 Essendo tutte variazioni molto piccole, le equazioni di D'Alembert sono quelle \emph{corrette} per le onde sonore, pur avendo applicato alcune approssimazioni al nostro modello. Questo significa che tutte le onde viaggiano alla stessa velocità (per fortuna, altrimenti sentiremmo la musica diversamente a seconda della distanza dalla sorgente!).

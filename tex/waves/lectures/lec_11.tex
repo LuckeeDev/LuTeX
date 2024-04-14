@@ -14,10 +14,10 @@ Passando nel piano complesso otteniamo che \(\xi _1 (x,t) = \Re [A_1 e^{i(kx- \o
 	\includegraphics[width=0.6\textwidth]{screenshots/2024-04-03-09-23-02.png}
 \end{figure}
 Il punto P rappresenta il vettore \(\xi (x,t)\). Riscriviamo la funzione che descrive la posizione del punto P:
-\begin{gather}
-	\widetilde{\xi } (x,t) = A_1 e^{i(kx - \omega t)} + A_2 e^{i(kx - \omega t + \varphi _0)} =\\
-	(A_1 + A_2 e^{i \varphi _0}) e^{i(kx - \omega t)} = A e^{i \alpha } e^{i(kx - \omega t)}
-\end{gather}
+\begin{align}
+	\widetilde{\xi } (x,t) &= A_1 e^{i(kx - \omega t)} + A_2 e^{i(kx - \omega t + \varphi _0)} =\\
+	&=(A_1 + A_2 e^{i \varphi _0}) e^{i(kx - \omega t)} = A e^{i \alpha } e^{i(kx - \omega t)}
+\end{align}
 Dove
 \begin{gather}
 	A  = \sqrt{A_1^2 + A_2^2 + 2A_1 A_2 \cos \varphi _0 }\\ 
@@ -39,18 +39,18 @@ Se le due onde hanno la stessa intensità \(I_1 = I_2 = I_0 \), allora
 \]
 Se le onde sono in fase (interferenza costruttiva), ottengo che l'intensità risultante è quattro volte l'intensità di partenza: \(\varphi _0 = 0\), \(I= 4 I_0\). Se le onde sono invece in contro-fase (interferenza distruttiva), l'intensità risultante è nulla: \(\varphi _0 = \pi \), \(I = 0\).
 \begin{note}
-	Si sommano le onde complesse, ma non le ampiezze nè le intensità!
+	Si sommano le onde complesse, ma non le ampiezze nè le intensità! Per la serie di Fourier avevamo visto che le intensità di onde a periodicità diversa si sommavano, ma qui abbiamo la somma di due onde che occupano lo stesso "posto" nella serie di Fourier.
 \end{note}
 
 \subsection{Battimenti}
-Consideriamo in questo caso due onde sonore armoniche con la stessa ampiezza (per semplicità, non è necessario) e pulsazioni simili \(\omega _1 \thickapprox  \omega _2\). Non siamo nel caso dell'interferenza perché le due pulsazioni non sono identiche. Viaggiando nello stesso mezzo, avremo anche che \(k_1 = k_2\).
+Consideriamo in questo caso due onde sonore armoniche con la stessa ampiezza (per semplicità, non è necessario) e pulsazioni simili \(\omega _1 \thickapprox  \omega _2\). Non siamo nel caso dell'interferenza perché le due pulsazioni non sono identiche. Viaggiando nello stesso mezzo, avremo anche che \(k_1 \thickapprox  k_2\).
 \begin{align}
-	\xi _1 (x,t) &= A \cos (kx - \omega _1 t) & \xi _2 (x,t) &= A \cos (kx - \omega _2 t)
+	\xi _1 (x,t) &= A \cos (k_1x - \omega _1 t) & \xi _2 (x,t) &= A \cos (k_2x - \omega _2 t)
 \end{align}
 Pongo \(\varphi _1 = k_1 x - \omega_1 t\) e \(\varphi _2 = k_2 x - \omega _2 t\). Passiamo immediatamente nel campo complesso: \(\widetilde{\xi } (x,t) = A (e^{i \varphi _1} + e^{i \varphi _2}) \).
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{screenshots/2024-04-03-09-44-52.png}
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-03-09-44-52.png}
 \end{figure}
 Dalla figura si intuisce che \(A_{tot} = 2A \cos \left( \frac{\varphi _2 - \varphi _1}{2} \right) \) e che la fase \(\varphi _{tot} = \frac{\varphi _1 + \varphi _2}{2} \). Quindi, la funzione d'onda diventa:
 \[
@@ -157,7 +157,7 @@ Come nel caso 2, si può cambiare il segno della velocità \(v_R\) per studiare 
 \[
 	f_m = \frac{f_s}{1 - \quotient{v_S}{v_m} }
 \]
-come nel secondo caso, perché avevamo studiato un osservatore fermo, ossia solidale con il mezzo. Poiché il ricevitore è in moto le onde vengono ricevuta con un'altra frequenza:
+come nel secondo caso, perché avevamo studiato un osservatore fermo, ossia solidale con il mezzo. Poiché il ricevitore è in moto le onde vengono ricevute con un'altra frequenza:
 \[
 	f_R = f_m \left( 1+ \frac{v_R}{v_m} \right) = f_S \frac{1+ \frac{v_R}{v_m}}{1- \frac{v_S}{v_m}}
 \]
