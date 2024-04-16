@@ -91,3 +91,85 @@ Di conseguenza
 	\centering
 	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-16-12-13-57.png}
 \end{figure}
+
+\section{Energia, intensità e vettore di Poynting}
+Studiando le equazioni di Maxwell si arriva alla formula del bilancio energetico per i campi elettrico e magnetico:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-16-12-28-12.png}
+\end{figure}
+Il primo termine contiene la densità di energia elettromagnetica, \(u_{EM} =u_E + u_B= \frac{1}{2} \varepsilon E^2 + \frac{1}{2\mu }B^{2} \). Il secondo termine è detto "vettore di Poynting".
+\begin{equation}
+	\vec{S}=\vec{E} \cp \vec{H}
+\end{equation}
+Nel vuoto poniamo \(\vec{J}= \vec{0}\). Troviamo un'equazione sorprendentemente simile come forma alla conservazione della carica elettrica:
+\begin{equation}
+	\frac{\partial u_{EM} }{\partial t} + \div \vec{S} =0 
+\end{equation}
+Significa che c'è uno spostamento di energia elettromagnetica. Studiamo una regione macroscopica dello spazio, prendendo un volume \(V\) fisso:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-16-12-32-26.png}
+\end{figure}
+L'unità di misura del vettore di Poynting è \(\unit{\frac{W}{m^2}}\). È la stessa unità di misura dell'intensità delle onde sonore.
+
+\subsection{Applicazione alle onde}
+Troviamo che per le onde elettromagnetiche l'energia elettrica e l'energia magnetica sono sempre uguali:
+\begin{gather}
+	u_E = \frac{1}{2} \varepsilon E^{2} = \frac{1}{2} \varepsilon v^{2} B^{2} = \frac{1}{2 \mu } B^{2} = u_B\\
+	u_{EM} = u_E + u_B = \varepsilon E^{2} = \frac{1}{\mu }B^{2} = \mu H^{2}\\
+	\rightsquigarrow u_{EM} =\frac{1}{vZ} E^{2} = \frac{Z}{v}H^{2} 
+\end{gather}
+Il modulo del vettore di Poynting è 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{screenshots/2024-04-16-12-39-42.png}
+\end{figure}
+Otteniamo una relazione molto simile alla proporzionalità fra potenza ed energia nelle onde meccaniche:
+\begin{equation}
+	\vert \vec{S} \vert = v u_{EM} 
+\end{equation}
+
+\subsection{Intensità per onde elettromagnetiche}
+Consideriamo una superficie arbitraria investita da un'onda elettromagnetica. Per quanto trovato prima
+\begin{equation}
+	\frac{\partial u_{EM} }{\partial t} + \div \vec{S}=0 
+\end{equation}
+Se ho un'onda periodica ho
+\begin{equation}
+	\left\langle \frac{\partial u_{EM} }{\partial t} \right\rangle = 0 \implies \langle \div \vec{S} \rangle = 0  
+\end{equation}
+Il vettore di Poynting non è solenoidale, ma è solenoidale in media. Considero un tratto infinitesimo del tubo di flusso lungo \(\mathrm{d} l = v \mathrm{d} t\):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\textwidth]{screenshots/2024-04-16-12-46-00.png}
+\end{figure}
+Tutta l'energia inizialmente nel cilindro esce in un tempo \(\mathrm{d} t\). L'energia che attraversa \(\mathrm{d} S_\perp=\mathrm{d} S \cos (\theta )\) in \(\mathrm{d} t\) è
+\begin{equation}
+	\mathrm{d} U_{EM} =u_{EM} \mathrm{d} V = u_{EM} \mathrm{d} S_\perp v \mathrm{d} t
+\end{equation}
+\begin{definition}
+	[Intensità di un'onda elettromagnetica]
+	\begin{equation}
+		I = \left\langle \frac{\mathrm{d} U_{EM} }{\mathrm{d} S_\perp \mathrm{d} t} \right\rangle = \langle u_{EM} v \rangle = v \langle u_{EM} \rangle = \langle \vert \vec{S} \vert  \rangle   
+	\end{equation}
+\end{definition}
+Per un'onda armonica vale
+\begin{equation}
+	I = \langle \vert \vec{S} \vert  \rangle = \left\langle \frac{1}{Z} E^{2} \right\rangle = \langle Z H^{2}  \rangle = \frac{1}{2} \frac{E_0 ^{2} }{Z} = \frac{1}{2}Z H_0 ^{2} 
+\end{equation}
+
+\paragraph{Cosa sono le onde elettromagnetiche}
+Sono onde dei campi \(\vec{E}\) e \(\vec{B}\), ma sono anche onde di densità di energia elettromagnetica:
+\begin{equation}
+	u_{EM} = \frac{E_0 ^{2} }{v Z} \cos ^{2} (kz-\omega t)
+\end{equation}
+E anche onde di vettore di Poynting:
+\begin{equation}
+	\vec{S} = \frac{E_0 ^{2} }{Z} \cos ^{2} (kz - \omega t) \vec{k}
+\end{equation}
+Si noti che queste onde vanno con il coseno al quadrato, quindi sono solo positive!
+
+\begin{note}
+	Qual è la polarizzazione del vettore di Poynting?
+\end{note}
