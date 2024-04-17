@@ -37,11 +37,10 @@ La pulsazione \(\omega \) è una variabile continua, anche se è data dal prodot
 	\[
 		\widetilde{f}(\omega )=\int_{-\infty}^{\infty} f(t)e^{-i \omega t} \,\mathrm{d}t  
 	\]
-	\(\widetilde{f}(\omega ) \) descrive la componente di \(e^{i \omega t}\) nella funzione di partenza. La \(f(t)\) è rappresentabile come sovrapposizione continua di fasori:
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-36-07.png}
-	\end{figure}   
+	\(\widetilde{f}(\omega ) \) descrive la componente di \(e^{i \omega t}\) nella funzione di partenza. La \(f(t)\) è rappresentabile come sovrapposizione continua di fasori tramite l'antitrasformata di Fourier:
+	\begin{equation}
+		f(t)=\frac{1}{2\pi } \int_{-\infty}^{\infty} \widetilde{f} (\omega ) e^{i \omega t} \,\mathrm{d}\omega  
+	\end{equation}
 \end{definition}
 
 La differenza con la serie di Fourier è che nella trasformata di Fourier siamo passati al continuo, mentre nella serie avevamo delle pulsazioni discrete. Questo procedimento è del tutto generale. Analizziamo le proprietà della trasformata di Fourier. Sia \(\mathcal{F} \) l'operatore trasformata di Fourier:
@@ -51,13 +50,13 @@ La differenza con la serie di Fourier è che nella trasformata di Fourier siamo 
 	\item \(\mathcal{F} \) è lineare:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-40-06.png}
+		\includegraphics[width=0.6\textwidth]{screenshots/2024-03-07-09-40-06.png}
 	\end{figure}
 	
 	\item Le derivate diventano moltiplicazioni, come già visto con i fasori:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-41-51.png}
+		\includegraphics[width=0.65\textwidth]{screenshots/2024-03-07-09-41-51.png}
 	\end{figure}
 \end{itemize}
 
@@ -66,12 +65,12 @@ La differenza con la serie di Fourier è che nella trasformata di Fourier siamo 
 Iniziamo applicando ad entrambi i membri della solita equazione la trasformata di Fourier.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-46-30.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-07-09-46-30.png}
 	\caption{Ottengo così un'uguaglianza fra le due trasformate. Applico la seconda proprietà della trasformata di Fourier per cui le derivate diventano moltiplicazioni. \(\widetilde{x} \) è la mia incognita. }
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-48-28.png}
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-03-07-09-48-28.png}
 	\caption{Così ho risolto il problema nello spazio delle pulsazioni. Con l'antitrasformata di Fourier posso trovare la soluzione particolare nello spazio dei tempi.}
 \end{figure}
 Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer questi integrali sono facilmente risolvibili numericamente. Proseguiamo con alcune osservazioni:
@@ -79,7 +78,7 @@ Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer 
 	\item Le equazioni differenziali lineari si trasformano in polinomi in \(\omega \):
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-51-21.png}
+		\includegraphics[width=0.6\textwidth]{screenshots/2024-03-07-09-51-21.png}
 		\caption{Posso vedere la trasformata di Fourier anche come un operatore che agisce su altri operatori.}
 	\end{figure}
 	
@@ -89,11 +88,20 @@ Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer 
 \begin{note}
 	[Diverse definizioni di trasformata di Fourier]
 	La definizione della trasformata di Fourier può essere diversa. Noi non le useremo mai! L'importante è associare l'antitrasformata corretta in base alla definizione di trasformata che abbiamo usato. Alcuni esempi:
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-09-57-28.png}
-		\caption{La prima è fatta per una questione di simmetria. La seconda è comoda per utilizzare il concetto di frequenza, che agli ingegneri sembra più naturale del concetto di pulsazione.}
-	\end{figure}
+	\begin{itemize}
+		\item Trovata spesso in ambito fisico o matematico:
+		\begin{align}
+			\widetilde{f} (\omega )&=\frac{1}{\sqrt{2\pi } }\int_{-\infty}^{\infty} f(t)e^{-i \omega t} \,\mathrm{d}t
+			&
+			f(t)&=\frac{1}{2\pi }\int_{-\infty}^{\infty} \widetilde{f} (\omega ) e^{i \omega t} \,\mathrm{d} \omega  
+		\end{align}
+		\item Trovata spesso in ambito ingegneristico, ponendo \(\nu = \quotient{\omega }{2 \pi } \):
+		\begin{align}
+			\widetilde{f} (\nu )&=\int_{-\infty}^{\infty} f(t)e^{-i2\pi \nu t} \,\mathrm{d}t
+			&
+			f(t)&=\int_{-\infty}^{\infty} \widetilde{f} (\nu ) e^{i 2\pi \nu t} \,\mathrm{d} \nu  
+		\end{align}
+	\end{itemize}
 \end{note}
 
 \chapter{Onde meccaniche}
@@ -101,10 +109,10 @@ Non è chiaramente un processo matematico semplice, ma con l'aiuto dei computer 
 Facciamo un riepilogo di cosa sono le onde:
 \begin{itemize}
 	
-	\item Un'onda è una perturbazione che si propaga nello spazio, partendo da una condizione di "equilibrio"
-	\item Per avere un'onda è necessario avere almeno una grandezza fisica che oscilla: onde scalari, vettoriali, tensoriali
-	\item Le onde hanno una sorgente, che è un punto o una regione dello spazio da dove parte la perturbazione
-	\item Le onde hanno una velocità con cui si propagano
+	\item Un'onda è una perturbazione che si propaga nello spazio, partendo da una condizione di "equilibrio".
+	\item Per avere un'onda è necessario avere almeno una grandezza fisica che oscilla: onde scalari, vettoriali, tensoriali.
+	\item Le onde hanno una sorgente, che è un punto o una regione dello spazio da dove parte la perturbazione.
+	\item Le onde hanno una velocità con cui si propagano.
 	\item Possono trasportare informazione, energia, potenza, quantità di moto. Solo quelle quantistiche possono trasportare materia, le altre non trasportano materia.
 	\item Le onde meccaniche richiedono un mezzo di propagazione.
 \end{itemize}
@@ -114,7 +122,7 @@ Facciamo un riepilogo di cosa sono le onde:
 	
 	\item Si propagano nei mezzi continui.
 	\item Sono oscillazioni coerenti delle posizioni di elementi materiali.
-	\item Possono essere unidimensionali (onde su corda tesa), bidimensionali (noi non le faremo, sono quelle su un tamburo o del mare) o nello spazio (onde sonore, vibrazioni, sismiche).
+	\item Possono essere unidimensionali (onde su corda tesa), bidimensionali (noi non le faremo, sono quelle su un tamburo o del mare) o nello spazio (onde sonore, vibrazioni sismiche).
 	\item Per queste onde si studia lo spostamento di un elemento infinitesimo di materiale, quindi sono onde vettoriali. Inizialmente noi le studieremo come onde scalari.
 	\item Esistono due grandi categorie di onde meccaniche: onde trasversali e onde longitudinali. Per le prime la velocità dell'onda è in una certa direzione e il moto del mezzo meccanico è in direzione ortogonale a quella di propagazione (molla oscillata). Nelle onde longitudinali invece l'oscillazione è nella direzione di moto dell'onda (molla compressa).
 \end{itemize}
@@ -122,10 +130,9 @@ Facciamo un riepilogo di cosa sono le onde:
 \paragraph{Caratteristiche delle onde elettromagnetiche}
 Le onde elettromagnetiche presentano delle differenze rispetto a quelle meccaniche:
 \begin{itemize}
-	
-	\item Si propagano nel vuoto e nei mezzi continui
-	\item Sono oscillazioni simultanee di campo elettrico e magnetico, sono particolari soluzioni delle equazioni di Maxwell
-	\item Sono onde vettoriali e trasversali
+	\item Si propagano nel vuoto e nei mezzi continui.
+	\item Sono oscillazioni simultanee di campo elettrico e magnetico, sono particolari soluzioni delle equazioni di Maxwell.
+	\item Sono onde vettoriali e trasversali.
 	\item Nel vuoto si muovono sempre alla velocità della luce indipendentemente dal sistema di riferimento: origine della relatività ristretta!
 \end{itemize}
 
@@ -163,11 +170,7 @@ Pongo \(T=T_1=T_2\). Ho verificato che il modulo tensione della corda è uguale 
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-47-36.png}
 \end{figure}
 
-L'equazione appena ricavata è molto importante. Per iniziare, considereremo casi in cui \(\mu \) è costante. È detta equazione di D'Alembert. Per ricordarci che \(\frac{\mu }{T}\) è una quantità positiva, la scriviamo come il quadrato di una quantità. Notiamo che ha le dimensioni dell'inverso di una velocità: \(\frac{\mu }{T} = \frac{1}{v^{2} } \to v=\sqrt{\frac{T}{\mu }} \). Dimensionalmente si vede che è effettivamente una velocità:
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-07-10-54-11.png}
-\end{figure}
+L'equazione appena ricavata è molto importante. Per iniziare, considereremo casi in cui \(\mu \) è costante. È detta equazione di D'Alembert. Per ricordarci che \(\frac{\mu }{T}\) è una quantità positiva, la scriviamo come il quadrato di una quantità. Notiamo che ha le dimensioni dell'inverso di una velocità: \(\frac{\mu }{T} = \frac{1}{v^{2} } \to v=\sqrt{\frac{T}{\mu }} \).
 L'equazione di D'Alembert è lineare, per cui vale il principio di sovrapposizione. Compaiono derivate seconde al primo grado:
 \begin{equation}
 	\label{eq:dalembert_1d}

@@ -17,15 +17,15 @@ Oggi cerchiamo le soluzioni dell'equazione di D'Alembert. È un'equazione molto 
 	\end{cases}	
 \]
 
-Si nota che particolari combinazioni delle variabili spazio e tempo conducono a considerare soluzioni unidimensionali: \(s=x-vt\) \(w=x+vt\). Dimostriamolo.
+Si nota che particolari combinazioni delle variabili spazio e tempo conducono a considerare soluzioni unidimensionali: \(s=x-vt\), \(w=x+vt\). Dimostriamolo.
 
-\begin{gather*}
+\begin{gather}
 	\xi (x,t) = f(s) = f(x-vt) \text{ con } s(x,t)=x-vt\\
-	\frac{\partial \xi }{\partial x} = \frac{\partial f}{\partial x} = \frac{\partial f}{\partial x} \frac{\partial s}{\partial x} = \frac{\mathrm{d}f}{\mathrm{d}s} = f^{\prime} \\
+	\frac{\partial \xi }{\partial x} = \frac{\partial f}{\partial x} = \frac{\partial f}{\partial s} \frac{\partial s}{\partial x} = \frac{\mathrm{d}f}{\mathrm{d}s} = f^{\prime} \\
 	\rightsquigarrow \frac{\partial \xi ^{2} }{\partial x^{2} } = \frac{\partial f^{\prime} }{\partial x} = \frac{\partial f^{\prime} }{\partial s} \frac{\partial s}{\partial x} = \frac{\mathrm{d}f^{\prime} }{\mathrm{d}s} = f^{\prime\prime} \\
 	\frac{\partial \xi }{\partial t} = \frac{\partial f}{\partial t} = \frac{\partial f}{\partial s} \frac{\partial s}{\partial t} = -v \frac{\mathrm{d}f}{\mathrm{d}s} = - v f^{\prime} \\
 	\rightsquigarrow \frac{\partial \xi ^{2} }{\partial t^{2} } = -v \frac{\partial f^{\prime} }{\partial t}  = - v \frac{\partial f^{\prime} }{\partial s} \frac{\partial s}{\partial t} = v ^{2} f^{\prime\prime} 
-\end{gather*}
+\end{gather}
 
 Ottengo quindi l'equazione di D'Alembert nella forma \(f^{\prime\prime} = \frac{1}{v^{2} } v ^{2} f^{\prime\prime} \), che è verificata \(\forall f\). È sufficiente che sia derivabile due volte. Si può dimostrare allo stesso modo che \(\xi (x,t) = g(x+vt)\) è sempre una soluzione. Siamo passati dal cercare funzioni in due variabili al cercare soluzioni in una variabile.
 
@@ -72,11 +72,10 @@ Consideriamo una corda elastica tesa, vincolata nella posizione \(x=0\) (detta s
 	\centering
 	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-12-12-19-43.png}
 \end{figure}
-Per la forma della corda, \(x_0 = 0\) è sorgente di onde progressive: \(\xi (x,t) = f(x-vt)\). Per \(t>0\) \(\xi (0,t_0) = -A \sin (\omega t_0) = f(x_0 - vt_0) = f(x-vt) = f(s)\). Di conseguenza, \(s=0-vt_0=x-vt \rightsquigarrow t_0 = t-\frac{x}{v} \rightsquigarrow t= t_0 + \frac{x}{v}\). \(\frac{x}{v}\) è il tempo che impiega la perturbazione che avviene al tempo \(t_0\) nel punto \(x_0\) a raggiungere il punto a coordinata x.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-12-12-28-56.png}
-\end{figure}
+Per la forma della corda, \(x_0 = 0\) è sorgente di onde progressive: \(\xi (x,t) = f(x-vt)\). Considero un tempo \(t_0 >0\) e cerco il tempo \(t\) a cui stessa la perturbazione si trova in posizione \(x\). \(\xi (0,t_0) = -A \sin (\omega t_0) = f(x_0 - vt_0) = f(x-vt) = f(s)\). Di conseguenza, \(s=0-vt_0=x-vt \rightsquigarrow t_0 = t-\frac{x}{v} \rightsquigarrow t= t_0 + \frac{x}{v}\). \(\frac{x}{v}\) è il tempo che impiega la perturbazione che avviene al tempo \(t_0\) nel punto \(x_0\) a raggiungere il punto a coordinata x.
+\begin{equation}
+	f(x-vt)=-A \sin (\omega t_0)=-A \sin \left( \omega \left( t- \frac{x}{v} \right)  \right) = A \sin \left( \frac{\omega }{v}x - \omega t \right) = \xi (x,t)  
+\end{equation}
 I pezzi della corda si mettono progressivamente in moto.
 
 \begin{definition}
@@ -98,36 +97,36 @@ L'onda su corda si scrive quindi \(\xi (x,t) = A \sin (kx - \omega t)\). Le onde
 \end{figure}
 Ogni punto dell'onda si muove con velocità \(v\).
 \begin{definition}
-	[Velocità di fase]
-	Si definisce velocità di fase
+	[Velocità di fase]\label{def:v_phase}
+	Per le onde armoniche si definisce la velocità di fase
 	\[
 		v_f = \frac{\omega }{k}
 	\]
-	Essa coincide con il parametro \(v\) dell'equazione di D'Alembert.
+	Essa coincide con il parametro \(v\) dell'equazione di D'Alembert e rappresenta la velocità a cui si propaga una certa fase dell'onda.
 \end{definition}
 Se consideriamo unicamente quello che avviene in un punto di ascissa fissata \(x=\overline{x} \), notiamo che il moto è armonico di periodo \(T_p = \frac{2\pi }{\omega }\). N.B.: i punti della corda si muovono con lo stesso periodo dell'oscillazione della sorgente! È una conseguenza generale: le caratteristiche temporali delle onde sono le stesse in ogni punto dello spazio e dipendono esclusivamente dalla sorgente.
 
 Allo stesso modo possiamo studiare quello che avviene a un istante fissato di tempo: \(t=\overline{t} \). Anche in questo caso si presenta una periodicità, tuttavia è una periodicità spaziale. \(k \lambda = 2\pi \rightsquigarrow \lambda = \frac{2\pi }{k} \rightsquigarrow \lambda = \frac{2 \pi }{\omega } v\). La differenza rispetto a quanto trovato per la periodicità temporale è che in questo caso il valore trovato dipende dalla velocità, che può dipendere dalla posizione nello spazio! \(\lambda \) è detta lunghezza d'onda. La relazione fra \(\lambda \) e T è la seguente:
 \begin{definition}
 	[Lunghezza d'onda]
-\[
-	\lambda = \frac{2 \pi }{k}= \frac{2\pi }{\omega }v= vT_p
-\]
+	\[
+		\lambda = \frac{2 \pi }{k}= \frac{2\pi }{\omega }v= vT_p
+	\]
 \end{definition}
 
 \subsection{Utilizzo delle onde armoniche}
 
-L'importanza delle onde armoniche sta nel fatto che per ogni onda armonica ho sempre lo stesso tempo di propagazione. Quindi posso studiare anche fenomeni descritti da onde complicate, come quelle analizzabili con la serie di Fourier. Consideriamo una sollecitazione periodica dell'origine descritta dalla funzione \(f(t)\). Pongo \(\omega _0 = \frac{2\pi }{T}\).
+L'importanza delle onde armoniche sta nel fatto che posso studiare anche fenomeni descritti da onde complicate, come quelle analizzabili con la serie di Fourier. Consideriamo una sollecitazione periodica dell'origine descritta dalla funzione \(f(t)\). Pongo \(\omega _0 = \frac{2\pi }{T}\).
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{screenshots/2024-03-12-12-49-14.png}
+	\includegraphics[width=0.7\textwidth]{screenshots/2024-03-12-12-49-14.png}
 	\caption{Abbiamo fatto il cambiamento \(n=-m\) perché nelle onde vogliamo sempre avere \(i(kx - \omega t)\).  }
 \end{figure}
-Cambiando il nome di m in n e ponendo \(\omega _n = n \omega _0, k_n = n \omega _0 / v\). L'onda progressiva si scrive come somma di onde armoniche:
+Cambiando il nome di m in n e ponendo \(\omega _n = n \omega _0, k_n = n \omega _0 / v\), l'onda progressiva si scrive come somma di onde armoniche:
 \[
 	\xi (x,t) = \sum_{n=-\infty }^{\infty} c^{\prime}_n e^{i(k_n x - \omega _n t)}
 \]
-Una singola onda armonica si muove con velocità data da \(v_n = \omega_n / k_n\). Quanto fatto si può generalizzare a un caso in cui le onde sono sia regressive che progressive:
+Una singola onda armonica si muove con velocità data da \(v_n = \omega_n / k_n=v\). Quanto fatto si può generalizzare a un caso in cui le onde sono sia regressive che progressive:
 \[
 	\xi (x,t) = \sum_{n=-\infty }^{\infty} [c_n e^{i(k_n x - \omega _n t)} + d_n e^{i(k_n x + \omega _n t)}]
 \]

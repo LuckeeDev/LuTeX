@@ -59,11 +59,10 @@ Ogni combinazione lineare di soluzioni è soluzione: se \(\hat{L} (x_{1} ) = 0\)
 
 Studiamo un oscillatore smorzato con una forzante costante sommata a due funzioni dipendenti dal tempo:
 \[
-	m \ddot{x} + \beta \dot{x} + kx = - mg + F_1 \cos \Omega t + F_2 \sin 2 \Omega t = \hat{L} (x)
+	m \ddot{x} + \beta \dot{x} + kx = - mg + F_1 \cos(\Omega t)+ F_2 \sin(2 \Omega t)= \hat{L} (x)
 \]
 Sfruttiamo la linearità:
 \begin{enumerate}
-	
 	\item Cerchiamo la soluzione omogenea: \(\hat{L} (x_{omo} ) = 0\). È un oscillatore smorzato con la stessa soluzione già trovata in precedenza: \(x_{omo} (t) = A_0 e^{-\frac{t}{2 \tau }}\cos (\omega t + \phi _0) \).
 	\item Cerchiamo soluzioni delle tre forzanti separatamente:
 	\begin{itemize}
@@ -101,9 +100,8 @@ Il "principio di sovrapposizione" vale quindi solo nei sistemi lineari. È l'esp
 
 Trattiamo ora uno degli strumenti più potenti per risolvere equazioni lineari, tra cui problemi di forzante generica scomponendola in casi particolari. Come generalizziamo quanto studiato finora?
 \begin{enumerate}
-	
 	\item Primo passo: consideriamo \(f(t)\) periodica con periodo T. Quando una funzione è periodica la possiamo risolvere se il periodo è limitato. Questo è il caso del tema di questa sezione, la serie di Fourier.
-	\item Secondo passo: funzione periodica per cui periodo è su asse reale. Consideriamo cioè una funzione periodica di periodo \(T \to \infty \). Questo verrà trattato invece con la trasformata di Fourier. 
+	\item Secondo passo: considerare una funzione non periodica, in altre parole con periodo \(T \to \infty \). Questo verrà trattato invece con la trasformata di Fourier. 
 \end{enumerate}
 
 Iniziamo costruendo una forzante particolare, periodica, per cui posso anche moltiplicare la pulsazione per una costante, con fase iniziale:
@@ -123,7 +121,7 @@ La differenza dalle soluzioni viste in precedenza sta nel fatto che in questo ca
 	z_n(t) = A e^{in \omega t}= \frac{F_n e^{i(n \omega t + \phi _n)}}{m [(\omega _0 ^{2} -(n \omega )^{2} )+i \gamma n \omega ]}\\
 	x(t)= \Re [z_n(t)]= \frac{F_n}{m}\Re \left[\frac{e^{i(n \omega t + \phi _n)}}{(\omega _0 ^{2} - (n \omega )^{2} )+i \gamma n \omega }\right] 
 \end{gather*}
-Le fasi \(\phi _n \) sono eliminabili utilizzando la formula nota per il coseno della somma\(\cos (\alpha +\beta )=\cos \alpha \cos \beta -\sin \alpha \sin \beta \rightsquigarrow F_n \cos (n \omega t + \phi _n) = F_n \cos \phi _n \cos (n \omega t) - F_n \sin \phi _n \sin (n \omega t) \). Si può quindi porre \(a_0 =F_0,\ a_n = F_n \cos \phi _n,\ b_n =-F_n \sin \phi _n\) per ottenere \(F_n \cos (n \omega t + \phi _n) = a_n \cos (n \omega t) + b_n \sin (n \omega t)\).
+Le fasi \(\phi _n \) sono eliminabili utilizzando la formula nota per il coseno della somma \(\cos (\alpha +\beta )=\cos \alpha \cos \beta -\sin \alpha \sin \beta \rightsquigarrow F_n \cos (n \omega t + \phi _n) = F_n \cos \phi _n \cos (n \omega t) - F_n \sin \phi _n \sin (n \omega t) \). Si può quindi porre \(a_0 =F_0,\ a_n = F_n \cos \phi _n,\ b_n =-F_n \sin \phi _n\) per ottenere \(F_n \cos (n \omega t + \phi _n) = a_n \cos (n \omega t) + b_n \sin (n \omega t)\).
 Ottengo quindi che
 \[
 	f(t) = a_0 + \sum_{n=1}^{\infty} [a_n \cos (n \omega t) + b_n \sin (n \omega t)]
