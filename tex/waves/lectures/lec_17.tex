@@ -74,7 +74,7 @@ Si può anche calcolare la potenza emessa da un'antenna:
 	\centering
 	\includegraphics[width=0.55\textwidth]{screenshots/2024-04-24-10-04-00.png}
 \end{figure}
-Per raddoppiare la frequenza, è necessario aumentare la potenza di un fattore 16. Ci sono anche generatori di onde elettromagnetiche che funzionano con correnti:
+Per raddoppiare la frequenza, è necessario aumentare la potenza di un fattore 16. Ci sono anche generatori di onde elettromagnetiche che funzionano con correnti oscillanti (quindi tramite un'induttanza che genera un campo magnetico variabile nel tempo). Si studiano nello stesso modo dei dipoli oscillanti tramite tramite la seguente analogia:
 \begin{equation}
 	\begin{cases}
 		q &= q_0 \sin (\omega t)\\
@@ -86,4 +86,39 @@ che permette di modificare il contributo della pulsazione alla potenza:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-24-10-09-39.png}
+\end{figure}
+
+\section{Spettro elettromagnetico}
+Le onde elettromagnetiche sono principalmente descritte da tre grandezze: \(\nu = \quotient{\omega }{2 \pi } \) frequenza, \(\lambda = \quotient{c}{\nu } \) lunghezza d'onda, e \(E= \hslash \omega \) l'energia del fotone con \(\hslash = \SI{1.05 e-34}{J s} \). Lo spettro elettromagnetico è convenzionalmente diviso in 7 regioni:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-24-10-30-49.png}
+\end{figure}
+Nelle onde radio (\num{0} - \SI{1}{GHz}) è difficile studiare la natura corpuscolare della luce. L'energia dei fotoni è molto bassa, quindi si tratta semplicemente come un'onda. Qui vanno la maggior parte dei segnali delle comunicazioni (radio, TV). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-24-10-38-17.png}
+\end{figure}
+Al di sopra delle onde radio si trovano le microonde (\num{1} - \SI{300}{GHz}). Il microonde funziona perché la molecola d'acqua entra in risonanza a \(\SI{2.45}{GHz} \). Gli spaghetti non si fanno a microonde. Le microonde sono usate per le comunicazioni dei telefoni cellulari, per il WiFi e per i radar che devono individuare gli aerei (se un aereo è lungo \SI{50}{m}, la lunghezza d'onda dev'essere molto minore).
+
+Fra i \SI{0.3}{THz} e i \SI{428}{THz} si trova la banda dell'infrarosso. Qui si trovano le transizioni molecolari, l'emissione termica dei corpi e le comunicazioni in fibra ottica.
+
+Tra i \SI{0.4}{\micro \metre} e i \SI{0.7}{\micro \metre} si trova la luce visibile. Qui risiedono le transizioni atomiche esterne (come lo spettro di emissione dell'idrogeno) e i colori. La descrizione deve essere necessariamente quantistica e quindi comprendere i fotoni. L'atmosfera è praticamente trasparente a queste onde elettromagnetiche:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-04-24-10-44-59.png}
+\end{figure}
+
+La regione dell'ultravioletto è fra \SI{1}{nm} e \SI{0.4}{\micro \metre}. Qui avvengono le transizioni atomiche profonde.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-24-10-49-54.png}
+\end{figure}
+
+I raggi X si trovano fra \SI{1}{keV} e \SI{100}{keV}. Non c'è identità di vedute su questo intervallo. Qui risiedono le transizioni atomiche profonde di atomi pesanti e il frenamento di elettroni. Vengono usati per le radiografie (trapassano la maggior parte della materia) e le cristallografie (studiare i reticoli cristallini).
+
+I raggi gamma hanno un'energia maggiore di \SI{0.1}{MeV}. Le transizioni nucleari, le interazioni tra particelle elementari e i raggi cosmici appartengono a questa categoria. Nella figura seguente si vede il piano galattico studiato tramite raggi gamma:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-24-10-57-52.png}
 \end{figure}
