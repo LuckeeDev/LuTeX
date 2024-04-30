@@ -22,7 +22,7 @@ Di conseguenza si può riscrivere l'equazione di D'Alembert con le nuove coordin
 \end{equation}
 \subsection{Soluzione delle onde sferiche}
 Si può mostrare che esistono soluzioni generiche di questo tipo:
-\begin{equation}
+\begin{equation}\label{eq:sol_wave_sphere}
 	\xi (\vec{r},t)=\xi (r,\theta ,\varphi ,t)=\frac{f(r\mp vt)}{r}Y^m_l(\theta ,\varphi )
 \end{equation}
 \(\forall f \in \mathcal{C} ^{2}\) e per particolari funzioni \(Y_l^m \in \mathcal{C} ^{2} \) infinite ma numerabili, gli indici sono \(l=0,1,\dots , \infty ;\ m =-l, \dots ,0,\dots +l\) (WOW! In futuro rappresenteranno gli orbitali). Queste funzioni soddisfano equazioni del tipo:
@@ -35,6 +35,9 @@ Le \(Y_l^m\) sono dette \emph{armoniche sferiche}.
 	\centering
 	\includegraphics[width=0.7\textwidth]{screenshots/2024-04-09-11-41-43.png}
 \end{figure}
+\begin{note}
+	È molto importante notare che le soluzioni nell'equazione \eqref{eq:sol_wave_sphere} sono esatte solo nel caso di \(l=0\), mentre negli altri casi valgono nel limite \(r \to +\infty \). Si vede inserendole nell'equazione di D'Alembert.
+\end{note}
 Noi generalmente guarderemo le armoniche sferiche con \(l=0,1\). Le funzioni sono ortonormali sulla superficie della sfera (nello spazio delle funzioni definite su \((\theta ,\varphi )\)).
 Guardiamo ora i casi che si possono presentare per il termine dipendente da \(r\mp vt\).
 \begin{itemize}
