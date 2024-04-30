@@ -111,3 +111,57 @@ da cui
 	\centering
 	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-30-12-16-51.png}
 \end{figure}
+
+\subsection{Propagazione in un metallo}
+Possiamo assumere il metallo come neutro, quindi \(\rho =0\). Però esistono cariche libere che danno origine a una corrente: \(\vec{J}= \sigma \vec{E}\).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-30-12-30-10.png}
+\end{figure}
+Sono equazioni lineari e omogenee, ottimo. Possiamo estrarre anche da qui l'equazione di D'Alembert?
+\begin{gather}
+	\curl{(\curl{\vec{E}} )} = \curl{(-\frac{\partial \vec{B}}{\partial t} )} = - \frac{\partial (\curl{\vec{B}} )}{\partial t}\\
+	\grad{(\div{\vec{E}} )} - \laplacian{\vec{E}} = - \mu \sigma \frac{\partial \vec{E}}{\partial t} - \mu \varepsilon \frac{\partial ^{2} \vec{E}}{\partial t^{2} }\\
+	\laplacian{\vec{E}}=\mu \varepsilon \frac{\partial ^{2} \vec{E}}{\partial t^{2} }+\mu \sigma \frac{\partial \vec{E}}{\partial t}    
+\end{gather}
+Non è l'equazione di D'Alembert, quindi sono in un mezzo dispersivo. La ritrovo solo nel limite \(\sigma \to 0\). Cerchiamo una soluzione nella forma di onde piane armoniche:
+\begin{align}
+	\vec{E}(\vec{r},t) &= \vec{E}_0 e^{i(\vec{k}\cdot \vec{r} - \omega t)} & \vec{B}(\vec{r},t)&= \vec{B}_0 e^{i (\vec{k}\cdot \vec{r}-\omega t)}
+\end{align}
+Così le equazioni di Maxwell assumono questa forma:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-30-12-39-14.png}
+\end{figure}
+\(\vec{E} \perp \vec{k},\ \vec{B}\perp \vec{k}\) quindi le onde in un metallo sono ancora onde trasversali. Inoltre \(\vec{E}\perp \vec{B}\), ma in generale non sono in fase perché c'è un numero complesso come proporzionalità fra i due. Significa che il vettore \(\vec{k}\) contiene una fase complessa. Provo a ricavare la componente complessa di \(\vec{k}\).
+\begin{equation}
+	i \vec{k} \cp \vec{B} = i \vec{k} \cp \frac{\vec{k}\cp \vec{E}}{\omega } = \frac{i}{\omega } [(\vec{k} \cdot \vec{E})\vec{k} - (\vec{k}\cdot \vec{k})\vec{E}] = -\frac{ik^{2} }{\omega }\vec{E}
+\end{equation}
+Inoltre avevo
+\begin{equation}
+	i \vec{k}\cp \vec{B}=\left( \mu \sigma - i \frac{\omega }{v^{2} } \right)\vec{E} 
+\end{equation}
+da cui
+\begin{gather}
+	-\frac{i k^{2} }{\omega } = \left( \mu \sigma - i \frac{\omega }{v^{2} } \right) \implies k^{2} = \frac{\omega ^{2} }{v ^{2} } + i \mu  \sigma  \omega = \frac{\omega ^{2} }{v^{2} }\left( 1+ i \frac{\mu \sigma v^{2} }{\omega } \right) \implies \\
+	\implies k = \frac{\omega }{v}\sqrt{1+ i \frac{\mu \sigma v^{2} }{\omega }} = k_r + i k_I 
+\end{gather}
+Anche qui noto che per \(\sigma \to 0\) riottengo una relazione già vista per le onde elettromagnetiche nel vuoto (\(k=\quotient{\omega }{v} \)). Il segno che compare di fronte a \(k_I\) è una convenzione: se avessimo usato un'onda con fase \(\omega t - \vec{k}\cdot \vec{r}\) avremmo ottenuto \(k=k_r - ik_I\).
+
+\paragraph{Assorbimento dell'onda nel metallo}
+Consideriamo un'onda che si propaga nella direzione delle z positive e che incontra un metallo per \(z>0\):
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-04-30-12-51-51.png}
+\end{figure}
+Il campo elettrico risulta
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-30-12-52-15.png}
+\end{figure}
+L'onda nel metallo ha un'ampiezza decrescente con la profondità (perde energia!). La parte immaginaria di \(k\) descrive l'assorbimento progressivo, dovuto alla perdita di energia per la messa in moto delle cariche. L'energia si trasferisce dall'onda al metallo, si ha il cosiddetto "effetto Joule". Come per le onde in un dielettrico, si definisce il coefficiente di assorbimento \(\mu = 2k_I\). Così \(I(z)=I_0 e^{-\mu z}\).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-04-30-12-56-12.png}
+\end{figure}
+Dalla figura si vede che il campo magnetico è sempre in ritardo rispetto al campo elettrico e che entrambe le onde sono attenuate nel tempo.
