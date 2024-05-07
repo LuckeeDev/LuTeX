@@ -96,3 +96,70 @@ Posso definire ancora i coefficienti di trasmissione e di riflessione:
 	\end{align}
 	Per definizione \(R + T = 1\), \(I_t = T I_i\) e \(I_r = R I_i\).
 \end{definition}
+
+\subsection{Incidenza non normale}
+Studiamo ora l'aspetto geometrico del passaggio fra due mezzi differenti, ossia come cambiano i versori che descrivono la direzione dell'onda.
+
+\paragraph{Riflessione}
+Si fa riferimento alla seguente figura e si sfrutta il principio di Huygens-Fresnel:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-07-12-17-10.png}
+\end{figure}
+Nel tempo in cui il punto C arriva in B, il punto A dello stesso fronte d'onda è arrivato in D (siamo sempre nel mezzo 1). I triangoli ABC e ABD sono entrambi retti per costruzione, perché sono dati dall'intersezione di un fronte d'onda con la retta di propagazione dell'onda. Inoltre hanno due lati uguali (AB in comune e AD=BC), quindi hanno anche gli stessi angoli. Segue che
+\begin{equation}
+	\theta^{\prime} _r = \theta _i
+\end{equation}
+Di conseguenza \(\vec{k}_i\), \(\vec{k}_r\) e la normale alla superficie stanno nello stesso piano, che è detto "piano d'incidenza".
+
+\begin{note}
+	Abbiamo parlato di riflessione nel caso di onde elettromagnetiche, ma il ragionamento si applica identico a tutti gli altri tipi di onde perché si basa esclusivamente sul principio di Huygens-Fresnel e caratteristiche generiche delle onde.
+\end{note}
+
+\paragraph{Rifrazione}
+Consideriamo ora il caso della rifrazione, ossia la trasmissione con un angolo di incidenza diverso da zero rispetto alla normale.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-07-12-26-14.png}
+\end{figure}
+Sia \(t_{CB} = \quotient{\overline{CB} }{v_1} \) il tempo che ci mette il punto C ad arrivare a B. Nello stesso tempo il punto A si muove in D: \(t_{AD} = \quotient{\overline{AD} }{v_2} = t_{CB} \). So anche che \(\overline{CB} = \overline{AB} \sin (\theta _i)\) e \(\overline{AD} = \overline{AB} \sin (\theta _t)\), quindi trovo
+\begin{equation}
+	\frac{\overline{AD} }{v_2} = \frac{\overline{CB} }{v_1}
+	\implies \frac{\overline{AB} \sin (\theta _t)}{v_2} = \frac{\overline{AB} \sin (\theta _i)}{v_1}
+	\implies \frac{n_2 \sin (\theta _t)}{c} = \frac{n_1 \sin (\theta _i)}{c}
+\end{equation}
+Così otteniamo la legge di Snell per la rifrazione:
+\begin{formula}
+	[Legge di Snell]
+	\begin{equation}
+		n_1 \sin (\theta _i) = n_2 \sin (\theta _r)
+	\end{equation}
+\end{formula}
+Passando da un mezzo con indice di rifrazione basso ad uno con indice di rifrazione alto (\(n_1 < n_2\)) la direzione dell'onda si avvicina alla normale, quindi \(\theta _r < \theta _i\). Viceversa, passando da un mezzo con indice di rifrazione alto ad uno con indice di rifrazione basso (\(n_1 > n_2\)) la direzione dell'onda si allontana dalla normale, ossia \(\theta _r > \theta _i\) (non sempre è possibile!). Essendo \(\sin (\theta _r) = \frac{n_1}{n_2} \sin (\theta _i)\), se \(\sin (\theta _i)> \frac{n_2}{n_1}\) non esiste alcun \(\theta _r\) che soddisfi l'equazione. Sono nel caso della \emph{riflessione totale}. Non avviene la rifrazione, ma avviene solo la riflessione. Succede ad esempio in piscina buttandosi sott'acqua e guardando verso l'alto.
+
+\paragraph{Applicazione: fibra ottica}
+Le fibre ottiche sfruttano il fenomeno della riflessione totale. All'interno c'è il core con indice \(n\), subito fuori c'è il cladding con indice \(n_c\) e a protezione c'è una guaina protettiva non trasparente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-05-07-12-43-10.png}
+\end{figure}
+Si definisce l'apertura numerica della fibra \(NA=\sin (\theta_{max} = \sqrt{n^{2} -n_c ^{2} } )\) dove \(\theta_{max} \) è il massimo angolo di incidenza per cui si ha riflessione totale all'incidenza sul cladding. Per angoli più piccoli (rispetto alla normale) si ha anche rifrazione, ma è possibile evitare che succeda. Questo mi permette di curvare la luce!
+
+\paragraph{Applicazione: prisma}
+Su una lastra di vetro a facce parallele un raggio che entra all'angolo \(\theta \) esce con lo stesso angolo indipendentemente dall'indice di rifrazione del vetro (si vede applicando la legge di Snell). Nel prisma le facce non sono parallele, ne consegue che l'angolo di uscita è una funzione dell'indice di rifrazione e dell'angolo incidente: \(\theta_f = f(n, \theta _i)\). Poiché \(n =n(\lambda )\), ne consegue che un fascio di luce bianca si separa in uno spettro di colori. È lo stesso fenomeno fisico che accade nelle gocce d'acqua e che permette la formazione dell'arcobaleno.
+
+\paragraph{Principio di Fermat}
+Il principio di Fermat generalizza la legge di Snell e la formalizza in una sorta di principio di minima azione. Tra tutti i possibili cammini che un raggio di luce può percorrere per andare da un punto a un altro, esso segue il cammino che richiede il tempo più breve.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{screenshots/2024-05-07-12-54-12.png}
+\end{figure}
+Il tempo necessario ad andare dal punto A al punto B è
+\begin{equation}
+	T = \int \frac{\mathrm{d} l}{v} = \frac{1}{c} \int n \mathrm{d} l
+\end{equation}
+Minimizzare il tempo significa minimizzare il percorso ottico: \(L_{ott}  \int n \mathrm{d} l\).
+
+\begin{exercise}
+	Per casa, prova a ottenere la legge di Snell a partire dal principio di Fermat.
+\end{exercise}
