@@ -1,6 +1,6 @@
 \lecture{21}{8 maggio 2024}
 \subsection{Formule di Fresnel}
-Oggi studiamo la relazione fra polarizzazione e passaggio fra due mezzi ottici distinti.
+Oggi studiamo la relazione fra polarizzazione e passaggio fra due mezzi ottici distinti. Supponiamo che la polarizzazione non cambi al passaggio fra due mezzi e nella riflessione (trascuriamo materiali con molecole chirali e altre stranezze).
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-09-15-56.png}
@@ -82,3 +82,65 @@ Abbiamo visto che c'è un angolo per cui \(r_{\parallel } =0	\). Questo equivale
 		\tan (\theta _B) = \frac{n_2}{n_1}
 	\end{equation}
 \end{formula}
+
+\section{Interferenza}
+Questo argomento è particolarmente importante perché ci permette di capire che cosa sia la luce. C'erano due grandi gruppi: i sostenitori della teoria corpuscolare e quelli della teoria ondulatoria. L'idea di Young era che se la luce è un'onda allora deve mostrare i comportamenti tipici delle onde, che non possono essere spiegati dalla teoria corpuscolare: diffrazione e interferenza.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{screenshots/2024-05-08-10-19-39.png}
+\end{figure}
+Viene prodotta luce monocromatica, diffusa attraverso lo schermo S1 e poi divisa in due sorgenti secondarie coerenti dallo schermo S2. Il risultato osservato sono delle figure di interferenza sullo schermo di osservazione F. Sembra che gli ondulatori avessero ragione (plot twist nel 1900). La stessa cosa succede anche con gli elettroni e anche mandando un fotone alla volta. La meccanica quantistica spiega questo comportamento. Rimaniamo coi piedi per terra e studiamo l'interferenza alla Young.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-10-27-22.png}
+\end{figure}
+I campi in uscita dalle fenditure sono \(\vec{E}_1 (F1) = E_0 e^{-i \omega t} \vec{\hat{n}}\) e \(\vec{E}_2(F2) = E_0 e^{i \omega t} \vec{\hat{n}}\), mentre in P sono \(\vec{E}_1 (P) = E_0^{\prime} e^{i(kr_1 - \omega t)} \vec{\hat{n}}\) e \(\vec{E}_2 (P) = E_0^{\prime} e^{i (kr_2 - \omega t)} \vec{\hat{n}}\). Per semplicità ipotizziamo che gli angoli siano piccoli e che quindi siano uguali le ampiezze (vanno come \(\quotient{1}{r} \)).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-10-31-11.png}
+\end{figure}
+Per angoli piccoli posso approssimare \(r_2 - r_1 = d \sin (\theta )\). Lo sfasamento fra i due raggi è \(\Delta \varphi = k (r_2 - r_1) = kd \sin (\theta )\). Questo vale se lo schermo è molto lontano e se gli angoli sono piccoli. Si hanno due casi estremi:
+\begin{description}
+	\item[Interferenza costruttiva] Si ha campo massimo se \(\Delta \varphi = 2n \pi\), da cui \(\sin (\theta ) = \frac{n \lambda }{d} \) con \(n=0, \pm 1, \pm 2, \dots , \pm \infty \). Il campo è doppio e l'intensità quadruplica.
+	\item[Interferenza distruttiva] Si ha campo minimo per \(\Delta \varphi = (2n + 1) \pi \implies \sin (\theta ) = (n + \frac{1}{2}) \frac{\lambda }{d}\). Il campo è nullo e l'intensità anche.
+\end{description}
+Per l'intensità in generale si ritrova la formula dell'interferenza delle onde sonore:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-10-39-46.png}
+\end{figure}
+Osserviamo che \(\langle I(\Delta \varphi ) \rangle = 2 I_0\), quindi l'intensità si conserva. Però l'energia appare redistribuirsi sullo schermo, solo con zone di accumulo e zone di perdita.
+
+\paragraph{Fattore di controllo}
+Ciò che controlla l'effetto dell'interferenza è il rapporto \(\quotient{d}{\lambda } \). Per \(d\ll \lambda \) sullo schermo si ha un solo massimo di interferenza, si ha una diffusione della luce. Per \(d \gg \lambda \) non ho più sorgenti puntiformi F1 ed F2, i raggi non sono più colineari e quindi i calcoli fatti non valgono. Si possono avere problemi di coerenza e non si vede più la figura d'interferenza. Per \(d>\lambda \) ma \(d\) piccolo vale l'approssimazione delle sorgenti puntiformi F1 ed F2 e si riesce a osservare il fenomeno di interferenza.
+
+\subsection{Interferenza con più sorgenti}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-10-46-30.png}
+\end{figure}
+Consideriamo un sistema con N sorgenti monocromatiche, coerenti ed uguali, distribuite a distanze fisse su uno schermo. Il campo in P è dato da
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\textwidth]{screenshots/2024-05-08-10-47-17.png}
+\end{figure}
+Opero la stessa approssimazione di prima: piccoli angoli, quindi \(r_m = r_{m-1} = d \sin (\theta )\) e in P considero uguali le N ampiezze. Pongo \(\varphi = kd \sin (\theta )\) e ottengo che
+\begin{equation}
+	\sum_{i=1}^{N} e^{i k(r_i - r_1)} = 1 + e^{i \varphi } + e^{i 2 \varphi } + \cdots + e^{(N-1) i \varphi }
+\end{equation}
+È un pezzo di serie geometrica, quindi
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-10-53-48.png}
+\end{figure}
+Se \(N=5\), \(I_{max} = 25 I_0 \). Se \(N=10\), \(I_{max}=100 I_0 \). Si osservano dei minimi e massimi, con massimi principali di intensità proporzionale a \(N^{2} \) e massimi e secondari. I minimi sono sempre ad intensità nulla e quasi equispaziati. La larghezza dei massimi principali dipende da \(N\).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-05-08-10-57-48.png}
+\end{figure}
+Si hanno minimi per \(N \frac{\pi}{\lambda } d \sin (\theta ) = n \pi\), cioè per \(\sin (\theta ) = \frac{n \lambda }{Nd}\) con \(n= \pm 1, \pm 2, \dots, \infty \) tranne quando \(n=0, \pm N, \pm 2N, \dots \). In tali casi infatti il denominatore vale 0 e la formula per l'intensità ha espressione indeterminata. Lo studio del limite porta a verificare che in questi casi si hanno massimi principali, ossia quando \(\frac{\pi}{\lambda } d \sin (\theta )= m \pi \) (come per l'interferenza con due fenditure!).
+Nell'ipotesi di piccoli angoli possiamo stimare la larghezza a metà altezza del picco come
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-08-11-02-12.png}
+\end{figure}
