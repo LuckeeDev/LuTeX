@@ -61,3 +61,53 @@ Questa costituisce da ora la definizione di ingrandimento. Si avrà \(m> 0\) per
 % TODO: se necessario guarda le slide
 \subsection{Specchio convesso}
 Per lo specchio convesso si ottengono le stesse formule dello specchio concavo. Si fa il disegno e si ricava facilmente tutto quanto. L'unica differenza è che si avranno \(R<0\) e \(q>0\). Si verifica anche che per P nello spazio oggetto, Q è sempre tra V e il fuoco e che l'ingrandimento è sempre \(0 \leq m \leq 1\).
+
+\section{Diottri}
+Si parla di superfici diottriche quando anziché considerare la riflessione si considera la rifrazione. Ovviamente si avrà sempre un po' di riflessione, ma in questo contesto viene trascurata e si studia solo quello che avviene per una superficie diottrica di curvatura sferica.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-05-13-12-28-42.png}
+\end{figure}
+L'immagine in Q è reale perché ottenuta dai raggi stessi e non dal loro prolungamento. Per angoli piccoli si approssima \(n_1 \theta _i = n_2 \theta _r\). Si ha inoltre \(\alpha + \gamma = \theta _i\) e \(\beta + \theta _r = \gamma \), da cui \(n_1 (\alpha + \gamma )=n_2(\gamma -\beta )\). Operiamo le stesse approssimazioni di prima:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{screenshots/2024-05-13-12-33-50.png}
+\end{figure}
+Così si ricava che
+\begin{gather}
+	n_1 \left( \frac{h}{p} +\frac{h}{R} \right) = n_2 \left( \frac{h}{R} - \frac{h}{q} \right)\\
+	\frac{n_1}{p} + \frac{n_2}{q} = \left( \frac{n_2 - n_1}{R} \right)   
+\end{gather}
+Se \(p\to +\infty \), \(q=\frac{n_2}{n_2 -n_1}R \coloneqq f_2\). Se \(q \to +\infty\), \(p=\frac{n_1}{n_2 - n_1}R \coloneqq f_1\). Con queste definizioni la formula trovata diventa
+\begin{equation}
+	\frac{f_1}{p}+\frac{f_2}{q}=1
+\end{equation}
+Costruisco l'immagine attraverso il diottro sferico:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-05-13-12-42-26.png}
+\end{figure}
+I triangoli OPP' e OQQ' sono simili, quindi l'ingrandimento è \(m=\frac{QQ^{\prime} }{PP^{\prime} }=\frac{QO}{PO}=\frac{q-R}{q+R}=\frac{n_1 QV}{n_2 PV}= \frac{n_1 q}{n_2 p}\).
+
+\subsection{Lenti spesse}
+Consideriamo un sistema ottico costituito da due superfici diottriche che condividono lo stesso asse ottico. Queste costituiscono una lente, in generale una lente spessa, caratterizzata da due raggi di curvatura \(R_1\) e \(R_2\), un indice di rifrazione e uno spessore \(L\).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{screenshots/2024-05-13-12-49-19.png}
+\end{figure}
+Usando quanto ricavato per i diottri si trova che
+\begin{align}
+	\frac{n_1}{p} + \frac{n_2}{q^{\prime} } &= \left( \frac{n_2 - n_1}{R_1} \right) &
+	\frac{n_2}{p^{\prime} } + \frac{n_1}{q} &= \left( \frac{n_1 - n_2}{R_2} \right) 
+\end{align}
+con \(q^{\prime} + p^{\prime} = L\). Approssimiamo per angoli piccoli e consideriamo lenti sottili (\(L\to 0 \implies p^{\prime} =-q^{\prime} \)).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-05-13-12-54-30.png}
+\end{figure}
+\(f\) è detta "distanza focale" della lente, \(D=\quotient{1}{f} \) è detta "diottria" della lente. Per \(p\to +\infty \), \(q=f\). Allo stesso modo, per \(q \to +\infty \) si ha \(p=f\). Se \(f>0\) la lente è detta convergente, mentre se \(f<0\) la lente è detta divergente. L'ingrandimento è identico alla formula vista finora.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{screenshots/2024-05-13-13-00-49.png}
+\end{figure}
+Per la costruzione di immagini dobbiamo ricordare tre tipi di raggi importanti: paralleli all'asse ottico nello spazio oggetto (convergono in F2), passanti per V (proseguono dritti) e passanti per F1 (escono paralleli all'asse ottico nello spazio immagine).
