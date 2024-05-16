@@ -37,7 +37,7 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 -   [ROOT](https://tex.lucazoppetti.me/root.pdf)  
     Una collezione di macro di [ROOT](https://root.cern) provenienti da [questa repository](https://github.com/LuckeeDev/root), in formato PDF per essere stampate.
 
--   [Fenomeni ondulatori (WIP)](https://tex.lucazoppetti.me/waves.pdf)  
+-   [Fenomeni ondulatori](https://tex.lucazoppetti.me/waves.pdf)  
     Note dal corso di Fenomeni Ondulatori della facoltà di Fisica dell'Università di Bologna.
 
 ## Crediti
