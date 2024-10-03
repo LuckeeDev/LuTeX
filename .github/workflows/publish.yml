@@ -25,6 +25,7 @@ jobs:
                       tex/analysis_2/analysis_2.tex
                       tex/bubbles/bubbles.tex
                       tex/cavendish/cavendish.tex
+                      tex/elec0002/elec0002.tex
                       tex/fnad/fnad.tex
                       tex/maxwell/maxwell.tex
                       tex/particles/particles.tex
