@@ -30,7 +30,7 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 
 ### Terzo anno
 
--   [Sommerfeld enhancement of dark matter signals at telescopes](https://amslaurea.unibo.it/id/eprint/35729/)
+-   [Sommerfeld enhancement of dark matter signals at telescopes](https://amslaurea.unibo.it/id/eprint/35729/)  
     My bachelor thesis, written under the supervision of Dr Filippo Sala at the University of Bologna. It contains a theoretical study of the quantum-mechanical effect called "Sommerfeld enhancement" and its implications for the interpretation of experimental data coming from dark matter surveys at telescopes (specifically, FERMI-LAT).
 
 ## Crediti
