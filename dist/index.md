@@ -33,11 +33,6 @@ In questo sito web sono disponibili i progetti LaTeX che scrivo per i miei studi
 -   [Sommerfeld enhancement of dark matter signals at telescopes](https://amslaurea.unibo.it/id/eprint/35729/)  
     My bachelor thesis, written under the supervision of Dr Filippo Sala at the University of Bologna. It contains a theoretical study of the quantum-mechanical effect called "Sommerfeld enhancement" and its implications for the interpretation of experimental data coming from dark matter surveys at telescopes (specifically, FERMI-LAT).
 
-### Fourth year (2025/2026)
-
--   [Open quantum systems, and a quick digression into quantum chaos](https://luckeedev.github.io/tpiv-i/report.pdf)  
-    My report for the TPIV semester project at EPFL in the Fall of 2025. I initially studied, analysed and simulated open quantum systems to understand the theoretical framework that describes them. I then carried out a small research project about quantum chaos signatures in open quantum systems, where I showed the validity of the eigenstate thermalization hypothesis for the singular values of the Lindbladian. 
-
 ## Crediti
 
 Molti lavori che si trovano su questa pagina sono stati realizzati in collaborazione con [est1ntore](https://github.com/est1ntore) e [ronzo13](https://github.com/ronzo13).
